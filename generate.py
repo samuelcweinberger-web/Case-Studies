@@ -479,7 +479,7 @@ def write_index():
           </figure>
           <figure class="life-shot life-shot-tall">
             <img src="media/life/boat.jpg" alt="Sam smiling at the helm of a boat" loading="lazy" />
-            <figcaption>Time off the grid</figcaption>
+            <figcaption>I enjoy steering the ship</figcaption>
           </figure>
         </div>
       </div>
