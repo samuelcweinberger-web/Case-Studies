@@ -121,13 +121,53 @@ CASES = [
         ],
     },
     {
-        "slug": "cx-measurement",
+        "slug": "onboarding-deposit",
         "num": "04",
+        "title": "Behavioral Onboarding & Deposit Optimization",
+        "short": "Trust-first KYC and wallet UX that converted 150K+ stagnant users and unlocked $12M in incremental handle.",
+        "context": "FanDuel · Core Products & Experiences",
+        "year": "2025",
+        "summary": "Onboarding UX, fintech compliance (KYC), and first-time deposit growth—diagnosing whether drop-off was motivation or a trust barrier.",
+        "stats": [
+            ("$12M", "Incremental handle in Q1 2025"),
+            ("150K+", "Stagnant users converted"),
+            ("65%", "New sign-ups blocked at wallet setup"),
+            ("30%", "Fewer support tickets"),
+        ],
+        "sections": [
+            (
+                "Situation",
+                """<p>Users completed registration but abandoned before setting up banking or making a First-Time Deposit (FTD). Amplitude mapped the moment of exit: registration was seamless, yet the Wallet/Banking Setup screen was a barrier for 65% of new sign-ups.</p>""",
+            ),
+            (
+                "Task",
+                """<p>Determine whether the registration-to-deposit gap was a motivation problem or a specific trust barrier during financial setup—and close the Drop-off Delta between account creation and financial commitment.</p>""",
+            ),
+            (
+                "Approach",
+                """<ul>
+<li><strong>Triangulated mixed methods</strong> — Combined Amplitude funnel mapping, in-depth interviews, moderated usability, and a MaxDiff survey to isolate where and why users stalled.</li>
+<li><strong>Trust diagnosis</strong> — Interviews showed users were comfortable sharing basic identity info, but hit a hard wall at routing numbers and SSNs—with profound confusion around ACH payments and why that sensitivity was required on a sports platform.</li>
+<li><strong>Progressive disclosure</strong> — Partnered with content designers to re-sequence: low-stakes data (phone, email) first to build momentum before sensitive wallet fields.</li>
+<li><strong>Contextual framing</strong> — Introduced micro-explanations of why federal regulations required specific banking data, humanizing the compliance wall and clarifying ACH security.</li>
+<li><strong>Validation</strong> — 15 moderated sessions observed hesitation at the routing-number field; a MaxDiff survey with 5,000 users identified which phrasing maximized confidence in sharing sensitive financial details.</li>
+</ul>""",
+            ),
+            (
+                "Outcome",
+                """<p>Re-sequenced flow and optimized messaging lifted successful wallet setups and deposits. Converted 150,000+ stagnant users, generating an estimated $12M in incremental handle in Q1 2025, and cut support tickets by 30% by explaining why sensitive information was mandatory.</p>
+<p class="callout">Established the Trust-First Onboarding Playbook as the company standard.</p>""",
+            ),
+        ],
+    },
+    {
+        "slug": "cx-measurement",
+        "num": "05",
         "title": "Continuous CX Measurement & Cross-Sell Growth",
-        "short": "A real-time measurement framework that doubled cross-sell acquisition in 90 days.",
+        "short": "A real-time Hyper-Focused Lens that doubled cross-sell acquisition in 90 days.",
         "context": "FanDuel · Core Products & Experiences",
         "year": "2024–2025",
-        "summary": "A real-time measurement framework, applied to a stalled cross-sell conversion funnel.",
+        "summary": "Enterprise UX and growth-driven research: a continuous CX measurement framework applied to a stalled cross-sell conversion funnel.",
         "stats": [
             ("$500M", "Projected LTV impact"),
             ("2×", "Cross-sell acquisitions within 90 days"),
@@ -137,25 +177,25 @@ CASES = [
         "sections": [
             (
                 "Situation",
-                """<p>Cross-sell conversion between product lines had stagnated for the year, with growth flat at roughly 10%. Existing brand trackers were too lagging and infrequent to diagnose where—or why—customers were dropping off.</p>""",
+                """<p>Lagging brand trackers could not keep pace with product health. Cross-sell conversion between product lines had stagnated at roughly 10% for the year—without a clear read on where, or why, customers were dropping off.</p>""",
             ),
             (
                 "Task",
-                """<p>Architect a continuous, real-time CX measurement system, then apply it to the cross-sell bottleneck to prove that research could function as a growth engine, not just a reporting function.</p>""",
+                """<p>Architect a real-time Continuous CX Measurement Framework—a “Hyper-Focused Lens” across Ease of Use, Functional Reliability, and User Satisfaction—then apply it to the cross-sell bottleneck to prove research could function as a growth engine, not a cost center.</p>""",
             ),
             (
                 "Approach",
                 """<ul>
-<li><strong>Continuous measurement framework</strong> — Built a “Hyper-Focused Lens” combining monthly in-app Pulse Checks (1% sampling), longitudinal quantitative benchmarking, and large-scale competitive usability testing (n=4,000).</li>
-<li><strong>Technical integration</strong> — Partnered with engineering to deploy event-based triggers (deposit_success, login_success), capturing sentiment at the Peak-End moment to reduce recall bias.</li>
-<li><strong>Unified dashboard</strong> — Mapped UX metrics (UMUX-Lite / SEQ) directly to product KPIs and business OKRs for cross-functional alignment.</li>
-<li><strong>Applied diagnosis at scale</strong> — Funnel analysis isolated a drop-off at the Payment Linking step; 120 structured interviews (including 20 unmoderated) surfaced trust hurdles, validated via A/B testing with 30,000 users and real-time Amplitude telemetry.</li>
+<li><strong>Three-pronged methodology</strong> — Monthly in-app Pulse Checks (1% sampling), longitudinal quantitative benchmarking, and large-scale competitive usability testing (n=4,000).</li>
+<li><strong>Technical integration</strong> — Partnered with engineering on event-based triggers (deposit_success, login_success) to capture sentiment at the Peak-End moment, reducing recall bias.</li>
+<li><strong>Cross-functional alignment</strong> — Built a unified dashboard mapping UX metrics (UMUX-Lite / SEQ) directly to product KPIs and business OKRs.</li>
+<li><strong>Cross-sell deep dive</strong> — Funnel analysis isolated drop-off at Payment Linking; 120 structured interviews (including 20 unmoderated) surfaced trust hurdles around data sharing; A/B usability testing with 30,000 users validated the optimal path; Amplitude telemetry enabled rapid iteration of messaging and UI.</li>
 </ul>""",
             ),
             (
                 "Outcome",
-                """<p>Cross-sell acquisitions doubled within 90 days, with a projected $500M LTV impact, 14% MAU lift, $5M+ incremental monthly revenue, and seven-figure annual support-cost savings. The framework was adopted as the standardized research playbook company-wide.</p>
-<p class="callout">Research operated as a growth engine—not a reporting function.</p>""",
+                """<p>Doubled annual cross-sell acquisitions within 90 days, with a 14% MAU lift, $5M+ incremental monthly revenue, and a projected $500M LTV impact. Support-per-user metrics fell enough to drive estimated seven-figure annual customer-operations savings.</p>
+<p class="callout">Formally adopted as the Standardized Research Playbook for future product onboarding and promotional launches.</p>""",
             ),
         ],
     },
@@ -236,7 +276,7 @@ def write_index():
       <div class="wrap">
         <div class="section-head reveal">
           <h2>Selected work</h2>
-          <p>Case studies from Robinhood prediction markets and FanDuel sportsbook research—behavioral segmentation, AI-orchestrated prototyping, research ops automation, and continuous CX measurement.</p>
+          <p>Case studies from Robinhood prediction markets and FanDuel sportsbook research—FTUX retention, AI prototyping, research ops, trust-first onboarding, and continuous CX measurement.</p>
         </div>
         <div class="case-list">
 {chr(10).join(rows)}
