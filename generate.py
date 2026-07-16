@@ -423,7 +423,7 @@ NOTABLE = [
         "org": "Robinhood",
         "title": "Onboarding Optimization & Strategic Retention",
         "brand": "robinhood",
-        "logos": [("robinhood-icon.png", "Robinhood")],
+        "logos": [("robinhood.png", "Robinhood")],
         "body": "Segmented users via MaxDiff (sports-first bettors vs. brokerage/crypto traders) and shipped personalized onboarding through a controlled experiment — 4–12% engagement/retention lift, 60%+ reduction in post-rejection drop-off, and $17M in retained monthly revenue.",
     },
     {

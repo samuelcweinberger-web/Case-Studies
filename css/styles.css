@@ -249,8 +249,20 @@ img {
 }
 
 .brand-strip img[alt="Robinhood"] {
+  height: 2.75rem;
+  max-width: 12rem;
+}
+
+.notable-logos img[alt="Robinhood"] {
+  height: 2.5rem;
+  max-width: 11rem;
+  border-radius: 0.45rem;
+}
+
+.notable-logos img[alt="FanDuel"] {
   height: 2.35rem;
-  max-width: 9rem;
+  max-width: 2.35rem;
+  border-radius: 0.35rem;
 }
 
 .brand-strip img[alt="NFL"] {
@@ -644,7 +656,6 @@ img {
   border-radius: 50%;
 }
 
-.notable-logos img[alt="Robinhood"],
 .notable-logos img[alt="FanDuel"] {
   height: 2.35rem;
   max-width: 2.35rem;
