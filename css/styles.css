@@ -1017,6 +1017,15 @@ body.brand-nfl .prose .callout {
   background: #000;
 }
 
+.phone-screen img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: top center;
+  background: #fff;
+}
+
 .case-video-caption {
   margin: 0;
   max-width: 36rem;

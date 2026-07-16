@@ -91,6 +91,11 @@ CASES = [
         "context": "Robinhood · Prediction Markets & Event Contracts",
         "year": "2026",
         "summary": "I diagnosed a first-trade rejection funnel where 1 in 5 trades failed and 90% of those users churned to competitors. Through qualitative interviews, MaxDiff segmentation, and targeted messaging, I recovered rejected traders at scale and quantified how early outcomes reshape long-term LTV.",
+        "phone": {
+            "src": "onboarding-retention-phone.png",
+            "alt": "Robinhood Prediction markets screen showing featured and newly listed event contracts",
+            "caption": "Prediction markets experience—featuring high-probability contracts used to guide first-time traders toward clearer, lower-risk first trades.",
+        },
         "stats": [
             ("85%", "Rejected traders recovered"),
             ("$17M", "Additional monthly revenue"),
@@ -758,22 +763,31 @@ def write_case(case, index):
 {stats}
       </div>"""
 
-    video_html = ""
-    if case.get("video"):
-        v = case["video"]
-        caption = v.get("caption", "")
+    media_html = ""
+    if case.get("video") or case.get("phone"):
+        caption = ""
+        screen_inner = ""
+        if case.get("video"):
+            v = case["video"]
+            caption = v.get("caption", "")
+            screen_inner = f"""<video controls playsinline preload="metadata">
+              <source src="../media/{v['src']}" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>"""
+        else:
+            p = case["phone"]
+            caption = p.get("caption", "")
+            alt = p.get("alt", "")
+            screen_inner = f'<img src="../media/{p["src"]}" alt="{alt}" />'
         caption_html = (
             f'<p class="case-video-caption">{caption}</p>' if caption else ""
         )
-        video_html = f"""
+        media_html = f"""
       <div class="case-video reveal">
-        <div class="phone-frame" aria-hidden="false">
+        <div class="phone-frame">
           <div class="phone-notch" aria-hidden="true"></div>
           <div class="phone-screen">
-            <video controls playsinline preload="metadata" poster="">
-              <source src="../media/{v['src']}" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            {screen_inner}
           </div>
         </div>
         {caption_html}
@@ -816,7 +830,7 @@ def write_case(case, index):
         </div>
       </header>
 {stats_html}
-{video_html}
+{media_html}
       <div class="case-board-body">
         <section class="exec-summary">
           <h2>Executive summary</h2>
