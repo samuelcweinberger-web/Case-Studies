@@ -332,7 +332,11 @@ def write_index():
         + f"""
   <main>
     <section class="hero">
-      <div class="hero-media" role="img" aria-label="Research work in progress"></div>
+      <div class="hero-media" aria-hidden="true">
+        <video autoplay muted loop playsinline poster="media/hero.jpg">
+          <source src="media/hero.mp4" type="video/mp4" />
+        </video>
+      </div>
       <div class="hero-atmosphere" aria-hidden="true"></div>
       <div class="wrap hero-copy">
         <div class="hero-kicker">AI-Driven Insights</div>
