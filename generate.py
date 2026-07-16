@@ -90,7 +90,7 @@ CASES = [
         "short": "Recovered 85% of rejected first-time traders—generating $17M in monthly revenue and ~900K net new customers.",
         "context": "Robinhood · Prediction Markets & Event Contracts",
         "year": "2026",
-        "summary": "I diagnosed a first-trade rejection funnel where 1 in 5 trades failed and 90% of those users churned to competitors. Through qualitative interviews, MaxDiff segmentation, and targeted messaging, I recovered rejected traders at scale and quantified how early outcomes reshape long-term LTV.",
+        "summary": "I identified a first-trade rejection funnel where 1 in 5 trades failed and 90% of those users churned to competitors. Through qualitative interviews, MaxDiff segmentation, and targeted messaging, I recovered rejected traders at scale and quantified how early outcomes reshape long-term LTV.",
         "phone": {
             "src": "onboarding-retention-phone.png",
             "alt": "Robinhood Prediction markets screen showing featured and newly listed event contracts",
@@ -219,7 +219,7 @@ CASES = [
         "short": "Mixed-methods onboarding and deposit research that lifted deposit success 22% and cut related support tickets 18%.",
         "context": "FanDuel · Core Products & Experiences",
         "year": "2025",
-        "summary": "Reduce friction in onboarding and first-time deposits by diagnosing usability barriers, trust gaps, and language confusion in wallet setup.",
+        "summary": "Reduce friction in onboarding and first-time deposits by identifying usability barriers, trust gaps, and language confusion in wallet setup.",
         "stats": [
             ("+22%", "Successful deposits"),
             ("−18%", "Onboarding/wallet support tickets"),
@@ -239,7 +239,7 @@ CASES = [
                 "Approach",
                 """<ul>
 <li><strong>Mixed methods</strong> — Behavioral analytics, remote moderated usability, competitive benchmarking, and triangulation across deposit-flow metrics, app logs, and qualitative sessions.</li>
-<li><strong>Language &amp; trust diagnosis</strong> — Users struggled differentiating “funding” vs “depositing”; missing verification reassurance cues lowered first-time trust; early-stage overload hindered completion.</li>
+<li><strong>Language &amp; trust identification</strong> — Users struggled differentiating “funding” vs “depositing”; missing verification reassurance cues lowered first-time trust; early-stage overload hindered completion.</li>
 <li><strong>Progressive disclosure</strong> — Re-sequenced low-stakes data before sensitive wallet fields; partnered with content design on micro-explanations for why banking data was required.</li>
 <li><strong>Validation at scale</strong> — Moderated sessions observed hesitation at sensitive fields; MaxDiff messaging tests identified phrasing that maximized confidence sharing financial details.</li>
 </ul>""",
