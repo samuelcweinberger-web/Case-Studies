@@ -380,14 +380,20 @@ CASES = [
 ]
 
 
-def header(active=None, prefix="", brand=None):
+def header(active=None, prefix="", brand=None, nav_active=None):
     brand_class = f' class="brand-{brand}"' if brand else ""
+    title = "Sam Weinberger — Case Studies" if not active else f"{active} — Sam Weinberger"
+
+    def nav_link(href, label, key):
+        cls = ' class="is-active"' if nav_active == key else ""
+        return f'<a href="{prefix}{href}"{cls}>{label}</a>'
+
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{"Sam Weinberger — Case Studies" if not active else f"{active} — Sam Weinberger"}</title>
+  <title>{title}</title>
   <meta name="description" content="Samuel Weinberger — applied cognitive and social psychologist turned UX Engineer and Quantitative UX Researcher. Bridging human behavior, analytics, and interactive design." />
   <link rel="stylesheet" href="{prefix}css/styles.css" />
 </head>
@@ -396,9 +402,9 @@ def header(active=None, prefix="", brand=None):
     <div class="wrap">
       <a class="brand" href="{prefix}index.html">Sam Weinberger</a>
       <nav class="nav" aria-label="Primary">
-        <a href="{prefix}index.html#case-studies">Case studies</a>
-        <a href="{prefix}index.html#notable">Notable projects</a>
-        <a href="{prefix}index.html#about">About me</a>
+        {nav_link("case-studies.html", "Case studies", "cases")}
+        {nav_link("notable.html", "Notable projects", "notable")}
+        {nav_link("about.html", "About me", "about")}
         <a href="mailto:samuelcweinberger@gmail.com">Contact</a>
       </nav>
     </div>
@@ -460,6 +466,13 @@ NOTABLE = [
 ]
 
 
+ABOUT_COPY = """
+          <p>I’m an applied cognitive and social psychologist turned UX Engineer and Quantitative UX Researcher. I specialize in bridging the gap between human behavior, advanced data analytics, and interactive design. My academic background—including graduate research focused on human motivation, persuasion, and systemic behavior change—serves as the foundation for how I approach product strategy.</p>
+          <p>After starting my career in human factors and FDA-regulated medical device research, I stepped into the digital product space. I spent my early UX career at the NFL optimizing the Fantasy mobile app, and later spent four years at FanDuel helping build and scale one of the most successful sportsbooks on the market—including a quarterly product benchmarking program that turned SUPR-Q, Ease of Use, loyalty, and Responsible Gaming into a shared executive scorecard. Most recently, I joined Robinhood to focus on first-time user experience, customer acquisition, and retention within the rapid-fire world of event contracts and prediction markets.</p>
+          <p>Today, I operate as a highly technical hybrid. By integrating generative AI and automated workflows into my practice, I’ve expanded my reach across product, design, engineering, and data science. Whether I am orchestrating end-to-end research operations, deploying automated quantitative surveys, or rapidly generating interactive, engineering-ready prototypes mid-interview, I focus on one thing: translating complex human behavior into massive product momentum.</p>
+"""
+
+
 def footer(prefix=""):
     return f"""
   <footer class="site-footer">
@@ -474,13 +487,12 @@ def footer(prefix=""):
 """
 
 
-def write_index():
+def build_case_blocks(case_href_prefix="cases/"):
     company_order = [
         ("robinhood", "Robinhood"),
         ("fanduel", "FanDuel"),
         ("nfl", "NFL"),
     ]
-
     case_blocks = []
     for brand_key, brand_label in company_order:
         brand_cases = [c for c in CASES if c["brand"] == brand_key]
@@ -488,7 +500,7 @@ def write_index():
         for c in brand_cases:
             badge = product_badge(c["brand"])
             rows.append(
-                f"""    <a class="case-row case-{c['brand']} reveal" href="cases/{c['slug']}.html">
+                f"""    <a class="case-row case-{c['brand']} reveal" href="{case_href_prefix}{c['slug']}.html">
       <div class="case-num">{c['num']}</div>
       <div>
         {badge}
@@ -520,7 +532,10 @@ def write_index():
           </div>
         </div>"""
         )
+    return case_blocks
 
+
+def build_notable_blocks():
     notable_order = [
         ("robinhood", "Robinhood"),
         ("fanduel", "FanDuel"),
@@ -535,9 +550,12 @@ def write_index():
             continue
         rows = []
         for p in projects:
-            case_anchor = f"#cases-{brand_key}" if brand_key in {"robinhood", "fanduel", "nfl"} else f"#project-{brand_key}"
+            if brand_key in {"robinhood", "fanduel", "nfl"}:
+                logo_href = f"case-studies.html#cases-{brand_key}"
+            else:
+                logo_href = f"#project-{brand_key}"
             logos = "".join(
-                f'<a class="notable-logo-link" href="{case_anchor}"><img src="media/brands/{src}" alt="{alt}" /></a>'
+                f'<a class="notable-logo-link" href="{logo_href}"><img src="media/brands/{src}" alt="{alt}" /></a>'
                 for src, alt in p["logos"]
             )
             rows.append(
@@ -557,12 +575,15 @@ def write_index():
           </div>
         </div>"""
         )
+    return notable_blocks
 
+
+def write_home():
     html = (
-        header()
-        + f"""
+        header(nav_active="home")
+        + """
   <main>
-    <section class="hero">
+    <section class="hero hero-page">
       <div class="hero-media" aria-hidden="true"></div>
       <div class="hero-atmosphere" aria-hidden="true"></div>
       <div class="wrap hero-copy">
@@ -571,22 +592,35 @@ def write_index():
         <p class="hero-role">Applied Cognitive and Social psychologist</p>
         <p class="hero-lede">9+ years of mixed-methods research across fintech, sports media, and healthcare—connecting usability, field research, and AI-augmented workflows to product and revenue outcomes.</p>
         <div class="brand-strip" aria-label="Brands worked with">
-          <a href="#cases-robinhood" title="Robinhood case studies"><img src="media/brands/robinhood.png" alt="Robinhood" /></a>
-          <a href="#cases-fanduel" title="FanDuel case studies"><img src="media/brands/fanduel.png" alt="FanDuel" /></a>
-          <a href="#cases-nfl" title="NFL case studies"><img src="media/brands/nfl.png" alt="NFL" /></a>
-          <a href="#notable-nfl" title="NFL · Verizon 5G SuperStadium"><img src="media/brands/verizon-5g.png" alt="Verizon 5G" /></a>
-          <a href="#notable-ipsos" title="Ipsos Healthcare projects"><img src="media/brands/ipsos.png" alt="Ipsos" /></a>
-          <a href="#notable-ipsos" title="Ipsos Healthcare · Merck study"><img src="media/brands/merck.png" alt="Merck" /></a>
-          <a href="#notable-cgu" title="Claremont Graduate University projects"><img src="media/brands/cgu.png" alt="Claremont Graduate University" /></a>
+          <a href="case-studies.html#cases-robinhood" title="Robinhood case studies"><img src="media/brands/robinhood.png" alt="Robinhood" /></a>
+          <a href="case-studies.html#cases-fanduel" title="FanDuel case studies"><img src="media/brands/fanduel.png" alt="FanDuel" /></a>
+          <a href="case-studies.html#cases-nfl" title="NFL case studies"><img src="media/brands/nfl.png" alt="NFL" /></a>
+          <a href="notable.html#notable-nfl" title="NFL · Verizon 5G SuperStadium"><img src="media/brands/verizon-5g.png" alt="Verizon 5G" /></a>
+          <a href="notable.html#notable-ipsos" title="Ipsos Healthcare projects"><img src="media/brands/ipsos.png" alt="Ipsos" /></a>
+          <a href="notable.html#notable-ipsos" title="Ipsos Healthcare · Merck study"><img src="media/brands/merck.png" alt="Merck" /></a>
+          <a href="notable.html#notable-cgu" title="Claremont Graduate University projects"><img src="media/brands/cgu.png" alt="Claremont Graduate University" /></a>
         </div>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#case-studies">View case studies</a>
-          <a class="btn btn-ghost" href="mailto:samuelcweinberger@gmail.com">Email Sam</a>
+          <a class="btn btn-primary" href="case-studies.html">View case studies</a>
+          <a class="btn btn-ghost" href="notable.html">Notable projects</a>
+          <a class="btn btn-ghost" href="about.html">About me</a>
         </div>
       </div>
     </section>
+  </main>
+"""
+        + footer()
+    )
+    (ROOT / "index.html").write_text(html)
 
-    <section class="section" id="case-studies">
+
+def write_case_studies_page():
+    case_blocks = build_case_blocks()
+    html = (
+        header(active="Case studies", nav_active="cases")
+        + f"""
+  <main>
+    <section class="section page-section" id="case-studies">
       <div class="wrap">
         <div class="section-head reveal">
           <h2>Case studies</h2>
@@ -614,8 +648,20 @@ def write_index():
         </div>
       </div>
     </section>
+  </main>
+"""
+        + footer()
+    )
+    (ROOT / "case-studies.html").write_text(html)
 
-    <section class="section notable-section" id="notable">
+
+def write_notable_page():
+    notable_blocks = build_notable_blocks()
+    html = (
+        header(active="Notable projects", nav_active="notable")
+        + f"""
+  <main>
+    <section class="section page-section notable-section" id="notable">
       <div class="wrap">
         <div class="section-head reveal">
           <h2>Notable projects</h2>
@@ -624,16 +670,25 @@ def write_index():
 {chr(10).join(notable_blocks)}
       </div>
     </section>
+  </main>
+"""
+        + footer()
+    )
+    (ROOT / "notable.html").write_text(html)
 
-    <section class="section" id="about">
+
+def write_about_page():
+    html = (
+        header(active="About me", nav_active="about")
+        + f"""
+  <main>
+    <section class="section page-section" id="about">
       <div class="wrap about-grid">
         <div class="reveal">
           <div class="section-head">
             <h2>About me</h2>
           </div>
-          <p>I’m an applied cognitive and social psychologist turned UX Engineer and Quantitative UX Researcher. I specialize in bridging the gap between human behavior, advanced data analytics, and interactive design. My academic background—including graduate research focused on human motivation, persuasion, and systemic behavior change—serves as the foundation for how I approach product strategy.</p>
-          <p>After starting my career in human factors and FDA-regulated medical device research, I stepped into the digital product space. I spent my early UX career at the NFL optimizing the Fantasy mobile app, and later spent four years at FanDuel helping build and scale one of the most successful sportsbooks on the market—including a quarterly product benchmarking program that turned SUPR-Q, Ease of Use, loyalty, and Responsible Gaming into a shared executive scorecard. Most recently, I joined Robinhood to focus on first-time user experience, customer acquisition, and retention within the rapid-fire world of event contracts and prediction markets.</p>
-          <p>Today, I operate as a highly technical hybrid. By integrating generative AI and automated workflows into my practice, I’ve expanded my reach across product, design, engineering, and data science. Whether I am orchestrating end-to-end research operations, deploying automated quantitative surveys, or rapidly generating interactive, engineering-ready prototypes mid-interview, I focus on one thing: translating complex human behavior into massive product momentum.</p>
+{ABOUT_COPY}
         </div>
         <div class="reveal">
           <div class="pill-row">
@@ -653,7 +708,7 @@ def write_index():
 """
         + footer()
     )
-    (ROOT / "index.html").write_text(html)
+    (ROOT / "about.html").write_text(html)
 
 
 def write_case(case, index):
@@ -679,12 +734,12 @@ def write_case(case, index):
     )
     badge = product_badge(case["brand"], prefix="../")
     html = (
-        header(active=case["title"], prefix="../", brand=case["brand"])
+        header(active=case["title"], prefix="../", brand=case["brand"], nav_active="cases")
         + f"""
   <main>
     <section class="case-hero">
       <div class="wrap">
-        <div class="crumb"><a href="../index.html">Case studies</a> / {case['num']}</div>
+        <div class="crumb"><a href="../case-studies.html">Case studies</a> / {case['num']}</div>
         {badge}
         <div class="eyebrow">{case['context']} · {case['year']}</div>
         <h1>{case['title']}</h1>
@@ -710,10 +765,13 @@ def write_case(case, index):
 
 def main():
     CASES_DIR.mkdir(parents=True, exist_ok=True)
-    write_index()
+    write_home()
+    write_case_studies_page()
+    write_notable_page()
+    write_about_page()
     for i, case in enumerate(CASES):
         write_case(case, i)
-    print(f"Wrote index + {len(CASES)} case pages")
+    print(f"Wrote home + section pages + {len(CASES)} case pages")
 
 
 if __name__ == "__main__":

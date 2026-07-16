@@ -114,8 +114,20 @@ img {
   transition: color 0.2s ease;
 }
 
+.nav a.is-active {
+  color: var(--ink);
+}
+
 .nav a:hover {
   color: var(--ink);
+}
+
+.page-section {
+  padding-top: 3.5rem;
+}
+
+.hero-page {
+  min-height: calc(100vh - 4.25rem);
 }
 
 .hero {
