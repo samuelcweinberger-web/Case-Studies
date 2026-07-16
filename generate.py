@@ -34,7 +34,7 @@ CASES = [
         "stats": [
             ("Generated $17M", "in monthly revenue"),
             ("~900K", "Net new customers"),
-            ("60%+", "Drop in post-rejection churn"),
+            ("60%", "Reduction in churn"),
             ("18%", "Trade volume increase, top-tier customers"),
         ],
         "sections": [
@@ -57,7 +57,7 @@ CASES = [
             ),
             (
                 "Outcome",
-                """<p>Generated ~$17M in monthly revenue and ~900K net new customers. Post-rejection churn dropped by over 60%. Trade volume among top-tier customers rose 18%, with retention lifts of 12% for the brokerage/crypto segment and 4% for sports-first users.</p>""",
+                """<p>Generated ~$17M in monthly revenue and ~900K net new customers. Achieved a 60% reduction in churn. Trade volume among top-tier customers rose 18%, with retention lifts of 12% for the brokerage/crypto segment and 4% for sports-first users.</p>""",
             ),
         ],
     },
@@ -430,7 +430,7 @@ NOTABLE = [
         "title": "Onboarding Optimization & Strategic Retention",
         "brand": "robinhood",
         "logos": [("robinhood.png", "Robinhood")],
-        "body": "Segmented users via MaxDiff (sports-first bettors vs. brokerage/crypto traders) and shipped personalized onboarding through a controlled experiment — 4–12% engagement/retention lift, 60%+ reduction in post-rejection drop-off, and $17M in retained monthly revenue.",
+        "body": "Segmented users via MaxDiff (sports-first bettors vs. brokerage/crypto traders) and shipped personalized onboarding through a controlled experiment — 4–12% engagement/retention lift, 60% reduction in churn, and $17M in retained monthly revenue.",
     },
     {
         "org": "FanDuel",
