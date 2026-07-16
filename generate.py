@@ -432,8 +432,9 @@ NOTABLE = [
         "body": "Directed the research strategy linking behavioral signals to cross-sell opportunities while scaling a 32-person research org to support it — doubled cross-sell acquisition, adding $8–10M in monthly recurring revenue (>$500M LTV).",
     },
     {
-        "org": "NFL Digital Media",
-        "title": "5G SuperStadium AR Fan Experience (with Verizon)",
+        "org": "NFL",
+        "title": "Verizon 5G SuperStadium Fan Experience",
+        "tone": "nfl",
         "logos": [
             ("5g-superstadium.png", "NFL 5G SuperStadium"),
             ("verizon-5g.png", "Verizon 5G"),
@@ -490,8 +491,10 @@ def write_index():
         logos = "".join(
             f'<img src="media/brands/{src}" alt="{alt}" />' for src, alt in p["logos"]
         )
+        tone = p.get("tone", "")
+        row_class = f"notable-row notable-{tone}" if tone else "notable-row"
         notable_rows.append(
-            f"""        <article class="notable-row reveal">
+            f"""        <article class="{row_class} reveal">
           <div class="notable-logos">{logos}</div>
           <div>
             <h3><span class="notable-org">{p['org']}</span> — {p['title']}</h3>

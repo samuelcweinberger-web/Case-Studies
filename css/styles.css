@@ -629,6 +629,11 @@ img {
   color: var(--accent);
 }
 
+.notable-nfl h3,
+.notable-nfl .notable-org {
+  color: #d50a0a;
+}
+
 .notable-row p {
   margin: 0;
   color: var(--muted);
