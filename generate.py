@@ -494,36 +494,6 @@ def write_index():
           <p>A 2020 design-studio program exploring how volumetric TrueView capture could power condensed, interactive game replays—personalizing NFL D2C content for fans who already know the score but still want the story.</p>
         </div>
 
-        <div class="trueview-body reveal">
-          <div class="trueview-copy">
-            <h3>Research approach</h3>
-            <ul>
-              <li><strong>Fan personas</strong> — Built Mike, Jake, and Ted to focus who watches live games, why they revisit condensed replays, and what would make TrueView feel like a must-watch episode—not another NFL Replay rerun.</li>
-              <li><strong>Concept stress-test</strong> — Positioned TrueView as on-field story capture plus insider breakdowns, interactive 360 moments, and club-partnered narrative—available after the live game with a clear value prop for fans and producers.</li>
-              <li><strong>Culver City studios</strong> — Ran in-person group sessions on the NFL campus Labs space (Jan 2020): prototype listening, generative workshops, 1:1 quote capture, and an exit survey—with high-quality video synthesis for stakeholders.</li>
-            </ul>
-            <p class="trueview-criteria">Success criteria: an experience fans would love and share; a TrueView value prop for the league and clubs (“more than an angle—a capability”); and clarity on what directors and producers need next.</p>
-          </div>
-
-          <div class="trueview-personas" aria-label="Fan personas">
-            <div>
-              <h4>Mike</h4>
-              <p class="trueview-mantra">College. Drink. Eat. Football. Repeat.</p>
-              <p>Social, mobile-first fan who lives the game through friends, fantasy, and clips—high on connection, hungry for moments worth sending.</p>
-            </div>
-            <div>
-              <h4>Jake</h4>
-              <p class="trueview-mantra">Be the football guy in the room.</p>
-              <p>Young professional who prepares all week to debate, celebrate, and feel close to the game—blackouts and thin context are his pain points.</p>
-            </div>
-            <div>
-              <h4>Ted</h4>
-              <p class="trueview-mantra">My football. My Sunday.</p>
-              <p>Knowledge-driven host of the Sunday ritual—stats, lore, and shared viewing—looking for depth that rewards expertise.</p>
-            </div>
-          </div>
-        </div>
-
         <div class="trueview-player reveal">
           <video controls playsinline preload="metadata" poster="media/hero.jpg">
             <source src="media/hero.mp4" type="video/mp4" />
