@@ -23,10 +23,10 @@ BRANDS = {
 
 CASES = [
     {
-        "slug": "ftux-retention",
+        "slug": "onboarding-retention",
         "num": "01",
         "brand": "robinhood",
-        "title": "FTUX Optimization & Strategic Retention",
+        "title": "Onboarding Optimization & Strategic Retention",
         "short": "Behavioral segmentation and MaxDiff research that recovered $17M in monthly revenue.",
         "context": "Robinhood · Prediction Markets & Event Contracts",
         "year": "2026",
@@ -422,7 +422,7 @@ def product_badge(brand_key, prefix=""):
 NOTABLE = [
     {
         "org": "Robinhood",
-        "title": "First-Time User Experience (FTUX) Optimization & Strategic Retention",
+        "title": "Onboarding Optimization & Strategic Retention",
         "logos": [("robinhood-icon.png", "Robinhood")],
         "body": "Segmented users via MaxDiff (sports-first bettors vs. brokerage/crypto traders) and shipped personalized onboarding through a controlled experiment — 4–12% engagement/retention lift, 60%+ reduction in post-rejection drop-off, and $17M in retained monthly revenue.",
     },
