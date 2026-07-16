@@ -238,6 +238,23 @@ img {
   animation: rise 1s var(--ease) 0.48s forwards;
 }
 
+.brand-strip a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 0.35rem;
+  transition: transform 0.25s var(--ease), opacity 0.2s ease;
+}
+
+.brand-strip a:hover {
+  transform: translateY(-2px);
+}
+
+.brand-strip a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
 .brand-strip img {
   height: 2rem;
   width: auto;
@@ -245,7 +262,11 @@ img {
   object-fit: contain;
   opacity: 0.92;
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.35));
-  transition: opacity 0.2s ease, transform 0.25s var(--ease);
+  transition: opacity 0.2s ease;
+}
+
+.brand-strip a:hover img {
+  opacity: 1;
 }
 
 .brand-strip img[alt="Robinhood"] {
@@ -295,9 +316,21 @@ img {
   border-radius: 50%;
 }
 
-.brand-strip img:hover {
-  opacity: 1;
+.notable-logo-link {
+  display: inline-flex;
+  text-decoration: none;
+  border-radius: 0.35rem;
+  transition: transform 0.2s var(--ease), opacity 0.2s ease;
+}
+
+.notable-logo-link:hover {
   transform: translateY(-1px);
+  opacity: 0.92;
+}
+
+.notable-logo-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
 .product-mark-rh-img {
@@ -505,6 +538,7 @@ img {
 
 .company-group {
   margin-bottom: 2.75rem;
+  scroll-margin-top: 5.5rem;
 }
 
 .company-group:last-of-type {

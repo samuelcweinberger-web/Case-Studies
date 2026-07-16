@@ -513,7 +513,7 @@ def write_index():
         if not rows:
             continue
         case_blocks.append(
-            f"""        <div class="company-group company-{brand_key} reveal">
+            f"""        <div class="company-group company-{brand_key} reveal" id="cases-{brand_key}">
           <h3 class="company-heading">{brand_label}</h3>
           <div class="case-list">
 {chr(10).join(rows)}
@@ -535,11 +535,13 @@ def write_index():
             continue
         rows = []
         for p in projects:
+            case_anchor = f"#cases-{brand_key}" if brand_key in {"robinhood", "fanduel", "nfl"} else f"#project-{brand_key}"
             logos = "".join(
-                f'<img src="media/brands/{src}" alt="{alt}" />' for src, alt in p["logos"]
+                f'<a class="notable-logo-link" href="{case_anchor}"><img src="media/brands/{src}" alt="{alt}" /></a>'
+                for src, alt in p["logos"]
             )
             rows.append(
-                f"""        <article class="notable-row notable-{brand_key} reveal">
+                f"""        <article class="notable-row notable-{brand_key} reveal" id="project-{brand_key}">
           <div class="notable-logos">{logos}</div>
           <div>
             <h3><span class="notable-org">{p['org']}</span> — {p['title']}</h3>
@@ -548,7 +550,7 @@ def write_index():
         </article>"""
             )
         notable_blocks.append(
-            f"""        <div class="company-group company-{brand_key} reveal">
+            f"""        <div class="company-group company-{brand_key} reveal" id="notable-{brand_key}">
           <h3 class="company-heading">{brand_label}</h3>
           <div class="notable-list">
 {chr(10).join(rows)}
@@ -569,13 +571,13 @@ def write_index():
         <p class="hero-role">Applied Cognitive and Social psychologist</p>
         <p class="hero-lede">9+ years of mixed-methods research across fintech, sports media, and healthcare—connecting usability, field research, and AI-augmented workflows to product and revenue outcomes.</p>
         <div class="brand-strip" aria-label="Brands worked with">
-          <img src="media/brands/robinhood.png" alt="Robinhood" />
-          <img src="media/brands/fanduel.png" alt="FanDuel" />
-          <img src="media/brands/nfl.png" alt="NFL" />
-          <img src="media/brands/verizon-5g.png" alt="Verizon 5G" />
-          <img src="media/brands/ipsos.png" alt="Ipsos" />
-          <img src="media/brands/merck.png" alt="Merck" />
-          <img src="media/brands/cgu.png" alt="Claremont Graduate University" />
+          <a href="#cases-robinhood" title="Robinhood case studies"><img src="media/brands/robinhood.png" alt="Robinhood" /></a>
+          <a href="#cases-fanduel" title="FanDuel case studies"><img src="media/brands/fanduel.png" alt="FanDuel" /></a>
+          <a href="#cases-nfl" title="NFL case studies"><img src="media/brands/nfl.png" alt="NFL" /></a>
+          <a href="#notable-nfl" title="NFL · Verizon 5G SuperStadium"><img src="media/brands/verizon-5g.png" alt="Verizon 5G" /></a>
+          <a href="#notable-ipsos" title="Ipsos Healthcare projects"><img src="media/brands/ipsos.png" alt="Ipsos" /></a>
+          <a href="#notable-ipsos" title="Ipsos Healthcare · Merck study"><img src="media/brands/merck.png" alt="Merck" /></a>
+          <a href="#notable-cgu" title="Claremont Graduate University projects"><img src="media/brands/cgu.png" alt="Claremont Graduate University" /></a>
         </div>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#case-studies">View case studies</a>
