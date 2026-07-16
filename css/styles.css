@@ -255,6 +255,32 @@ img {
   height: 2.5rem;
 }
 
+.brand-strip img[alt="Verizon 5G"] {
+  height: 2.35rem;
+  max-width: 5.5rem;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 0.2rem 0.35rem;
+  border-radius: 0.25rem;
+}
+
+.brand-strip img[alt="Ipsos"] {
+  height: 2.5rem;
+  max-width: 5rem;
+  border-radius: 0.35rem;
+}
+
+.brand-strip img[alt="Merck"] {
+  height: 1.85rem;
+  max-width: 6.5rem;
+  border-radius: 0.2rem;
+}
+
+.brand-strip img[alt="Claremont Graduate University"] {
+  height: 2.5rem;
+  max-width: 2.5rem;
+  border-radius: 50%;
+}
+
 .brand-strip img:hover {
   opacity: 1;
   transform: translateY(-1px);
@@ -510,6 +536,109 @@ img {
   background: linear-gradient(90deg, rgba(213, 10, 10, 0.12), transparent 55%);
 }
 .case-row.case-nfl .case-num { color: #d50a0a; }
+
+.notable-section {
+  border-top: 1px solid var(--line);
+}
+
+.notable-list {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+
+.notable-row {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  padding: 1.65rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.notable-logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem;
+  padding-top: 0.15rem;
+}
+
+.notable-logos img {
+  height: 2.35rem;
+  width: auto;
+  max-width: 7rem;
+  object-fit: contain;
+}
+
+.notable-logos img[alt="NFL 5G SuperStadium"] {
+  height: 1.85rem;
+  max-width: 7.5rem;
+  background: #000;
+  padding: 0.35rem 0.45rem;
+  border-radius: 0.25rem;
+}
+
+.notable-logos img[alt="Verizon 5G"] {
+  height: 2.1rem;
+  max-width: 4.75rem;
+  background: #f4f4f4;
+  padding: 0.2rem 0.3rem;
+  border-radius: 0.2rem;
+}
+
+.notable-logos img[alt="Ipsos"] {
+  height: 2.6rem;
+  max-width: 4.5rem;
+  border-radius: 0.3rem;
+}
+
+.notable-logos img[alt="Merck"] {
+  height: 1.75rem;
+  max-width: 5.5rem;
+  border-radius: 0.2rem;
+}
+
+.notable-logos img[alt="Claremont Graduate University"] {
+  height: 2.75rem;
+  max-width: 2.75rem;
+  border-radius: 50%;
+}
+
+.notable-logos img[alt="Robinhood"],
+.notable-logos img[alt="FanDuel"] {
+  height: 2.35rem;
+  max-width: 2.35rem;
+  border-radius: 0.35rem;
+}
+
+.notable-row h3 {
+  margin: 0 0 0.55rem;
+  font-family: var(--display);
+  font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+.notable-org {
+  color: var(--accent);
+}
+
+.notable-row p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.55;
+  max-width: 46rem;
+}
+
+@media (max-width: 720px) {
+  .notable-row {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+}
 
 /* Case page brand themes */
 body.brand-robinhood {

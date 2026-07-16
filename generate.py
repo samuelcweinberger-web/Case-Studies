@@ -397,6 +397,7 @@ def header(active=None, prefix="", brand=None):
       <a class="brand" href="{prefix}index.html">Sam Weinberger</a>
       <nav class="nav" aria-label="Primary">
         <a href="{prefix}index.html#work">Work</a>
+        <a href="{prefix}index.html#notable">Notable</a>
         <a href="{prefix}index.html#trueview">TrueView</a>
         <a href="{prefix}index.html#about">About</a>
         <a href="mailto:samuelcweinberger@gmail.com">Contact</a>
@@ -416,6 +417,43 @@ def product_badge(brand_key, prefix=""):
     elif brand_key == "nfl":
         mark = f'<img class="product-mark product-mark-nfl-img" src="{prefix}media/brands/nfl-fantasy-icon.png" alt="" width="22" height="22" />'
     return f'<span class="product-badge product-{brand_key}">{mark}<span class="product-name">{meta["label"]}</span></span>'
+
+
+NOTABLE = [
+    {
+        "org": "Robinhood",
+        "title": "First-Time User Experience (FTUX) Optimization & Strategic Retention",
+        "logos": [("robinhood-icon.png", "Robinhood")],
+        "body": "Segmented users via MaxDiff (sports-first bettors vs. brokerage/crypto traders) and shipped personalized onboarding through a controlled experiment — 4–12% engagement/retention lift, 60%+ reduction in post-rejection drop-off, and $17M in retained monthly revenue.",
+    },
+    {
+        "org": "FanDuel",
+        "title": "Cross-Sell Acquisition & Revenue Growth",
+        "logos": [("fanduel-icon.png", "FanDuel")],
+        "body": "Directed the research strategy linking behavioral signals to cross-sell opportunities while scaling a 32-person research org to support it — doubled cross-sell acquisition, adding $8–10M in monthly recurring revenue (>$500M LTV).",
+    },
+    {
+        "org": "NFL Digital Media",
+        "title": "5G SuperStadium AR Fan Experience (with Verizon)",
+        "logos": [
+            ("5g-superstadium.png", "NFL 5G SuperStadium"),
+            ("verizon-5g.png", "Verizon 5G"),
+        ],
+        "body": "Partnered with Verizon to test immersive AR overlays for in-stadium fan engagement across next-generation hardware — 25% engagement lift and 18% higher retention across the NFL Fantasy App and 5G/AR experiences.",
+    },
+    {
+        "org": "Claremont Graduate University",
+        "title": "Behavioral Messaging for Diabetes Management",
+        "logos": [("cgu.png", "Claremont Graduate University")],
+        "body": "As Research Associate, designed and evaluated an SMS-based behavioral intervention for chronic disease patients, grounded in cognitive and social psychology theory — 30% reduction in hospitalizations among enrolled participants.",
+    },
+    {
+        "org": "Ipsos Healthcare",
+        "title": "Multi-Country Insulin Pen Validation Study",
+        "logos": [("ipsos.png", "Ipsos"), ("merck.png", "Merck")],
+        "body": "FDA comparative insulin injector pen study across the US, UK, and Canada ahead of FDA submission — 27% fewer device-use errors, 40% faster training.",
+    },
+]
 
 
 def footer(prefix=""):
@@ -447,6 +485,21 @@ def write_index():
       <div class="case-meta">{c['year']}</div>
     </a>"""
         )
+
+    notable_rows = []
+    for p in NOTABLE:
+        logos = "".join(
+            f'<img src="media/brands/{src}" alt="{alt}" />' for src, alt in p["logos"]
+        )
+        notable_rows.append(
+            f"""        <article class="notable-row reveal">
+          <div class="notable-logos">{logos}</div>
+          <div>
+            <h3><span class="notable-org">{p['org']}</span> — {p['title']}</h3>
+            <p>{p['body']}</p>
+          </div>
+        </article>"""
+        )
     html = (
         header()
         + f"""
@@ -463,6 +516,10 @@ def write_index():
           <img src="media/brands/robinhood.png" alt="Robinhood" />
           <img src="media/brands/fanduel.png" alt="FanDuel" />
           <img src="media/brands/nfl.png" alt="NFL" />
+          <img src="media/brands/verizon-5g.png" alt="Verizon 5G" />
+          <img src="media/brands/ipsos.png" alt="Ipsos" />
+          <img src="media/brands/merck.png" alt="Merck" />
+          <img src="media/brands/cgu.png" alt="Claremont Graduate University" />
         </div>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#work">View case studies</a>
@@ -479,6 +536,18 @@ def write_index():
         </div>
         <div class="case-list">
 {chr(10).join(rows)}
+        </div>
+      </div>
+    </section>
+
+    <section class="section notable-section" id="notable">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2>Notable projects</h2>
+          <p>Highlight outcomes across fintech, sports media, healthcare devices, and academic research.</p>
+        </div>
+        <div class="notable-list">
+{chr(10).join(notable_rows)}
         </div>
       </div>
     </section>
