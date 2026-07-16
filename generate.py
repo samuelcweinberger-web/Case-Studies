@@ -138,37 +138,46 @@ CASES = [
         "slug": "research-ops",
         "num": "03",
         "brand": "robinhood",
-        "title": "Research Ops Automation Lifecycle",
-        "short": "An autonomous AI workflow that quadrupled concurrent research capacity.",
+        "title": "Engineering an AI-Agentic UX Research Pipeline (ResearchOps Automation)",
+        "short": "Built an autonomous Claude + MCP research pipeline that cut cycle time from 30 to 14 days and scaled output up to 16 studies per month.",
         "context": "Robinhood · Prediction Markets & Event Contracts",
         "year": "2026",
-        "summary": "Scaling research throughput, workflow automation, and compressing time-to-insight.",
+        "summary": "I designed and engineered an autonomous AI research pipeline—using Claude, Model Context Protocol (MCP), and custom database APIs—to remove administrative bottlenecks, compress a 30-day cycle to 14 days, and multiply concurrent study capacity without sacrificing rigor.",
         "stats": [
-            ("4×", "Concurrent research capacity"),
-            ("30 → 14", "Days typical cycle time"),
-            ("End-to-end", "Compliance → multi-format reporting"),
-            ("AI agents", "Autonomous study lifecycle"),
+            ("30 → 14", "Days per project cycle"),
+            ("4×", "Concurrent study capacity"),
+            ("10–16×", "Monthly throughput multiplier"),
+            ("<1 hr", "Study setup (from weeks)"),
         ],
         "sections": [
             (
                 "Situation",
-                """<p>The end-to-end process of executing a single research project at Robinhood was highly fragmented—compliance approvals, custom research plans, stakeholder feedback, manual database queries for user lists (4–5 days alone), data collection, analysis, and building decks and executive summaries. A standard project cycle consumed up to a full calendar month.</p>""",
+                """<p>The end-to-end process of executing a single research project at Robinhood was highly fragmented and bottlenecked by manual administrative steps. Drafting custom research plans, routing compliance approvals, manually setting up tools, and chasing stakeholders for alignment consumed valuable cycles. Most critically, waiting for data science to query and provision target user lists took 4 to 5 days alone.</p>
+<p>Between these operational delays, asset compilation, and manual analysis, a standard project cycle consumed up to a full calendar month (30 days), capping the team’s ability to support rapid product cycles.</p>""",
             ),
             (
                 "Task",
-                """<p>Streamline the operational architecture, remove administrative lag, and multiply the volume of concurrent studies without compromising statistical or qualitative rigor.</p>""",
+                """<p>Streamline the operational architecture, eliminate administrative lag, and multiply the volume of concurrent studies without compromising qualitative or quantitative rigor.</p>""",
             ),
             (
                 "Approach",
-                """<ul>
-<li><strong>End-to-end automation</strong> — Built an autonomous AI workflow using Claude to orchestrate every step of the research lifecycle.</li>
-<li><strong>Workflow compression</strong> — Automated compliance-check routing, dynamically generated standardized research plans for stakeholder review, and streamlined data pipelines for real-time list generation.</li>
-<li><strong>Synthesis &amp; reporting</strong> — Programmed AI nodes to ingest raw survey and interview outputs and instantly draft dual-delivery assets: a concise one-page executive summary for leadership and a deep-dive, multi-slide deck for product teams.</li>
+                """<p>To eliminate these bottlenecks, I acted as both researcher and UX engineer—designing and building an autonomous AI workflow using Claude, Model Context Protocol (MCP), and custom database APIs to orchestrate the entire research lifecycle:</p>
+<ul>
+<li><strong>Instant Research Plan Generation</strong> — I built an AI agent that takes raw notes from stakeholder kickoff meetings and instantly structures them into a standardized research plan template. Based on preset instructions, the agent automatically selects the optimal methodology, drafts tailored survey questions or interview guides, and formats them for stakeholder feedback within 1 to 2 hours of the kickoff.</li>
+<li><strong>Automated Study Provisioning</strong> — The pipeline automatically translates approved plans into programmatic study assets—instantly generating logic-ready Qualtrics surveys, Great Question screeners, budget allocations, and compliance tracking tickets via custom MCP integrations.</li>
+<li><strong>Autonomous User List Generation</strong> — I partnered with the data science team to build a custom database skill for my AI assistant. The moment a user group is defined in the research plan, Claude autonomously queries the database and pulls the validated user list within minutes—completely bypassing the standard 1-week data science backlog.</li>
+<li><strong>Stimuli &amp; Prototype Synthesis</strong> — To eliminate design dependencies, I trained an agent to locate existing design assets, organize screens into logical user flows, and compile prototypes tailored to the research questions. If testing an entirely new concept, the agent utilizes custom design-system templates to autonomously generate the required visual assets.</li>
+<li><strong>Real-Time Synthesis &amp; Dual-Delivery Reporting</strong> — Once a study is launched, I leverage MCP SQL integrations to query and synthesize incoming participant data in real time. I programmed AI nodes to ingest raw survey and interview outputs and instantly draft dual-delivery assets: a concise one-page executive summary for leadership and a deep-dive, multi-slide deck for product teams.</li>
 </ul>""",
             ),
             (
                 "Outcome",
-                """<p>Compressed a traditional 30-day project cycle to two weeks after full automation, and quadrupled concurrent capacity so four studies could run without pipeline blockages.</p>""",
+                """<ul>
+<li><strong>Timeline Compression</strong> — I successfully compressed a traditional 30-day project cycle down to 14 days after full automation, with the initial study-setup phase dropping from weeks to less than 1 hour.</li>
+<li><strong>Quadrupled Concurrent Capacity</strong> — This automated workflow allowed me to run up to 4 studies simultaneously without pipeline blockages or cognitive fatigue.</li>
+<li><strong>10x to 16x Throughput Multiplier</strong> — By running 4 concurrent studies in a single week, I scaled my personal output from completing 1 to 2 studies per month to executing up to 16 projects per month.</li>
+<li><strong>Operational Autonomy</strong> — By building these custom MCP integrations, I successfully eliminated dependencies on data science for list generation, PMs/designers for stimuli creation, and manual administrative overhead, turning qualitative research into a high-velocity, engineering-grade resource.</li>
+</ul>""",
             ),
         ],
     },
