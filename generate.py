@@ -23,41 +23,58 @@ BRANDS = {
 
 CASES = [
     {
-        "slug": "onboarding-retention",
+        "slug": "educational-module",
         "num": "01",
         "brand": "robinhood",
-        "title": "Onboarding Optimization & Strategic Retention",
-        "short": "Behavioral segmentation and MaxDiff research that recovered $17M in monthly revenue.",
+        "title": "High-Velocity Usability Testing of a Prediction Market Educational Module",
+        "short": "Compressed a 3–4 week research cycle into under 48 hours—validating an educational module for event contracts ahead of the World Cup.",
         "context": "Robinhood · Prediction Markets & Event Contracts",
         "year": "2026",
-        "summary": "Behavioral segmentation, quantitative survey methodology, and multi-million dollar revenue retention.",
+        "summary": "One week before launch, I usability-tested a complex educational module for trading event contracts using only static images. I chose Listen Labs for adaptive AI moderation and multi-segment sourcing, delivered large-sample qualitative validation in under 48 hours, and drove design changes that lifted trade conversion among module completers.",
         "stats": [
-            ("Generated $17M", "Monthly revenue"),
-            ("~900K", "Net new customers"),
-            ("60%", "Reduction in churn"),
-            ("18%", "Trade volume lift"),
+            ("<48 hrs", "Research cycle (from 3–4 weeks)"),
+            ("100", "Participants tested"),
+            ("40%", "Completed the module"),
+            ("15%", "Higher trade rate vs non-completers"),
         ],
         "sections": [
             (
                 "Situation",
-                """<p>The Event Contracts and Prediction Markets division at Robinhood was experiencing noticeable drop-offs in the first-time user flow—particularly right after signup and first-trade friction. Recruiting users who had already churned, or failed to complete a first trade, is notoriously difficult to study qualitatively.</p>""",
+                """<p>One week before launch, a new educational module designed to educate new customers about trading event contracts needed to be tested. The module consisted of complex concepts that typically require a human explanation. Stakeholders needed a large sample size to validate it before the start of the World Cup. The target audience included both net-new customers and existing brokerage/crypto users.</p>
+<p>Testing had to be done using static images instead of an interactive prototype, with less than a week to complete the study.</p>""",
             ),
             (
                 "Task",
-                """<p>Isolate the exact friction points causing the drop-offs, understand the needs of disparate user archetypes within the same funnel, and implement structural changes to stabilize retention.</p>""",
+                """<p>Usability test the efficacy of the module to understand how to tailor content to motivate different types of users. KPIs included:</p>
+<ul>
+<li>Length of time it takes.</li>
+<li>How effective it is at educating customers.</li>
+<li>Whether it prepares them to trade event contracts.</li>
+</ul>""",
             ),
             (
                 "Approach",
-                """<ul>
-<li><strong>Behavioral segmentation</strong> — Uncovered two distinct mental models in the funnel: newly acquired sports bettors with zero brokerage or crypto experience, and existing Robinhood users exploring prediction markets as sophisticated traders.</li>
-<li><strong>MaxDiff survey</strong> — Designed and deployed a Maximum Differential (MaxDiff) quantitative survey to systematically rank and isolate each segment’s unique informational needs.</li>
-<li><strong>Experimental validation</strong> — Partnered with data science on a controlled experiment with isolated control groups; variant users received tailored onboarding, personalized recommendations, and custom watchlists aligned to their MaxDiff preferences.</li>
-<li><strong>Friction remediation</strong> — Pinpointed the exact barriers causing drop-off after a first-trade rejection and built a targeted, personalized messaging strategy to guide users through failure states.</li>
+                """<p>To solve the constraint of having only static images under a one-week deadline, I selected Listen Labs. I chose this platform specifically for its ability to scale qualitative depth through automated, adaptive AI moderation and rapid, multi-segment participant sourcing.</p>
+<p>I executed the study through the following steps:</p>
+<ul>
+<li><strong>Targeted Recruitment</strong> — I recruited 50 existing customers internally and leveraged the platform’s integrated panel sourcing to instantly recruit 50 potential customers from a third-party panel.</li>
+<li><strong>Custom AI Training</strong> — I actively trained the automated AI interviewers to master and explain the complex trading concepts, allowing them to act as the virtual “human-in-the-loop” required to guide users through the material.</li>
+<li><strong>Stimuli Testing &amp; Adaptive Moderation</strong> — I uploaded the static images into the platform. Instead of using a rigid, static script, the AI interviewers walked all 100 participants through the images simultaneously, dynamically pivoting with custom follow-up questions based on each participant’s individual responses to test comprehension.</li>
+<li><strong>Enterprise LLM Synthesis</strong> — I utilized our enterprise LLM to automatically analyze and cluster the qualitative feedback, mapping usability barriers and comprehension metrics within 24 hours.</li>
+<li><strong>Design Collaboration</strong> — I worked directly with product designers, using these synthesized findings to rapidly adjust visual elements and tailor examples before the module was shipped.</li>
 </ul>""",
             ),
             (
                 "Outcome",
-                """<p>Generated ~$17M in monthly revenue and ~900K net new customers. Achieved a 60% reduction in churn. Trade volume among top-tier customers rose 18%, with retention lifts of 12% for the brokerage/crypto segment and 4% for sports-first users.</p>""",
+                """<ul>
+<li><strong>Operational Efficiency</strong> — I compressed a 3-to-4 week manual research cycle into less than 48 hours.</li>
+<li><strong>Stakeholder Validation</strong> — I provided the large-sample qualitative validation required to greenlight the launch on schedule.</li>
+<li><strong>Prototype Savings</strong> — I successfully evaluated conceptual comprehension using only static images, bypassing interactive prototype development.</li>
+<li><strong>Design Optimization</strong> — I answered key research questions and provided design-specific recommendations on tailoring examples and highlighting key elements to increase completion and subsequent engagement.</li>
+<li><strong>Launch Metrics (World Cup)</strong> — Over 1 billion World Cup trades were executed across 1.5 million users. 40% of those users completed the educational module. Module completers traded event contracts at rates 15% higher than non-completers.</li>
+<li><strong>Experimental Proof (Tailoring vs. Non-Tailored)</strong> — I ran a subsequent experiment to evaluate the module’s performance on existing brokerage and crypto traders trying event contracts for the first time. The tailored modules (based on my recommendations) significantly outperformed non-tailored modules in both initial trade conversion and total trade volume.</li>
+<li><strong>Strategic Product Direction</strong> — The performance of the tailored modules proved the value of personalization to product managers and leadership. I then led the follow-up research on how to personalize the user experience to increase engagement and satisfaction in prediction markets.</li>
+</ul>""",
             ),
         ],
     },
