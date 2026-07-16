@@ -297,6 +297,86 @@ CASES = [
             ),
         ],
     },
+    {
+        "slug": "product-benchmarking",
+        "num": "08",
+        "brand": "fanduel",
+        "title": "Product Benchmarking Program",
+        "short": "A quarterly UX scorecard across Ease of Use, Loyalty, and Responsible Gaming that became a core 2023 OKR input.",
+        "context": "FanDuel · Core Products & Experiences",
+        "year": "2022",
+        "summary": "Replace anecdotal UX reporting with a standardized, executive-ready benchmark across products—and tie improvements to loyalty, retention, and safe play.",
+        "stats": [
+            ("+4 pts", "Ease of Use improvement"),
+            ("+3 pts", "Responsible Gaming score"),
+            ("−30%", "Support tickets"),
+            ("7%", "Active-user lift with +10 Ease"),
+        ],
+        "sections": [
+            (
+                "Situation",
+                """<p>Product teams operated in silos without a unified UX scorecard. Leadership needed comparable, metric-based evidence to guide investment—and Responsible Gaming goals required proof that design supported safe play. Anecdotal reporting could not keep pace.</p>""",
+            ),
+            (
+                "Task",
+                """<p>Design and run a quarterly Product Benchmarking Program measuring Ease of Use, Loyalty (Net Intention Score), and Responsible Gaming sentiment—giving executives a single view of UX health across verticals.</p>""",
+            ),
+            (
+                "Approach",
+                """<ul>
+<li><strong>Metric framework</strong> — Standardized Ease of Use, Loyalty (NIS), and RG sentiment so products could be compared over time and against strategic goals.</li>
+<li><strong>Cross-functional alignment</strong> — Brought Product, Design, and Compliance onto shared success measures instead of team-local narratives.</li>
+<li><strong>Executive synthesis</strong> — Translated quarterly waves into actionable priorities: wallet clarity, promotion redesign, and bet-tracking reliability.</li>
+<li><strong>Behavioral linkage</strong> — Connected comprehension of results to higher responsible play and retention—not just satisfaction scores in isolation.</li>
+</ul>""",
+            ),
+            (
+                "Outcome",
+                """<p>Q4 delivered measurable movement: Ease of Use +4 pts, Responsible Gaming +3 pts, and ~30% fewer support tickets. A 10-point Ease lift correlated with a 7% rise in active users. Benchmarking became a core input to 2023 OKRs and executive KPI reviews—shifting UX from qualitative feedback into business intelligence.</p>
+<p class="callout">Designed the framework, led execution and synthesis, and influenced roadmaps with data-backed insights across four verticals.</p>""",
+            ),
+        ],
+    },
+    {
+        "slug": "nfl-d2c-packaging",
+        "num": "09",
+        "brand": "nfl",
+        "title": "NFL Direct-to-Consumer Packaging Research",
+        "short": "Design studios and multivariate analysis that showed how price disclosure reshapes package preference—and informed early NFL+ packaging.",
+        "context": "NFL · Fantasy Sports & Digital Media",
+        "year": "2018–2020",
+        "summary": "Determine which D2C package structures maximize appeal, and which motivational drivers shape subscription decisions as the league expanded beyond traditional distribution partners.",
+        "stats": [
+            ("p&lt;.001", "Package C ranked #1 after pricing"),
+            ("50%", "Shifted from à-la-carte once priced"),
+            ("60%+", "Purchase intent from loyalty/cognition"),
+            ("5", "Package architectures tested (A–E)"),
+        ],
+        "sections": [
+            (
+                "Situation",
+                """<p>The NFL needed empirical guidance for Direct-to-Consumer packaging as it prepared to expand streaming and subscriptions beyond traditional partners. Product and marketing required a data-driven blueprint for how to structure and price NFL+ and add-ons.</p>""",
+            ),
+            (
+                "Task",
+                """<p>Identify which combinations of price, features, and structure maximize appeal—and link Motivation to Consume Content drivers to purchase intent across fan segments.</p>""",
+            ),
+            (
+                "Approach",
+                """<ul>
+<li><strong>Design studios</strong> — Fans interacted with five prototype subscription configurations (Packages A–E) and ranked them before and after price disclosure.</li>
+<li><strong>National survey panel</strong> — Measured reach, preference, and feature awareness with standardized Motivation to Consume Content scales.</li>
+<li><strong>Multivariate modeling</strong> — SPSS univariate and multivariate models linked demographics, motivational clusters, and package preference.</li>
+<li><strong>Feature motivation</strong> — Condensed Game Replays led broad appeal; Live Game Audio served loyal connectors; RedZone Mobile underperformed for socially motivated fans.</li>
+</ul>""",
+            ),
+            (
+                "Outcome",
+                """<p>Before price, à-la-carte (Package D) led; after pricing, <strong>tiered Package C</strong> ranked first (p&lt;.001), with ~50% of fans shifting toward A/C. Vicarious achievement and game-strategy thinking explained over 60% of purchase-intent variance. Findings informed early NFL+ packaging—live local audio, condensed replays, team content—and validated flexibility over exclusivity for modern streaming fans.</p>
+<p class="callout">Designed and moderated the full program—from recruitment through statistical models—and partnered with NFL Media and Product Strategy on packaging recommendations.</p>""",
+            ),
+        ],
+    },
 ]
 
 
@@ -390,7 +470,7 @@ def write_index():
       <div class="wrap">
         <div class="section-head reveal">
           <h2>Selected work</h2>
-          <p>Case studies branded by product: Robinhood prediction markets and FanDuel sportsbook / CPE research.</p>
+          <p>Case studies branded by product: Robinhood prediction markets, FanDuel sportsbook / CPE, and NFL digital packaging—plus an Intel TrueView studio reel.</p>
         </div>
         <div class="case-list">
 {chr(10).join(rows)}
