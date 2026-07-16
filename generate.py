@@ -278,6 +278,7 @@ def header(active=None, prefix="", brand=None):
       <a class="brand" href="{prefix}index.html">Sam Weinberger</a>
       <nav class="nav" aria-label="Primary">
         <a href="{prefix}index.html#work">Work</a>
+        <a href="{prefix}index.html#trueview">TrueView</a>
         <a href="{prefix}index.html#about">About</a>
         <a href="mailto:samuelcweinberger@gmail.com">Contact</a>
       </nav>
@@ -332,11 +333,7 @@ def write_index():
         + f"""
   <main>
     <section class="hero">
-      <div class="hero-media" aria-hidden="true">
-        <video autoplay muted loop playsinline poster="media/hero.jpg">
-          <source src="media/hero.mp4" type="video/mp4" />
-        </video>
-      </div>
+      <div class="hero-media" role="img" aria-label="Research work in progress"></div>
       <div class="hero-atmosphere" aria-hidden="true"></div>
       <div class="wrap hero-copy">
         <div class="hero-kicker">AI-Driven Insights</div>
@@ -358,6 +355,25 @@ def write_index():
         </div>
         <div class="case-list">
 {chr(10).join(rows)}
+        </div>
+      </div>
+    </section>
+
+    <section class="section trueview-section" id="trueview">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div class="product-badge product-intel">
+            <span class="product-mark product-mark-intel" aria-hidden="true"></span>
+            <span class="product-name">Intel · TrueView</span>
+          </div>
+          <h2>Intel TrueView studio reel</h2>
+          <p>A 2020 design-studio trailer exploring immersive sports viewing—volumetric capture, multi-angle replay, and next-generation fan experience concepts developed with Intel TrueView.</p>
+        </div>
+        <div class="trueview-player reveal">
+          <video controls playsinline preload="metadata" poster="media/hero.jpg">
+            <source src="media/hero.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
       </div>
     </section>

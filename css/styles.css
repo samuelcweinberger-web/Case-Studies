@@ -133,13 +133,6 @@ img {
   z-index: 0;
   overflow: hidden;
   background: url("../media/hero.jpg") center / cover no-repeat;
-}
-
-.hero-media video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
   transform: scale(1.02);
   animation: drift 28s ease-in-out infinite alternate;
 }
@@ -405,6 +398,43 @@ img {
 .product-robinhood .product-name { color: #00c805; }
 .product-fanduel .product-name { color: #4c9aff; }
 .product-nfl .product-name { color: #6ea8ff; }
+.product-intel .product-name { color: #00c7fd; }
+
+.product-mark-intel {
+  display: inline-block;
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 0.12rem;
+  background: linear-gradient(135deg, #0071c5 0%, #00c7fd 100%);
+}
+
+.trueview-section {
+  background:
+    radial-gradient(900px 480px at 80% 0%, rgba(0, 113, 197, 0.22), transparent 55%),
+    radial-gradient(700px 400px at 10% 80%, rgba(0, 199, 253, 0.08), transparent 50%);
+  border-top: 1px solid rgba(0, 199, 253, 0.12);
+  border-bottom: 1px solid rgba(0, 199, 253, 0.12);
+}
+
+.trueview-section .section-head {
+  max-width: 42rem;
+}
+
+.trueview-player {
+  margin-top: 0.5rem;
+  overflow: hidden;
+  background: #000;
+  border: 1px solid rgba(0, 199, 253, 0.2);
+  box-shadow: 0 24px 80px rgba(0, 40, 80, 0.35);
+}
+
+.trueview-player video {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
 
 .case-row.case-robinhood:hover {
   background: linear-gradient(90deg, rgba(0, 200, 5, 0.12), transparent 55%);
