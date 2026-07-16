@@ -266,10 +266,10 @@ img {
 }
 
 .product-mark-rh-img {
-  width: auto !important;
-  height: 1.05rem !important;
+  width: 1.25rem !important;
+  height: 1.25rem !important;
   object-fit: contain;
-  border-radius: 0.25rem;
+  border-radius: 0.3rem;
 }
 
 .hero-actions {
