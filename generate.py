@@ -709,20 +709,30 @@ def write_about_page():
 def write_case(case, index):
     prev_c = CASES[index - 1] if index > 0 else None
     next_c = CASES[index + 1] if index < len(CASES) - 1 else None
+
     stats_html = ""
     if case["stats"]:
         stats = "\n".join(
-            f'      <div class="stat"><strong>{v}</strong><span>{l}</span></div>'
+            f"""          <div class="impact-card">
+            <div class="impact-label">{l}</div>
+            <div class="impact-value">{v}</div>
+          </div>"""
             for v, l in case["stats"]
         )
         stats_html = f"""
-        <div class="stat-band">
+      <div class="impact-row">
 {stats}
-        </div>"""
-    sections = "\n".join(
-        f'      <section class="reveal">\n        <h2>{title}</h2>\n        {body}\n      </section>'
-        for title, body in case["sections"]
-    )
+      </div>"""
+
+    star_cells = []
+    for title, body in case["sections"]:
+        star_cells.append(
+            f"""        <section class="star-card">
+          <h2>{title}</h2>
+          <div class="star-body">{body}</div>
+        </section>"""
+        )
+
     prev_link = (
         f'<a href="{prev_c["slug"]}.html">← {prev_c["num"]} {prev_c["title"]}</a>'
         if prev_c
@@ -737,22 +747,33 @@ def write_case(case, index):
     html = (
         header(active=case["title"], prefix="../", brand=case["brand"], nav_active="cases")
         + f"""
-  <main>
-    <section class="case-hero">
-      <div class="wrap">
-        <div class="crumb"><a href="../case-studies.html">Case studies</a> / {case['num']}</div>
-        {badge}
-        <div class="eyebrow">{case['context']} · {case['year']}</div>
-        <h1>{case['title']}</h1>
-        <p class="summary">{case['summary']}</p>{stats_html}
+  <main class="case-board">
+    <div class="wrap case-board-inner">
+      <header class="case-board-head">
+        <div class="case-board-meta">
+          <div class="crumb"><a href="../case-studies.html">Case studies</a> / {case['num']}</div>
+          {badge}
+          <h1>{case['title']}</h1>
+        </div>
+        <div class="case-board-side">
+          <div class="case-meta-block">{case['context']}</div>
+          <div class="case-meta-block">{case['year']}</div>
+        </div>
+      </header>
+{stats_html}
+      <div class="case-board-body">
+        <section class="exec-summary">
+          <h2>Executive summary</h2>
+          <p>{case['summary']}</p>
+        </section>
+        <div class="star-grid">
+{chr(10).join(star_cells)}
+        </div>
       </div>
-    </section>
-    <div class="wrap prose">
-{sections}
-    </div>
-    <div class="wrap pager">
-      {prev_link}
-      {next_link}
+      <div class="pager">
+        {prev_link}
+        {next_link}
+      </div>
     </div>
   </main>
 """
