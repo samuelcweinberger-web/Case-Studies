@@ -83,36 +83,49 @@ CASES = [
         ],
     },
     {
-        "slug": "live-prototyping",
+        "slug": "onboarding-retention",
         "num": "02",
         "brand": "robinhood",
-        "title": "Live Prototype Interventions & UX Architecture",
-        "short": "AI-orchestrated prototyping that collapsed a weeks-long design loop into a single interview.",
+        "title": "Onboarding Optimization & Strategic Retention in Prediction Markets",
+        "short": "Recovered 85% of rejected first-time traders—generating $17M in monthly revenue and ~900K net new customers.",
         "context": "Robinhood · Prediction Markets & Event Contracts",
         "year": "2026",
-        "summary": "Bypassing slow design-to-engineering loops via generative AI and real-time usability testing.",
-        "stats": [],
+        "summary": "I diagnosed a first-trade rejection funnel where 1 in 5 trades failed and 90% of those users churned to competitors. Through qualitative interviews, MaxDiff segmentation, and targeted messaging, I recovered rejected traders at scale and quantified how early outcomes reshape long-term LTV.",
+        "stats": [
+            ("85%", "Rejected traders recovered"),
+            ("$17M", "Additional monthly revenue"),
+            ("~900K", "Net new customers"),
+            ("15%", "Higher volume — power traders"),
+        ],
         "sections": [
             (
                 "Situation",
-                """<p>Traditional feature validation required extensive alignment across growth, product, design, and marketing—stretching feature iterations out over weeks. Validating features that didn’t exist yet needed high-fidelity assets faster than standard research methods could produce them.</p>""",
+                """<p>The Event Contracts and Prediction Markets division at Robinhood was experiencing noticeable drop-offs in the first-time user flow—specifically right after signup and first-trade friction. Recruiting users who have already churned or failed to complete a first trade is notoriously difficult to study qualitatively.</p>
+<p>Specifically, I identified the single biggest barrier in the funnel: 1 out of every 5 first-time trades—representing roughly 450,000 customers each month—was being rejected due to peer-to-peer matching mechanics on the backend exchange. 90% of those users abandoned the platform entirely and defected to a competitor.</p>""",
             ),
             (
                 "Task",
-                """<p>Short-circuit the design iteration cycle by introducing real-time, interactive prototyping into the active research phase—testing concepts before a single line of production code was written.</p>""",
+                """<p>Isolate the exact friction points causing these drop-offs, understand the needs of disparate user archetypes within the same funnel, and implement structural changes to stabilize retention and recover rejected traders.</p>""",
             ),
             (
                 "Approach",
                 """<ul>
-<li><strong>AI-orchestrated design flow</strong> — Used Claude and custom autonomous AI agents to interact directly with existing Figma design systems.</li>
-<li><strong>Real-time synthesis</strong> — Identified user mental models and behavioral barriers at the start of a customer interview, then used the AI orchestration layer to generate and update high-fidelity, interactive prototypes mid-interview based on live feedback.</li>
-<li><strong>Instant usability testing</strong> — Presented the freshly generated design variants back to the same participant by the middle and end of the same session—testing concepts that hadn’t existed an hour earlier.</li>
-<li><strong>Direct engineering handoff</strong> — Packaged the successful, validated design components into engineering-ready specifications.</li>
+<li><strong>Targeted Qual Recruitment &amp; Competitor Insights</strong> — I successfully recruited and conducted 1-on-1 interviews with users who abandoned the platform after a first-trade rejection. I discovered that many of them had defected directly to our primary competitors because they interpreted the backend rejection as a platform failure.</li>
+<li><strong>Behavioral Segmentation</strong> — I uncovered two distinct mental models in the funnel: newly acquired sports bettors with zero brokerage/crypto experience, and existing Robinhood users exploring prediction markets as sophisticated traders.</li>
+<li><strong>MaxDiff Survey</strong> — I designed and deployed a Maximum Differential (MaxDiff) quantitative survey to systematically rank and isolate each segment’s unique informational needs.</li>
+<li><strong>Friction Remediation &amp; UI/UX Messaging</strong> — I recommended and designed targeted messaging and navigational changes to explain the backend rejection in plain language and guide users immediately back into the first-trade flow.</li>
+<li><strong>Longitudinal Methodology &amp; LTV Mapping</strong> — To understand the long-term impact of early user experiences (first impressions), I initiated and designed a 3-month longitudinal tracking study evaluating the behavioral patterns of users based on their initial trading outcomes (winning vs. losing their very first contract).</li>
 </ul>""",
             ),
             (
                 "Outcome",
-                """<p>Where feature validation once required ~10 stakeholders across growth, product, and marketing, one researcher delivered fully validated, engineering-ready prototypes live within the interview—contributing to a 10% reduction in corporate overhead post-implementation.</p>""",
+                """<ul>
+<li><strong>Recovery &amp; Revenue Impact</strong> — My messaging and navigational recommendations successfully recovered 85% of the rejected first-time traders who would have otherwise churned, directly generating $17M in additional monthly revenue and ~900K net new customers.</li>
+<li><strong>Discovery of “Power Traders”</strong> — Through matched-sample testing against demographics like age, I proved that customers who overcame a first-trade rejection via the new messaging went on to trade at 15% higher volumes than those whose very first trade succeeded. Overcoming the initial barrier triggered highly active “power trader” behavior.</li>
+<li><strong>Infrastructure Advocacy</strong> — Despite the recovery rate, I used these insights to initiate major cross-functional efforts to systematically reduce backend rejected trades, proving to engineering that a friction-free initial experience is vital for long-term customer health.</li>
+<li><strong>LTV Quantification &amp; Loss Impact</strong> — Through my 3-month longitudinal study, I identified that losing a first trade reduces a customer’s Lifetime Value (LTV) by 20% to 25%.</li>
+<li><strong>Strategic Onboarding &amp; Responsible Trading</strong> — Based on the LTV loss data, I recommended tailoring specific types of event contracts and highlighting details for first-time customers to direct them toward high-probability, lower-risk trades for their first transaction. This research successfully launched an ongoing, company-wide initiative focused on promoting responsible trading (e.g., preventing brand-new customers from immediately placing low-likelihood, “long-shot” trades).</li>
+</ul>""",
             ),
         ],
     },
