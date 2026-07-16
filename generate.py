@@ -184,7 +184,7 @@ CASES = [
         "title": "Optimizing the Onboarding Experience",
         "short": "Mixed-methods onboarding and deposit research that lifted deposit success 22% and cut related support tickets 18%.",
         "context": "FanDuel · Core Products & Experiences",
-        "year": "2024–2025",
+        "year": "2025",
         "summary": "Reduce friction in onboarding and first-time deposits by diagnosing usability barriers, trust gaps, and language confusion in wallet setup.",
         "stats": [
             ("+22%", "Successful deposits"),
@@ -224,7 +224,7 @@ CASES = [
         "title": "Building Responsible Gaming Metrics",
         "short": "A regulator-validated Responsible Gaming Index deployed across 23M+ accounts—bridging behavioral science, compliance, and trust.",
         "context": "FanDuel · Core Products & Experiences",
-        "year": "2024",
+        "year": "2023",
         "summary": "Design and validate measurable indicators of responsible gaming behavior that meet regulatory standards and promote user trust across digital platforms.",
         "stats": [
             ("23M+", "Accounts covered"),
@@ -264,7 +264,7 @@ CASES = [
         "title": "Continuous CX Measurement & Cross-Sell Growth",
         "short": "A real-time Hyper-Focused Lens that doubled cross-sell acquisition in 90 days.",
         "context": "FanDuel · Core Products & Experiences",
-        "year": "2024–2025",
+        "year": "2025",
         "summary": "Enterprise UX and growth-driven research: a continuous CX measurement framework applied to a stalled cross-sell conversion funnel.",
         "stats": [
             ("$500M", "Projected LTV impact"),
@@ -344,7 +344,7 @@ CASES = [
         "title": "NFL Direct-to-Consumer Packaging Research",
         "short": "Design studios and multivariate analysis that showed how price disclosure reshapes package preference—and informed early NFL+ packaging.",
         "context": "NFL · Fantasy Sports & Digital Media",
-        "year": "2018–2020",
+        "year": "2020",
         "summary": "Determine which D2C package structures maximize appeal, and which motivational drivers shape subscription decisions as the league expanded beyond traditional distribution partners.",
         "stats": [
             ("p&lt;.001", "Package C ranked #1 after pricing"),
