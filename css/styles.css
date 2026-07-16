@@ -188,11 +188,6 @@ img {
   animation: rise 1s var(--ease) 0.18s forwards;
 }
 
-.hero-brand em {
-  font-style: normal;
-  color: var(--accent);
-}
-
 .hero-role {
   margin: 0.85rem 0 0;
   font-family: var(--sans);
