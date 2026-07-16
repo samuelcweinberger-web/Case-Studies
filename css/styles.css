@@ -132,9 +132,10 @@ img {
   height: 100%;
   z-index: 0;
   overflow: hidden;
-  background: url("../media/hero.jpg") center / cover no-repeat;
-  transform: scale(1.02);
-  animation: drift 28s ease-in-out infinite alternate;
+  background:
+    radial-gradient(900px 520px at 12% -10%, rgba(214, 255, 75, 0.14), transparent 55%),
+    radial-gradient(700px 420px at 90% 10%, rgba(76, 154, 255, 0.12), transparent 50%),
+    linear-gradient(180deg, #121820 0%, #0c0f12 45%, #090b0e 100%);
 }
 
 .hero-atmosphere {
@@ -142,8 +143,7 @@ img {
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(180deg, rgba(8, 10, 12, 0.72) 0%, rgba(8, 10, 12, 0.45) 40%, rgba(8, 10, 12, 0.92) 100%),
-    linear-gradient(90deg, rgba(8, 10, 12, 0.7) 0%, rgba(8, 10, 12, 0.25) 55%, rgba(8, 10, 12, 0.45) 100%);
+    linear-gradient(180deg, rgba(8, 10, 12, 0.35) 0%, rgba(8, 10, 12, 0.15) 40%, rgba(8, 10, 12, 0.88) 100%);
   pointer-events: none;
 }
 
@@ -228,6 +228,52 @@ img {
   text-shadow: 0 1px 12px rgba(0, 0, 0, 0.45);
   opacity: 0;
   animation: rise 1s var(--ease) 0.42s forwards;
+}
+
+.brand-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem 1.15rem;
+  margin: 1.5rem 0 0;
+  max-width: 40rem;
+  opacity: 0;
+  animation: rise 1s var(--ease) 0.48s forwards;
+}
+
+.brand-strip img {
+  height: 2rem;
+  width: auto;
+  max-width: 7.5rem;
+  object-fit: contain;
+  opacity: 0.92;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.35));
+  transition: opacity 0.2s ease, transform 0.25s var(--ease);
+}
+
+.brand-strip img[alt="Robinhood"] {
+  height: 2.35rem;
+  max-width: 9rem;
+}
+
+.brand-strip img[alt="NFL"] {
+  height: 2.5rem;
+}
+
+.brand-strip img[alt="TVG, part of FanDuel"] {
+  height: 2.15rem;
+}
+
+.brand-strip img:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.product-mark-rh-img {
+  width: auto !important;
+  height: 1.05rem !important;
+  object-fit: contain;
+  border-radius: 0.25rem;
 }
 
 .hero-actions {

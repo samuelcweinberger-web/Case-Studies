@@ -412,9 +412,9 @@ def product_badge(brand_key, prefix=""):
     if brand_key == "fanduel":
         mark = f'<img class="product-mark" src="{prefix}media/brands/fanduel-mark.png" alt="" width="22" height="22" />'
     elif brand_key == "robinhood":
-        mark = '<span class="product-mark product-mark-rh" aria-hidden="true"></span>'
+        mark = f'<img class="product-mark product-mark-rh-img" src="{prefix}media/brands/robinhood.png" alt="" height="18" />'
     elif brand_key == "nfl":
-        mark = '<span class="product-mark product-mark-nfl" aria-hidden="true"></span>'
+        mark = f'<img class="product-mark" src="{prefix}media/brands/nfl.png" alt="" width="22" height="22" />'
     return f'<span class="product-badge product-{brand_key}">{mark}<span class="product-name">{meta["label"]}</span></span>'
 
 
@@ -452,13 +452,20 @@ def write_index():
         + f"""
   <main>
     <section class="hero">
-      <div class="hero-media" role="img" aria-label="Research work in progress"></div>
+      <div class="hero-media" aria-hidden="true"></div>
       <div class="hero-atmosphere" aria-hidden="true"></div>
       <div class="wrap hero-copy">
         <div class="hero-kicker">AI-Driven Insights</div>
         <h1 class="hero-brand">Sam<br />Weinberger<em>.</em></h1>
         <p class="hero-role">Applied Cognitive and Social psychologist</p>
         <p class="hero-lede">9+ years of mixed-methods research across fintech, sports media, and healthcare—connecting usability, field research, and AI-augmented workflows to product and revenue outcomes.</p>
+        <div class="brand-strip" aria-label="Brands worked with">
+          <img src="media/brands/robinhood.png" alt="Robinhood" />
+          <img src="media/brands/fanduel.png" alt="FanDuel" />
+          <img src="media/brands/tvg.png" alt="TVG, part of FanDuel" title="TVG · FanDuel Group" />
+          <img src="media/brands/nfl.png" alt="NFL" />
+          <img src="media/brands/nfl-plus.png" alt="NFL+" />
+        </div>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#work">View case studies</a>
           <a class="btn btn-ghost" href="mailto:samuelcweinberger@gmail.com">Email Sam</a>
