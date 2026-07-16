@@ -31,6 +31,10 @@ CASES = [
         "context": "Robinhood · Prediction Markets & Event Contracts",
         "year": "2026",
         "summary": "One week before launch, I usability-tested a complex educational module for trading event contracts using only static images. I chose Listen Labs for adaptive AI moderation and multi-segment sourcing, delivered large-sample qualitative validation in under 48 hours, and drove design changes that lifted trade conversion among module completers.",
+        "video": {
+            "src": "educational-module.mp4",
+            "caption": "Walkthrough of the Listen Labs study setup—recruitment, AI-moderated sessions on static stimuli, and synthesis workflow.",
+        },
         "stats": [
             ("<48 hrs", "Research cycle (from 3–4 weeks)"),
             ("100", "Participants tested"),
@@ -439,10 +443,10 @@ def product_badge(brand_key, prefix=""):
 NOTABLE = [
     {
         "org": "Robinhood",
-        "title": "Onboarding Optimization & Strategic Retention",
+        "title": "High-Velocity Usability Testing of a Prediction Market Educational Module",
         "brand": "robinhood",
         "logos": [("robinhood.png", "Robinhood")],
-        "body": "Segmented users via MaxDiff (sports-first bettors vs. brokerage/crypto traders) and shipped personalized onboarding through a controlled experiment — 4–12% engagement/retention lift, 60% reduction in churn, and $17M in retained monthly revenue.",
+        "body": "One week before World Cup launch, I used Listen Labs’ adaptive AI moderation to usability-test a complex event-contracts educational module with 100 participants—compressing a 3–4 week cycle into under 48 hours. Module completers traded at rates 15% higher than non-completers.",
     },
     {
         "org": "FanDuel",
@@ -741,6 +745,22 @@ def write_case(case, index):
 {stats}
       </div>"""
 
+    video_html = ""
+    if case.get("video"):
+        v = case["video"]
+        caption = v.get("caption", "")
+        caption_html = (
+            f'<p class="case-video-caption">{caption}</p>' if caption else ""
+        )
+        video_html = f"""
+      <div class="case-video reveal">
+        <video controls playsinline preload="metadata">
+          <source src="../media/{v['src']}" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        {caption_html}
+      </div>"""
+
     star_cells = []
     for title, body in case["sections"]:
         star_cells.append(
@@ -778,6 +798,7 @@ def write_case(case, index):
         </div>
       </header>
 {stats_html}
+{video_html}
       <div class="case-board-body">
         <section class="exec-summary">
           <h2>Executive summary</h2>
