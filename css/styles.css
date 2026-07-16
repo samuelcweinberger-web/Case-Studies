@@ -389,6 +389,11 @@ img {
   display: grid;
   gap: 0;
   border-top: 1px solid var(--line);
+  margin-bottom: 0;
+}
+
+.company-group .case-list {
+  margin-bottom: 0;
 }
 
 .case-row {
@@ -443,10 +448,10 @@ img {
   align-items: center;
   gap: 0.45rem;
   margin-bottom: 0.55rem;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-transform: none;
 }
 
 .product-mark {
@@ -475,8 +480,8 @@ img {
 
 .product-robinhood .product-name { color: #00c805; }
 .product-fanduel .product-name { color: #4c9aff; }
-.product-nfl .product-name { color: #6ea8ff; }
-.product-intel .product-name { color: #00c7fd; }
+.product-nfl .product-name { color: #ffffff; }
+.product-intel .product-name { color: #ffffff; }
 
 .product-mark-intel {
   display: inline-block;
@@ -486,14 +491,44 @@ img {
   background: linear-gradient(135deg, #0071c5 0%, #00c7fd 100%);
 }
 
+.company-group {
+  margin-bottom: 2.75rem;
+}
+
+.company-group:last-of-type {
+  margin-bottom: 0;
+}
+
+.company-heading {
+  margin: 0 0 0.85rem;
+  font-family: var(--display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.company-robinhood .company-heading { color: #00c805; }
+.company-fanduel .company-heading { color: #4c9aff; }
+.company-nfl .company-heading { color: #ffffff; }
+.company-cgu .company-heading,
+.company-ipsos .company-heading { color: var(--ink); }
+
+.case-row.case-robinhood h3 { color: #00c805; }
+.case-row.case-fanduel h3 { color: #4c9aff; }
+.case-row.case-nfl h3 { color: #ffffff; }
+
 .trueview-section {
   margin-top: 3.5rem;
   padding-top: 2.5rem;
-  border-top: 1px solid rgba(0, 199, 253, 0.18);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
   background:
-    radial-gradient(900px 480px at 80% 0%, rgba(0, 113, 197, 0.22), transparent 55%),
-    radial-gradient(700px 400px at 10% 80%, rgba(0, 199, 253, 0.08), transparent 50%);
+    radial-gradient(900px 480px at 80% 0%, rgba(213, 10, 10, 0.12), transparent 55%),
+    radial-gradient(700px 400px at 10% 80%, rgba(1, 51, 105, 0.18), transparent 50%);
   border-radius: 0;
+}
+
+.trueview-section .section-head h2 {
+  color: #ffffff;
 }
 
 .trueview-section .section-head {
@@ -625,14 +660,19 @@ img {
   font-weight: 600;
 }
 
-.notable-org {
-  color: var(--accent);
-}
+.notable-robinhood h3,
+.notable-robinhood .notable-org { color: #00c805; }
+
+.notable-fanduel h3,
+.notable-fanduel .notable-org { color: #4c9aff; }
 
 .notable-nfl h3,
-.notable-nfl .notable-org {
-  color: #d50a0a;
-}
+.notable-nfl .notable-org { color: #ffffff; }
+
+.notable-cgu h3,
+.notable-cgu .notable-org,
+.notable-ipsos h3,
+.notable-ipsos .notable-org { color: var(--ink); }
 
 .notable-row p {
   margin: 0;
@@ -671,6 +711,7 @@ body.brand-robinhood .site-header {
 body.brand-robinhood .case-hero h1 {
   letter-spacing: -0.04em;
   font-weight: 700;
+  color: #00c805;
 }
 
 body.brand-fanduel {
@@ -696,6 +737,10 @@ body.brand-fanduel .case-hero {
   border-bottom: 1px solid rgba(76, 154, 255, 0.12);
 }
 
+body.brand-fanduel .case-hero h1 {
+  color: #4c9aff;
+}
+
 body.brand-nfl {
   --accent: #d50a0a;
   --accent-dim: rgba(213, 10, 10, 0.14);
@@ -709,6 +754,10 @@ body.brand-nfl::before {
     radial-gradient(700px 420px at 15% -5%, rgba(1, 51, 105, 0.55), transparent 55%),
     radial-gradient(500px 360px at 90% 10%, rgba(213, 10, 10, 0.18), transparent 50%),
     linear-gradient(180deg, #0a1830 0%, #06101c 50%, #040a12 100%);
+}
+
+body.brand-nfl .case-hero h1 {
+  color: #ffffff;
 }
 
 body.brand-robinhood .prose .callout,

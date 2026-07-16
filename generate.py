@@ -422,19 +422,21 @@ NOTABLE = [
     {
         "org": "Robinhood",
         "title": "Onboarding Optimization & Strategic Retention",
+        "brand": "robinhood",
         "logos": [("robinhood-icon.png", "Robinhood")],
         "body": "Segmented users via MaxDiff (sports-first bettors vs. brokerage/crypto traders) and shipped personalized onboarding through a controlled experiment — 4–12% engagement/retention lift, 60%+ reduction in post-rejection drop-off, and $17M in retained monthly revenue.",
     },
     {
         "org": "FanDuel",
         "title": "Cross-Sell Acquisition & Revenue Growth",
+        "brand": "fanduel",
         "logos": [("fanduel-icon.png", "FanDuel")],
         "body": "Directed the research strategy linking behavioral signals to cross-sell opportunities while scaling a 32-person research org to support it — doubled cross-sell acquisition, adding $8–10M in monthly recurring revenue (>$500M LTV).",
     },
     {
         "org": "NFL",
         "title": "Verizon 5G SuperStadium Fan Experience",
-        "tone": "nfl",
+        "brand": "nfl",
         "logos": [
             ("5g-superstadium.png", "NFL 5G SuperStadium"),
             ("verizon-5g.png", "Verizon 5G"),
@@ -444,12 +446,14 @@ NOTABLE = [
     {
         "org": "Claremont Graduate University",
         "title": "Behavioral Messaging for Diabetes Management",
+        "brand": "cgu",
         "logos": [("cgu.png", "Claremont Graduate University")],
         "body": "As Research Associate, designed and evaluated an SMS-based behavioral intervention for chronic disease patients, grounded in cognitive and social psychology theory — 30% reduction in hospitalizations among enrolled participants.",
     },
     {
         "org": "Ipsos Healthcare",
         "title": "Multi-Country Insulin Pen Validation Study",
+        "brand": "ipsos",
         "logos": [("ipsos.png", "Ipsos"), ("merck.png", "Merck")],
         "body": "FDA comparative insulin injector pen study across the US, UK, and Canada ahead of FDA submission — 27% fewer device-use errors, 40% faster training.",
     },
@@ -471,11 +475,20 @@ def footer(prefix=""):
 
 
 def write_index():
-    rows = []
-    for c in CASES:
-        badge = product_badge(c["brand"])
-        rows.append(
-            f"""    <a class="case-row case-{c['brand']} reveal" href="cases/{c['slug']}.html">
+    company_order = [
+        ("robinhood", "Robinhood"),
+        ("fanduel", "FanDuel"),
+        ("nfl", "NFL"),
+    ]
+
+    case_blocks = []
+    for brand_key, brand_label in company_order:
+        brand_cases = [c for c in CASES if c["brand"] == brand_key]
+        rows = []
+        for c in brand_cases:
+            badge = product_badge(c["brand"])
+            rows.append(
+                f"""    <a class="case-row case-{c['brand']} reveal" href="cases/{c['slug']}.html">
       <div class="case-num">{c['num']}</div>
       <div>
         {badge}
@@ -484,24 +497,65 @@ def write_index():
       </div>
       <div class="case-meta">{c['year']}</div>
     </a>"""
+            )
+        if brand_key == "nfl":
+            rows.append(
+                """    <a class="case-row case-nfl reveal" href="#trueview">
+      <div class="case-num">10</div>
+      <div>
+        <span class="product-badge product-nfl"><img class="product-mark product-mark-nfl-img" src="media/brands/nfl-fantasy-icon.png" alt="" width="22" height="22" /><span class="product-name">NFL · TrueView</span></span>
+        <h3>TrueView 360: testing enhanced game replays</h3>
+        <p>A design-studio program exploring volumetric TrueView capture for condensed, interactive NFL game replays.</p>
+      </div>
+      <div class="case-meta">2020</div>
+    </a>"""
+            )
+        if not rows:
+            continue
+        case_blocks.append(
+            f"""        <div class="company-group company-{brand_key} reveal">
+          <h3 class="company-heading">{brand_label}</h3>
+          <div class="case-list">
+{chr(10).join(rows)}
+          </div>
+        </div>"""
         )
 
-    notable_rows = []
-    for p in NOTABLE:
-        logos = "".join(
-            f'<img src="media/brands/{src}" alt="{alt}" />' for src, alt in p["logos"]
-        )
-        tone = p.get("tone", "")
-        row_class = f"notable-row notable-{tone}" if tone else "notable-row"
-        notable_rows.append(
-            f"""        <article class="{row_class} reveal">
+    notable_order = [
+        ("robinhood", "Robinhood"),
+        ("fanduel", "FanDuel"),
+        ("nfl", "NFL"),
+        ("cgu", "Claremont Graduate University"),
+        ("ipsos", "Ipsos Healthcare"),
+    ]
+    notable_blocks = []
+    for brand_key, brand_label in notable_order:
+        projects = [p for p in NOTABLE if p["brand"] == brand_key]
+        if not projects:
+            continue
+        rows = []
+        for p in projects:
+            logos = "".join(
+                f'<img src="media/brands/{src}" alt="{alt}" />' for src, alt in p["logos"]
+            )
+            rows.append(
+                f"""        <article class="notable-row notable-{brand_key} reveal">
           <div class="notable-logos">{logos}</div>
           <div>
             <h3><span class="notable-org">{p['org']}</span> — {p['title']}</h3>
             <p>{p['body']}</p>
           </div>
         </article>"""
+            )
+        notable_blocks.append(
+            f"""        <div class="company-group company-{brand_key} reveal">
+          <h3 class="company-heading">{brand_label}</h3>
+          <div class="notable-list">
+{chr(10).join(rows)}
+          </div>
+        </div>"""
         )
+
     html = (
         header()
         + f"""
@@ -536,24 +590,13 @@ def write_index():
           <h2>Case studies</h2>
           <p>In-depth work across Robinhood prediction markets, FanDuel sportsbook / CPE, and NFL digital media—including an Intel TrueView studio reel.</p>
         </div>
-        <div class="case-list">
-{chr(10).join(rows)}
-    <a class="case-row case-nfl reveal" href="#trueview">
-      <div class="case-num">10</div>
-      <div>
-        <span class="product-badge product-intel"><span class="product-mark product-mark-intel" aria-hidden="true"></span><span class="product-name">Intel · TrueView · NFL</span></span>
-        <h3>TrueView 360: testing enhanced game replays</h3>
-        <p>A design-studio program exploring volumetric TrueView capture for condensed, interactive NFL game replays.</p>
-      </div>
-      <div class="case-meta">2020</div>
-    </a>
-        </div>
+{chr(10).join(case_blocks)}
 
         <div class="trueview-section" id="trueview">
           <div class="section-head reveal">
-            <div class="product-badge product-intel">
-              <span class="product-mark product-mark-intel" aria-hidden="true"></span>
-              <span class="product-name">Intel · TrueView · NFL</span>
+            <div class="product-badge product-nfl">
+              <img class="product-mark product-mark-nfl-img" src="media/brands/nfl-fantasy-icon.png" alt="" width="22" height="22" />
+              <span class="product-name">NFL · TrueView</span>
             </div>
             <h2>TrueView 360: testing enhanced game replays</h2>
             <p>A 2020 design-studio program exploring how volumetric TrueView capture could power condensed, interactive game replays—personalizing NFL D2C content for fans who already know the score but still want the story.</p>
@@ -576,9 +619,7 @@ def write_index():
           <h2>Notable projects</h2>
           <p>Highlight outcomes across fintech, sports media, healthcare devices, and academic research.</p>
         </div>
-        <div class="notable-list">
-{chr(10).join(notable_rows)}
-        </div>
+{chr(10).join(notable_blocks)}
       </div>
     </section>
 
