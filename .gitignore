@@ -2,5 +2,7 @@
 .DS_Store
 *.log
 media/*.mp4
+!media/hero.mp4
+media/intel-trueview-source.mp4
 media/frames/
 media/*.mp4.png
