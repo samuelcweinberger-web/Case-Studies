@@ -334,7 +334,6 @@ def header(active=None, prefix=""):
       <nav class="nav" aria-label="Primary">
         <a href="{prefix}index.html#work">Work</a>
         <a href="{prefix}index.html#about">About</a>
-        <a href="{prefix}index.html#life">Life</a>
         <a href="mailto:samuelcweinberger@gmail.com">Contact</a>
       </nav>
     </div>
@@ -421,44 +420,6 @@ def write_index():
             <span class="pill">Generative AI</span>
             <span class="pill">Research ops</span>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="life">
-      <div class="wrap">
-        <div class="life-intro reveal">
-          <p>My weekends revolve around my 13-year-old son, Max. Max wants to be a pilot, so we joined the Academy of Model Aeronautics (AMA). We spend our Saturdays and Sundays building and flying remote-controlled turbine jets—he is the pilot, and I am the mechanic.</p>
-          <p>One day, he decided to try out baseball and follow in my footsteps—a choice that was truly intrinsically motivated. As a psychologist, the framework that guides both my parenting and my professional design work is Self-Determination Theory (Deci &amp; Ryan, 2000), which centers on how we foster that exact kind of autonomy, competence, and internal drive.</p>
-          <p>I read and write poetry as a personal creative outlet, with Pablo Neruda and Emily Dickinson being two of my favorite authors.</p>
-          <p>I played Division I football and baseball, and later trained for Team USA as a track cyclist. Those years taught me how to be a true team player, maintain intense self-discipline, and constantly compete against my own limits. I love playing basketball and golf.</p>
-        </div>
-
-        <div class="life-gallery reveal">
-          <figure class="life-shot life-shot-tall">
-            <img src="media/life/father-son.jpg" alt="Sam with his son outside school" loading="lazy" />
-            <figcaption>Fatherhood first</figcaption>
-          </figure>
-          <figure class="life-shot">
-            <img src="media/life/aviation-sabre.jpg" alt="Son with a U.S. Air Force RC Sabre jet" loading="lazy" />
-            <figcaption>Aviation, shared</figcaption>
-          </figure>
-          <figure class="life-shot">
-            <img src="media/life/aviation-mig.jpg" alt="Son giving a thumbs up beside an RC MiG jet" loading="lazy" />
-            <figcaption>Flight day</figcaption>
-          </figure>
-          <figure class="life-shot life-shot-tall">
-            <img src="media/life/fishing.jpg" alt="Son holding a fish he caught" loading="lazy" />
-            <figcaption>On the water</figcaption>
-          </figure>
-          <figure class="life-shot">
-            <img src="media/life/golf.jpg" alt="Sam teeing off on a golf course" loading="lazy" />
-            <figcaption>Still competing</figcaption>
-          </figure>
-          <figure class="life-shot life-shot-tall">
-            <img src="media/life/boat.jpg" alt="Sam smiling at the helm of a boat" loading="lazy" />
-            <figcaption>I enjoy steering the ship</figcaption>
-          </figure>
         </div>
       </div>
     </section>
