@@ -410,7 +410,7 @@ def product_badge(brand_key, prefix=""):
     meta = BRANDS[brand_key]
     mark = ""
     if brand_key == "fanduel":
-        mark = f'<img class="product-mark" src="{prefix}media/brands/fanduel-mark.png" alt="" width="22" height="22" />'
+        mark = f'<img class="product-mark product-mark-fd-img" src="{prefix}media/brands/fanduel-icon.png" alt="" width="22" height="22" />'
     elif brand_key == "robinhood":
         mark = f'<img class="product-mark product-mark-rh-img" src="{prefix}media/brands/robinhood-icon.png" alt="" width="22" height="22" />'
     elif brand_key == "nfl":
