@@ -734,12 +734,12 @@ def write_case(case, index):
         )
 
     prev_link = (
-        f'<a href="{prev_c["slug"]}.html">← {prev_c["num"]} {prev_c["title"]}</a>'
+        f'<a href="{prev_c["slug"]}.html">← Previous Case Study</a>'
         if prev_c
         else "<span></span>"
     )
     next_link = (
-        f'<a href="{next_c["slug"]}.html">{next_c["num"]} {next_c["title"]} →</a>'
+        f'<a href="{next_c["slug"]}.html">Next Case Study →</a>'
         if next_c
         else "<span></span>"
     )
