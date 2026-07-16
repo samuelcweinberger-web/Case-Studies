@@ -16,7 +16,7 @@ BRANDS = {
         "product": "Sportsbook & CPE",
     },
     "nfl": {
-        "label": "NFL",
+        "label": "NFL Fantasy",
         "product": "Fantasy & Digital Media",
     },
 }
@@ -414,7 +414,7 @@ def product_badge(brand_key, prefix=""):
     elif brand_key == "robinhood":
         mark = f'<img class="product-mark product-mark-rh-img" src="{prefix}media/brands/robinhood-icon.png" alt="" width="22" height="22" />'
     elif brand_key == "nfl":
-        mark = f'<img class="product-mark" src="{prefix}media/brands/nfl.png" alt="" width="22" height="22" />'
+        mark = f'<img class="product-mark product-mark-nfl-img" src="{prefix}media/brands/nfl-fantasy-icon.png" alt="" width="22" height="22" />'
     return f'<span class="product-badge product-{brand_key}">{mark}<span class="product-name">{meta["label"]}</span></span>'
 
 
