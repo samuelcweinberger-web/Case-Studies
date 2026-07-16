@@ -32,10 +32,10 @@ CASES = [
         "year": "2026",
         "summary": "Behavioral segmentation, quantitative survey methodology, and multi-million dollar revenue retention.",
         "stats": [
-            ("Generated $17M", "in monthly revenue"),
+            ("Generated $17M", "Monthly revenue"),
             ("~900K", "Net new customers"),
             ("60%", "Reduction in churn"),
-            ("18%", "Trade volume increase, top-tier customers"),
+            ("18%", "Trade volume lift"),
         ],
         "sections": [
             (
