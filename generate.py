@@ -181,46 +181,85 @@ CASES = [
         "slug": "onboarding-deposit",
         "num": "05",
         "brand": "fanduel",
-        "title": "Behavioral Onboarding & Deposit Optimization",
-        "short": "Trust-first KYC and wallet UX that converted 150K+ stagnant users and unlocked $12M in incremental handle.",
+        "title": "Optimizing the Onboarding Experience",
+        "short": "Mixed-methods onboarding and deposit research that lifted deposit success 22% and cut related support tickets 18%.",
         "context": "FanDuel · Core Products & Experiences",
-        "year": "2025",
-        "summary": "Onboarding UX, fintech compliance (KYC), and first-time deposit growth—diagnosing whether drop-off was motivation or a trust barrier.",
+        "year": "2024–2025",
+        "summary": "Reduce friction in onboarding and first-time deposits by diagnosing usability barriers, trust gaps, and language confusion in wallet setup.",
         "stats": [
-            ("$12M", "Incremental handle in Q1 2025"),
+            ("+22%", "Successful deposits"),
+            ("−18%", "Onboarding/wallet support tickets"),
+            ("83%", "Ease of Use (+4% QoQ)"),
             ("150K+", "Stagnant users converted"),
-            ("65%", "New sign-ups blocked at wallet setup"),
-            ("30%", "Fewer support tickets"),
         ],
         "sections": [
             (
                 "Situation",
-                """<p>Users completed registration but abandoned before setting up banking or making a First-Time Deposit (FTD). Amplitude mapped the moment of exit: registration was seamless, yet the Wallet/Banking Setup screen was a barrier for 65% of new sign-ups.</p>""",
+                """<p>Users completed registration but abandoned before setting up banking or making a First-Time Deposit. Amplitude showed registration was seamless, yet wallet/banking setup blocked a large share of new sign-ups. SUPR-Q and Ease of Use needed to move while promotions like “Kick of Destiny” raised excitement (+8%) but also added confusion.</p>""",
             ),
             (
                 "Task",
-                """<p>Determine whether the registration-to-deposit gap was a motivation problem or a specific trust barrier during financial setup—and close the Drop-off Delta between account creation and financial commitment.</p>""",
+                """<p>Identify pain points in sign-up, wallet setup, and trust barriers—then improve completion rates and lower support contact volume without sacrificing compliance requirements.</p>""",
             ),
             (
                 "Approach",
                 """<ul>
-<li><strong>Triangulated mixed methods</strong> — Combined Amplitude funnel mapping, in-depth interviews, moderated usability, and a MaxDiff survey to isolate where and why users stalled.</li>
-<li><strong>Trust diagnosis</strong> — Interviews showed users were comfortable sharing basic identity info, but hit a hard wall at routing numbers and SSNs—with profound confusion around ACH payments and why that sensitivity was required on a sports platform.</li>
-<li><strong>Progressive disclosure</strong> — Partnered with content designers to re-sequence: low-stakes data (phone, email) first to build momentum before sensitive wallet fields.</li>
-<li><strong>Contextual framing</strong> — Introduced micro-explanations of why federal regulations required specific banking data, humanizing the compliance wall and clarifying ACH security.</li>
-<li><strong>Validation</strong> — 15 moderated sessions observed hesitation at the routing-number field; a MaxDiff survey with 5,000 users identified which phrasing maximized confidence in sharing sensitive financial details.</li>
+<li><strong>Mixed methods</strong> — Behavioral analytics, remote moderated usability, competitive benchmarking, and triangulation across deposit-flow metrics, app logs, and qualitative sessions.</li>
+<li><strong>Language &amp; trust diagnosis</strong> — Users struggled differentiating “funding” vs “depositing”; missing verification reassurance cues lowered first-time trust; early-stage overload hindered completion.</li>
+<li><strong>Progressive disclosure</strong> — Re-sequenced low-stakes data before sensitive wallet fields; partnered with content design on micro-explanations for why banking data was required.</li>
+<li><strong>Validation at scale</strong> — Moderated sessions observed hesitation at sensitive fields; MaxDiff messaging tests identified phrasing that maximized confidence sharing financial details.</li>
 </ul>""",
             ),
             (
                 "Outcome",
-                """<p>Re-sequenced flow and optimized messaging lifted successful wallet setups and deposits. Converted 150,000+ stagnant users, generating an estimated $12M in incremental handle in Q1 2025, and cut support tickets by 30% by explaining why sensitive information was mandatory.</p>
-<p class="callout">Established the Trust-First Onboarding Playbook as the company standard.</p>""",
+                """<p>Deposit success rose 22%; onboarding/wallet support tickets fell 18%. Ease of Use reached 83% (+4% QoQ, +3% YoY) with Responsible Gaming at 86%. Trust and clarity around verification unlocked conversion of 150K+ stagnant users and an estimated $12M incremental handle in Q1 2025.</p>
+<p class="callout">Established the Trust-First Onboarding Playbook—progressive disclosure, verification transparency, and guided deposit recovery—as the company standard.</p>""",
+            ),
+        ],
+    },
+    {
+        "slug": "responsible-gaming",
+        "num": "06",
+        "brand": "fanduel",
+        "title": "Building Responsible Gaming Metrics",
+        "short": "A regulator-validated Responsible Gaming Index deployed across 23M+ accounts—bridging behavioral science, compliance, and trust.",
+        "context": "FanDuel · Core Products & Experiences",
+        "year": "2024",
+        "summary": "Design and validate measurable indicators of responsible gaming behavior that meet regulatory standards and promote user trust across digital platforms.",
+        "stats": [
+            ("23M+", "Accounts covered"),
+            ("Approved", "Regulator-validated RG Index"),
+            ("−17%", "Risky session length via messaging"),
+            ("Core KPI", "RGI adopted by product teams"),
+        ],
+        "sections": [
+            (
+                "Situation",
+                """<p>Product teams needed more than lagging brand trackers and spend thresholds to protect players. Responsible gaming tools existed, but content and measurement lacked a foundational, regulator-ready framework that connected behavioral science to product KPIs.</p>""",
+            ),
+            (
+                "Task",
+                """<p>Design and validate a quantifiable Responsible Gaming Index (RGI)—and baseline RG messaging—so compliance, product, and design could monitor risk, improve tool uptake, and meet regulatory standards across platforms.</p>""",
+            ),
+            (
+                "Approach",
+                """<ul>
+<li><strong>Behavioral science + modeling</strong> — Literature review, expert interviews, and longitudinal analysis of player engagement trends to define measurable RG indicators.</li>
+<li><strong>Risk signal discovery</strong> — Temporal play patterns (session spikes and chaining) predicted at-risk behavior more accurately than spending thresholds alone.</li>
+<li><strong>Messaging baseline</strong> — Moderated prototype interviews on RG copy, motivation, placement, and competitor patterns; recommendations drove a subsequent ~30% lift in tool usage.</li>
+<li><strong>Cross-functional approval</strong> — Partnered UXR, analytics, and compliance to accelerate regulatory validation and institutionalize the metric.</li>
+</ul>""",
+            ),
+            (
+                "Outcome",
+                """<p>The Responsible Gaming Index was approved by regulators and deployed across 23M+ active user accounts as a core product KPI. Real-time messaging raised self-awareness and reduced risky session length by 17%. The model later influenced player-safety protocols across multiple jurisdictions.</p>
+<p class="callout">Framework bridges behavioral science, compliance, and user trust—turning responsible play into measurable product infrastructure.</p>""",
             ),
         ],
     },
     {
         "slug": "cx-measurement",
-        "num": "06",
+        "num": "07",
         "brand": "fanduel",
         "title": "Continuous CX Measurement & Cross-Sell Growth",
         "short": "A real-time Hyper-Focused Lens that doubled cross-sell acquisition in 90 days.",
