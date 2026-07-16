@@ -639,6 +639,7 @@ img {
   align-items: start;
   padding: 1.65rem 0;
   border-bottom: 1px solid var(--line);
+  scroll-margin-top: 5.5rem;
 }
 
 .notable-logos {
