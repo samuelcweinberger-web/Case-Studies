@@ -70,12 +70,7 @@ CASES = [
         "context": "Robinhood · Prediction Markets & Event Contracts",
         "year": "2026",
         "summary": "Bypassing slow design-to-engineering loops via generative AI and real-time usability testing.",
-        "stats": [
-            ("10%", "Reduction in corporate overhead"),
-            ("10 → 1", "Stakeholders typically required"),
-            ("Same day", "Concept → usability → handoff"),
-            ("0", "Production code required to validate"),
-        ],
+        "stats": [],
         "sections": [
             (
                 "Situation",
@@ -714,10 +709,16 @@ def write_about_page():
 def write_case(case, index):
     prev_c = CASES[index - 1] if index > 0 else None
     next_c = CASES[index + 1] if index < len(CASES) - 1 else None
-    stats = "\n".join(
-        f'      <div class="stat"><strong>{v}</strong><span>{l}</span></div>'
-        for v, l in case["stats"]
-    )
+    stats_html = ""
+    if case["stats"]:
+        stats = "\n".join(
+            f'      <div class="stat"><strong>{v}</strong><span>{l}</span></div>'
+            for v, l in case["stats"]
+        )
+        stats_html = f"""
+        <div class="stat-band">
+{stats}
+        </div>"""
     sections = "\n".join(
         f'      <section class="reveal">\n        <h2>{title}</h2>\n        {body}\n      </section>'
         for title, body in case["sections"]
@@ -743,10 +744,7 @@ def write_case(case, index):
         {badge}
         <div class="eyebrow">{case['context']} · {case['year']}</div>
         <h1>{case['title']}</h1>
-        <p class="summary">{case['summary']}</p>
-        <div class="stat-band">
-{stats}
-        </div>
+        <p class="summary">{case['summary']}</p>{stats_html}
       </div>
     </section>
     <div class="wrap prose">
