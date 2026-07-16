@@ -396,10 +396,9 @@ def header(active=None, prefix="", brand=None):
     <div class="wrap">
       <a class="brand" href="{prefix}index.html">Sam Weinberger</a>
       <nav class="nav" aria-label="Primary">
-        <a href="{prefix}index.html#work">Work</a>
-        <a href="{prefix}index.html#notable">Notable</a>
-        <a href="{prefix}index.html#trueview">TrueView</a>
-        <a href="{prefix}index.html#about">About</a>
+        <a href="{prefix}index.html#case-studies">Case studies</a>
+        <a href="{prefix}index.html#notable">Notable projects</a>
+        <a href="{prefix}index.html#about">About me</a>
         <a href="mailto:samuelcweinberger@gmail.com">Contact</a>
       </nav>
     </div>
@@ -522,20 +521,48 @@ def write_index():
           <img src="media/brands/cgu.png" alt="Claremont Graduate University" />
         </div>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#work">View case studies</a>
+          <a class="btn btn-primary" href="#case-studies">View case studies</a>
           <a class="btn btn-ghost" href="mailto:samuelcweinberger@gmail.com">Email Sam</a>
         </div>
       </div>
     </section>
 
-    <section class="section" id="work">
+    <section class="section" id="case-studies">
       <div class="wrap">
         <div class="section-head reveal">
-          <h2>Selected work</h2>
-          <p>Case studies branded by product: Robinhood prediction markets, FanDuel sportsbook / CPE, and NFL digital packaging—plus an Intel TrueView studio reel.</p>
+          <h2>Case studies</h2>
+          <p>In-depth work across Robinhood prediction markets, FanDuel sportsbook / CPE, and NFL digital media—including an Intel TrueView studio reel.</p>
         </div>
         <div class="case-list">
 {chr(10).join(rows)}
+    <a class="case-row case-nfl reveal" href="#trueview">
+      <div class="case-num">10</div>
+      <div>
+        <span class="product-badge product-intel"><span class="product-mark product-mark-intel" aria-hidden="true"></span><span class="product-name">Intel · TrueView · NFL</span></span>
+        <h3>TrueView 360: testing enhanced game replays</h3>
+        <p>A design-studio program exploring volumetric TrueView capture for condensed, interactive NFL game replays.</p>
+      </div>
+      <div class="case-meta">2020</div>
+    </a>
+        </div>
+
+        <div class="trueview-section" id="trueview">
+          <div class="section-head reveal">
+            <div class="product-badge product-intel">
+              <span class="product-mark product-mark-intel" aria-hidden="true"></span>
+              <span class="product-name">Intel · TrueView · NFL</span>
+            </div>
+            <h2>TrueView 360: testing enhanced game replays</h2>
+            <p>A 2020 design-studio program exploring how volumetric TrueView capture could power condensed, interactive game replays—personalizing NFL D2C content for fans who already know the score but still want the story.</p>
+          </div>
+
+          <div class="trueview-player reveal">
+            <video controls playsinline preload="metadata" poster="media/hero.jpg">
+              <source src="media/hero.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <p class="trueview-caption">Studio reel from the TrueView concept exploration—volumetric capture, multi-angle replay, and next-generation fan viewing.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -552,32 +579,11 @@ def write_index():
       </div>
     </section>
 
-    <section class="section trueview-section" id="trueview">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <div class="product-badge product-intel">
-            <span class="product-mark product-mark-intel" aria-hidden="true"></span>
-            <span class="product-name">Intel · TrueView · NFL</span>
-          </div>
-          <h2>TrueView 360: testing enhanced game replays</h2>
-          <p>A 2020 design-studio program exploring how volumetric TrueView capture could power condensed, interactive game replays—personalizing NFL D2C content for fans who already know the score but still want the story.</p>
-        </div>
-
-        <div class="trueview-player reveal">
-          <video controls playsinline preload="metadata" poster="media/hero.jpg">
-            <source src="media/hero.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <p class="trueview-caption">Studio reel from the TrueView concept exploration—volumetric capture, multi-angle replay, and next-generation fan viewing.</p>
-        </div>
-      </div>
-    </section>
-
     <section class="section" id="about">
       <div class="wrap about-grid">
         <div class="reveal">
           <div class="section-head">
-            <h2>About</h2>
+            <h2>About me</h2>
           </div>
           <p>I’m an applied cognitive and social psychologist turned UX Engineer and Quantitative UX Researcher. I specialize in bridging the gap between human behavior, advanced data analytics, and interactive design. My academic background—including graduate research focused on human motivation, persuasion, and systemic behavior change—serves as the foundation for how I approach product strategy.</p>
           <p>After starting my career in human factors and FDA-regulated medical device research, I stepped into the digital product space. I spent my early UX career at the NFL optimizing the Fantasy mobile app, and later spent four years at FanDuel helping build and scale one of the most successful sportsbooks on the market—including a quarterly product benchmarking program that turned SUPR-Q, Ease of Use, loyalty, and Responsible Gaming into a shared executive scorecard. Most recently, I joined Robinhood to focus on first-time user experience, customer acquisition, and retention within the rapid-fire world of event contracts and prediction markets.</p>
