@@ -462,9 +462,7 @@ def write_index():
         <div class="brand-strip" aria-label="Brands worked with">
           <img src="media/brands/robinhood.png" alt="Robinhood" />
           <img src="media/brands/fanduel.png" alt="FanDuel" />
-          <img src="media/brands/tvg.png" alt="TVG, part of FanDuel" title="TVG · FanDuel Group" />
           <img src="media/brands/nfl.png" alt="NFL" />
-          <img src="media/brands/nfl-plus.png" alt="NFL+" />
         </div>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#work">View case studies</a>

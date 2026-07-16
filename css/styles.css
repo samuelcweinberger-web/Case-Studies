@@ -260,10 +260,6 @@ img {
   height: 2.5rem;
 }
 
-.brand-strip img[alt="TVG, part of FanDuel"] {
-  height: 2.15rem;
-}
-
 .brand-strip img:hover {
   opacity: 1;
   transform: translateY(-1px);
