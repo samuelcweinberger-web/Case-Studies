@@ -417,7 +417,76 @@ img {
 }
 
 .trueview-section .section-head {
-  max-width: 42rem;
+  max-width: 46rem;
+}
+
+.trueview-body {
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr;
+  gap: 2.5rem;
+  align-items: start;
+  margin: 0 0 2.25rem;
+}
+
+.trueview-copy h3 {
+  margin: 0 0 0.85rem;
+  font-family: var(--display);
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+}
+
+.trueview-copy ul {
+  margin: 0;
+  padding-left: 1.15rem;
+  display: grid;
+  gap: 0.75rem;
+  color: var(--muted);
+}
+
+.trueview-copy li {
+  font-size: 1.02rem;
+  line-height: 1.55;
+}
+
+.trueview-copy strong {
+  color: var(--ink);
+}
+
+.trueview-criteria {
+  margin: 1.25rem 0 0;
+  padding: 1rem 0 0;
+  border-top: 1px solid rgba(0, 199, 253, 0.18);
+  color: #d7e8f5;
+  font-size: 1.02rem;
+  line-height: 1.55;
+}
+
+.trueview-personas {
+  display: grid;
+  gap: 1.35rem;
+  padding-top: 0.25rem;
+}
+
+.trueview-personas h4 {
+  margin: 0 0 0.25rem;
+  font-family: var(--display);
+  font-size: 1.05rem;
+  color: #00c7fd;
+  letter-spacing: -0.02em;
+}
+
+.trueview-mantra {
+  margin: 0 0 0.4rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.trueview-personas p:last-child {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 .trueview-player {
@@ -434,6 +503,22 @@ img {
   display: block;
   aspect-ratio: 16 / 9;
   background: #000;
+}
+
+.trueview-caption {
+  margin: 0;
+  padding: 0.85rem 1rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.45;
+  border-top: 1px solid rgba(0, 199, 253, 0.12);
+  background: rgba(0, 20, 40, 0.55);
+}
+
+@media (max-width: 860px) {
+  .trueview-body {
+    grid-template-columns: 1fr;
+  }
 }
 
 .case-row.case-robinhood:hover {
