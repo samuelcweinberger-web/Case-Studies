@@ -14,35 +14,34 @@ CASES = [
         "short": "Behavioral segmentation and MaxDiff research that recovered $17M in monthly revenue.",
         "context": "Robinhood · Prediction Markets & Event Contracts",
         "year": "2026",
-        "summary": "Two mental models lived in the same first-trade funnel. Segment-specific onboarding and failure-state messaging turned drop-off into retained revenue.",
+        "summary": "Behavioral segmentation, quantitative survey methodology, and multi-million dollar revenue retention.",
         "stats": [
             ("$17M", "Retained monthly revenue"),
             ("~900K", "Users retained monthly"),
-            ("60%+", "Drop in post-rejection drop-off"),
-            ("18%", "Trade volume lift, top-tier customers"),
+            ("60%+", "Drop in post-rejection churn"),
+            ("18%", "Trade volume increase, top-tier customers"),
         ],
         "sections": [
             (
                 "Situation",
-                """<p>The Event Contracts and Prediction Markets division was losing users in the first-time experience—especially right after signup and first-trade friction. People who had already churned or never completed a first trade were hard to study with traditional qualitative recruiting alone.</p>""",
+                """<p>The Event Contracts and Prediction Markets division at Robinhood was experiencing noticeable drop-offs in the first-time user flow—particularly right after signup and first-trade friction. Recruiting users who had already churned, or failed to complete a first trade, is notoriously difficult to study qualitatively.</p>""",
             ),
             (
                 "Task",
-                """<p>Isolate the exact friction points, understand the needs of different archetypes inside the same funnel, and ship structural changes that stabilized retention without flattening the product for either group.</p>""",
+                """<p>Isolate the exact friction points causing the drop-offs, understand the needs of disparate user archetypes within the same funnel, and implement structural changes to stabilize retention.</p>""",
             ),
             (
                 "Approach",
                 """<ul>
-<li><strong>Behavioral segmentation</strong> — Uncovered two mental models: newly acquired sports bettors with little brokerage/crypto experience, and existing Robinhood users treating prediction markets like sophisticated trading.</li>
-<li><strong>MaxDiff survey</strong> — Ranked each segment’s unique informational needs with Maximum Differential scaling.</li>
-<li><strong>Experimental validation</strong> — Partnered with data science on controlled tests; variants received tailored onboarding, personalized recommendations, and custom watchlists aligned to MaxDiff preferences.</li>
-<li><strong>Friction remediation</strong> — Mapped barriers after first-trade rejection and built personalized messaging through failure states.</li>
+<li><strong>Behavioral segmentation</strong> — Uncovered two distinct mental models in the funnel: newly acquired sports bettors with zero brokerage or crypto experience, and existing Robinhood users exploring prediction markets as sophisticated traders.</li>
+<li><strong>MaxDiff survey</strong> — Designed and deployed a Maximum Differential (MaxDiff) quantitative survey to systematically rank and isolate each segment’s unique informational needs.</li>
+<li><strong>Experimental validation</strong> — Partnered with data science on a controlled experiment with isolated control groups; variant users received tailored onboarding, personalized recommendations, and custom watchlists aligned to their MaxDiff preferences.</li>
+<li><strong>Friction remediation</strong> — Pinpointed the exact barriers causing drop-off after a first-trade rejection and built a targeted, personalized messaging strategy to guide users through failure states.</li>
 </ul>""",
             ),
             (
                 "Outcome",
-                """<p>A personalized messaging strategy after first-trade rejection cut drop-off by over 60%, retaining ~900K users/month (~$17M monthly revenue). MaxDiff-informed experiments drove 4–12% engagement/retention lifts and an 18% increase in trade volume among top-tier customers.</p>
-<p class="callout">Research did not just describe the funnel — it rewired onboarding around how sports-first bettors and brokerage/crypto traders actually think.</p>""",
+                """<p>Retained ~$17M in monthly revenue and ~900K users monthly. Post-rejection churn dropped by over 60%. Trade volume among top-tier customers rose 18%, with retention lifts of 12% for the brokerage/crypto segment and 4% for sports-first users.</p>""",
             ),
         ],
     },
@@ -53,34 +52,34 @@ CASES = [
         "short": "AI-orchestrated prototyping that collapsed a weeks-long design loop into a single interview.",
         "context": "Robinhood · Prediction Markets & Event Contracts",
         "year": "2026",
-        "summary": "Concepts were generated and stress-tested inside live interviews—before production engineering ever started.",
+        "summary": "Bypassing slow design-to-engineering loops via generative AI and real-time usability testing.",
         "stats": [
             ("10%", "Reduction in corporate overhead"),
-            ("1", "Researcher delivering validated prototypes"),
+            ("10 → 1", "Stakeholders typically required"),
             ("Same day", "Concept → usability → handoff"),
             ("0", "Production code required to validate"),
         ],
         "sections": [
             (
                 "Situation",
-                """<p>Feature validation typically required alignment across growth, product, design, and marketing, stretching iteration cycles across weeks. Teams needed high-fidelity assets faster than standard research workflows could produce them.</p>""",
+                """<p>Traditional feature validation required extensive alignment across growth, product, design, and marketing—stretching feature iterations out over weeks. Validating features that didn’t exist yet needed high-fidelity assets faster than standard research methods could produce them.</p>""",
             ),
             (
                 "Task",
-                """<p>Short-circuit the design loop by bringing interactive prototyping into the active research session—testing concepts before a single line of production code was written.</p>""",
+                """<p>Short-circuit the design iteration cycle by introducing real-time, interactive prototyping into the active research phase—testing concepts before a single line of production code was written.</p>""",
             ),
             (
                 "Approach",
                 """<ul>
-<li><strong>AI-orchestrated design flow</strong> — Used Claude and custom agents against existing Figma systems.</li>
-<li><strong>Real-time synthesis</strong> — Spotted mental models and barriers early in an interview, then generated/updated interactive prototypes mid-session from live feedback.</li>
-<li><strong>Instant usability testing</strong> — Put fresh variants back in front of the same participant within the same hour.</li>
-<li><strong>Engineering handoff</strong> — Packaged validated components as engineering-ready specs.</li>
+<li><strong>AI-orchestrated design flow</strong> — Used Claude and custom autonomous AI agents to interact directly with existing Figma design systems.</li>
+<li><strong>Real-time synthesis</strong> — Identified user mental models and behavioral barriers at the start of a customer interview, then used the AI orchestration layer to generate and update high-fidelity, interactive prototypes mid-interview based on live feedback.</li>
+<li><strong>Instant usability testing</strong> — Presented the freshly generated design variants back to the same participant by the middle and end of the same session—testing concepts that hadn’t existed an hour earlier.</li>
+<li><strong>Direct engineering handoff</strong> — Packaged the successful, validated design components into engineering-ready specifications.</li>
 </ul>""",
             ),
             (
                 "Outcome",
-                """<p>Delivered engineering-ready designs mid-interview and bypassed traditional multi-cycle design reviews. A volume of cross-functional insight work that would typically require up to 10 stakeholders contributed to a ~10% reduction in corporate overhead after implementation.</p>""",
+                """<p>Where feature validation once required ~10 stakeholders across growth, product, and marketing, one researcher delivered fully validated, engineering-ready prototypes live within the interview—contributing to a 10% reduction in corporate overhead post-implementation.</p>""",
             ),
         ],
     },
@@ -91,7 +90,7 @@ CASES = [
         "short": "An autonomous AI workflow that quadrupled concurrent research capacity.",
         "context": "Robinhood · Prediction Markets & Event Contracts",
         "year": "2026",
-        "summary": "A month-long research cycle became a two-week system—without sacrificing rigor.",
+        "summary": "Scaling research throughput, workflow automation, and compressing time-to-insight.",
         "stats": [
             ("4×", "Concurrent research capacity"),
             ("30 → 14", "Days typical cycle time"),
@@ -101,216 +100,62 @@ CASES = [
         "sections": [
             (
                 "Situation",
-                """<p>A single research project was fragmented across compliance approvals, custom plans, stakeholder review, multi-day user-list queries, collection, analysis, and executive packaging. A standard cycle could consume a full calendar month.</p>""",
+                """<p>The end-to-end process of executing a single research project at Robinhood was highly fragmented—compliance approvals, custom research plans, stakeholder feedback, manual database queries for user lists (4–5 days alone), data collection, analysis, and building decks and executive summaries. A standard project cycle consumed up to a full calendar month.</p>""",
             ),
             (
                 "Task",
-                """<p>Streamline the operational architecture, remove administrative lag, and multiply concurrent studies without compromising statistical or qualitative rigor.</p>""",
+                """<p>Streamline the operational architecture, remove administrative lag, and multiply the volume of concurrent studies without compromising statistical or qualitative rigor.</p>""",
             ),
             (
                 "Approach",
                 """<ul>
-<li><strong>End-to-end automation</strong> — Architected autonomous AI agents to manage study lifecycles from compliance approval through user-list generation and multi-format reporting.</li>
-<li><strong>Workflow compression</strong> — Removed administrative lag that previously stretched a standard project across a full calendar month.</li>
-<li><strong>Concurrent capacity</strong> — Designed the system so multiple studies could run without pipeline blockages.</li>
+<li><strong>End-to-end automation</strong> — Built an autonomous AI workflow using Claude to orchestrate every step of the research lifecycle.</li>
+<li><strong>Workflow compression</strong> — Automated compliance-check routing, dynamically generated standardized research plans for stakeholder review, and streamlined data pipelines for real-time list generation.</li>
+<li><strong>Synthesis &amp; reporting</strong> — Programmed AI nodes to ingest raw survey and interview outputs and instantly draft dual-delivery assets: a concise one-page executive summary for leadership and a deep-dive, multi-slide deck for product teams.</li>
 </ul>""",
             ),
             (
                 "Outcome",
-                """<p>Compressed a 30-day research cycle to two weeks and quadrupled concurrent capacity to four active studies—without sacrificing methodological rigor.</p>""",
+                """<p>Compressed a traditional 30-day project cycle to two weeks after full automation, and quadrupled concurrent capacity so four studies could run without pipeline blockages.</p>""",
             ),
         ],
     },
     {
         "slug": "cx-measurement",
         "num": "04",
-        "title": "Cross-Sell Acquisition & Research Org Scale",
-        "short": "Doubled cross-sell acquisition while scaling UX Research into a 32-person division.",
+        "title": "Continuous CX Measurement & Cross-Sell Growth",
+        "short": "A real-time measurement framework that doubled cross-sell acquisition in 90 days.",
         "context": "FanDuel · Core Products & Experiences",
         "year": "2024–2025",
-        "summary": "As Lead UX Researcher, I linked behavioral signals to cross-sell growth while building the research organization that could sustain it—AI-enabled pipelines included.",
+        "summary": "A real-time measurement framework, applied to a stalled cross-sell conversion funnel.",
         "stats": [
-            (">$500M", "Projected LTV impact"),
-            ("2×", "Cross-sell acquisition"),
-            ("$8–10M", "Added monthly recurring revenue"),
-            ("32", "Researchers in scaled org"),
+            ("$500M", "Projected LTV impact"),
+            ("2×", "Cross-sell acquisitions within 90 days"),
+            ("14%", "Lift in Monthly Active Users"),
+            ("$5M+", "Incremental monthly revenue"),
         ],
         "sections": [
             (
                 "Situation",
-                """<p>Cross-sell conversion had room to grow, and the research function needed to scale with the ambition of FanDuel’s core products—delivering reliable insight at the pace of Product, Marketing, and Engineering.</p>""",
+                """<p>Cross-sell conversion between product lines had stagnated for the year, with growth flat at roughly 10%. Existing brand trackers were too lagging and infrequent to diagnose where—or why—customers were dropping off.</p>""",
             ),
             (
                 "Task",
-                """<p>Direct research strategy that tied behavioral signals to cross-sell opportunities, while scaling UX Research into an organization capable of 200+ studies a year—and accelerating insight-to-launch with AI-enabled pipelines.</p>""",
+                """<p>Architect a continuous, real-time CX measurement system, then apply it to the cross-sell bottleneck to prove that research could function as a growth engine, not just a reporting function.</p>""",
             ),
             (
                 "Approach",
                 """<ul>
-<li><strong>Research leadership</strong> — Scaled UX Research into a 32-person division; mentored researchers and designers; partnered across Product and Marketing.</li>
-<li><strong>Growth diagnosis</strong> — Connected continuous CX measurement and behavioral signals to stalled cross-sell funnels.</li>
-<li><strong>AI-enabled pipelines</strong> — Directed research systems that cut turnaround time by ~75%, accelerating insight-to-launch cycles.</li>
-<li><strong>Experimentation</strong> — Validated interventions with large-scale testing and product analytics so recommendations shipped with evidence.</li>
+<li><strong>Continuous measurement framework</strong> — Built a “Hyper-Focused Lens” combining monthly in-app Pulse Checks (1% sampling), longitudinal quantitative benchmarking, and large-scale competitive usability testing (n=4,000).</li>
+<li><strong>Technical integration</strong> — Partnered with engineering to deploy event-based triggers (deposit_success, login_success), capturing sentiment at the Peak-End moment to reduce recall bias.</li>
+<li><strong>Unified dashboard</strong> — Mapped UX metrics (UMUX-Lite / SEQ) directly to product KPIs and business OKRs for cross-functional alignment.</li>
+<li><strong>Applied diagnosis at scale</strong> — Funnel analysis isolated a drop-off at the Payment Linking step; 120 structured interviews (including 20 unmoderated) surfaced trust hurdles, validated via A/B testing with 30,000 users and real-time Amplitude telemetry.</li>
 </ul>""",
             ),
             (
                 "Outcome",
-                """<p>Cross-sell acquisition doubled, adding $8–10M in monthly recurring revenue (&gt;$500M LTV). The scaled org supported 14% MAU growth and a durable research operating model for core products.</p>
-<p class="callout">Research operated as a growth engine and a leadership practice—not a reporting function.</p>""",
-            ),
-        ],
-    },
-    {
-        "slug": "nfl-d2c-packaging",
-        "num": "05",
-        "title": "NFL Direct-to-Consumer Packaging Research",
-        "short": "Design studios and a national panel that revealed how price reshapes package preference.",
-        "context": "NFL · Fantasy Sports & NFL+",
-        "year": "2018–2021",
-        "summary": "Five D2C packaging architectures were evaluated with studio fans and validated against a 2,208-fan national survey—showing à-la-carte appeal before price, and tiered preference after.",
-        "stats": [
-            ("24", "Studio participants across 2 design studios"),
-            ("2,208", "National survey respondents"),
-            ("5", "Package architectures tested (A–E)"),
-            ("p&lt;.001", "Package C ranked #1 after pricing"),
-        ],
-        "sections": [
-            (
-                "Situation",
-                """<p>NFL Digital Media needed evidence for how to structure Direct-to-Consumer offerings spanning NFL+, Clubs+, Club Pass, League Pass, and RedZone Mobile—before committing to a packaging architecture fans would actually buy.</p>""",
-            ),
-            (
-                "Task",
-                """<p>Determine which package arrangements fans were most motivated to consume, measure reach and appeal by segment, and explain preferences through Motivation to Consume Content (MCC) drivers drawn from fan-behavior literature.</p>""",
-            ),
-            (
-                "Approach",
-                """<ul>
-<li><strong>Pilot interviews</strong> — Stress-tested survey comprehension with 3 fans; refined instruments and studio protocol.</li>
-<li><strong>Design studios (n=24)</strong> — Fans built MOSCOW media packages, then ranked Packages A–E before and after pricing.</li>
-<li><strong>National survey (n=2,208)</strong> — Quantified feature interest and competitor platform usage at scale.</li>
-<li><strong>Multivariate analysis</strong> — Linked package preference to motives: excitement/drama, loyalty, social interaction, performance tracking, escape, aesthetics, vicarious achievement, and football IQ.</li>
-</ul>""",
-            ),
-            (
-                "Outcome",
-                """<p>Before price, Package D (à-la-carte) led; after price, <strong>Package C (tiered)</strong> ranked first (79% top-two), with a large shift away from single-platform options. Package D still scored highest on perceived flexibility/value, while C balanced cognitive and affective motives—critical input for packaging strategy.</p>
-<p class="callout">“Must have” demand concentrated on League Pass (42%) and NFL+ (29%); RedZone Mobile trailed as a won't-have for many social/family-driven fans.</p>""",
-            ),
-        ],
-    },
-    {
-        "slug": "product-benchmarking",
-        "num": "06",
-        "title": "Competitive Product Benchmarking System",
-        "short": "A quarterly usability & loyalty scorecard across FanDuel products and key competitors.",
-        "context": "FanDuel · Core Products & Experiences",
-        "year": "2022",
-        "summary": "SUPR-Q, journey Ease of Use, loyalty intentions, and Responsible Gaming scores—weighted to revenue/platform mix—became a living product scorecard.",
-        "stats": [
-            ("2,881", "Customers in the Q2 wave"),
-            ("13,637", "Surveyed since 2021 across quarters"),
-            ("75%", "Industry standard for SUPR-Q / Ease"),
-            ("85%", "FanDuel RG score standard"),
-        ],
-        "sections": [
-            (
-                "Situation",
-                """<p>FanDuel needed a repeatable way to track whether digital products were improving in the wild—against both internal baselines and competitors like DraftKings, BetMGM, and TwinSpires—not just against one-off usability tests.</p>""",
-            ),
-            (
-                "Task",
-                """<p>Run a quarterly benchmarking program that surfaces strengths, weaknesses, and actionable design insights across Sportsbook, Casino, Fantasy, TVG, and related experiences—including financial-transaction ease and Responsible Gaming.</p>""",
-            ),
-            (
-                "Approach",
-                """<ul>
-<li><strong>Metric stack</strong> — SUPR-Q usability, journey Ease of Use, Net Intentions loyalty, and Responsible Gaming Likert scores.</li>
-<li><strong>Competitive scorecards</strong> — Side-by-side cards vs. primary rivals per product line.</li>
-<li><strong>Weighted scoring</strong> — Platform split and revenue weights so underrepresented cohorts did not distort product-level decisions.</li>
-<li><strong>2022 expansions</strong> — Deeper live-dealer analysis, deposit/withdrawal ease, and verbatim loyalty drivers.</li>
-</ul>""",
-            ),
-            (
-                "Outcome",
-                """<p>Q2 showed Ease of Use above industry standard across FanDuel products, with SUPR-Q gains nearly everywhere except TVG (Kentucky Derby friction). Loyalty lagged as the shared improvement theme—especially around discovery, variety, and promo-driven engagement—giving product teams a clear, comparable roadmap each quarter.</p>""",
-            ),
-        ],
-    },
-    {
-        "slug": "team-chemistry",
-        "num": "07",
-        "title": "Team Chemistry Measurement Program",
-        "short": "A season-long sports psychology program to measure and shape team cohesion.",
-        "context": "Burkmont Analytics · PHX Proposal",
-        "year": "2016–2017",
-        "summary": "A three-mission engagement—Recon, Unite, Conquer—turned team chemistry from anecdote into a weekly measurement and intervention system.",
-        "stats": [
-            ("3", "Mission phases across the season"),
-            ("Weekly", "Game-linked chemistry measures"),
-            ("30+ yrs", "Research basis in sports & orgs"),
-            ("Time-series", "Design for in-season change"),
-        ],
-        "sections": [
-            (
-                "Situation",
-                """<p>Elite talent and traditional analytics explain only part of on-court performance. Burkmont Analytics proposed treating team chemistry—the tendency of a group to remain united toward instrumental goals—as a measurable performance lever.</p>""",
-            ),
-            (
-                "Task",
-                """<p>Design a full-season program for a professional basketball organization: assess culture, intervene deliberately, and monitor chemistry with the same seriousness as physical performance data.</p>""",
-            ),
-            (
-                "Approach",
-                """<ul>
-<li><strong>Mission 1 — Recon</strong> — Literature review, culture definition, baseline surveys/observations, staff debrief (Jun–Jul 2016).</li>
-<li><strong>Mission 2 — Unite</strong> — Preseason activity, 2–3 in-season sessions, weekly game measures, midseason reporting (Aug 2016–Feb 2017).</li>
-<li><strong>Mission 3 — Conquer</strong> — Continued monitoring, additional sessions, and a comprehensive end-of-season report (Feb–Apr 2017).</li>
-</ul>
-<p>Methods blended sports psychology, social psychology, and advanced measurement—weekly reporting kept coaching staff close to the signal.</p>""",
-            ),
-            (
-                "Outcome",
-                """<p>The proposal established a concrete operating model: chemistry as an analytic input alongside talent, with deliverables that moved from baseline identity work to season-long regulation. It framed performance enhancement as a measurable behavioral systems problem—not a motivational poster.</p>""",
-            ),
-        ],
-    },
-    {
-        "slug": "smartphone-esm",
-        "num": "08",
-        "title": "Smartphone-Enabled Experience Sampling",
-        "short": "Bringing ESM into the field with PACO to study engagement, stress, and burnout in daily life.",
-        "context": "Claremont Graduate University · WSH 2013",
-        "year": "2013",
-        "summary": "A methods contribution: using Android smartphones and Google’s PACO platform to run robust Experience Sampling in occupational health research.",
-        "stats": [
-            ("ESM", "In-the-moment self-report method"),
-            ("PACO", "Scalable smartphone signaling platform"),
-            ("2", "Field studies at CGU exemplified"),
-            ("Offline", "Capable data collection on-device"),
-        ],
-        "sections": [
-            (
-                "Situation",
-                """<p>Classic ESM relied on booklets, pagers, watches, or early PDAs. Researchers studying daily engagement, stress, and burnout needed scalable signaling and data entry that matched how people actually lived and worked.</p>""",
-            ),
-            (
-                "Task",
-                """<p>Introduce smartphone-enabled ESM—specifically PACO (Personal Analytic Companion)—as a secure, scalable way to run occupational health ESM and intervention designs.</p>""",
-            ),
-            (
-                "Approach",
-                """<ul>
-<li><strong>Platform</strong> — PACO surveys authored in-browser; Android clients could run offline; response types included Likert, text, lists, GPS, and photo.</li>
-<li><strong>Schedules</strong> — Daily, weekly, monthly, random ESM, and self-report triggers.</li>
-<li><strong>Field examples</strong> — Flow Experience study (50 students; devices provided; 6 random vs 1 daily signal) and Study of Experience class project (59 participants on own devices; 8 random signals × 5 days).</li>
-<li><strong>Methods honesty</strong> — Documented device heterogeneity, signaling UX, remote participant management, and emerging custom feedback/intervention hooks.</li>
-</ul>""",
-            ),
-            (
-                "Outcome",
-                """<p>Presented at the 10th International Conference on Occupational Stress and Health (Los Angeles), the work positioned smartphone ESM as a practical research infrastructure—bridging academic method and real-world deployment constraints.</p>
-<p class="callout">This methods foundation threads through later industry work: measurement in context, event-tied capture, and research instruments that survive contact with real users.</p>""",
+                """<p>Cross-sell acquisitions doubled within 90 days, with a projected $500M LTV impact, 14% MAU lift, $5M+ incremental monthly revenue, and seven-figure annual support-cost savings. The framework was adopted as the standardized research playbook company-wide.</p>
+<p class="callout">Research operated as a growth engine—not a reporting function.</p>""",
             ),
         ],
     },
@@ -391,7 +236,7 @@ def write_index():
       <div class="wrap">
         <div class="section-head reveal">
           <h2>Selected work</h2>
-          <p>Case studies from Robinhood prediction markets, FanDuel sportsbook research, NFL digital products, and academic methods work.</p>
+          <p>Case studies from Robinhood prediction markets and FanDuel sportsbook research—behavioral segmentation, AI-orchestrated prototyping, research ops automation, and continuous CX measurement.</p>
         </div>
         <div class="case-list">
 {chr(10).join(rows)}
@@ -406,7 +251,7 @@ def write_index():
             <h2>About</h2>
           </div>
           <p>I’m an applied cognitive and social psychologist turned UX Engineer and Quantitative UX Researcher. I specialize in bridging the gap between human behavior, advanced data analytics, and interactive design. My academic background—including graduate research focused on human motivation, persuasion, and systemic behavior change—serves as the foundation for how I approach product strategy.</p>
-          <p>After starting my career in human factors and FDA-regulated medical device research, I stepped into the digital product space. I spent my early UX career at the NFL optimizing the Fantasy mobile app, and later spent four years at FanDuel helping build and scale one of the most successful sportsbooks on the market. Most recently, I joined Robinhood to focus on first-time user experience, customer acquisition, and retention within the rapid-fire world of event contracts and prediction markets.</p>
+          <p>After starting my career in human factors and FDA-regulated medical device research, I stepped into the digital product space. I spent my early UX career at the NFL optimizing the Fantasy mobile app, and later spent four years at FanDuel helping build and scale one of the most successful sportsbooks on the market—including a quarterly product benchmarking program that turned SUPR-Q, Ease of Use, loyalty, and Responsible Gaming into a shared executive scorecard. Most recently, I joined Robinhood to focus on first-time user experience, customer acquisition, and retention within the rapid-fire world of event contracts and prediction markets.</p>
           <p>Today, I operate as a highly technical hybrid. By integrating generative AI and automated workflows into my practice, I’ve expanded my reach across product, design, engineering, and data science. Whether I am orchestrating end-to-end research operations, deploying automated quantitative surveys, or rapidly generating interactive, engineering-ready prototypes mid-interview, I focus on one thing: translating complex human behavior into massive product momentum.</p>
         </div>
         <div class="reveal">
