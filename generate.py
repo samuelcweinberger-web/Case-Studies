@@ -754,10 +754,15 @@ def write_case(case, index):
         )
         video_html = f"""
       <div class="case-video reveal">
-        <video controls playsinline preload="metadata">
-          <source src="../media/{v['src']}" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        <div class="phone-frame" aria-hidden="false">
+          <div class="phone-notch" aria-hidden="true"></div>
+          <div class="phone-screen">
+            <video controls playsinline preload="metadata" poster="">
+              <source src="../media/{v['src']}" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
         {caption_html}
       </div>"""
 

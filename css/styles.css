@@ -965,27 +965,74 @@ body.brand-nfl .prose .callout {
 }
 
 .case-video {
-  overflow: hidden;
-  background: #000;
-  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.5rem 0 0.25rem;
+  background: transparent;
+  border: none;
+  overflow: visible;
 }
 
-.case-video video {
+.phone-frame {
+  position: relative;
+  width: min(100%, 280px);
+  padding: 0.55rem;
+  border-radius: 2.15rem;
+  background: linear-gradient(160deg, #3a3a3e 0%, #1a1a1c 45%, #0d0d0f 100%);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 18px 50px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.phone-notch {
+  position: absolute;
+  top: 0.85rem;
+  left: 50%;
+  z-index: 2;
+  width: 5.5rem;
+  height: 1.05rem;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: #0a0a0a;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+  pointer-events: none;
+}
+
+.phone-screen {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.65rem;
+  background: #000;
+  aspect-ratio: 332 / 720;
+}
+
+.phone-screen video {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
-  aspect-ratio: 16 / 9;
+  object-fit: cover;
   background: #000;
 }
 
 .case-video-caption {
   margin: 0;
-  padding: 0.75rem 1rem;
+  max-width: 36rem;
+  padding: 0;
+  text-align: center;
   color: var(--muted);
   font-size: 0.88rem;
   line-height: 1.45;
-  border-top: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.03);
+  border: none;
+  background: transparent;
+}
+
+@media (max-width: 560px) {
+  .phone-frame {
+    width: min(100%, 240px);
+  }
 }
 
 .case-board-body {
