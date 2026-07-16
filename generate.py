@@ -6,10 +6,26 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 CASES_DIR = ROOT / "cases"
 
+BRANDS = {
+    "robinhood": {
+        "label": "Robinhood",
+        "product": "Prediction Markets",
+    },
+    "fanduel": {
+        "label": "FanDuel",
+        "product": "Sportsbook & CPE",
+    },
+    "nfl": {
+        "label": "NFL",
+        "product": "Fantasy & Digital Media",
+    },
+}
+
 CASES = [
     {
         "slug": "ftux-retention",
         "num": "01",
+        "brand": "robinhood",
         "title": "FTUX Optimization & Strategic Retention",
         "short": "Behavioral segmentation and MaxDiff research that recovered $17M in monthly revenue.",
         "context": "Robinhood · Prediction Markets & Event Contracts",
@@ -48,6 +64,7 @@ CASES = [
     {
         "slug": "live-prototyping",
         "num": "02",
+        "brand": "robinhood",
         "title": "Live Prototype Interventions & UX Architecture",
         "short": "AI-orchestrated prototyping that collapsed a weeks-long design loop into a single interview.",
         "context": "Robinhood · Prediction Markets & Event Contracts",
@@ -86,6 +103,7 @@ CASES = [
     {
         "slug": "research-ops",
         "num": "03",
+        "brand": "robinhood",
         "title": "Research Ops Automation Lifecycle",
         "short": "An autonomous AI workflow that quadrupled concurrent research capacity.",
         "context": "Robinhood · Prediction Markets & Event Contracts",
@@ -121,8 +139,48 @@ CASES = [
         ],
     },
     {
-        "slug": "onboarding-deposit",
+        "slug": "acquisition-offers",
         "num": "04",
+        "brand": "fanduel",
+        "title": "Acquisition Offers & First-Bet Activation",
+        "short": "A 1×3 RCT that lifted first-bet conversion 10 points—and proved the $5 offer beat $50 on ROI and loyalty.",
+        "context": "FanDuel · Core Products & Experiences",
+        "year": "2024",
+        "summary": "A multi-factor evaluation of acquisition tactics: High-Accessibility vs High-Stakes promotions vs control, solving the Ease of Use paradox behind onboarding drop-off.",
+        "stats": [
+            ("+10 pts", "Absolute conversion lift vs control"),
+            ("20% → 30%", "Activation-to-first-bet goal"),
+            ("4×", "Lower payout cost for $5 offer vs $50"),
+            ("N=1,050", "Randomized controlled trial"),
+        ],
+        "sections": [
+            (
+                "Situation",
+                """<p>Activation-to-first-bet was the #1 leading indicator for long-term retention and LTV. Onboarding conversion sat below target—and a 15% trust deficit looked like a technical problem. Surveys flipped that story: drop-offs rated Ease of Use the same as converters. The real barrier was conceptual confusion around promotional offers.</p>""",
+            ),
+            (
+                "Task",
+                """<p>Lead a cross-functional CPE strike team to raise first-bet conversion from 20% to 30%, and learn which incentive structure drives conversion without eroding loyalty—especially ahead of state launches where first impressions win market share.</p>""",
+            ),
+            (
+                "Approach",
+                """<ul>
+<li><strong>1×3 randomized controlled trial</strong> — New visitors assigned to High-Accessibility (Bet $5, Get $50), High-Stakes (Bet $50, Get $200), or control (no promo); n=350 per group (N=1,050).</li>
+<li><strong>Immediate + longitudinal measurement</strong> — Alchemer surveys after first bet (Perceived Generosity, Loyalty, Ease of Use); Amplitude-triggered repeats at 30/60/90 days; Qualtrics via Braze for drop-off reasons.</li>
+<li><strong>Statistical program</strong> — Chi-square and pairwise Z-tests (Bonferroni) for conversion; t-tests for Ease of Use; multiple regression for 90-day engagement; mixed-design ANOVA for loyalty decay.</li>
+</ul>""",
+            ),
+            (
+                "Outcome",
+                """<p>Both offers delivered a significant 10-point absolute lift over control, with no difference between $5 and $50 offers (p=0.56)—making the High-Accessibility offer the ROI winner at ~4× lower payout cost. Ease of Use did not differ between drop-offs and converters; conceptual confusion around “Win to Get” rules did. A first win predicted 90-day engagement ~4× more than bonus size, while high-stakes loyalty crashed by Day 60.</p>
+<p class="callout">Standardize Bet $5 / Get $50, redesign promo messaging for clarity, and prioritize features that create an early “First Win.”</p>""",
+            ),
+        ],
+    },
+    {
+        "slug": "onboarding-deposit",
+        "num": "05",
+        "brand": "fanduel",
         "title": "Behavioral Onboarding & Deposit Optimization",
         "short": "Trust-first KYC and wallet UX that converted 150K+ stagnant users and unlocked $12M in incremental handle.",
         "context": "FanDuel · Core Products & Experiences",
@@ -162,7 +220,8 @@ CASES = [
     },
     {
         "slug": "cx-measurement",
-        "num": "05",
+        "num": "06",
+        "brand": "fanduel",
         "title": "Continuous CX Measurement & Cross-Sell Growth",
         "short": "A real-time Hyper-Focused Lens that doubled cross-sell acquisition in 90 days.",
         "context": "FanDuel · Core Products & Experiences",
@@ -202,7 +261,8 @@ CASES = [
 ]
 
 
-def header(active=None, prefix=""):
+def header(active=None, prefix="", brand=None):
+    brand_class = f' class="brand-{brand}"' if brand else ""
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -212,7 +272,7 @@ def header(active=None, prefix=""):
   <meta name="description" content="Samuel Weinberger — applied cognitive and social psychologist turned UX Engineer and Quantitative UX Researcher. Bridging human behavior, analytics, and interactive design." />
   <link rel="stylesheet" href="{prefix}css/styles.css" />
 </head>
-<body>
+<body{brand_class}>
   <header class="site-header">
     <div class="wrap">
       <a class="brand" href="{prefix}index.html">Sam Weinberger</a>
@@ -224,6 +284,18 @@ def header(active=None, prefix=""):
     </div>
   </header>
 """
+
+
+def product_badge(brand_key, prefix=""):
+    meta = BRANDS[brand_key]
+    mark = ""
+    if brand_key == "fanduel":
+        mark = f'<img class="product-mark" src="{prefix}media/brands/fanduel-mark.png" alt="" width="22" height="22" />'
+    elif brand_key == "robinhood":
+        mark = '<span class="product-mark product-mark-rh" aria-hidden="true"></span>'
+    elif brand_key == "nfl":
+        mark = '<span class="product-mark product-mark-nfl" aria-hidden="true"></span>'
+    return f'<span class="product-badge product-{brand_key}">{mark}<span class="product-name">{meta["label"]}</span></span>'
 
 
 def footer(prefix=""):
@@ -243,10 +315,12 @@ def footer(prefix=""):
 def write_index():
     rows = []
     for c in CASES:
+        badge = product_badge(c["brand"])
         rows.append(
-            f"""    <a class="case-row reveal" href="cases/{c['slug']}.html">
+            f"""    <a class="case-row case-{c['brand']} reveal" href="cases/{c['slug']}.html">
       <div class="case-num">{c['num']}</div>
       <div>
+        {badge}
         <h3>{c['title']}</h3>
         <p>{c['short']}</p>
       </div>
@@ -276,7 +350,7 @@ def write_index():
       <div class="wrap">
         <div class="section-head reveal">
           <h2>Selected work</h2>
-          <p>Case studies from Robinhood prediction markets and FanDuel sportsbook research—FTUX retention, AI prototyping, research ops, trust-first onboarding, and continuous CX measurement.</p>
+          <p>Case studies branded by product: Robinhood prediction markets and FanDuel sportsbook / CPE research.</p>
         </div>
         <div class="case-list">
 {chr(10).join(rows)}
@@ -336,13 +410,15 @@ def write_case(case, index):
         if next_c
         else "<span></span>"
     )
+    badge = product_badge(case["brand"], prefix="../")
     html = (
-        header(active=case["title"], prefix="../")
+        header(active=case["title"], prefix="../", brand=case["brand"])
         + f"""
   <main>
     <section class="case-hero">
       <div class="wrap">
         <div class="crumb"><a href="../index.html">Case studies</a> / {case['num']}</div>
+        {badge}
         <div class="eyebrow">{case['context']} · {case['year']}</div>
         <h1>{case['title']}</h1>
         <p class="summary">{case['summary']}</p>

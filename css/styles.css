@@ -358,6 +358,129 @@ img {
   white-space: nowrap;
 }
 
+/* Product brand identity */
+.product-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.55rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.product-mark {
+  width: 1.15rem;
+  height: 1.15rem;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.product-mark-rh {
+  display: inline-block;
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 50%;
+  background: #00c805;
+  box-shadow: 0 0 0 2px rgba(0, 200, 5, 0.25);
+}
+
+.product-mark-nfl {
+  display: inline-block;
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 0.15rem;
+  background: linear-gradient(135deg, #013369 50%, #d50a0a 50%);
+}
+
+.product-robinhood .product-name { color: #00c805; }
+.product-fanduel .product-name { color: #4c9aff; }
+.product-nfl .product-name { color: #6ea8ff; }
+
+.case-row.case-robinhood:hover {
+  background: linear-gradient(90deg, rgba(0, 200, 5, 0.12), transparent 55%);
+}
+.case-row.case-robinhood .case-num { color: #00c805; }
+
+.case-row.case-fanduel:hover {
+  background: linear-gradient(90deg, rgba(76, 154, 255, 0.14), transparent 55%);
+}
+.case-row.case-fanduel .case-num { color: #4c9aff; }
+
+.case-row.case-nfl:hover {
+  background: linear-gradient(90deg, rgba(213, 10, 10, 0.12), transparent 55%);
+}
+.case-row.case-nfl .case-num { color: #d50a0a; }
+
+/* Case page brand themes */
+body.brand-robinhood {
+  --accent: #00c805;
+  --accent-dim: rgba(0, 200, 5, 0.14);
+  --glow: rgba(0, 200, 5, 0.16);
+  --bg: #000000;
+  --bg-soft: #0a0a0a;
+}
+
+body.brand-robinhood::before {
+  background:
+    radial-gradient(800px 480px at 10% -8%, rgba(0, 200, 5, 0.16), transparent 55%),
+    linear-gradient(180deg, #050505 0%, #000 45%, #000 100%);
+}
+
+body.brand-robinhood .site-header {
+  background: rgba(0, 0, 0, 0.78);
+}
+
+body.brand-robinhood .case-hero h1 {
+  letter-spacing: -0.04em;
+  font-weight: 700;
+}
+
+body.brand-fanduel {
+  --accent: #4c9aff;
+  --accent-dim: rgba(76, 154, 255, 0.16);
+  --glow: rgba(76, 154, 255, 0.2);
+  --bg: #070b14;
+  --bg-soft: #0d1422;
+}
+
+body.brand-fanduel::before {
+  background:
+    radial-gradient(900px 520px at 88% -10%, rgba(76, 154, 255, 0.18), transparent 55%),
+    radial-gradient(600px 400px at 8% 20%, rgba(20, 40, 90, 0.45), transparent 50%),
+    linear-gradient(180deg, #0a1220 0%, #070b14 50%, #05080f 100%);
+}
+
+body.brand-fanduel .site-header {
+  background: rgba(7, 11, 20, 0.82);
+}
+
+body.brand-fanduel .case-hero {
+  border-bottom: 1px solid rgba(76, 154, 255, 0.12);
+}
+
+body.brand-nfl {
+  --accent: #d50a0a;
+  --accent-dim: rgba(213, 10, 10, 0.14);
+  --glow: rgba(1, 51, 105, 0.35);
+  --bg: #06101c;
+  --bg-soft: #0a1828;
+}
+
+body.brand-nfl::before {
+  background:
+    radial-gradient(700px 420px at 15% -5%, rgba(1, 51, 105, 0.55), transparent 55%),
+    radial-gradient(500px 360px at 90% 10%, rgba(213, 10, 10, 0.18), transparent 50%),
+    linear-gradient(180deg, #0a1830 0%, #06101c 50%, #040a12 100%);
+}
+
+body.brand-robinhood .prose .callout,
+body.brand-fanduel .prose .callout,
+body.brand-nfl .prose .callout {
+  background: var(--accent-dim);
+}
+
 .about-grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
