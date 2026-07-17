@@ -182,8 +182,96 @@ CASES = [
         ],
     },
     {
-        "slug": "acquisition-offers",
+        "slug": "scaled-benchmarking",
         "num": "04",
+        "brand": "fanduel",
+        "title": "Scaled Product Benchmarking, Regulatory Strategy, and Core Experience Growth",
+        "short": "Built FanDuel’s cross-product benchmarking engine—surveying 4M+ customers, lifting RG compliance 78%→92%, and scaling research from 2 to 32.",
+        "context": "FanDuel · Core Products & Experiences",
+        "year": "2021–2025",
+        "summary": "I designed and scaled a standardized benchmarking program across FanDuel’s fragmented product ecosystem—unifying measurement, engineering event-triggered telemetry, and partnering with regulators on Responsible Gaming standards—while growing research capacity and proving that every 5% RG compliance gain protects thousands of customers and families from real-world harm.",
+        "stats": [
+            ("78%→92%", "RG compliance in 2 years"),
+            ("4M+", "Customers surveyed"),
+            ("$220M", "Attributable revenue"),
+            ("2→32", "UX researchers globally"),
+        ],
+        "charts": [
+            {
+                "src": "benchmarking/q2-2023-metrics-dashboard.jpg",
+                "alt": "Q2 2023 product benchmarking metrics dashboard with SUPR-Q, Ease of Use, RG, and Loyalty scores",
+                "caption": "Q2 2023 scorecard—SUPR-Q, Ease of Use, Responsible Gaming, and Loyalty tracked quarter-over-quarter.",
+            },
+            {
+                "src": "benchmarking/q2-2023-exec-summary.jpg",
+                "alt": "Q2 2023 all-product executive summary from FanDuel product benchmarking",
+                "caption": "Executive synthesis across Sportsbook, TVG, Casino, DFS, and Racing.",
+            },
+            {
+                "src": "benchmarking/q2-2023-all-products-a.jpg",
+                "alt": "Q2 2023 all-products benchmarking results charts",
+                "caption": "Cross-product results view used in quarterly leadership reviews.",
+            },
+            {
+                "src": "benchmarking/q1-2022-rg-scores.jpg",
+                "alt": "Responsible Gaming score comparison across FanDuel products and competitors",
+                "caption": "Responsible Gaming scores across FanDuel products and competitors—foundation for regulatory strategy.",
+            },
+            {
+                "src": "benchmarking/q1-2022-supr-q-trend.jpg",
+                "alt": "SUPR-Q trend chart across FanDuel products from Q4 2021 to Q1 2022",
+                "caption": "SUPR-Q trends across verticals—baseline tracking that made design outcomes comparable.",
+            },
+            {
+                "src": "benchmarking/q1-2022-competitor-supr.jpg",
+                "alt": "Competitor SUPR-Q comparison chart for FanDuel vs DraftKings and others",
+                "caption": "Competitive SUPR-Q benchmarking against DraftKings, BetMGM, TwinSpires, and others.",
+            },
+        ],
+        "sections": [
+            (
+                "Situation",
+                """<p>When I joined FanDuel, the company’s product ecosystem was highly fragmented across five individual apps. The development teams spanned the globe—from Los Angeles (TVG and Racing) to Atlanta and New York (Fantasy and Sportsbook) and the UK (FanDuel Casino). Product managers and designers had no baseline framework to identify, measure, or track the outcomes of their product decisions.</p>
+<p>With only one other researcher on the team, we had to establish a baseline UX methodology to understand, retain, and grow a user base of 1.1 million active users across all four major verticals.</p>""",
+            ),
+            (
+                "Task",
+                """<p>Design and scale a standardized benchmarking program across all FanDuel products and their main competitors to track how design decisions impact user experience, while scaling the research team to meet the demands of rapid global expansion.</p>""",
+            ),
+            (
+                "Approach",
+                """<p>To build a unified, data-driven understanding of our customer experience, I took a multi-phased, highly cross-functional approach:</p>
+<ul>
+<li><strong>Standardized Journey Benchmarking</strong> — Because features differed wildly across Sportsbook, Racing, Casino, and Fantasy, I standardized a continuous tracking methodology across the core journeys common to all users: Onboarding, Promotional Engagement, Depositing/Withdrawing Funds, Bet Selection/Placement, In-Play (Live) Betting, and Outcome Tracking.</li>
+<li><strong>Custom Event-Triggered Telemetry</strong> — To maintain methodological consistency across quarterly reports, I navigated a shifting tech stack of various survey and analytics tools. I eventually architected and engineered custom, event-triggered in-app surveys and behavioral trackers. This allowed me to capture real-time user sentiments the exact moment a high-friction action occurred, providing immediate qualitative context to raw behavioral data.</li>
+<li><strong>Responsible Gaming (RG) &amp; Regulatory Standards</strong> — I prioritized the development of robust Responsible Gaming features. I worked directly with state gaming regulators to establish the first industry-wide standard for assessing a customer’s ability to bet responsibly. Recognizing that at-risk individuals would simply defect to other apps, I partnered with competitors (including DraftKings) to build a collaborative industry framework that prevents self-excluded or high-risk users from opening accounts across competing platforms.</li>
+<li><strong>Anti-Fraud &amp; Compliance Collaboration</strong> — I supported efforts of Gaming Regulators and Federal Agents, collaborating directly with backend engineers to build real-time event triggers to identify suspicious account behavior, successfully preventing money laundering and fraud.</li>
+<li><strong>Founding the Core Products Team</strong> — Based on the success of my quarterly benchmarking reports, I established and led the Core Products and Experiences team—a cross-functional unit consisting of UX/market researchers, data scientists, engineers, and legal/compliance stakeholders.</li>
+<li><strong>Scaling Research Operations</strong> — I personally grew and mentored a direct team of 8, while scaling the broader UX Research organization from 2 to 32 researchers globally.</li>
+</ul>""",
+            ),
+            (
+                "Outcome",
+                """<p>Over my four-year tenure running this benchmarking program, I surveyed over 4 million customers, establishing myself as the definitive subject matter expert on the FanDuel user experience.</p>
+<p><strong>Responsible Gaming &amp; Human Impact (Key Achievement)</strong></p>
+<ul>
+<li><strong>Double-Digit Compliance Gain</strong> — Driven directly by my design recommendations and strategic frameworks, we improved overall Responsible Gaming compliance from 78% to 92% in just two years.</li>
+<li><strong>Direct Harm Mitigation</strong> — I conducted a groundbreaking study proving that every 5% increase in RG compliance directly prevents significant bodily and financial harm to 6,000 to 7,000 customers, and indirectly protects roughly 55,000 individuals (including spouses, children, and family members) from the cascading effects of problem gambling.</li>
+</ul>
+<p><strong>Growth, Revenue &amp; Operational Scale</strong></p>
+<ul>
+<li><strong>Massive User Growth</strong> — Scaled the active user base from 1.1 million to over 30 million users.</li>
+<li><strong>Direct Revenue Generation</strong> — Generated $220M in attributable revenue by optimizing promotional engagement and messaging through large-scale A/B testing.</li>
+<li><strong>High-Value Cross-Selling</strong> — Guided the UX strategy to cross-sell over 14 million users from Fantasy and Casino into the Sportsbook platform, unlocking an estimated $500M in Lifetime Value (LTV).</li>
+<li><strong>Engagement &amp; Retention</strong> — Drove a 30% increase in Monthly Active Users (MAU) while maintaining a consistent market lead over key competitors.</li>
+<li><strong>Support Cost Reduction</strong> — Reduced customer support contact rates and operational costs by $1.2 million by redesigning high-friction financial journeys (including integrating seamless ACH wallet systems).</li>
+</ul>""",
+            ),
+        ],
+    },
+    {
+        "slug": "acquisition-offers",
+        "num": "05",
         "brand": "fanduel",
         "title": "Acquisition Offers & First-Bet Activation",
         "short": "A 1×3 RCT that lifted first-bet conversion 10 points—and proved the $5 offer beat $50 on ROI and loyalty.",
@@ -222,7 +310,7 @@ CASES = [
     },
     {
         "slug": "onboarding-deposit",
-        "num": "05",
+        "num": "06",
         "brand": "fanduel",
         "title": "Optimizing the Onboarding Experience",
         "short": "Mixed-methods onboarding and deposit research that lifted deposit success 22% and cut related support tickets 18%.",
@@ -262,7 +350,7 @@ CASES = [
     },
     {
         "slug": "responsible-gaming",
-        "num": "06",
+        "num": "07",
         "brand": "fanduel",
         "title": "Building Responsible Gaming Metrics",
         "short": "A regulator-validated Responsible Gaming Index deployed across 23M+ accounts—bridging behavioral science, compliance, and trust.",
@@ -302,7 +390,7 @@ CASES = [
     },
     {
         "slug": "cx-measurement",
-        "num": "07",
+        "num": "08",
         "brand": "fanduel",
         "title": "Continuous CX Measurement & Cross-Sell Growth",
         "short": "A real-time Hyper-Focused Lens that doubled cross-sell acquisition in 90 days.",
@@ -337,46 +425,6 @@ CASES = [
                 "Outcome",
                 """<p>Doubled annual cross-sell acquisitions within 90 days, with a 14% MAU lift, $5M+ incremental monthly revenue, and a projected $500M LTV impact. Support-per-user metrics fell enough to drive estimated seven-figure annual customer-operations savings.</p>
 <p class="callout">Formally adopted as the Standardized Research Playbook for future product onboarding and promotional launches.</p>""",
-            ),
-        ],
-    },
-    {
-        "slug": "product-benchmarking",
-        "num": "08",
-        "brand": "fanduel",
-        "title": "Product Benchmarking Program",
-        "short": "A quarterly UX scorecard across Ease of Use, Loyalty, and Responsible Gaming that became a core 2023 OKR input.",
-        "context": "FanDuel · Core Products & Experiences",
-        "year": "2022",
-        "summary": "Replace anecdotal UX reporting with a standardized, executive-ready benchmark across products—and tie improvements to loyalty, retention, and safe play.",
-        "stats": [
-            ("+4 pts", "Ease of Use improvement"),
-            ("+3 pts", "Responsible Gaming score"),
-            ("−30%", "Support tickets"),
-            ("7%", "Active-user lift with +10 Ease"),
-        ],
-        "sections": [
-            (
-                "Situation",
-                """<p>Product teams operated in silos without a unified UX scorecard. Leadership needed comparable, metric-based evidence to guide investment—and Responsible Gaming goals required proof that design supported safe play. Anecdotal reporting could not keep pace.</p>""",
-            ),
-            (
-                "Task",
-                """<p>Design and run a quarterly Product Benchmarking Program measuring Ease of Use, Loyalty (Net Intention Score), and Responsible Gaming sentiment—giving executives a single view of UX health across verticals.</p>""",
-            ),
-            (
-                "Approach",
-                """<ul>
-<li><strong>Metric framework</strong> — Standardized Ease of Use, Loyalty (NIS), and RG sentiment so products could be compared over time and against strategic goals.</li>
-<li><strong>Cross-functional alignment</strong> — Brought Product, Design, and Compliance onto shared success measures instead of team-local narratives.</li>
-<li><strong>Executive synthesis</strong> — Translated quarterly waves into actionable priorities: wallet clarity, promotion redesign, and bet-tracking reliability.</li>
-<li><strong>Behavioral linkage</strong> — Connected comprehension of results to higher responsible play and retention—not just satisfaction scores in isolation.</li>
-</ul>""",
-            ),
-            (
-                "Outcome",
-                """<p>Q4 delivered measurable movement: Ease of Use +4 pts, Responsible Gaming +3 pts, and ~30% fewer support tickets. A 10-point Ease lift correlated with a 7% rise in active users. Benchmarking became a core input to 2023 OKRs and executive KPI reviews—shifting UX from qualitative feedback into business intelligence.</p>
-<p class="callout">Designed the framework, led execution and synthesis, and influenced roadmaps with data-backed insights across four verticals.</p>""",
             ),
         ],
     },
@@ -802,6 +850,26 @@ def write_case(case, index):
         {caption_html}
       </div>"""
 
+    charts_html = ""
+    if case.get("charts"):
+        items = []
+        for c in case["charts"]:
+            cap = c.get("caption", "")
+            cap_html = f'<figcaption>{cap}</figcaption>' if cap else ""
+            items.append(
+                f"""        <figure class="chart-card">
+          <img src="../media/{c['src']}" alt="{c.get('alt', '')}" loading="lazy" />
+          {cap_html}
+        </figure>"""
+            )
+        charts_html = f"""
+      <section class="chart-gallery reveal">
+        <h2>Benchmarking artifacts</h2>
+        <div class="chart-grid">
+{chr(10).join(items)}
+        </div>
+      </section>"""
+
     star_cells = []
     for title, body in case["sections"]:
         star_cells.append(
@@ -840,6 +908,7 @@ def write_case(case, index):
       </header>
 {stats_html}
 {media_html}
+{charts_html}
       <div class="case-board-body">
         <section class="exec-summary">
           <h2>Executive summary</h2>

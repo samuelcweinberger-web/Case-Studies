@@ -1038,6 +1038,56 @@ body.brand-nfl .prose .callout {
   background: transparent;
 }
 
+.chart-gallery {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.02);
+  padding: 1rem 1.1rem 1.15rem;
+}
+
+.chart-gallery h2 {
+  margin: 0 0 0.85rem;
+  font-family: var(--display);
+  font-size: 0.95rem;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.chart-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.chart-card {
+  margin: 0;
+  background: #fff;
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.chart-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  vertical-align: top;
+}
+
+.chart-card figcaption {
+  padding: 0.55rem 0.7rem 0.7rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.4;
+  background: rgba(0, 0, 0, 0.55);
+  color: #d5dbe3;
+}
+
+@media (max-width: 860px) {
+  .chart-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 560px) {
   .phone-frame {
     width: min(100%, 240px);
