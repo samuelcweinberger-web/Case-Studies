@@ -309,42 +309,50 @@ CASES = [
         ],
     },
     {
-        "slug": "onboarding-deposit",
+        "slug": "wallet-deposit",
         "num": "06",
         "brand": "fanduel",
-        "title": "Optimizing the Onboarding Experience",
-        "short": "Mixed-methods onboarding and deposit research that lifted deposit success 22% and cut related support tickets 18%.",
+        "title": "Wallet Deposit Optimization",
+        "short": "Converted 150K+ stagnant sign-ups by redesigning wallet setup—generating $8M in Q1 handle and cutting support tickets 30%.",
         "context": "FanDuel · Core Products & Experiences",
         "year": "2025",
-        "summary": "Reduce friction in onboarding and first-time deposits by identifying usability barriers, trust gaps, and language confusion in wallet setup.",
+        "summary": "I used Amplitude to identify a 65% drop-off at Wallet/Banking Setup after seamless registration. Through interviews, moderated usability, and a 5,000-respondent MaxDiff, I rebuilt the flow with progressive disclosure and compliance framing—converting stagnant accounts into depositing players.",
         "stats": [
-            ("+22%", "Successful deposits"),
-            ("−18%", "Onboarding/wallet support tickets"),
-            ("83%", "Ease of Use (+4% QoQ)"),
             ("150K+", "Stagnant users converted"),
+            ("$8M", "Handle generated in Q1"),
+            ("−30%", "Onboarding support tickets"),
+            ("65%", "Pre-fix drop-off at wallet setup"),
         ],
         "sections": [
             (
                 "Situation",
-                """<p>Users completed registration but abandoned before setting up banking or making a First-Time Deposit. Amplitude showed registration was seamless, yet wallet/banking setup blocked a large share of new sign-ups. SUPR-Q and Ease of Use needed to move while promotions like “Kick of Destiny” raised excitement (+8%) but also added confusion.</p>""",
+                """<p>At the top of our registration funnel, we faced a severe operational bottleneck: hundreds of thousands of users completed the initial sign-up process but abandoned the platform completely before linking a bank account or making their First-Time Deposit (FTD).</p>
+<p>I utilized Amplitude to map this registration-to-deposit gap and discovered that while the initial registration steps were completely seamless, the Wallet/Banking Setup screen was a hard barrier for 65% of all new sign-ups.</p>""",
             ),
             (
                 "Task",
-                """<p>Identify pain points in sign-up, wallet setup, and trust barriers—then improve completion rates and lower support contact volume without sacrificing compliance requirements.</p>""",
+                """<p>Determine whether this drop-off was driven by a lack of user motivation or specific trust barriers during financial onboarding, and systematically redesign the flow to convert stagnant accounts into active, depositing players.</p>""",
             ),
             (
                 "Approach",
-                """<ul>
-<li><strong>Mixed methods</strong> — Behavioral analytics, remote moderated usability, competitive benchmarking, and triangulation across deposit-flow metrics, app logs, and qualitative sessions.</li>
-<li><strong>Language &amp; trust identification</strong> — Users struggled differentiating “funding” vs “depositing”; missing verification reassurance cues lowered first-time trust; early-stage overload hindered completion.</li>
-<li><strong>Progressive disclosure</strong> — Re-sequenced low-stakes data before sensitive wallet fields; partnered with content design on micro-explanations for why banking data was required.</li>
-<li><strong>Validation at scale</strong> — Moderated sessions observed hesitation at sensitive fields; MaxDiff messaging tests identified phrasing that maximized confidence sharing financial details.</li>
+                """<p>To identify and dismantle this high-friction wall, I designed and led a triangulated, mixed-methods research strategy:</p>
+<ul>
+<li><strong>In-Depth Interviews (Evaluating the “Why”)</strong> — I conducted 1-on-1 interviews with churning users. The research revealed a profound mental model disconnect: while users were comfortable sharing standard identity info, they hit a hard wall when asked for routing numbers and Social Security Numbers (SSNs). They expressed deep confusion around ACH payments and simply did not understand why a sports platform required this level of sensitive financial data.</li>
+<li><strong>Moderated Usability Sessions</strong> — I ran 15 moderated sessions to physically observe the exact micro-moments of hesitation, cognitive load, and friction when users encountered the routing number field.</li>
+<li><strong>MaxDiff Survey Scaling</strong> — To validate my qualitative findings at scale, I designed and deployed a MaxDiff survey to 5,000 target users to systematically test and rank which visual framing and terminology maximized user confidence when sharing sensitive financial details.</li>
+<li><strong>Progressive Disclosure &amp; Re-Sequencing</strong> — Partnering with content and product designers, I restructured the onboarding flow. I re-sequenced the experience to ask for low-stakes, high-momentum data (like email and phone number) first. By delaying the sensitive banking requests, we allowed users to build a sense of investment in their account setup first.</li>
+<li><strong>Contextual Framing &amp; Humanizing Compliance</strong> — I designed contextual micro-copy explaining why federal compliance regulations mandate this specific banking data, effectively humanizing the regulatory KYC (Know Your Customer) wall while clearly articulating the safety and encryption of ACH transfers.</li>
 </ul>""",
             ),
             (
                 "Outcome",
-                """<p>Deposit success rose 22%; onboarding/wallet support tickets fell 18%. Ease of Use reached 83% (+4% QoQ, +3% YoY) with Responsible Gaming at 86%. Trust and clarity around verification unlocked conversion of 150K+ stagnant users and an estimated $12M incremental handle in Q1 2025.</p>
-<p class="callout">Established the Trust-First Onboarding Playbook—progressive disclosure, verification transparency, and guided deposit recovery—as the company standard.</p>""",
+                """<p>By translating behavioral psychology and clear compliance framing into the UI, I turned our highest-friction funnel drop-off into a high-converting growth engine:</p>
+<ul>
+<li><strong>Stagnant User Conversion</strong> — Successfully converted over 150,000 stagnant users who had previously abandoned the funnel.</li>
+<li><strong>Significant Financial Impact</strong> — Generated an estimated $8M in handle (the sum of every single bet placed, regardless of whether those bets win or lose) in Q1 alone as a direct result of the optimized wallet setup flow.</li>
+<li><strong>Operational Efficiency</strong> — Reduced onboarding-related customer support tickets by 30% by preemptively answering compliance and security questions within the UI.</li>
+<li><strong>Institutional Legacy</strong> — I established this “Trust-First Onboarding Playbook” as the permanent design and research standard across all corporate onboarding and wallet initiatives.</li>
+</ul>""",
             ),
         ],
     },
