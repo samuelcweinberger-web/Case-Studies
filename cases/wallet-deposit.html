@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Wallet Deposit Optimization — Sam Weinberger</title>
+  <title>Trust-First Wallet &amp; Deposit Onboarding — Sam Weinberger</title>
   <meta name="description" content="Samuel Weinberger — applied cognitive and social psychologist turned UX Engineer and Quantitative UX Researcher. Bridging human behavior, analytics, and interactive design." />
   <link rel="stylesheet" href="../css/styles.css" />
 </head>
@@ -20,79 +20,93 @@
     </div>
   </header>
 
-  <main class="case-board">
-    <div class="wrap case-board-inner">
-      <header class="case-board-head">
-        <div class="case-board-meta">
-          <div class="crumb"><a href="../case-studies.html">Case studies</a> / 06</div>
-          <span class="product-badge product-fanduel"><img class="product-mark product-mark-fd-img" src="../media/brands/fanduel-icon.png" alt="" width="22" height="22" /><span class="product-name">FanDuel</span></span>
-          <h1>Wallet Deposit Optimization</h1>
+  <main class="case-page">
+    <header class="case-hero">
+      <div class="wrap">
+        <div class="crumb"><a href="../case-studies.html">Case studies</a> <span aria-hidden="true">/</span> 06</div>
+        <span class="product-badge product-fanduel"><span class="product-name">FanDuel</span></span>
+        <h1>Trust-First Wallet &amp; Deposit Onboarding</h1>
+        <p class="case-dek">Amplitude showed a hard wall: 65% of new sign-ups abandoned at wallet and banking setup. Interviews, moderated sessions, and a 5,000-respondent MaxDiff revealed a trust problem, not a motivation problem. Re-sequencing the flow and explaining the compliance ask converted 150,000+ stagnant accounts, drove ~$8M in Q1 handle, and cut onboarding support tickets 30%.</p>
+        <div class="case-meta-line">
+          <span>FanDuel · Core Products &amp; Experiences</span>
+          <span class="case-meta-dot" aria-hidden="true">·</span>
+          <span>2025</span>
         </div>
-        <div class="case-board-side">
-          <div class="case-meta-block">FanDuel · Core Products &amp; Experiences</div>
-          <div class="case-meta-block">2025</div>
-        </div>
-      </header>
-
-      <div class="impact-row">
-          <div class="impact-card impact-card--scale">
-            <p class="impact-metric">
-              <span class="impact-label">Previously abandoned sign-ups who completed wallet setup</span><span class="impact-sep">: </span><span class="impact-value impact-value--scale">150K+</span>
-            </p>
-          </div>
-          <div class="impact-card impact-card--revenue">
-            <p class="impact-metric">
-              <span class="impact-label">Incremental betting handle in Q1 2025</span><span class="impact-sep">: </span><span class="impact-value impact-value--revenue">$8M</span>
-            </p>
-          </div>
-          <div class="impact-card impact-card--efficiency">
-            <p class="impact-metric">
-              <span class="impact-label">Onboarding customer-support tickets</span><span class="impact-sep">: </span><span class="impact-value impact-value--efficiency">30% reduction</span>
-            </p>
-          </div>
       </div>
+    </header>
+    <div class="wrap case-body">
+
+      <section class="kpi-band reveal" aria-label="Key outcomes">
+        <div class="kpi kpi--scale">
+          <p class="kpi-value kpi-value--scale">150K+</p>
+          <p class="kpi-label">Previously abandoned sign-ups who completed wallet setup</p>
+        </div>
+        <div class="kpi kpi--revenue">
+          <p class="kpi-value kpi-value--revenue">$8M</p>
+          <p class="kpi-label">Incremental betting handle in Q1 2025</p>
+        </div>
+        <div class="kpi kpi--efficiency">
+          <p class="kpi-value kpi-value--efficiency">30% reduction</p>
+          <p class="kpi-label">Onboarding customer-support tickets</p>
+        </div>
+      </section>
 
 
-      <div class="case-board-body">
-        <section class="exec-summary">
-          <h2>Executive summary</h2>
-          <p>Following the benchmarking program, I initiated this work when analyses showed onboarding challenges were tied to banking setup and first deposit. Triangulated mixed-methods research (Amplitude funnel analysis, 15 moderated sessions, a 5,000-respondent MaxDiff survey) rebuilt the KYC flow with progressive disclosure and trust framing—converting 150,000+ stagnant users, generating ~$8M in incremental handle in Q1 2025, and cutting onboarding support tickets 30%.</p>
-        </section>
-        <div class="star-grid">
-        <section class="star-card">
+      <div class="case-flow">
+      <section class="case-section reveal">
+        <div class="case-section-label">
+          <span class="case-section-num">01</span>
           <h2>Situation</h2>
-          <div class="star-body"><p>Hundreds of thousands of users completed initial sign-up but abandoned before linking a bank account or making a First-Time Deposit (FTD). Amplitude showed a hard wall at Wallet/Banking Setup for 65% of new sign-ups—even when earlier registration steps felt seamless.</p>
-<p>I initiated this project after journey work showed onboarding pain concentrated in banking/FTD. Analyses also showed that customers who onboarded and deposited successfully in the same visit placed more bets and engaged more deeply—the customers we most needed to keep and make successful.</p></div>
-        </section>
-        <section class="star-card">
-          <h2>Task</h2>
-          <div class="star-body"><p>Determine whether drop-off was lack of motivation or trust barriers in financial onboarding—and redesign the KYC flow so stagnant accounts become depositing, engaged players. Explicitly connect onboarding, acquisition, and first-time deposit as one continuous experience.</p></div>
-        </section>
-        <section class="star-card">
-          <h2>Approach</h2>
-          <div class="star-body"><ul>
-<li><strong>Triangulated mixed methods</strong> — Amplitude funnel analysis, 15 moderated sessions, and a 5,000-respondent MaxDiff survey to diagnose trust and comprehension barriers at wallet/banking setup.</li>
-<li><strong>In-depth interviews</strong> — Churning users hit a mental-model wall at routing numbers and SSNs; ACH felt opaque, and they did not understand why a sports platform needed that level of financial data.</li>
-<li><strong>Progressive disclosure &amp; re-sequencing</strong> — Low-stakes data first (email, phone); delay banking until users had momentum.</li>
-<li><strong>Trust framing for KYC</strong> — Micro-copy explaining why compliance requires banking data, and how ACH transfers are protected—humanizing the ask without softening regulatory requirements.</li>
-</ul></div>
-        </section>
-        <section class="star-card">
-          <h2>Outcome</h2>
-          <div class="star-body"><ul>
-<li><strong>Stagnant user conversion</strong> — 150,000+ previously abandoned accounts converted.</li>
-<li><strong>Handle</strong> — Generated ~$8M in incremental handle in Q1 2025 from the optimized wallet setup flow.</li>
-<li><strong>Customer support</strong> — About a 30% reduction in onboarding-related customer-support tickets by answering compliance and security questions in-product.</li>
-<li><strong>Playbook</strong> — “Trust-First Onboarding” adopted as the standard for corporate onboarding and wallet initiatives.</li>
-</ul></div>
-        </section>
         </div>
+        <div class="case-section-body"><p>Hundreds of thousands of users finished sign-up, then vanished before linking a bank account or making a first-time deposit. Amplitude showed a hard wall at Wallet/Banking Setup for 65% of new sign-ups—even when every earlier registration step felt seamless.</p>
+<p>I initiated this project after journey work localized onboarding pain to banking and first deposit. The same analyses showed that customers who deposit in their first visit go on to bet and engage the most—exactly the customers we were losing.</p></div>
+      </section>
+      <section class="case-section reveal">
+        <div class="case-section-label">
+          <span class="case-section-num">02</span>
+          <h2>Task</h2>
+        </div>
+        <div class="case-section-body"><p>Determine whether the drop-off was a motivation problem or a trust problem—then redesign the KYC flow so stagnant accounts become depositing, engaged players, treating onboarding, acquisition, and first deposit as one continuous experience.</p></div>
+      </section>
+      <section class="case-section reveal">
+        <div class="case-section-label">
+          <span class="case-section-num">03</span>
+          <h2>Approach</h2>
+        </div>
+        <div class="case-section-body"><ul>
+<li><strong>Triangulated mixed methods</strong> — Amplitude funnel analysis, 15 moderated usability sessions, and a 5,000-respondent MaxDiff survey isolated where—and why—trust broke down.</li>
+<li><strong>The mental-model wall</strong> — Interviews showed churning users hit a wall at routing numbers and SSNs. ACH felt opaque, and nobody understood why a sports platform needed bank-grade financial data.</li>
+<li><strong>Progressive disclosure &amp; re-sequencing</strong> — Low-stakes information first (email, phone); banking delayed until users had momentum in the product.</li>
+<li><strong>Trust-framed KYC</strong> — Micro-copy explaining why compliance requires banking data and how ACH transfers are protected—humanizing the ask without softening the regulatory requirements.</li>
+</ul></div>
+      </section>
+      <aside class="case-insight reveal">
+        <p>“Users weren’t unmotivated—they were being asked for a routing number before anyone explained why.”</p>
+      </aside>
+      <section class="case-section reveal">
+        <div class="case-section-label">
+          <span class="case-section-num">04</span>
+          <h2>Outcome</h2>
+        </div>
+        <div class="case-section-body"><ul>
+<li><strong>Stagnant-user conversion</strong> — 150,000+ previously abandoned accounts completed wallet setup and converted.</li>
+<li><strong>Handle</strong> — The optimized flow generated ~$8M in incremental betting handle in Q1 2025.</li>
+<li><strong>Support load</strong> — Onboarding-related support tickets fell about 30% because compliance and security questions were answered in-product.</li>
+<li><strong>Playbook</strong> — “Trust-First Onboarding” was adopted as the standard for corporate onboarding and wallet initiatives.</li>
+</ul></div>
+      </section>
       </div>
 
-      <div class="pager">
-        <a href="acquisition-offers.html">← Previous Case Study</a>
-        <a href="cx-measurement.html">Next Case Study →</a>
-      </div>
+      <nav class="pager" aria-label="Case study pagination">
+        <a class="pager-link pager-prev" href="acquisition-offers.html">
+          <span class="pager-kicker">← Previous</span>
+          <span class="pager-title">Acquisition Offers &amp; First-Bet Activation</span>
+        </a>
+        <a class="pager-link pager-next" href="cx-measurement.html">
+          <span class="pager-kicker">Next →</span>
+          <span class="pager-title">Doubling Cross-Sell Across FanDuel Products</span>
+        </a>
+      </nav>
     </div>
   </main>
 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>High-Velocity Usability Testing of a Prediction Market Educational Module — Sam Weinberger</title>
+  <title>Validating a Prediction-Markets Education Module in 48 Hours — Sam Weinberger</title>
   <meta name="description" content="Samuel Weinberger — applied cognitive and social psychologist turned UX Engineer and Quantitative UX Researcher. Bridging human behavior, analytics, and interactive design." />
   <link rel="stylesheet" href="../css/styles.css" />
 </head>
@@ -20,102 +20,97 @@
     </div>
   </header>
 
-  <main class="case-board">
-    <div class="wrap case-board-inner">
-      <header class="case-board-head">
-        <div class="case-board-meta">
-          <div class="crumb"><a href="../case-studies.html">Case studies</a> / 01</div>
-          <span class="product-badge product-robinhood"><img class="product-mark product-mark-rh-img" src="../media/brands/robinhood-icon.png" alt="" width="22" height="22" /><span class="product-name">Robinhood</span></span>
-          <h1>High-Velocity Usability Testing of a Prediction Market Educational Module</h1>
+  <main class="case-page">
+    <header class="case-hero">
+      <div class="wrap">
+        <div class="crumb"><a href="../case-studies.html">Case studies</a> <span aria-hidden="true">/</span> 01</div>
+        <span class="product-badge product-robinhood"><span class="product-name">Robinhood</span></span>
+        <h1>Validating a Prediction-Markets Education Module in 48 Hours</h1>
+        <p class="case-dek">A complex education module for event contracts had to be validated one week before the World Cup—with only static images to test. I ran adaptive AI-moderated sessions with 100 participants, synthesized findings within 24 hours, and shipped design changes that lifted trade rates 15% among module completers.</p>
+        <div class="case-meta-line">
+          <span>Robinhood · Prediction Markets & Event Contracts</span>
+          <span class="case-meta-dot" aria-hidden="true">·</span>
+          <span>2026</span>
         </div>
-        <div class="case-board-side">
-          <div class="case-meta-block">Robinhood · Prediction Markets & Event Contracts</div>
-          <div class="case-meta-block">2026</div>
-        </div>
-      </header>
-
-      <div class="impact-row">
-          <div class="impact-card impact-card--efficiency">
-            <p class="impact-metric">
-              <span class="impact-label">End-to-end research cycle time</span><span class="impact-sep">: </span><span class="impact-value impact-value--efficiency">Under 48 hrs</span>
-            </p>
-          </div>
-          <div class="impact-card impact-card--conversion">
-            <p class="impact-metric">
-              <span class="impact-label">Event-contract traders who completed the module</span><span class="impact-sep">: </span><span class="impact-value impact-value--conversion">40%</span>
-            </p>
-          </div>
-          <div class="impact-card impact-card--conversion">
-            <p class="impact-metric">
-              <span class="impact-label">Trade rate vs. users who skipped the module</span><span class="impact-sep">: </span><span class="impact-value impact-value--conversion">15% increase</span>
-            </p>
-          </div>
       </div>
+    </header>
+    <div class="wrap case-body">
 
-      <div class="case-video reveal">
-        <div class="phone-frame">
-          <div class="phone-notch" aria-hidden="true"></div>
-          <div class="phone-screen">
-            <video controls playsinline preload="metadata">
-              <source src="../media/educational-module.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
+      <section class="kpi-band reveal" aria-label="Key outcomes">
+        <div class="kpi kpi--efficiency">
+          <p class="kpi-value kpi-value--efficiency">Under 48 hrs</p>
+          <p class="kpi-label">End-to-end research cycle time</p>
         </div>
-        <p class="case-video-caption">Walkthrough of the Listen Labs study setup—recruitment, AI-moderated sessions on static stimuli, and synthesis workflow.</p>
-      </div>
+        <div class="kpi kpi--conversion">
+          <p class="kpi-value kpi-value--conversion">40%</p>
+          <p class="kpi-label">Event-contract traders who completed the module</p>
+        </div>
+        <div class="kpi kpi--conversion">
+          <p class="kpi-value kpi-value--conversion">15% increase</p>
+          <p class="kpi-label">Trade rate vs. users who skipped the module</p>
+        </div>
+      </section>
 
-      <div class="case-board-body">
-        <section class="exec-summary">
-          <h2>Executive summary</h2>
-          <p>One week before launch, I usability-tested a complex educational module for trading event contracts using only static images. I chose Listen Labs for adaptive AI moderation and multi-segment sourcing, delivered large-sample qualitative validation in under 48 hours, and drove design changes that boosted trade conversion among module completers.</p>
-        </section>
-        <div class="star-grid">
-        <section class="star-card">
+
+      <div class="case-flow">
+      <section class="case-section reveal">
+        <div class="case-section-label">
+          <span class="case-section-num">01</span>
           <h2>Situation</h2>
-          <div class="star-body"><p>One week before launch, a new educational module designed to educate new customers about trading event contracts needed to be tested. The module consisted of complex concepts that typically require a human explanation. Stakeholders needed a large sample size to validate it before the start of the World Cup. The target audience included both net-new customers and existing brokerage/crypto users.</p>
-<p>Testing had to be done using static images instead of an interactive prototype, with less than a week to complete the study.</p></div>
-        </section>
-        <section class="star-card">
-          <h2>Task</h2>
-          <div class="star-body"><p>Usability test the efficacy of the module to understand how to tailor content to motivate different types of users. KPIs included:</p>
-<ul>
-<li>Length of time it takes.</li>
-<li>How effective it is at educating customers.</li>
-<li>Whether it prepares them to trade event contracts.</li>
-</ul></div>
-        </section>
-        <section class="star-card">
-          <h2>Approach</h2>
-          <div class="star-body"><p>To solve the constraint of having only static images under a one-week deadline, I selected Listen Labs. I chose this platform specifically for its ability to scale qualitative depth through automated, adaptive AI moderation and rapid, multi-segment participant sourcing.</p>
-<p>I executed the study through the following steps:</p>
-<ul>
-<li><strong>Targeted Recruitment</strong> — I recruited 50 existing customers internally and leveraged the platform’s integrated panel sourcing to instantly recruit 50 potential customers from a third-party panel.</li>
-<li><strong>Custom AI Training</strong> — I actively trained the automated AI interviewers to master and explain the complex trading concepts, allowing them to act as the virtual “human-in-the-loop” required to guide users through the material.</li>
-<li><strong>Stimuli Testing &amp; Adaptive Moderation</strong> — I uploaded the static images into the platform. Instead of using a rigid, static script, the AI interviewers walked all 100 participants through the images simultaneously, dynamically pivoting with custom follow-up questions based on each participant’s individual responses to test comprehension.</li>
-<li><strong>Enterprise LLM Synthesis</strong> — I utilized our enterprise LLM to automatically analyze and cluster the qualitative feedback, mapping usability barriers and comprehension metrics within 24 hours.</li>
-<li><strong>Design Collaboration</strong> — I worked directly with product designers, using these synthesized findings to rapidly adjust visual elements and tailor examples before the module was shipped.</li>
-</ul></div>
-        </section>
-        <section class="star-card">
-          <h2>Outcome</h2>
-          <div class="star-body"><ul>
-<li><strong>Operational Efficiency</strong> — I compressed a 3-to-4 week manual research cycle into less than 48 hours.</li>
-<li><strong>Stakeholder Validation</strong> — I provided the large-sample qualitative validation required to greenlight the launch on schedule.</li>
-<li><strong>Prototype Savings</strong> — I successfully evaluated conceptual comprehension using only static images, bypassing interactive prototype development.</li>
-<li><strong>Design Optimization</strong> — I answered key research questions and provided design-specific recommendations on tailoring examples and highlighting key elements to increase completion and subsequent engagement.</li>
-<li><strong>Launch Metrics (World Cup)</strong> — Over 1 billion World Cup trades were executed across 1.5 million users. 40% of those users completed the educational module. Module completers traded event contracts at a 15% increase vs. users who did not complete the module.</li>
-<li><strong>Experimental Proof (Tailoring vs. Non-Tailored)</strong> — I ran a subsequent experiment to evaluate the module’s performance on existing brokerage and crypto traders trying event contracts for the first time. The tailored modules (based on my recommendations) significantly outperformed non-tailored modules in both initial trade conversion and total trade volume.</li>
-<li><strong>Strategic Product Direction</strong> — The performance of the tailored modules proved the value of personalization to product managers and leadership. I then led the follow-up research on how to personalize the user experience to increase engagement and satisfaction in prediction markets.</li>
-</ul></div>
-        </section>
         </div>
+        <div class="case-section-body"><p>The education module had one job: teach brand-new customers how event contracts work—concepts that usually need a human to explain them. Launch was a week away, timed to the start of the World Cup, and stakeholders wanted large-sample validation before greenlighting.</p>
+<p>Two constraints made that hard. The audience spanned both net-new customers and existing brokerage/crypto users, and there was no interactive prototype to test—only static images.</p></div>
+      </section>
+      <section class="case-section reveal">
+        <div class="case-section-label">
+          <span class="case-section-num">02</span>
+          <h2>Task</h2>
+        </div>
+        <div class="case-section-body"><p>Validate the module’s efficacy before launch and learn how to tailor its content to motivate different types of users. The study had to answer three questions:</p>
+<ul>
+<li>How long does the module take?</li>
+<li>How well does it actually teach the concepts?</li>
+<li>Does it leave people prepared to trade event contracts?</li>
+</ul></div>
+      </section>
+      <section class="case-section reveal">
+        <div class="case-section-label">
+          <span class="case-section-num">03</span>
+          <h2>Approach</h2>
+        </div>
+        <div class="case-section-body"><p>Static images and a one-week deadline ruled out traditional moderation. I chose Listen Labs for its adaptive AI interviewers and rapid multi-segment sourcing, then ran the study in five moves:</p>
+<ul>
+<li><strong>Two-segment recruitment</strong> — 50 existing customers recruited internally, 50 potential customers sourced instantly from the platform’s integrated third-party panel.</li>
+<li><strong>Training the AI moderator</strong> — I trained the automated interviewers to master and explain the trading concepts themselves, so they could act as the “human in the loop” the material normally requires.</li>
+<li><strong>Adaptive sessions on static stimuli</strong> — All 100 participants moved through the images simultaneously. Instead of a rigid script, the interviewers pivoted with custom follow-ups based on each person’s answers to probe real comprehension.</li>
+<li><strong>24-hour synthesis</strong> — Our enterprise LLM clustered the qualitative feedback into usability barriers and comprehension metrics within a day.</li>
+<li><strong>Same-week design changes</strong> — I worked directly with product designers to tailor examples and highlight key elements before the module shipped.</li>
+</ul></div>
+      </section>
+      <aside class="case-insight reveal">
+        <p>“You don’t need a working prototype to test comprehension—you need an interviewer that can adapt to every answer.”</p>
+      </aside>
+      <section class="case-section reveal">
+        <div class="case-section-label">
+          <span class="case-section-num">04</span>
+          <h2>Outcome</h2>
+        </div>
+        <div class="case-section-body"><ul>
+<li><strong>Cycle time</strong> — A 3-to-4-week manual research cycle compressed to under 48 hours, delivering the large-sample validation that greenlit the launch on schedule—no interactive prototype required.</li>
+<li><strong>World Cup launch</strong> — Over 1 billion trades executed across 1.5 million users. 40% of those users completed the module, and completers traded event contracts at a 15% higher rate than users who skipped it.</li>
+<li><strong>Personalization proof</strong> — A follow-up experiment with existing brokerage and crypto traders showed the tailored modules (built on my recommendations) significantly outperformed non-tailored versions on both first-trade conversion and total trade volume.</li>
+<li><strong>What it changed</strong> — The tailoring results proved the value of personalization to product leadership, and I went on to lead the follow-up research on personalizing the prediction-markets experience.</li>
+</ul></div>
+      </section>
       </div>
 
-      <div class="pager">
+      <nav class="pager" aria-label="Case study pagination">
         <span></span>
-        <a href="onboarding-retention.html">Next Case Study →</a>
-      </div>
+        <a class="pager-link pager-next" href="onboarding-retention.html">
+          <span class="pager-kicker">Next →</span>
+          <span class="pager-title">Turning First-Trade Rejection Into Retention</span>
+        </a>
+      </nav>
     </div>
   </main>
 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cross-Sell Growth Across FanDuel Products — Sam Weinberger</title>
+  <title>Doubling Cross-Sell Across FanDuel Products — Sam Weinberger</title>
   <meta name="description" content="Samuel Weinberger — applied cognitive and social psychologist turned UX Engineer and Quantitative UX Researcher. Bridging human behavior, analytics, and interactive design." />
   <link rel="stylesheet" href="../css/styles.css" />
 </head>
@@ -20,82 +20,95 @@
     </div>
   </header>
 
-  <main class="case-board">
-    <div class="wrap case-board-inner">
-      <header class="case-board-head">
-        <div class="case-board-meta">
-          <div class="crumb"><a href="../case-studies.html">Case studies</a> / 07</div>
-          <span class="product-badge product-fanduel"><img class="product-mark product-mark-fd-img" src="../media/brands/fanduel-icon.png" alt="" width="22" height="22" /><span class="product-name">FanDuel</span></span>
-          <h1>Cross-Sell Growth Across FanDuel Products</h1>
+  <main class="case-page">
+    <header class="case-hero">
+      <div class="wrap">
+        <div class="crumb"><a href="../case-studies.html">Case studies</a> <span aria-hidden="true">/</span> 07</div>
+        <span class="product-badge product-fanduel"><span class="product-name">FanDuel</span></span>
+        <h1>Doubling Cross-Sell Across FanDuel Products</h1>
+        <p class="case-dek">Cross-sell between FanDuel products had been stuck near 10% all year. I built a continuous CX measurement layer—in-app pulse checks, competitive usability testing with 4,000 users, and custom telemetry hooks—found the choke point at payment linking, and shipped redesigned entry points that doubled cross-sell acquisitions in 90 days, lifted MAU 14%, and added $5M+ in monthly revenue. Outcome figures here are exclusive to this case.</p>
+        <div class="case-meta-line">
+          <span>FanDuel · Core Products &amp; Experiences</span>
+          <span class="case-meta-dot" aria-hidden="true">·</span>
+          <span>2025</span>
         </div>
-        <div class="case-board-side">
-          <div class="case-meta-block">FanDuel · Core Products &amp; Experiences</div>
-          <div class="case-meta-block">2025</div>
-        </div>
-      </header>
-
-      <div class="impact-row">
-          <div class="impact-card impact-card--conversion">
-            <p class="impact-metric">
-              <span class="impact-label">Cross-sell acquisitions within 90 days</span><span class="impact-sep">: </span><span class="impact-value impact-value--conversion">2× increase</span>
-            </p>
-          </div>
-          <div class="impact-card impact-card--revenue">
-            <p class="impact-metric">
-              <span class="impact-label">Projected lifetime value from the cross-sell program</span><span class="impact-sep">: </span><span class="impact-value impact-value--revenue">$500M</span>
-            </p>
-          </div>
-          <div class="impact-card impact-card--revenue">
-            <p class="impact-metric">
-              <span class="impact-label">Incremental monthly revenue from cross-sell</span><span class="impact-sep">: </span><span class="impact-value impact-value--revenue">$5M+</span>
-            </p>
-          </div>
-          <div class="impact-card impact-card--conversion">
-            <p class="impact-metric">
-              <span class="impact-label">Monthly active users</span><span class="impact-sep">: </span><span class="impact-value impact-value--conversion">14% increase</span>
-            </p>
-          </div>
       </div>
+    </header>
+    <div class="wrap case-body">
+
+      <section class="kpi-band reveal" aria-label="Key outcomes">
+        <div class="kpi kpi--conversion">
+          <p class="kpi-value kpi-value--conversion">2× increase</p>
+          <p class="kpi-label">Cross-sell acquisitions within 90 days</p>
+        </div>
+        <div class="kpi kpi--revenue">
+          <p class="kpi-value kpi-value--revenue">$500M</p>
+          <p class="kpi-label">Projected lifetime value from the cross-sell program</p>
+        </div>
+        <div class="kpi kpi--revenue">
+          <p class="kpi-value kpi-value--revenue">$5M+</p>
+          <p class="kpi-label">Incremental monthly revenue from cross-sell</p>
+        </div>
+        <div class="kpi kpi--conversion">
+          <p class="kpi-value kpi-value--conversion">14% increase</p>
+          <p class="kpi-label">Monthly active users</p>
+        </div>
+      </section>
 
 
-      <div class="case-board-body">
-        <section class="exec-summary">
-          <h2>Executive summary</h2>
-          <p>Marketing brought this project because of my cross-product customer knowledge. Cross-sell conversion had stalled near 10%. I architected a continuous CX measurement framework—in-app pulse checks, competitive usability testing with 4,000 users, and behavioral event tracking via custom telemetry hooks—diagnosed drop-off (especially payment linking / trust), and shipped a path that doubled cross-sell acquisitions within 90 days, lifted MAU 14%, and generated $5M+ in incremental monthly revenue (~$500M projected LTV). Outcome figures here are exclusive to this case.</p>
-        </section>
-        <div class="star-grid">
-        <section class="star-card">
+      <div class="case-flow">
+      <section class="case-section reveal">
+        <div class="case-section-label">
+          <span class="case-section-num">01</span>
           <h2>Situation</h2>
-          <div class="star-body"><p>Cross-sell conversion between FanDuel product lines had stagnated at roughly 10% for the year, without a clear read on where or why customers dropped off. Marketing requested this work based on my knowledge of the full customer base—including who already used multiple products and who did not.</p>
-<p>This was not a benchmarking workstream; it was a commissioned growth problem that leveraged that customer fluency.</p></div>
-        </section>
-        <section class="star-card">
-          <h2>Task</h2>
-          <div class="star-body"><p>Diagnose the cross-sell conversion plateau with continuous CX measurement, then ship interventions that unlock multi-product acquisition without eroding trust—especially at payment linking.</p></div>
-        </section>
-        <section class="star-card">
-          <h2>Approach</h2>
-          <div class="star-body"><ul>
-<li><strong>Continuous CX measurement framework</strong> — In-app pulse checks, competitive usability testing with 4,000 users, and behavioral event tracking via custom telemetry hooks to locate drop-off and compare FanDuel’s multi-product journey against competitors.</li>
-<li><strong>Mixed-methods diagnosis</strong> — Funnel and event analysis paired with moderated sessions focused on payment linking and trust barriers between product lines.</li>
-<li><strong>Intervention design</strong> — Redesigned cross-sell entry points and trust framing so customers understood why financial credentials were needed again—and what they gained by linking products.</li>
-</ul></div>
-        </section>
-        <section class="star-card">
-          <h2>Outcome</h2>
-          <div class="star-body"><ul>
-<li><strong>Acquisition</strong> — Doubled cross-sell acquisitions within 90 days.</li>
-<li><strong>Engagement &amp; revenue</strong> — Lifted MAU 14% and generated $5M+ in incremental monthly revenue (~$500M projected LTV).</li>
-<li><strong>Measurement system</strong> — Left Marketing and Product with an ongoing CX pulse + telemetry layer so cross-sell health could be tracked continuously—not only in one-off deep dives.</li>
-</ul></div>
-        </section>
         </div>
+        <div class="case-section-body"><p>Cross-sell conversion between FanDuel product lines had stagnated near 10% for a year, with no clear read on where—or why—customers dropped off. Marketing commissioned the work because I knew the full customer base: who already used multiple products, who didn’t, and how the two groups differed.</p>
+<p>This wasn’t a benchmarking workstream; it was a growth problem that leveraged that customer fluency.</p></div>
+      </section>
+      <section class="case-section reveal">
+        <div class="case-section-label">
+          <span class="case-section-num">02</span>
+          <h2>Task</h2>
+        </div>
+        <div class="case-section-body"><p>Diagnose the cross-sell plateau with continuous CX measurement, then ship interventions that unlock multi-product acquisition without eroding trust—especially at payment linking.</p></div>
+      </section>
+      <section class="case-section reveal">
+        <div class="case-section-label">
+          <span class="case-section-num">03</span>
+          <h2>Approach</h2>
+        </div>
+        <div class="case-section-body"><ul>
+<li><strong>Continuous CX measurement</strong> — In-app pulse checks, competitive usability testing with 4,000 users, and behavioral event tracking via custom telemetry hooks located the drop-off and compared FanDuel’s multi-product journey against competitors.</li>
+<li><strong>Mixed-methods diagnosis</strong> — Funnel and event analysis paired with moderated sessions zeroed in on payment linking and the trust barriers around sharing data between product lines.</li>
+<li><strong>Intervention design</strong> — Redesigned cross-sell entry points and trust framing so customers understood why financial credentials were needed again—and what linking products got them.</li>
+</ul></div>
+      </section>
+      <aside class="case-insight reveal">
+        <p>“The barrier to a second product wasn’t interest—it was being asked for financial credentials all over again.”</p>
+      </aside>
+      <section class="case-section reveal">
+        <div class="case-section-label">
+          <span class="case-section-num">04</span>
+          <h2>Outcome</h2>
+        </div>
+        <div class="case-section-body"><ul>
+<li><strong>Acquisition</strong> — Cross-sell acquisitions doubled within 90 days.</li>
+<li><strong>Engagement &amp; revenue</strong> — MAU rose 14%, with $5M+ in incremental monthly revenue and ~$500M in projected lifetime value from the program.</li>
+<li><strong>A lasting measurement system</strong> — Marketing and Product kept an ongoing CX pulse + telemetry layer, so cross-sell health is tracked continuously—not only in one-off deep dives.</li>
+</ul></div>
+      </section>
       </div>
 
-      <div class="pager">
-        <a href="wallet-deposit.html">← Previous Case Study</a>
-        <a href="fantasy-d2c-ideation.html">Next Case Study →</a>
-      </div>
+      <nav class="pager" aria-label="Case study pagination">
+        <a class="pager-link pager-prev" href="wallet-deposit.html">
+          <span class="pager-kicker">← Previous</span>
+          <span class="pager-title">Trust-First Wallet &amp; Deposit Onboarding</span>
+        </a>
+        <a class="pager-link pager-next" href="fantasy-d2c-ideation.html">
+          <span class="pager-kicker">Next →</span>
+          <span class="pager-title">Monetizing NFL Fantasy — The Tools Package</span>
+        </a>
+      </nav>
     </div>
   </main>
 

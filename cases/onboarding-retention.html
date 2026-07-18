@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Onboarding Optimization & Strategic Retention in Prediction Markets — Sam Weinberger</title>
+  <title>Turning First-Trade Rejection Into Retention — Sam Weinberger</title>
   <meta name="description" content="Samuel Weinberger — applied cognitive and social psychologist turned UX Engineer and Quantitative UX Researcher. Bridging human behavior, analytics, and interactive design." />
   <link rel="stylesheet" href="../css/styles.css" />
 </head>
@@ -20,96 +20,100 @@
     </div>
   </header>
 
-  <main class="case-board">
-    <div class="wrap case-board-inner">
-      <header class="case-board-head">
-        <div class="case-board-meta">
-          <div class="crumb"><a href="../case-studies.html">Case studies</a> / 02</div>
-          <span class="product-badge product-robinhood"><img class="product-mark product-mark-rh-img" src="../media/brands/robinhood-icon.png" alt="" width="22" height="22" /><span class="product-name">Robinhood</span></span>
-          <h1>Onboarding Optimization & Strategic Retention in Prediction Markets</h1>
+  <main class="case-page">
+    <header class="case-hero">
+      <div class="wrap">
+        <div class="crumb"><a href="../case-studies.html">Case studies</a> <span aria-hidden="true">/</span> 02</div>
+        <span class="product-badge product-robinhood"><span class="product-name">Robinhood</span></span>
+        <h1>Turning First-Trade Rejection Into Retention</h1>
+        <p class="case-dek">One in five first-time trades was rejected by backend matching mechanics, and 90% of those users left—many straight to competitors. I modeled exactly when they churned, rebuilt the moment with personalized loss-aversion-framed messaging, and cut post-rejection drop-off by more than 60%—about 900K users and $17M in revenue retained every month.</p>
+        <div class="case-meta-line">
+          <span>Robinhood · Prediction Markets & Event Contracts</span>
+          <span class="case-meta-dot" aria-hidden="true">·</span>
+          <span>2026</span>
         </div>
-        <div class="case-board-side">
-          <div class="case-meta-block">Robinhood · Prediction Markets & Event Contracts</div>
-          <div class="case-meta-block">2026</div>
-        </div>
-      </header>
-
-      <div class="impact-row">
-          <div class="impact-card impact-card--conversion">
-            <p class="impact-metric">
-              <span class="impact-label">Post-first-trade-rejection drop-off</span><span class="impact-sep">: </span><span class="impact-value impact-value--conversion">60%+ reduction</span>
-            </p>
-          </div>
-          <div class="impact-card impact-card--revenue">
-            <p class="impact-metric">
-              <span class="impact-label">Monthly revenue retained from recovered traders</span><span class="impact-sep">: </span><span class="impact-value impact-value--revenue">$17M</span>
-            </p>
-          </div>
-          <div class="impact-card impact-card--scale">
-            <p class="impact-metric">
-              <span class="impact-label">Users retained per month</span><span class="impact-sep">: </span><span class="impact-value impact-value--scale">~900K</span>
-            </p>
-          </div>
-          <div class="impact-card impact-card--conversion">
-            <p class="impact-metric">
-              <span class="impact-label">Trade volume among top-tier customers</span><span class="impact-sep">: </span><span class="impact-value impact-value--conversion">18% increase</span>
-            </p>
-          </div>
       </div>
+    </header>
+    <div class="wrap case-body">
 
-      <div class="case-video reveal">
-        <div class="phone-frame">
-          <div class="phone-notch" aria-hidden="true"></div>
-          <div class="phone-screen">
-            <img src="../media/onboarding-retention-phone.png" alt="Robinhood Prediction markets screen showing featured and newly listed event contracts" />
-          </div>
+      <section class="kpi-band reveal" aria-label="Key outcomes">
+        <div class="kpi kpi--conversion">
+          <p class="kpi-value kpi-value--conversion">60%+ reduction</p>
+          <p class="kpi-label">Post-first-trade-rejection drop-off</p>
         </div>
-        <p class="case-video-caption">Prediction markets experience—featuring high-probability contracts used to guide first-time traders toward clearer, lower-risk first trades.</p>
-      </div>
+        <div class="kpi kpi--revenue">
+          <p class="kpi-value kpi-value--revenue">$17M</p>
+          <p class="kpi-label">Monthly revenue retained from recovered traders</p>
+        </div>
+        <div class="kpi kpi--scale">
+          <p class="kpi-value kpi-value--scale">~900K</p>
+          <p class="kpi-label">Users retained per month</p>
+        </div>
+        <div class="kpi kpi--conversion">
+          <p class="kpi-value kpi-value--conversion">18% increase</p>
+          <p class="kpi-label">Trade volume among top-tier customers</p>
+        </div>
+      </section>
 
-      <div class="case-board-body">
-        <section class="exec-summary">
-          <h2>Executive summary</h2>
-          <p>I used survival analysis to pinpoint when post-first-trade-rejection drop-off occurred, then built a personalized, loss-aversion-framed messaging strategy that cut that drop-off by over 60%. Parallel Growth &amp; Acquisition research—behavioral archetypes via KMeans on product telemetry, validated in controlled A/B/n experiments—drove engagement/retention lifts and higher trade volume among top-tier customers.</p>
-        </section>
-        <div class="star-grid">
-        <section class="star-card">
+
+      <div class="case-flow">
+      <section class="case-section reveal">
+        <div class="case-section-label">
+          <span class="case-section-num">01</span>
           <h2>Situation</h2>
-          <div class="star-body"><p>The Event Contracts and Prediction Markets division at Robinhood was experiencing noticeable drop-offs in the first-time user flow—specifically right after signup and first-trade friction. Recruiting users who have already churned or failed to complete a first trade is notoriously difficult to study qualitatively.</p>
-<p>Specifically, I identified the single biggest barrier in the funnel: 1 out of every 5 first-time trades—representing roughly 450,000 customers each month—was being rejected due to peer-to-peer matching mechanics on the backend exchange. 90% of those users abandoned the platform entirely and defected to a competitor.</p></div>
-        </section>
-        <section class="star-card">
-          <h2>Task</h2>
-          <div class="star-body"><p>Pinpoint exactly when post-first-trade-rejection drop-off occurred, understand needs across behavioral archetypes in the same funnel, and ship messaging and product changes that stabilize retention—while also informing Growth &amp; Acquisition UI and engagement strategy for Prediction Markets.</p></div>
-        </section>
-        <section class="star-card">
-          <h2>Approach</h2>
-          <div class="star-body"><ul>
-<li><strong>Survival analysis</strong> — Modeled time-to-churn after first-trade rejection to isolate the precise window where drop-off concentrated, so interventions could fire when loss aversion and abandonment risk peaked.</li>
-<li><strong>Targeted Qual Recruitment &amp; Competitor Insights</strong> — Recruited and conducted 1-on-1 interviews with users who abandoned after a first-trade rejection. Many had defected to primary competitors because they interpreted the backend rejection as a platform failure.</li>
-<li><strong>Behavioral Segmentation &amp; KMeans</strong> — Segmented behavioral archetypes from product telemetry (including newly acquired sports bettors vs. existing Robinhood traders exploring prediction markets), then validated patterns with controlled A/B/n experiments for Growth &amp; Acquisition.</li>
-<li><strong>MaxDiff Survey</strong> — Designed and deployed a Maximum Differential (MaxDiff) quantitative survey to systematically rank and isolate each segment’s unique informational needs.</li>
-<li><strong>Loss-aversion-framed messaging</strong> — Built personalized messaging and navigational changes that explained the backend rejection in plain language, reframed the moment with loss-aversion principles, and guided users immediately back into the first-trade flow.</li>
-<li><strong>Longitudinal Methodology &amp; LTV Mapping</strong> — Designed a 3-month longitudinal tracking study evaluating behavioral patterns based on initial trading outcomes (winning vs. losing the first contract).</li>
-</ul></div>
-        </section>
-        <section class="star-card">
-          <h2>Outcome</h2>
-          <div class="star-body"><ul>
-<li><strong>Retention strategy</strong> — The personalized, loss-aversion-framed messaging strategy cut post-first-trade-rejection drop-off by over 60%, retaining ~900K users per month (~$17M in monthly revenue).</li>
-<li><strong>Growth &amp; Acquisition lifts</strong> — Formative and evaluative research on UI design and user needs—archetypes via KMeans on telemetry, validated in A/B/n experiments—drove 4–12% engagement/retention lifts and an 18% increase in trade volume among top-tier customers.</li>
-<li><strong>Infrastructure Advocacy</strong> — Used these insights to initiate cross-functional efforts to systematically reduce backend rejected trades, proving to engineering that a friction-free initial experience is vital for long-term customer health.</li>
-<li><strong>LTV Quantification &amp; Loss Impact</strong> — Through the 3-month longitudinal study, losing a first trade decreased a customer’s Lifetime Value (LTV) by 20% to 25%.</li>
-<li><strong>Strategic Onboarding &amp; Responsible Trading</strong> — Based on the LTV loss data, recommended tailoring event contracts and highlighting details for first-time customers toward high-probability, lower-risk first trades—launching an ongoing initiative focused on responsible trading (e.g., preventing brand-new customers from immediately placing low-likelihood, “long-shot” trades).</li>
-</ul></div>
-        </section>
         </div>
+        <div class="case-section-body"><p>Robinhood’s prediction-markets funnel was leaking right after signup. The single biggest barrier: 1 in every 5 first-time trades—roughly 450,000 customers a month—was rejected by peer-to-peer matching mechanics on the backend exchange. Users read the rejection as a platform failure. 90% abandoned entirely, many defecting straight to competitors.</p>
+<p>Studying them was its own problem: people who churn after one failed trade are notoriously difficult to recruit for research.</p></div>
+      </section>
+      <section class="case-section reveal">
+        <div class="case-section-label">
+          <span class="case-section-num">02</span>
+          <h2>Task</h2>
+        </div>
+        <div class="case-section-body"><p>Pinpoint exactly when post-rejection drop-off happened, understand the different mental models moving through the same funnel, and ship messaging and product changes that stabilized retention—while feeding Growth &amp; Acquisition strategy for prediction markets.</p></div>
+      </section>
+      <section class="case-section reveal">
+        <div class="case-section-label">
+          <span class="case-section-num">03</span>
+          <h2>Approach</h2>
+        </div>
+        <div class="case-section-body"><ul>
+<li><strong>Survival analysis</strong> — Modeled time-to-churn after first-trade rejection to isolate the window where abandonment risk peaked—so interventions could fire at exactly the right moment.</li>
+<li><strong>Interviews with the churned</strong> — Recruited and interviewed users who had abandoned after a rejection. They blamed the platform, not the market mechanics—and many had already moved to a competitor.</li>
+<li><strong>Behavioral segmentation</strong> — KMeans clustering on product telemetry separated newly acquired sports bettors from experienced Robinhood traders exploring prediction markets, with archetypes validated through controlled A/B/n experiments.</li>
+<li><strong>MaxDiff survey</strong> — Systematically ranked each segment’s informational needs so messaging could be tailored rather than averaged.</li>
+<li><strong>Loss-aversion-framed messaging</strong> — Personalized messaging and navigation that explained the rejection in plain language, reframed the moment using loss-aversion principles, and routed users immediately back into the first-trade flow.</li>
+<li><strong>Longitudinal LTV study</strong> — A 3-month tracking study following behavior based on whether users won or lost their very first contract.</li>
+</ul></div>
+      </section>
+      <aside class="case-insight reveal">
+        <p>“The most dangerous moment in the funnel wasn’t signup—it was the silence right after a first trade failed.”</p>
+      </aside>
+      <section class="case-section reveal">
+        <div class="case-section-label">
+          <span class="case-section-num">04</span>
+          <h2>Outcome</h2>
+        </div>
+        <div class="case-section-body"><ul>
+<li><strong>Retention</strong> — The personalized messaging strategy cut post-first-trade-rejection drop-off by over 60%, retaining ~900K users per month—about $17M in monthly revenue.</li>
+<li><strong>Growth &amp; Acquisition lifts</strong> — Archetype-driven UI research, validated in A/B/n experiments, drove 4–12% engagement and retention lifts and an 18% increase in trade volume among top-tier customers.</li>
+<li><strong>LTV quantification</strong> — The longitudinal study showed that losing a first trade decreases a customer’s lifetime value by 20–25%.</li>
+<li><strong>Responsible trading</strong> — That LTV finding launched an ongoing initiative steering first-time customers toward high-probability, lower-risk first trades—and away from immediate “long-shot” bets.</li>
+<li><strong>Infrastructure advocacy</strong> — The insights kicked off cross-functional engineering work to reduce backend rejections at the source, not just recover from them.</li>
+</ul></div>
+      </section>
       </div>
 
-      <div class="pager">
-        <a href="educational-module.html">← Previous Case Study</a>
-        <a href="research-ops.html">Next Case Study →</a>
-      </div>
+      <nav class="pager" aria-label="Case study pagination">
+        <a class="pager-link pager-prev" href="educational-module.html">
+          <span class="pager-kicker">← Previous</span>
+          <span class="pager-title">Validating a Prediction-Markets Education Module in 48 Hours</span>
+        </a>
+        <a class="pager-link pager-next" href="research-ops.html">
+          <span class="pager-kicker">Next →</span>
+          <span class="pager-title">Building an AI-Agentic Research Pipeline</span>
+        </a>
+      </nav>
     </div>
   </main>
 
