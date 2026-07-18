@@ -13,7 +13,7 @@
       <a class="brand" href="../index.html">Sam Weinberger</a>
       <nav class="nav" aria-label="Primary">
         <a href="../case-studies.html" class="is-active">Case studies</a>
-        <a href="../notable.html">Notable projects</a>
+        <a href="../skills.html">Skills</a>
         <a href="../about.html">About me</a>
         <a href="mailto:samuelcweinberger@gmail.com">Contact</a>
       </nav>
@@ -35,21 +35,25 @@
       </header>
 
       <div class="impact-row">
-          <div class="impact-card">
-            <div class="impact-label">Rejected traders recovered</div>
-            <div class="impact-value">85%</div>
+          <div class="impact-card impact-card--conversion">
+            <p class="impact-metric">
+              <span class="impact-label">Post-first-trade-rejection drop-off</span><span class="impact-sep">: </span><span class="impact-value impact-value--conversion">60%+ reduction</span>
+            </p>
           </div>
-          <div class="impact-card">
-            <div class="impact-label">Additional monthly revenue</div>
-            <div class="impact-value">$17M</div>
+          <div class="impact-card impact-card--revenue">
+            <p class="impact-metric">
+              <span class="impact-label">Monthly revenue retained from recovered traders</span><span class="impact-sep">: </span><span class="impact-value impact-value--revenue">$17M</span>
+            </p>
           </div>
-          <div class="impact-card">
-            <div class="impact-label">Net new customers</div>
-            <div class="impact-value">~900K</div>
+          <div class="impact-card impact-card--scale">
+            <p class="impact-metric">
+              <span class="impact-label">Users retained per month</span><span class="impact-sep">: </span><span class="impact-value impact-value--scale">~900K</span>
+            </p>
           </div>
-          <div class="impact-card">
-            <div class="impact-label">Higher volume — power traders</div>
-            <div class="impact-value">15%</div>
+          <div class="impact-card impact-card--conversion">
+            <p class="impact-metric">
+              <span class="impact-label">Trade volume among top-tier customers</span><span class="impact-sep">: </span><span class="impact-value impact-value--conversion">18% increase</span>
+            </p>
           </div>
       </div>
 
@@ -66,7 +70,7 @@
       <div class="case-board-body">
         <section class="exec-summary">
           <h2>Executive summary</h2>
-          <p>I identified a first-trade rejection funnel where 1 in 5 trades failed and 90% of those users churned to competitors. Through qualitative interviews, MaxDiff segmentation, and targeted messaging, I recovered rejected traders at scale and quantified how early outcomes reshape long-term LTV.</p>
+          <p>I used survival analysis to pinpoint when post-first-trade-rejection drop-off occurred, then built a personalized, loss-aversion-framed messaging strategy that cut that drop-off by over 60%. Parallel Growth &amp; Acquisition research—behavioral archetypes via KMeans on product telemetry, validated in controlled A/B/n experiments—drove engagement/retention lifts and higher trade volume among top-tier customers.</p>
         </section>
         <div class="star-grid">
         <section class="star-card">
@@ -76,26 +80,27 @@
         </section>
         <section class="star-card">
           <h2>Task</h2>
-          <div class="star-body"><p>Isolate the exact friction points causing these drop-offs, understand the needs of disparate user archetypes within the same funnel, and implement structural changes to stabilize retention and recover rejected traders.</p></div>
+          <div class="star-body"><p>Pinpoint exactly when post-first-trade-rejection drop-off occurred, understand needs across behavioral archetypes in the same funnel, and ship messaging and product changes that stabilize retention—while also informing Growth &amp; Acquisition UI and engagement strategy for Prediction Markets.</p></div>
         </section>
         <section class="star-card">
           <h2>Approach</h2>
           <div class="star-body"><ul>
-<li><strong>Targeted Qual Recruitment &amp; Competitor Insights</strong> — I successfully recruited and conducted 1-on-1 interviews with users who abandoned the platform after a first-trade rejection. I discovered that many of them had defected directly to our primary competitors because they interpreted the backend rejection as a platform failure.</li>
-<li><strong>Behavioral Segmentation</strong> — I uncovered two distinct mental models in the funnel: newly acquired sports bettors with zero brokerage/crypto experience, and existing Robinhood users exploring prediction markets as sophisticated traders.</li>
-<li><strong>MaxDiff Survey</strong> — I designed and deployed a Maximum Differential (MaxDiff) quantitative survey to systematically rank and isolate each segment’s unique informational needs.</li>
-<li><strong>Friction Remediation &amp; UI/UX Messaging</strong> — I recommended and designed targeted messaging and navigational changes to explain the backend rejection in plain language and guide users immediately back into the first-trade flow.</li>
-<li><strong>Longitudinal Methodology &amp; LTV Mapping</strong> — To understand the long-term impact of early user experiences (first impressions), I initiated and designed a 3-month longitudinal tracking study evaluating the behavioral patterns of users based on their initial trading outcomes (winning vs. losing their very first contract).</li>
+<li><strong>Survival analysis</strong> — Modeled time-to-churn after first-trade rejection to isolate the precise window where drop-off concentrated, so interventions could fire when loss aversion and abandonment risk peaked.</li>
+<li><strong>Targeted Qual Recruitment &amp; Competitor Insights</strong> — Recruited and conducted 1-on-1 interviews with users who abandoned after a first-trade rejection. Many had defected to primary competitors because they interpreted the backend rejection as a platform failure.</li>
+<li><strong>Behavioral Segmentation &amp; KMeans</strong> — Segmented behavioral archetypes from product telemetry (including newly acquired sports bettors vs. existing Robinhood traders exploring prediction markets), then validated patterns with controlled A/B/n experiments for Growth &amp; Acquisition.</li>
+<li><strong>MaxDiff Survey</strong> — Designed and deployed a Maximum Differential (MaxDiff) quantitative survey to systematically rank and isolate each segment’s unique informational needs.</li>
+<li><strong>Loss-aversion-framed messaging</strong> — Built personalized messaging and navigational changes that explained the backend rejection in plain language, reframed the moment with loss-aversion principles, and guided users immediately back into the first-trade flow.</li>
+<li><strong>Longitudinal Methodology &amp; LTV Mapping</strong> — Designed a 3-month longitudinal tracking study evaluating behavioral patterns based on initial trading outcomes (winning vs. losing the first contract).</li>
 </ul></div>
         </section>
         <section class="star-card">
           <h2>Outcome</h2>
           <div class="star-body"><ul>
-<li><strong>Recovery &amp; Revenue Impact</strong> — My messaging and navigational recommendations successfully recovered 85% of the rejected first-time traders who would have otherwise churned, directly generating $17M in additional monthly revenue and ~900K net new customers.</li>
-<li><strong>Discovery of “Power Traders”</strong> — Through matched-sample testing against demographics like age, I proved that customers who overcame a first-trade rejection via the new messaging went on to trade at 15% higher volumes than those whose very first trade succeeded. Overcoming the initial barrier triggered highly active “power trader” behavior.</li>
-<li><strong>Infrastructure Advocacy</strong> — Despite the recovery rate, I used these insights to initiate major cross-functional efforts to systematically reduce backend rejected trades, proving to engineering that a friction-free initial experience is vital for long-term customer health.</li>
-<li><strong>LTV Quantification &amp; Loss Impact</strong> — Through my 3-month longitudinal study, I identified that losing a first trade reduces a customer’s Lifetime Value (LTV) by 20% to 25%.</li>
-<li><strong>Strategic Onboarding &amp; Responsible Trading</strong> — Based on the LTV loss data, I recommended tailoring specific types of event contracts and highlighting details for first-time customers to direct them toward high-probability, lower-risk trades for their first transaction. This research successfully launched an ongoing, company-wide initiative focused on promoting responsible trading (e.g., preventing brand-new customers from immediately placing low-likelihood, “long-shot” trades).</li>
+<li><strong>Retention strategy</strong> — The personalized, loss-aversion-framed messaging strategy cut post-first-trade-rejection drop-off by over 60%, retaining ~900K users per month (~$17M in monthly revenue).</li>
+<li><strong>Growth &amp; Acquisition lifts</strong> — Formative and evaluative research on UI design and user needs—archetypes via KMeans on telemetry, validated in A/B/n experiments—drove 4–12% engagement/retention lifts and an 18% increase in trade volume among top-tier customers.</li>
+<li><strong>Infrastructure Advocacy</strong> — Used these insights to initiate cross-functional efforts to systematically reduce backend rejected trades, proving to engineering that a friction-free initial experience is vital for long-term customer health.</li>
+<li><strong>LTV Quantification &amp; Loss Impact</strong> — Through the 3-month longitudinal study, losing a first trade decreased a customer’s Lifetime Value (LTV) by 20% to 25%.</li>
+<li><strong>Strategic Onboarding &amp; Responsible Trading</strong> — Based on the LTV loss data, recommended tailoring event contracts and highlighting details for first-time customers toward high-probability, lower-risk first trades—launching an ongoing initiative focused on responsible trading (e.g., preventing brand-new customers from immediately placing low-likelihood, “long-shot” trades).</li>
 </ul></div>
         </section>
         </div>

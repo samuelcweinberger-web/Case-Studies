@@ -8,4 +8,9 @@ media/intel-trueview-source.mp4
 media/frames/
 media/*.mp4.png
 media/*.mov
+media/**/*.mov
 media/*.m4v
+media/**/*.m4v
+!media/nfl-intel/*.jpg
+!media/nfl-intel/*.png
+!media/nfl-intel/superstadium-demo.mp4

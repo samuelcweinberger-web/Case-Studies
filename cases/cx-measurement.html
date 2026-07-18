@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Continuous CX Measurement & Cross-Sell Growth — Sam Weinberger</title>
+  <title>Cross-Sell Growth Across FanDuel Products — Sam Weinberger</title>
   <meta name="description" content="Samuel Weinberger — applied cognitive and social psychologist turned UX Engineer and Quantitative UX Researcher. Bridging human behavior, analytics, and interactive design." />
   <link rel="stylesheet" href="../css/styles.css" />
 </head>
@@ -13,7 +13,7 @@
       <a class="brand" href="../index.html">Sam Weinberger</a>
       <nav class="nav" aria-label="Primary">
         <a href="../case-studies.html" class="is-active">Case studies</a>
-        <a href="../notable.html">Notable projects</a>
+        <a href="../skills.html">Skills</a>
         <a href="../about.html">About me</a>
         <a href="mailto:samuelcweinberger@gmail.com">Contact</a>
       </nav>
@@ -24,32 +24,36 @@
     <div class="wrap case-board-inner">
       <header class="case-board-head">
         <div class="case-board-meta">
-          <div class="crumb"><a href="../case-studies.html">Case studies</a> / 08</div>
+          <div class="crumb"><a href="../case-studies.html">Case studies</a> / 07</div>
           <span class="product-badge product-fanduel"><img class="product-mark product-mark-fd-img" src="../media/brands/fanduel-icon.png" alt="" width="22" height="22" /><span class="product-name">FanDuel</span></span>
-          <h1>Continuous CX Measurement & Cross-Sell Growth</h1>
+          <h1>Cross-Sell Growth Across FanDuel Products</h1>
         </div>
         <div class="case-board-side">
-          <div class="case-meta-block">FanDuel · Core Products & Experiences</div>
+          <div class="case-meta-block">FanDuel · Core Products &amp; Experiences</div>
           <div class="case-meta-block">2025</div>
         </div>
       </header>
 
       <div class="impact-row">
-          <div class="impact-card">
-            <div class="impact-label">Projected LTV impact</div>
-            <div class="impact-value">$500M</div>
+          <div class="impact-card impact-card--conversion">
+            <p class="impact-metric">
+              <span class="impact-label">Cross-sell acquisitions within 90 days</span><span class="impact-sep">: </span><span class="impact-value impact-value--conversion">2× increase</span>
+            </p>
           </div>
-          <div class="impact-card">
-            <div class="impact-label">Cross-sell acquisitions within 90 days</div>
-            <div class="impact-value">2×</div>
+          <div class="impact-card impact-card--revenue">
+            <p class="impact-metric">
+              <span class="impact-label">Projected lifetime value from the cross-sell program</span><span class="impact-sep">: </span><span class="impact-value impact-value--revenue">$500M</span>
+            </p>
           </div>
-          <div class="impact-card">
-            <div class="impact-label">Lift in Monthly Active Users</div>
-            <div class="impact-value">14%</div>
+          <div class="impact-card impact-card--revenue">
+            <p class="impact-metric">
+              <span class="impact-label">Incremental monthly revenue from cross-sell</span><span class="impact-sep">: </span><span class="impact-value impact-value--revenue">$5M+</span>
+            </p>
           </div>
-          <div class="impact-card">
-            <div class="impact-label">Incremental monthly revenue</div>
-            <div class="impact-value">$5M+</div>
+          <div class="impact-card impact-card--conversion">
+            <p class="impact-metric">
+              <span class="impact-label">Monthly active users</span><span class="impact-sep">: </span><span class="impact-value impact-value--conversion">14% increase</span>
+            </p>
           </div>
       </div>
 
@@ -57,36 +61,39 @@
       <div class="case-board-body">
         <section class="exec-summary">
           <h2>Executive summary</h2>
-          <p>Enterprise UX and growth-driven research: a continuous CX measurement framework applied to a stalled cross-sell conversion funnel.</p>
+          <p>Marketing brought this project because of my cross-product customer knowledge. Cross-sell conversion had stalled near 10%. I architected a continuous CX measurement framework—in-app pulse checks, competitive usability testing with 4,000 users, and behavioral event tracking via custom telemetry hooks—diagnosed drop-off (especially payment linking / trust), and shipped a path that doubled cross-sell acquisitions within 90 days, lifted MAU 14%, and generated $5M+ in incremental monthly revenue (~$500M projected LTV). Outcome figures here are exclusive to this case.</p>
         </section>
         <div class="star-grid">
         <section class="star-card">
           <h2>Situation</h2>
-          <div class="star-body"><p>Lagging brand trackers could not keep pace with product health. Cross-sell conversion between product lines had stagnated at roughly 10% for the year—without a clear read on where, or why, customers were dropping off.</p></div>
+          <div class="star-body"><p>Cross-sell conversion between FanDuel product lines had stagnated at roughly 10% for the year, without a clear read on where or why customers dropped off. Marketing requested this work based on my knowledge of the full customer base—including who already used multiple products and who did not.</p>
+<p>This was not a benchmarking workstream; it was a commissioned growth problem that leveraged that customer fluency.</p></div>
         </section>
         <section class="star-card">
           <h2>Task</h2>
-          <div class="star-body"><p>Architect a real-time Continuous CX Measurement Framework—a “Hyper-Focused Lens” across Ease of Use, Functional Reliability, and User Satisfaction—then apply it to the cross-sell bottleneck to prove research could function as a growth engine, not a cost center.</p></div>
+          <div class="star-body"><p>Diagnose the cross-sell conversion plateau with continuous CX measurement, then ship interventions that unlock multi-product acquisition without eroding trust—especially at payment linking.</p></div>
         </section>
         <section class="star-card">
           <h2>Approach</h2>
           <div class="star-body"><ul>
-<li><strong>Three-pronged methodology</strong> — Monthly in-app Pulse Checks (1% sampling), longitudinal quantitative benchmarking, and large-scale competitive usability testing (n=4,000).</li>
-<li><strong>Technical integration</strong> — Partnered with engineering on event-based triggers (deposit_success, login_success) to capture sentiment at the Peak-End moment, reducing recall bias.</li>
-<li><strong>Cross-functional alignment</strong> — Built a unified dashboard mapping UX metrics (UMUX-Lite / SEQ) directly to product KPIs and business OKRs.</li>
-<li><strong>Cross-sell deep dive</strong> — Funnel analysis isolated drop-off at Payment Linking; 120 structured interviews (including 20 unmoderated) surfaced trust hurdles around data sharing; A/B usability testing with 30,000 users validated the optimal path; Amplitude telemetry enabled rapid iteration of messaging and UI.</li>
+<li><strong>Continuous CX measurement framework</strong> — In-app pulse checks, competitive usability testing with 4,000 users, and behavioral event tracking via custom telemetry hooks to locate drop-off and compare FanDuel’s multi-product journey against competitors.</li>
+<li><strong>Mixed-methods diagnosis</strong> — Funnel and event analysis paired with moderated sessions focused on payment linking and trust barriers between product lines.</li>
+<li><strong>Intervention design</strong> — Redesigned cross-sell entry points and trust framing so customers understood why financial credentials were needed again—and what they gained by linking products.</li>
 </ul></div>
         </section>
         <section class="star-card">
           <h2>Outcome</h2>
-          <div class="star-body"><p>Doubled annual cross-sell acquisitions within 90 days, with a 14% MAU lift, $5M+ incremental monthly revenue, and a projected $500M LTV impact. Support-per-user metrics fell enough to drive estimated seven-figure annual customer-operations savings.</p>
-<p class="callout">Formally adopted as the Standardized Research Playbook for future product onboarding and promotional launches.</p></div>
+          <div class="star-body"><ul>
+<li><strong>Acquisition</strong> — Doubled cross-sell acquisitions within 90 days.</li>
+<li><strong>Engagement &amp; revenue</strong> — Lifted MAU 14% and generated $5M+ in incremental monthly revenue (~$500M projected LTV).</li>
+<li><strong>Measurement system</strong> — Left Marketing and Product with an ongoing CX pulse + telemetry layer so cross-sell health could be tracked continuously—not only in one-off deep dives.</li>
+</ul></div>
         </section>
         </div>
       </div>
       <div class="pager">
-        <a href="responsible-gaming.html">← Previous Case Study</a>
-        <a href="nfl-d2c-packaging.html">Next Case Study →</a>
+        <a href="wallet-deposit.html">← Previous Case Study</a>
+        <a href="fantasy-d2c-ideation.html">Next Case Study →</a>
       </div>
     </div>
   </main>
