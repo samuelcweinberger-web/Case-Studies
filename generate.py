@@ -65,7 +65,7 @@ CASES = [
 </ul>""",
             ),
             (
-                "Approach",
+                "Action",
                 """<p>Static images and a one-week deadline ruled out traditional moderation. I chose Listen Labs for its adaptive AI interviewers and rapid multi-segment sourcing, then ran the study in five moves:</p>
 <ul>
 <li><strong>Two-segment recruitment</strong> — 50 existing customers recruited internally, 50 potential customers sourced instantly from the platform’s integrated third-party panel.</li>
@@ -76,7 +76,7 @@ CASES = [
 </ul>""",
             ),
             (
-                "Outcome",
+                "Result",
                 """<ul>
 <li><strong>Cycle time</strong> — A 3-to-4-week manual research cycle compressed to under 48 hours, delivering the large-sample validation that greenlit the launch on schedule—no interactive prototype required.</li>
 <li><strong>World Cup launch</strong> — Over 1 billion trades executed across 1.5 million users. 40% of those users completed the module, and completers traded event contracts at a 15% higher rate than users who skipped it.</li>
@@ -113,7 +113,7 @@ CASES = [
                 """<p>Pinpoint exactly when post-rejection drop-off happened, understand the different mental models moving through the same funnel, and ship messaging and product changes that stabilized retention—while feeding Growth &amp; Acquisition strategy for prediction markets.</p>""",
             ),
             (
-                "Approach",
+                "Action",
                 """<ul>
 <li><strong>Survival analysis</strong> — Modeled time-to-churn after first-trade rejection to isolate the window where abandonment risk peaked—so interventions could fire at exactly the right moment.</li>
 <li><strong>Interviews with the churned</strong> — Recruited and interviewed users who had abandoned after a rejection. They blamed the platform, not the market mechanics—and many had already moved to a competitor.</li>
@@ -124,7 +124,7 @@ CASES = [
 </ul>""",
             ),
             (
-                "Outcome",
+                "Result",
                 """<ul>
 <li><strong>Retention</strong> — The personalized messaging strategy cut post-first-trade-rejection drop-off by over 60%, retaining ~900K users per month—about $17M in monthly revenue.</li>
 <li><strong>Growth &amp; Acquisition lifts</strong> — Archetype-driven UI research, validated in A/B/n experiments, drove 4–12% engagement and retention lifts and an 18% increase in trade volume among top-tier customers.</li>
@@ -160,7 +160,7 @@ CASES = [
                 """<p>Rebuild the operational architecture so administrative lag disappears and concurrent study capacity multiplies—including producing prototypes live, mid-interview—without compromising qualitative or quantitative rigor.</p>""",
             ),
             (
-                "Approach",
+                "Action",
                 """<p>I acted as both researcher and UX engineer, building autonomous agents on Claude, Model Context Protocol (MCP), Figma design systems, and custom database APIs to run the research lifecycle end to end:</p>
 <ul>
 <li><strong>Research plans in hours, not days</strong> — An agent turns raw kickoff-meeting notes into a standardized research plan: it selects the optimal methodology, drafts tailored survey questions or interview guides, and formats everything for stakeholder feedback within 1–2 hours of the meeting.</li>
@@ -171,7 +171,7 @@ CASES = [
 </ul>""",
             ),
             (
-                "Outcome",
+                "Result",
                 """<ul>
 <li><strong>Timeline compression</strong> — A traditional 30-day cycle now runs in 1 week or less, with study setup dropping from weeks to under an hour.</li>
 <li><strong>Quadrupled capacity</strong> — Up to four studies run simultaneously without pipeline blockages or cognitive fatigue.</li>
@@ -207,7 +207,7 @@ CASES = [
                 """<p>Design and scale standardized benchmarking across FanDuel products and primary competitors; grow research capacity for rapid expansion; and—when Voice of Customer and compliance data demanded it—build Responsible Gaming measurement rigorous enough for product, Legal/Compliance, and state regulators.</p>""",
             ),
             (
-                "Approach",
+                "Action",
                 """<ul>
 <li><strong>Standardized journey benchmarking</strong> — Continuous tracking across the journeys every vertical shares: Onboarding, Promotional Engagement, Depositing/Withdrawing, Bet Selection/Placement, In-Play Betting, and Outcome Tracking.</li>
 <li><strong>Event-triggered telemetry</strong> — In-app surveys and behavioral trackers fired at high-friction moments. Over time, journey surveys fed stakeholder dashboards automatically (Alchemer + triggers), with me remaining owner of the instruments, data, and reporting layer.</li>
@@ -217,7 +217,7 @@ CASES = [
 </ul>""",
             ),
             (
-                "Outcome",
+                "Result",
                 """<ul>
 <li><strong>Org &amp; ops leverage</strong> — UX Research scaled from 2 to a 32-person division delivering 200+ studies annually, while AI-enabled pipelines cut turnaround time 75%—and I retained ownership of the benchmarking stack.</li>
 <li><strong>Multi-state growth</strong> — Message testing and measurement supported rollouts that grew the user base from 1.5M to 20M+.</li>
@@ -253,7 +253,7 @@ CASES = [
                 """<p>Lead a cross-functional CPE strike team chartered to lift first-bet conversion from 20% to 30%—and determine which incentive structure converts without eroding loyalty, ahead of state launches where first impressions decide market share.</p>""",
             ),
             (
-                "Approach",
+                "Action",
                 """<ul>
 <li><strong>1×3 randomized controlled trial</strong> — New visitors assigned to High-Accessibility (Bet $5, Get $50), High-Stakes (Bet $50, Get $200), or control (no promo); n=350 per group (N=1,050).</li>
 <li><strong>Immediate + longitudinal measurement</strong> — Alchemer surveys after the first bet (Perceived Generosity, Loyalty, Ease of Use); Amplitude-triggered repeats at 30/60/90 days; Qualtrics via Braze for drop-off reasons.</li>
@@ -261,7 +261,7 @@ CASES = [
 </ul>""",
             ),
             (
-                "Outcome",
+                "Result",
                 """<p>Both offers lifted first-bet conversion about 10% over control—with no difference between the $5 and $50 offers (p=0.56). That made High-Accessibility the ROI winner at roughly a 4× reduction in payout cost. Ease of Use didn’t separate drop-offs from converters; confusion around “Win to Get” rules did. And a first win predicted 90-day engagement ~4× more strongly than bonus size, while High-Stakes loyalty decayed sharply by Day 60.</p>
 <p class="callout">The recommendation: standardize Bet $5 / Get $50, redesign promo messaging for clarity, and prioritize features that create an early “First Win.”</p>""",
             ),
@@ -293,7 +293,7 @@ CASES = [
                 """<p>Determine whether the drop-off was a motivation problem or a trust problem—then redesign the KYC flow so stagnant accounts become depositing, engaged players, treating onboarding, acquisition, and first deposit as one continuous experience.</p>""",
             ),
             (
-                "Approach",
+                "Action",
                 """<ul>
 <li><strong>Triangulated mixed methods</strong> — Amplitude funnel analysis, 15 moderated usability sessions, and a 5,000-respondent MaxDiff survey isolated where—and why—trust broke down.</li>
 <li><strong>The mental-model wall</strong> — Interviews showed churning users hit a wall at routing numbers and SSNs. ACH felt opaque, and nobody understood why a sports platform needed bank-grade financial data.</li>
@@ -302,7 +302,7 @@ CASES = [
 </ul>""",
             ),
             (
-                "Outcome",
+                "Result",
                 """<ul>
 <li><strong>Stagnant-user conversion</strong> — 150,000+ previously abandoned accounts completed wallet setup and converted.</li>
 <li><strong>Handle</strong> — The optimized flow generated ~$8M in incremental betting handle in Q1 2025.</li>
@@ -339,7 +339,7 @@ CASES = [
                 """<p>Diagnose the cross-sell plateau with continuous CX measurement, then ship interventions that unlock multi-product acquisition without eroding trust—especially at payment linking.</p>""",
             ),
             (
-                "Approach",
+                "Action",
                 """<ul>
 <li><strong>Continuous CX measurement</strong> — In-app pulse checks, competitive usability testing with 4,000 users, and behavioral event tracking via custom telemetry hooks located the drop-off and compared FanDuel’s multi-product journey against competitors.</li>
 <li><strong>Mixed-methods diagnosis</strong> — Funnel and event analysis paired with moderated sessions zeroed in on payment linking and the trust barriers around sharing data between product lines.</li>
@@ -347,7 +347,7 @@ CASES = [
 </ul>""",
             ),
             (
-                "Outcome",
+                "Result",
                 """<ul>
 <li><strong>Acquisition</strong> — Cross-sell acquisitions doubled within 90 days.</li>
 <li><strong>Engagement &amp; revenue</strong> — MAU rose 14%, with $5M+ in incremental monthly revenue and ~$500M in projected lifetime value from the program.</li>
@@ -381,7 +381,7 @@ CASES = [
                 """<p>Prove the NFL could monetize the Fantasy user base directly, inside hard guardrails set up front: no unfair competitive advantage, core gameplay stays intact, avoid content the team doesn’t control, never charge for what competitors give away free, and prioritize ideas likely to drive repeat purchases.</p>""",
             ),
             (
-                "Approach",
+                "Action",
                 """<ul>
 <li><strong>Design-thinking cycle</strong> — Ran the group through Empathize → Define → Ideate → Prototype → Test with structured ideation sessions.</li>
 <li><strong>Large-scale survey</strong> — Surfaced the top 6 features that would deepen engagement among casual and highly active players who want to do better.</li>
@@ -392,7 +392,7 @@ CASES = [
 </ul>""",
             ),
             (
-                "Outcome",
+                "Result",
                 """<ul>
 <li><strong>Week one</strong> — The mid-season launch drove $600K in direct-to-consumer revenue in the first week, converting 1.4 million active users—45% of all customers.</li>
 <li><strong>Season close</strong> — An additional 24% of active users purchased by season end, bringing the tools to $920K in annual revenue.</li>
@@ -425,7 +425,7 @@ CASES = [
                 """<p>Evaluate five alternate NFL+ packaging configurations to inform D2C pricing and bundling strategy—and explain why preferences differed across fan segments using a Motivation to Consume Content measure adapted from academic literature.</p>""",
             ),
             (
-                "Approach",
+                "Action",
                 """<ul>
 <li><strong>Pilot evaluation</strong> — Semi-structured interviews with 3 fans pressure-tested survey comprehension before fielding.</li>
 <li><strong>Design Studios</strong> — Two in-person sessions with 24 NFL fans, who sorted NFL+, Club+, League Pass, Club Pass, and Mobile RedZone into MoSCoW (Must / Should / Could / Won’t) categories, then rank-ordered Packages A–E before and after pricing was revealed.</li>
@@ -435,7 +435,7 @@ CASES = [
 </ul>""",
             ),
             (
-                "Outcome",
+                "Result",
                 """<ul>
 <li><strong>The first NFL+ offering</strong> — The recommendations supported the final shape of the first NFL+ direct-to-consumer product—the first subscription bundle the NFL ever offered in its mobile app.</li>
 <li><strong>Launch scale</strong> — About 1.1 million sign-ups followed the 2022 launch. Though I had moved on by then, total subscribers grew 29% year-over-year, with NFL+ and NFL Sunday Ticket together reaching close to 6 million subscribers (the two are often reported as a combined figure).</li>
@@ -467,7 +467,7 @@ CASES = [
                 """<p>Put the working prototype in front of fans, learn how they used it, and turn that into clear product recommendations for NFL Labs and Intel.</p>""",
             ),
             (
-                "Approach",
+                "Action",
                 """<ul>
 <li><strong>Design studios</strong> — Fans tried the live TrueView prototype and talked through what felt useful, confusing, or unnecessary.</li>
 <li><strong>Usage feedback</strong> — Focused on when perspective control helped (e.g., understanding a play) vs. when a normal highlight was enough.</li>
@@ -475,7 +475,7 @@ CASES = [
 </ul>""",
             ),
             (
-                "Outcome",
+                "Result",
                 """<ul>
 <li><strong>Clear partner brief</strong> — Delivered an appetite read plus concrete recommendations for interactive-replay use in highlight products.</li>
 <li><strong>Decision support</strong> — Gave Labs and Intel a shared research basis for next partnership steps, instead of guessing from demos alone.</li>
