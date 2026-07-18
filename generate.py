@@ -515,79 +515,47 @@ CASES = [
         ],
     },
     {
-        "slug": "intel-verizon-superstadium",
+        "slug": "intel-trueview",
         "num": "10",
         "brand": "nfl",
-        "title": "Intel TrueView Design Studio → Verizon 5G SuperStadium",
-        "short": "Fantasy App UX plus Verizon 5G/AR field research—cognitive task analysis with wearable biometrics—drove a 25% engagement lift and 18% higher retention.",
-        "context": "NFL · Fantasy Sports &amp; NFL Labs (Intel &amp; Verizon)",
-        "year": "2018–2021",
-        "summary": "I directed UX research for the NFL Fantasy App and partnered with Verizon on 5G/AR fan-experience field research—pairing cognitive task analysis with wearable biometric telemetry during live events—and prototype evaluation on immersive AR hardware. That work, seeded in part by an earlier Intel TrueView design studio, formalized into SuperStadium and achieved a 25% engagement lift and 18% higher retention.",
-        "stats": [
-            ("25% increase", "Engagement lift from Fantasy App &amp; 5G/AR research", "conversion"),
-            ("18% increase", "Retention from Fantasy App &amp; 5G/AR research", "conversion"),
-            ("59.6%", "Super Bowl LX attendees who used SuperStadium", "conversion"),
-            ("$1B+", "Value of the Verizon–NFL technology partnership", "revenue"),
-        ],
-        "video": {
-            "src": "nfl-intel/superstadium-demo.mp4",
-            "caption": "SuperStadium / VIP fan experience walkthrough—multi-angle viewing and AR overlays in the NFL app.",
-            "poster": "nfl-intel/superstadium-poster.jpg",
-        },
-        "gallery_title": "Intel studio → fan personas &amp; prototypes",
-        "charts": [
-            {
-                "src": "nfl-intel/slide-19-prototype.jpg",
-                "alt": "Intel TrueView prototype still from design studio",
-                "caption": "Intel prototype explored in the design studio.",
-            },
-            {
-                "src": "nfl-intel/slide-20-prototype.jpg",
-                "alt": "TrueView video player prototype interface",
-                "caption": "TrueView player concept—interactive replay perspective.",
-            },
-            {
-                "src": "nfl-intel/persona-target-population.jpg",
-                "alt": "Target population personas Mike Jake Bill Ted",
-                "caption": "Target population—Mike, Jake, Bill, and Ted.",
-            },
-            {
-                "src": "nfl-intel/persona-jake-profile.jpg",
-                "alt": "Jake the Team Fan persona profile slide",
-                "caption": "Persona depth—Jake: The Team Fan.",
-            },
-            {
-                "src": "nfl-intel/persona-jake-empathy-map.jpg",
-                "alt": "Personalize Jake empathy map framework",
-                "caption": "How personas were activated—empathy map for Jake.",
-            },
-        ],
+        "badge_label": "NFL Labs",
+        "title": "Intel TrueView Design Studio",
+        "short": "Tested Intel’s interactive replay prototype with fans to learn whether—and how—the NFL should use it in Game Pass highlights.",
+        "context": "NFL Labs · Partner research with Intel",
+        "year": "2019",
+        "summary": "Intel built TrueView: a replay tool that lets you rotate the camera around a play instead of watching from one fixed angle. NFL Labs needed a clear read on fan appetite before investing further. I ran design studios where fans tried the working prototype, then delivered recommendations for how (and whether) to use it in Game Pass–style highlight experiences.",
+        "stats": [],
+        "gallery_after_body": True,
+        "gallery_title": "What fans tested",
+        "charts": [],
         "sections": [
             (
                 "Situation",
-                """<p>The Fantasy app remained a free flywheel into the main NFL ecosystem, while Labs pursued next-generation live and in-stadium engagement with partner technology. Intel’s TrueView technology let fans change visual perspective on recorded games—relevant to GamPass and condensed replays—and the league needed to know whether fans wanted that capability, how they would use it, and how to market it by fan type.</p>""",
+                """<p>Intel’s TrueView prototype let fans change the camera angle on recorded NFL plays. The league needed to know if fans actually wanted that—and what it would take to make it useful in products like Game Pass highlights—before committing more partnership effort.</p>""",
             ),
             (
                 "Task",
-                """<p>Direct UX research for the NFL Fantasy App while partnering with Verizon on 5G/AR fan-experience field research—and run design studios around the Intel prototype to deliver personas and a concrete proposal for enhancing the live game experience.</p>""",
+                """<p>Put the working prototype in front of fans, learn how they used it, and turn that into clear product recommendations for NFL Labs and Intel.</p>""",
             ),
             (
                 "Approach",
                 """<ul>
-<li><strong>Fantasy App UX research</strong> — Directed research on Fantasy product experiences that informed engagement and retention interventions alongside Labs partner work.</li>
-<li><strong>Intel design studio</strong> — Generative ideation with fans against working Intel prototypes; built NFL fan personas (e.g., Mike, Jake, Bill, Ted) and an empathy-map method so teams could personalize concepts to each archetype.</li>
-<li><strong>Live-game proposal</strong> — Primary studio outcomes were the personas and a proposal to enhance the <em>live</em> game experience—which NFL Labs formalized and largely seeded into the Verizon 5G SuperStadium program.</li>
-<li><strong>Verizon field research with biometrics</strong> — Paired cognitive task analysis with wearable biometric telemetry during live events, plus prototype evaluation on immersive AR hardware with Verizon’s innovation team.</li>
-<li><strong>Product shape</strong> — SuperStadium became an interactive AR feature <em>inside</em> the official NFL mobile app: up to 7 live/replay camera angles in-stadium (5 from home), Next Gen Stats AR overlays, live stats, play tracking, and in-stadium navigation—powered by Verizon 5G Ultra Wideband.</li>
-</ul>""",
+<li><strong>Design studios</strong> — Fans tried the live TrueView prototype and talked through what felt useful, confusing, or unnecessary.</li>
+<li><strong>Usage feedback</strong> — Focused on when perspective control helped (e.g., understanding a play) vs. when a normal highlight was enough.</li>
+<li><strong>Recommendations</strong> — Translated session findings into guidance for Game Pass / condensed-replay use cases Intel and Labs could act on.</li>
+</ul>
+<figure class="prototype-video">
+  <video controls playsinline preload="metadata" poster="../media/nfl-intel/trueview-prototype-poster.jpg">
+    <source src="../media/nfl-intel/trueview-prototype.mp4" type="video/mp4" />
+  </video>
+  <figcaption>TrueView prototype clip used in studio sessions.</figcaption>
+</figure>""",
             ),
             (
                 "Outcome",
                 """<ul>
-<li><strong>Engagement &amp; retention</strong> — Fantasy App and Verizon 5G/AR research achieved a 25% engagement lift and 18% higher retention.</li>
-<li><strong>Still in market</strong> — SuperStadium remains in current use as an embedded NFL app feature and a cornerstone of Verizon’s landmark 10-year, $1 billion+ technology partnership with the NFL (signed 2021).</li>
-<li><strong>Super Bowl LX (2026)</strong> — 59.6% of the 70,823 attendees were actively connected to the SuperStadium experience.</li>
-<li><strong>Attribution</strong> — I directed Fantasy UX research and early Verizon usability/prototype evaluation, and helped formalize the Labs concept that grew out of the Intel studio; I left for FanDuel before the full commercial partnership and later VIP product evolution landed.</li>
+<li><strong>Clear partner brief</strong> — Delivered an appetite read plus concrete recommendations for interactive-replay use in highlight products.</li>
+<li><strong>Decision support</strong> — Gave Labs and Intel a shared research basis for next partnership steps, instead of guessing from demos alone.</li>
 </ul>""",
             ),
         ],
@@ -634,8 +602,9 @@ def normalize_stat(item):
     return item[0], item[1], "default"
 
 
-def product_badge(brand_key, prefix=""):
+def product_badge(brand_key, prefix="", label_override=None):
     meta = BRANDS[brand_key]
+    label = label_override or meta["label"]
     mark = ""
     if brand_key == "fanduel":
         mark = f'<img class="product-mark product-mark-fd-img" src="{prefix}media/brands/fanduel-icon.png" alt="" width="22" height="22" />'
@@ -649,7 +618,7 @@ def product_badge(brand_key, prefix=""):
         mark = f'<img class="product-mark product-mark-cgu-img" src="{prefix}media/brands/cgu.png" alt="" width="22" height="22" />'
     elif brand_key == "burkmont":
         mark = '<span class="product-mark product-mark-burkmont" aria-hidden="true"></span>'
-    return f'<span class="product-badge product-{brand_key}">{mark}<span class="product-name">{meta["label"]}</span></span>'
+    return f'<span class="product-badge product-{brand_key}">{mark}<span class="product-name">{label}</span></span>'
 
 
 ABOUT_COPY = """
@@ -842,7 +811,6 @@ def write_home():
           <a href="case-studies.html#cases-robinhood" title="Robinhood case studies"><img src="media/brands/robinhood.png" alt="Robinhood" /></a>
           <a href="case-studies.html#cases-fanduel" title="FanDuel case studies"><img src="media/brands/fanduel.png" alt="FanDuel" /></a>
           <a href="case-studies.html#cases-nfl" title="NFL case studies"><img src="media/brands/nfl.png" alt="NFL" /></a>
-          <a href="cases/intel-verizon-superstadium.html" title="NFL · Verizon 5G SuperStadium"><img src="media/brands/verizon-5g.png" alt="Verizon 5G" /></a>
           <a href="case-studies.html" title="Ipsos Healthcare (case study forthcoming)"><img src="media/brands/ipsos.png" alt="Ipsos" /></a>
           <a href="case-studies.html" title="Merck study (case study forthcoming)"><img src="media/brands/merck.png" alt="Merck" /></a>
           <a href="case-studies.html" title="Claremont Colleges (case study forthcoming)"><img src="media/brands/cgu.png" alt="Claremont Graduate University" /></a>
@@ -871,7 +839,7 @@ def write_case_studies_page():
       <div class="wrap">
         <div class="section-head reveal">
           <h2>Case studies</h2>
-          <p>In-depth work across Robinhood, FanDuel, and NFL digital media—Fantasy tools, NFL+ packaging, and Intel → Verizon SuperStadium.</p>
+          <p>In-depth work across Robinhood, FanDuel, and NFL digital media—Fantasy tools, NFL+ packaging, and Intel TrueView.</p>
         </div>
 {chr(10).join(case_blocks)}
       </div>
@@ -1043,6 +1011,9 @@ def write_case(case, index):
         </div>
       </section>"""
 
+    charts_before = "" if case.get("gallery_after_body") else charts_html
+    charts_after = charts_html if case.get("gallery_after_body") else ""
+
     star_cells = []
     for title, body in case["sections"]:
         star_cells.append(
@@ -1062,7 +1033,10 @@ def write_case(case, index):
         if next_c
         else "<span></span>"
     )
-    badge = product_badge(case["brand"], prefix="../")
+    badge = product_badge(
+        case["brand"], prefix="../", label_override=case.get("badge_label")
+    )
+
     html = (
         header(active=case["title"], prefix="../", brand=case["brand"], nav_active="cases")
         + f"""
@@ -1081,7 +1055,7 @@ def write_case(case, index):
       </header>
 {stats_html}
 {media_html}
-{charts_html}
+{charts_before}
       <div class="case-board-body">
         <section class="exec-summary">
           <h2>Executive summary</h2>
@@ -1091,6 +1065,7 @@ def write_case(case, index):
 {chr(10).join(star_cells)}
         </div>
       </div>
+{charts_after}
       <div class="pager">
         {prev_link}
         {next_link}
