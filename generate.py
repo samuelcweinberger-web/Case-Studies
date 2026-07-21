@@ -513,6 +513,56 @@ CASES = [{
             ),
         ],
     },
+    {
+        "slug": "verizon-superstadium",
+        "num": "11",
+        "brand": "nfl",
+        "badge_label": "NFL Labs",
+        "title": "Verizon 5G Enhanced VIP Experience — SuperStadium",
+        "short": "Directed 5G/AR fan-experience field research with Verizon—pairing cognitive task analysis with wearable biometrics—that helped seed SuperStadium, now embedded in the NFL app.",
+        "context": "NFL Labs · Verizon 5G partnership",
+        "year": "2019–2021",
+        "summary": "NFL Labs wanted next-generation ways to deepen live and in-stadium engagement. I directed usability and field research on Verizon-powered 5G/AR fan experiences—pairing cognitive task analysis with wearable biometric telemetry during live events—that helped formalize the SuperStadium concept now embedded in the official NFL app.",
+        "insight": "In-stadium fans didn’t want a second screen—they wanted the stadium itself to become the interface.",
+        "stats": [
+            ("25% increase", "Engagement lift from Fantasy App &amp; 5G/AR research", "conversion"),
+            ("18% increase", "Retention from Fantasy App &amp; 5G/AR research", "conversion"),
+            ("59.6%", "Super Bowl LX attendees connected to SuperStadium", "conversion"),
+            ("$1B+", "NFL–Verizon technology partnership", "revenue"),
+        ],
+        "sections": [
+            (
+                "Situation",
+                """<ul>
+<li>NFL Labs wanted next-generation ways to deepen live and in-stadium fan engagement with partner technology.</li>
+<li>Verizon 5G opened the door to real-time AR overlays and multi-angle viewing inside the stadium.</li>
+</ul>""",
+            ),
+            (
+                "Task",
+                """<ul>
+<li>Direct usability and field research on Verizon-powered 5G/AR/VR fan experiences for in-stadium and at-home use.</li>
+<li>Turn findings into a concrete product direction Labs could formalize with Verizon.</li>
+</ul>""",
+            ),
+            (
+                "Action",
+                """<ul>
+<li>Paired cognitive task analysis with wearable biometric telemetry during live events to capture real in-stadium behavior.</li>
+<li>Ran prototype and usability evaluation on immersive AR hardware with Verizon’s innovation team.</li>
+<li>Shaped the product direction: multi-angle live/replay views, Next Gen Stats AR overlays, and in-stadium navigation over 5G Ultra Wideband.</li>
+</ul>""",
+            ),
+            (
+                "Result",
+                """<ul>
+<li>Fantasy App and 5G/AR research achieved a 25% engagement lift and 18% higher retention.</li>
+<li>Helped seed SuperStadium—now embedded in the official NFL app and central to a $1B+ NFL–Verizon partnership.</li>
+<li>At Super Bowl LX, 59.6% of attendees were actively connected to the SuperStadium experience.</li>
+</ul>""",
+            ),
+        ],
+    },
 ]
 
 
