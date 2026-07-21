@@ -16,7 +16,7 @@ BRANDS = {
         "product": "Sportsbook & CPE",
     },
     "nfl": {
-        "label": "NFL Fantasy",
+        "label": "NFL Fantasy App & NFL+",
         "product": "Fantasy & Digital Media",
     },
     "burkmont": {
@@ -285,12 +285,12 @@ CASES = [{
         "short": "Fixed 65% wallet drop-off with trust-framed KYC—converting 150K+ users and ~$8M in Q1 handle.",
         "context": "FanDuel · Core Products &amp; Experiences",
         "year": "2025",
-        "summary": "65% of new sign-ups abandoned at wallet/banking. Trust-framed KYC and progressive disclosure converted 150K+ accounts, drove ~$8M Q1 handle, and cut onboarding tickets 30%.",
+        "summary": "65% of new sign-ups abandoned at wallet/banking. Trust-framed KYC and progressive disclosure converted 150K+ accounts, drove ~$8M Q1 handle, and cut onboarding tickets 30% ($1–$1.5M saved annually).",
         "insight": "Users weren’t unmotivated—they were being asked for a routing number before anyone explained why.",
         "stats": [
             ("150K+", "Previously abandoned sign-ups who completed wallet setup", "scale"),
             ("$8M", "Incremental betting handle in Q1 2025", "revenue"),
-            ("30% reduction", "Onboarding customer-support tickets", "efficiency"),
+            ("30% reduction", "Onboarding support tickets ($1–$1.5M saved annually)", "efficiency"),
         ],
         "sections": [
             (
@@ -320,7 +320,7 @@ CASES = [{
                 """<ul>
 <li>Converted 150,000+ previously abandoned accounts.</li>
 <li>Generated ~$8M in incremental Q1 2025 handle.</li>
-<li>Cut onboarding support tickets ~30%; “Trust-First Onboarding” became the corporate standard.</li>
+<li>Cut onboarding support tickets ~30% ($1–$1.5M saved annually); “Trust-First Onboarding” became the corporate standard.</li>
 </ul>""",
             ),
         ],
@@ -337,7 +337,7 @@ CASES = [{
         "insight": "The barrier to a second product wasn’t interest—it was being asked for financial credentials all over again.",
         "stats": [
             ("2× increase", "Cross-sell acquisitions within 90 days", "conversion"),
-            ("$500M", "Projected lifetime value from the cross-sell program", "revenue"),
+            ("$300M", "Projected lifetime value from the cross-sell program", "revenue"),
             ("$5M+", "Incremental monthly revenue from cross-sell", "revenue"),
             ("14% increase", "Monthly active users", "conversion"),
         ],
@@ -368,7 +368,7 @@ CASES = [{
                 "Result",
                 """<ul>
 <li>Doubled cross-sell acquisitions within 90 days.</li>
-<li>Lifted MAU 14% with $5M+ incremental monthly revenue (~$500M projected LTV).</li>
+<li>Lifted MAU 14% with $5M+ incremental monthly revenue (~$300M projected LTV).</li>
 <li>Left Marketing/Product with an ongoing CX pulse + telemetry system.</li>
 </ul>""",
             ),
