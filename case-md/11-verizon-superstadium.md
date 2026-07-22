@@ -1,13 +1,13 @@
-# 11. Verizon 5G SuperStadium — Virtual Fan Experience
+# 11. Verizon 5G SuperStadium — In-Stadium Fan Experience
 
 **Company:** NFL Fantasy App & NFL+  
 **Context:** NFL Labs · Verizon 5G partnership  
 **Year:** 2019–2021
 
-**Listing blurb:** Partnered with Verizon 5G to test the SuperStadium Virtual Fan Experience—a next-generation, in-stadium and at-home experience for live NFL games.
+**Listing blurb:** Partnered with Verizon 5G to test the SuperStadium experience—an in-stadium-only, next-generation experience for live NFL games that later morphed into the VIP Fan Experience.
 
 ## Summary
-NFL Labs partnered with Verizon 5G to explore next-generation ways to deepen live and in-stadium engagement. I directed usability and field research on the SuperStadium Virtual Fan Experience—pairing cognitive task analysis with in-stadium field observation during live events—that helped formalize the concept now embedded in the official NFL app.
+NFL Labs partnered with Verizon 5G to explore next-generation ways to deepen in-stadium fan engagement. I directed usability and field research on the SuperStadium experience—an in-stadium-only concept pairing cognitive task analysis with field observation during live events—that later morphed into the VIP Fan Experience.
 
 > In-stadium fans didn’t want a second screen—they wanted the stadium itself to become the interface.
 
@@ -22,7 +22,7 @@ NFL Labs partnered with Verizon 5G to explore next-generation ways to deepen liv
 - Verizon 5G opened the door to real-time AR overlays and multi-angle viewing inside the stadium.
 
 ## Task
-- Direct usability and field research on Verizon-powered 5G/AR/VR fan experiences for in-stadium and at-home use.
+- Direct usability and field research on Verizon-powered 5G/AR/VR fan experiences for in-stadium use.
 - Turn findings into a concrete product direction Labs could formalize with Verizon.
 
 ## Action

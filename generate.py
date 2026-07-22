@@ -518,11 +518,11 @@ CASES = [{
         "num": "11",
         "brand": "nfl",
         "badge_label": "NFL Labs",
-        "title": "Verizon 5G SuperStadium — Virtual Fan Experience",
-        "short": "Partnered with Verizon 5G to test the SuperStadium Virtual Fan Experience—a next-generation, in-stadium and at-home experience for live NFL games.",
+        "title": "Verizon 5G SuperStadium — In-Stadium Fan Experience",
+        "short": "Partnered with Verizon 5G to test the SuperStadium experience—an in-stadium-only, next-generation experience for live NFL games that later morphed into the VIP Fan Experience.",
         "context": "NFL Labs · Verizon 5G partnership",
         "year": "2019–2021",
-        "summary": "NFL Labs partnered with Verizon 5G to explore next-generation ways to deepen live and in-stadium engagement. I directed usability and field research on the SuperStadium Virtual Fan Experience—pairing cognitive task analysis with in-stadium field observation during live events—that helped formalize the concept now embedded in the official NFL app.",
+        "summary": "NFL Labs partnered with Verizon 5G to explore next-generation ways to deepen in-stadium fan engagement. I directed usability and field research on the SuperStadium experience—an in-stadium-only concept pairing cognitive task analysis with field observation during live events—that later morphed into the VIP Fan Experience.",
         "insight": "In-stadium fans didn’t want a second screen—they wanted the stadium itself to become the interface.",
         "stats": [
             ("25% increase", "Engagement lift from Fantasy App &amp; 5G/AR research", "conversion"),
@@ -541,7 +541,7 @@ CASES = [{
             (
                 "Task",
                 """<ul>
-<li>Direct usability and field research on Verizon-powered 5G/AR/VR fan experiences for in-stadium and at-home use.</li>
+<li>Direct usability and field research on Verizon-powered 5G/AR/VR fan experiences for in-stadium use.</li>
 <li>Turn findings into a concrete product direction Labs could formalize with Verizon.</li>
 </ul>""",
             ),
