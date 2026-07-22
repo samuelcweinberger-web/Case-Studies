@@ -381,6 +381,10 @@ CASES = [{
         "title": "NFL Fantasy Mobile App",
         "subtitle": "Monetizing Fantasy Football — The Tools Package",
         "short": "Developed and shipped features available via in-app purchase—converting 45% of users and generating $920K.",
+        "headline_kpis": [
+            ("Subscriptions Purchased", "45% of users"),
+            ("Total Revenue", "$920K"),
+        ],
         "context": "NFL · Fantasy Sports",
         "year": "2020",
         "summary": "Developed and shipped Fantasy features available via in-app purchase—converting 45% of active users and generating $920K in direct-to-consumer revenue.",
@@ -1040,6 +1044,19 @@ def write_case(case, index):
     hero_desc_html = (
         f'<p class="case-dek">{case["short"]}</p>' if case.get("subtitle") else ""
     )
+    headline_html = ""
+    if case.get("headline_kpis"):
+        items = "\n".join(
+            f"""          <div class="headline-metric">
+            <span class="headline-metric-label">{label}</span>
+            <span class="headline-metric-value">{value}</span>
+          </div>"""
+            for label, value in case["headline_kpis"]
+        )
+        headline_html = f"""
+        <div class="case-headline" aria-label="Headline results">
+{items}
+        </div>"""
 
     html = (
         header(active=case["title"], prefix="../", brand=case["brand"], nav_active="cases")
@@ -1052,6 +1069,7 @@ def write_case(case, index):
         <h1>{case['title']}</h1>
         {subtitle_html}
         {hero_desc_html}
+        {headline_html}
         <div class="case-meta-line">
           <span>{case['context']}</span>
           <span class="case-meta-dot" aria-hidden="true">·</span>
