@@ -1008,7 +1008,6 @@ def write_case(case, index):
         section_blocks.append(
             f"""      <section class="case-section reveal">
         <div class="case-section-label">
-          <span class="case-section-num">{i + 1:02d}</span>
           <h2>{title}</h2>
         </div>
         <div class="case-section-body">{body}</div>
