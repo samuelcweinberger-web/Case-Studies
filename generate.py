@@ -433,6 +433,10 @@ CASES = [{
         "brand": "nfl",
         "title": "Pricing &amp; Packaging: D2C Subscription for NFL+",
         "short": "Formative research on the NFL’s first direct-to-consumer mobile subscription.",
+        "headline_kpis": [
+            ("Sign-ups at Launch", "1.1M"),
+            ("Subscribers by 2024", "2.7M"),
+        ],
         "context": "NFL · Digital Media &amp; NFL+",
         "year": "2020",
         "summary": "Formative research on the NFL’s first direct-to-consumer mobile subscription—NFL+, launched in 2022 to ~1.1M sign-ups.",
