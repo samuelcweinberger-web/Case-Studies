@@ -4,10 +4,10 @@
 **Context:** NFL Labs · Partner research with Intel  
 **Year:** 2019
 
-**Listing blurb:** Tested Intel’s TrueView replay prototype with fans and recommended where it belonged in Game Pass highlights.
+**Listing blurb:** Tested Intel’s TrueView replay prototype with fans and recommended how to integrate it into the NFL app and monetize it.
 
 ## Summary
-Ran design studios on Intel’s TrueView rotate-the-camera replay prototype and delivered recommendations for whether—and where—it belonged in Game Pass highlights.
+Ran design studios on Intel’s TrueView rotate-the-camera replay prototype and delivered recommendations for how to integrate it into the NFL app and monetize it.
 
 > Perspective control earned its place when fans wanted to understand a play—not as a default for every highlight.
 
