@@ -1,13 +1,13 @@
-# 11. Verizon 5G Enhanced VIP Experience — SuperStadium
+# 11. Verizon 5G SuperStadium — Virtual Fan Experience
 
 **Company:** NFL Fantasy App & NFL+  
 **Context:** NFL Labs · Verizon 5G partnership  
 **Year:** 2019–2021
 
-**Listing blurb:** Directed 5G/AR fan-experience field research with Verizon—pairing cognitive task analysis with wearable biometrics—that helped seed SuperStadium, now embedded in the NFL app.
+**Listing blurb:** Partnered with Verizon 5G to test the SuperStadium Virtual Fan Experience—a next-generation, in-stadium and at-home experience for live NFL games.
 
 ## Summary
-NFL Labs wanted next-generation ways to deepen live and in-stadium engagement. I directed usability and field research on Verizon-powered 5G/AR fan experiences—pairing cognitive task analysis with wearable biometric telemetry during live events—that helped formalize the SuperStadium concept now embedded in the official NFL app.
+NFL Labs partnered with Verizon 5G to explore next-generation ways to deepen live and in-stadium engagement. I directed usability and field research on the SuperStadium Virtual Fan Experience—pairing cognitive task analysis with in-stadium field observation during live events—that helped formalize the concept now embedded in the official NFL app.
 
 > In-stadium fans didn’t want a second screen—they wanted the stadium itself to become the interface.
 
@@ -26,7 +26,7 @@ NFL Labs wanted next-generation ways to deepen live and in-stadium engagement. I
 - Turn findings into a concrete product direction Labs could formalize with Verizon.
 
 ## Action
-- Paired cognitive task analysis with wearable biometric telemetry during live events to capture real in-stadium behavior.
+- Ran cognitive task analysis and in-stadium field research during live events to capture real fan behavior.
 - Ran prototype and usability evaluation on immersive AR hardware with Verizon’s innovation team.
 - Shaped the product direction: multi-angle live/replay views, Next Gen Stats AR overlays, and in-stadium navigation over 5G Ultra Wideband.
 

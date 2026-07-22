@@ -518,11 +518,11 @@ CASES = [{
         "num": "11",
         "brand": "nfl",
         "badge_label": "NFL Labs",
-        "title": "Verizon 5G Enhanced VIP Experience — SuperStadium",
-        "short": "Directed 5G/AR fan-experience field research with Verizon—pairing cognitive task analysis with wearable biometrics—that helped seed SuperStadium, now embedded in the NFL app.",
+        "title": "Verizon 5G SuperStadium — Virtual Fan Experience",
+        "short": "Partnered with Verizon 5G to test the SuperStadium Virtual Fan Experience—a next-generation, in-stadium and at-home experience for live NFL games.",
         "context": "NFL Labs · Verizon 5G partnership",
         "year": "2019–2021",
-        "summary": "NFL Labs wanted next-generation ways to deepen live and in-stadium engagement. I directed usability and field research on Verizon-powered 5G/AR fan experiences—pairing cognitive task analysis with wearable biometric telemetry during live events—that helped formalize the SuperStadium concept now embedded in the official NFL app.",
+        "summary": "NFL Labs partnered with Verizon 5G to explore next-generation ways to deepen live and in-stadium engagement. I directed usability and field research on the SuperStadium Virtual Fan Experience—pairing cognitive task analysis with in-stadium field observation during live events—that helped formalize the concept now embedded in the official NFL app.",
         "insight": "In-stadium fans didn’t want a second screen—they wanted the stadium itself to become the interface.",
         "stats": [
             ("25% increase", "Engagement lift from Fantasy App &amp; 5G/AR research", "conversion"),
@@ -548,7 +548,7 @@ CASES = [{
             (
                 "Action",
                 """<ul>
-<li>Paired cognitive task analysis with wearable biometric telemetry during live events to capture real in-stadium behavior.</li>
+<li>Ran cognitive task analysis and in-stadium field research during live events to capture real fan behavior.</li>
 <li>Ran prototype and usability evaluation on immersive AR hardware with Verizon’s innovation team.</li>
 <li>Shaped the product direction: multi-angle live/replay views, Next Gen Stats AR overlays, and in-stadium navigation over 5G Ultra Wideband.</li>
 </ul>""",
