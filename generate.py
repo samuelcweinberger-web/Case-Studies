@@ -426,7 +426,7 @@ CASES = [{
         "slug": "nfl-d2c-packaging",
         "num": "09",
         "brand": "nfl",
-        "title": "Pricing &amp; Packaging NFL+",
+        "title": "Pricing &amp; Packaging: D2C Subscription for NFL+",
         "short": "Design studios + a 2,208-fan survey shaped NFL+ packaging—the league’s first mobile subscription.",
         "context": "NFL · Digital Media &amp; NFL+",
         "year": "2020",

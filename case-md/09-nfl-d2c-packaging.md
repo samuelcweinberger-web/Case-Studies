@@ -1,4 +1,4 @@
-# 09. Pricing & Packaging NFL+
+# 09. Pricing & Packaging: D2C Subscription for NFL+
 
 **Company:** NFL Fantasy App & NFL+  
 **Context:** NFL · Digital Media & NFL+  
