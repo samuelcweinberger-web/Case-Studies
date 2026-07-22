@@ -427,10 +427,10 @@ CASES = [{
         "num": "09",
         "brand": "nfl",
         "title": "Pricing &amp; Packaging: D2C Subscription for NFL+",
-        "short": "Turned design studios and a 2,208-fan survey into the pricing and packaging blueprint for NFL+—the league’s first-ever D2C mobile subscription.",
+        "short": "Formative research on the NFL’s first direct-to-consumer mobile subscription—design studios and a 2,208-fan survey shaped the pricing and packaging blueprint for NFL+.",
         "context": "NFL · Digital Media &amp; NFL+",
         "year": "2020",
-        "summary": "Turned design studios and a 2,208-fan national survey into the pricing and packaging blueprint for NFL+—the league’s first-ever D2C mobile subscription, launched in 2022 to ~1.1M sign-ups.",
+        "summary": "Formative research on the NFL’s first direct-to-consumer mobile subscription—design studios and a 2,208-fan national survey shaped the pricing and packaging blueprint for NFL+, launched in 2022 to ~1.1M sign-ups.",
         "insight": "Features alone didn’t explain what fans would pay for—motivation to consume content explained why segments chose differently.",
         "stats": [
             ("1.1M", "NFL+ sign-ups after the 2022 launch", "scale"),
