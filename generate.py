@@ -475,10 +475,10 @@ CASES = [{
         "brand": "nfl",
         "badge_label": "NFL Labs",
         "title": "Intel TrueView Design Studio",
-        "short": "Tested Intel’s TrueView replay prototype with fans and recommended where it belonged in Game Pass highlights.",
+        "short": "Tested Intel’s TrueView replay prototype with fans and recommended how to integrate it into the NFL app and monetize it.",
         "context": "NFL Labs · Partner research with Intel",
         "year": "2019",
-        "summary": "Ran design studios on Intel’s TrueView rotate-the-camera replay prototype and delivered recommendations for whether—and where—it belonged in Game Pass highlights.",
+        "summary": "Ran design studios on Intel’s TrueView rotate-the-camera replay prototype and delivered recommendations for how to integrate it into the NFL app and monetize it.",
         "insight": "Perspective control earned its place when fans wanted to understand a play—not as a default for every highlight.",
         "stats": [],
         "sections": [
