@@ -1005,12 +1005,6 @@ def write_case(case, index):
     section_blocks = []
     total = len(case["sections"])
     for i, (title, body) in enumerate(case["sections"]):
-        if case.get("insight") and i == total - 1:
-            section_blocks.append(
-                f"""      <aside class="case-insight reveal">
-        <p>“{case['insight']}”</p>
-      </aside>"""
-            )
         section_blocks.append(
             f"""      <section class="case-section reveal">
         <div class="case-section-label">
@@ -1050,7 +1044,6 @@ def write_case(case, index):
         <div class="crumb"><a href="../case-studies.html">Case studies</a> <span aria-hidden="true">/</span> {case['num']}</div>
         {badge}
         <h1>{case['title']}</h1>
-        <p class="case-dek">{case['summary']}</p>
         <div class="case-meta-line">
           <span>{case['context']}</span>
           <span class="case-meta-dot" aria-hidden="true">·</span>
@@ -1059,7 +1052,6 @@ def write_case(case, index):
       </div>
     </header>
     <div class="wrap case-body">
-{kpi_html}
 {media_html}
 {charts_before}
       <div class="case-flow">
