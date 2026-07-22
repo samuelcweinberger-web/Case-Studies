@@ -1,4 +1,4 @@
-# 10. Intel TrueView Design Studio
+# 10. Intel TrueView 360° Prototype
 
 **Company:** NFL Fantasy App & NFL+  
 **Context:** NFL Labs · Partner research with Intel  

@@ -474,7 +474,7 @@ CASES = [{
         "num": "10",
         "brand": "nfl",
         "badge_label": "NFL Labs",
-        "title": "Intel TrueView Design Studio",
+        "title": "Intel TrueView 360° Prototype",
         "short": "Tested Intel’s TrueView replay prototype with fans and recommended how to integrate it into the NFL app and monetize it.",
         "context": "NFL Labs · Partner research with Intel",
         "year": "2019",
