@@ -4,10 +4,10 @@
 **Context:** NFL · Digital Media & NFL+  
 **Year:** 2020
 
-**Listing blurb:** Design studios + a 2,208-fan survey shaped NFL+ packaging—the league’s first mobile subscription.
+**Listing blurb:** Turned design studios and a 2,208-fan survey into the pricing and packaging blueprint for NFL+—the league’s first-ever D2C mobile subscription.
 
 ## Summary
-Design studios and a 2,208-fan national survey shaped NFL+ packaging recommendations—the league’s first mobile subscription launched in 2022 to ~1.1M sign-ups.
+Turned design studios and a 2,208-fan national survey into the pricing and packaging blueprint for NFL+—the league’s first-ever D2C mobile subscription, launched in 2022 to ~1.1M sign-ups.
 
 > Features alone didn’t explain what fans would pay for—motivation to consume content explained why segments chose differently.
 
