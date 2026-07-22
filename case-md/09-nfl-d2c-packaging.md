@@ -4,10 +4,10 @@
 **Context:** NFL · Digital Media & NFL+  
 **Year:** 2020
 
-**Listing blurb:** Formative research on the NFL’s first direct-to-consumer mobile subscription—design studios and a 2,208-fan survey shaped the pricing and packaging blueprint for NFL+.
+**Listing blurb:** Formative research on the NFL’s first direct-to-consumer mobile subscription.
 
 ## Summary
-Formative research on the NFL’s first direct-to-consumer mobile subscription—design studios and a 2,208-fan national survey shaped the pricing and packaging blueprint for NFL+, launched in 2022 to ~1.1M sign-ups.
+Formative research on the NFL’s first direct-to-consumer mobile subscription—NFL+, launched in 2022 to ~1.1M sign-ups.
 
 > Features alone didn’t explain what fans would pay for—motivation to consume content explained why segments chose differently.
 
