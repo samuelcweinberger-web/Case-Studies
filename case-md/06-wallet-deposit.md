@@ -4,6 +4,7 @@
 **Context:** FanDuel · Core Products & Experiences  
 **Year:** 2025
 
+
 **Listing blurb:** Fixed 65% wallet drop-off with trust-framed KYC—converting 150K+ users and ~$8M in Q1 handle.
 
 ## Summary

@@ -4,6 +4,7 @@
 **Context:** NFL · Digital Media & NFL+  
 **Year:** 2020
 
+
 **Listing blurb:** Formative research on the NFL’s first direct-to-consumer mobile subscription.
 
 ## Summary

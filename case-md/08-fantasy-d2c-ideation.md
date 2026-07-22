@@ -1,13 +1,15 @@
-# 08. Monetizing NFL Fantasy — The Tools Package
+# 08. NFL Fantasy Mobile App
 
 **Company:** NFL Fantasy App & NFL+  
 **Context:** NFL · Fantasy Sports  
 **Year:** 2020
 
-**Listing blurb:** Shipped a mid-season Fantasy Tools Package that converted 45% of active users—$600K in week one.
+**Project:** Monetizing Fantasy Football — The Tools Package
+
+**Listing blurb:** Developed and shipped features available via in-app purchase—converting 45% of users and generating $920K.
 
 ## Summary
-Proved Fantasy could monetize without breaking free play: a mid-season Tools Package converted 1.4M users (45%) in week one for $600K—$920K by season end.
+Developed and shipped Fantasy features available via in-app purchase—converting 45% of active users and generating $920K in direct-to-consumer revenue.
 
 > Fans would pay to win their league—as long as paying never changed the game itself.
 

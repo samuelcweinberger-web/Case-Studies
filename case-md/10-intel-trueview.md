@@ -4,6 +4,7 @@
 **Context:** NFL Labs · Partner research with Intel  
 **Year:** 2019
 
+
 **Listing blurb:** Tested Intel’s TrueView replay prototype with fans and recommended how to integrate it into the NFL app and monetize it.
 
 ## Summary

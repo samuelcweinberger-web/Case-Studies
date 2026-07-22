@@ -4,6 +4,7 @@
 **Context:** FanDuel · Core Products & Experiences  
 **Year:** 2025
 
+
 **Listing blurb:** Diagnosed a cross-sell plateau at payment linking—doubling acquisitions in 90 days and adding $5M+ monthly revenue.
 
 ## Summary

@@ -4,6 +4,7 @@
 **Context:** Robinhood · Prediction Markets & Event Contracts  
 **Year:** 2026
 
+
 **Listing blurb:** Built Claude + Figma agents that cut research cycles from 30 days to 1 week or less and quadrupled concurrent capacity.
 
 ## Summary

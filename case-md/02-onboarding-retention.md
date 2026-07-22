@@ -4,6 +4,7 @@
 **Context:** Robinhood · Prediction Markets & Event Contracts  
 **Year:** 2026
 
+
 **Listing blurb:** Cut post-rejection drop-off 60%+ with survival analysis and loss-aversion messaging—retaining ~900K users and ~$17M monthly.
 
 ## Summary

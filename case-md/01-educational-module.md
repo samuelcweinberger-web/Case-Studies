@@ -4,6 +4,7 @@
 **Context:** Robinhood · Prediction Markets & Event Contracts  
 **Year:** 2026
 
+
 **Listing blurb:** Validated a complex education module in under 48 hours with AI-moderated sessions—lifting trade rates 15% among completers.
 
 ## Summary

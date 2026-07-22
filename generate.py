@@ -378,11 +378,12 @@ CASES = [{
         "slug": "fantasy-d2c-ideation",
         "num": "08",
         "brand": "nfl",
-        "title": "Monetizing NFL Fantasy — The Tools Package",
-        "short": "Shipped a mid-season Fantasy Tools Package that converted 45% of active users—$600K in week one.",
+        "title": "NFL Fantasy Mobile App",
+        "subtitle": "Monetizing Fantasy Football — The Tools Package",
+        "short": "Developed and shipped features available via in-app purchase—converting 45% of users and generating $920K.",
         "context": "NFL · Fantasy Sports",
         "year": "2020",
-        "summary": "Proved Fantasy could monetize without breaking free play: a mid-season Tools Package converted 1.4M users (45%) in week one for $600K—$920K by season end.",
+        "summary": "Developed and shipped Fantasy features available via in-app purchase—converting 45% of active users and generating $920K in direct-to-consumer revenue.",
         "insight": "Fans would pay to win their league—as long as paying never changed the game itself.",
         "stats": [
             ("$600K", "Direct-to-consumer revenue in the first week", "revenue"),
@@ -1033,6 +1034,12 @@ def write_case(case, index):
     badge = product_badge(
         case["brand"], prefix="../", label_override=case.get("badge_label")
     )
+    subtitle_html = (
+        f'<p class="case-subtitle">{case["subtitle"]}</p>' if case.get("subtitle") else ""
+    )
+    hero_desc_html = (
+        f'<p class="case-dek">{case["short"]}</p>' if case.get("subtitle") else ""
+    )
 
     html = (
         header(active=case["title"], prefix="../", brand=case["brand"], nav_active="cases")
@@ -1043,6 +1050,8 @@ def write_case(case, index):
         <div class="crumb"><a href="../case-studies.html">Case studies</a> <span aria-hidden="true">/</span> {case['num']}</div>
         {badge}
         <h1>{case['title']}</h1>
+        {subtitle_html}
+        {hero_desc_html}
         <div class="case-meta-line">
           <span>{case['context']}</span>
           <span class="case-meta-dot" aria-hidden="true">·</span>

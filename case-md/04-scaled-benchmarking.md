@@ -4,6 +4,7 @@
 **Context:** FanDuel · Core Products & Experiences  
 **Year:** 2021–2025
 
+
 **Listing blurb:** Scaled UX research 2→32 and built regulator-approved RG measurement—while cutting research turnaround 75%.
 
 ## Summary

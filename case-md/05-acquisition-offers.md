@@ -4,6 +4,7 @@
 **Context:** FanDuel · Core Products & Experiences  
 **Year:** 2024
 
+
 **Listing blurb:** RCT showed the $5 offer matched the $50 offer on conversion at 4× lower cost—clarity beat generosity.
 
 ## Summary

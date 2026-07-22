@@ -4,6 +4,7 @@
 **Context:** NFL Labs · Verizon 5G partnership  
 **Year:** 2019–2021
 
+
 **Listing blurb:** Partnered with Verizon 5G to test the SuperStadium experience—an in-stadium-only, next-generation experience for live NFL games that later morphed into the VIP Fan Experience.
 
 ## Summary
