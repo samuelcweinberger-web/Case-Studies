@@ -443,6 +443,11 @@ CASES = [
         "year": "2019",
         "summary": "Ran design studios on Intel’s TrueView rotate-the-camera replay prototype and delivered recommendations for how to integrate it into the NFL app and monetize it.",
         "insight": "Perspective control earned its place when fans wanted to understand a play—not as a default for every highlight.",
+        "video": {
+            "src": "nfl-intel/trueview-prototype.mp4",
+            "poster": "intel-trueview-poster.png",
+            "caption": "Intel TrueView prototype — rotate-the-camera replay.",
+        },
         "stats": [],
         "sections": [
             (
@@ -948,38 +953,33 @@ def write_case(case, index):
 {cells}
       </section>"""
 
-    media_html = ""
-    if case.get("video") or case.get("phone"):
-        caption = ""
-        screen_inner = ""
-        if case.get("video"):
-            v = case["video"]
-            caption = v.get("caption", "")
-            vtype = v.get("type", "video/mp4")
-            poster = v.get("poster")
-            poster_attr = f' poster="../media/{poster}"' if poster else ""
-            screen_inner = f"""<video controls playsinline preload="metadata"{poster_attr}>
+    video_rail_html = ""
+    if case.get("video"):
+        v = case["video"]
+        vtype = v.get("type", "video/mp4")
+        poster = v.get("poster")
+        poster_attr = f' poster="../media/{poster}"' if poster else ""
+        caption = v.get("caption", "")
+        caption_html = (
+            f'<figcaption class="video-loop-caption">{caption}</figcaption>'
+            if caption
+            else ""
+        )
+        video_rail_html = f"""      <aside class="case-media-rail">
+        <figure class="video-loop reveal">
+          <div class="video-loop-frame">
+            <video class="video-loop-el" autoplay loop muted playsinline preload="metadata"{poster_attr}>
               <source src="../media/{v['src']}" type="{vtype}" />
               Your browser does not support the video tag.
-            </video>"""
-        else:
-            p = case["phone"]
-            caption = p.get("caption", "")
-            alt = p.get("alt", "")
-            screen_inner = f'<img src="../media/{p["src"]}" alt="{alt}" />'
-        caption_html = (
-            f'<p class="case-video-caption">{caption}</p>' if caption else ""
-        )
-        media_html = f"""
-      <div class="case-video reveal">
-        <div class="phone-frame">
-          <div class="phone-notch" aria-hidden="true"></div>
-          <div class="phone-screen">
-            {screen_inner}
+            </video>
+            <button type="button" class="video-loop-cta" data-video-cta aria-label="Restart video and expand to full screen">
+              <span class="video-loop-cta-icon" aria-hidden="true">&#10227;</span>
+              <span>Restart &amp; expand</span>
+            </button>
           </div>
-        </div>
-        {caption_html}
-      </div>"""
+          {caption_html}
+        </figure>
+      </aside>"""
 
     charts_html = ""
     if case.get("charts"):
@@ -1009,13 +1009,23 @@ def write_case(case, index):
     total = len(case["sections"])
     for i, (title, body) in enumerate(case["sections"]):
         section_blocks.append(
-            f"""      <section class="case-section reveal">
-        <div class="case-section-label">
-          <h2>{title}</h2>
-        </div>
-        <div class="case-section-body">{body}</div>
-      </section>"""
+            f"""        <section class="case-section reveal">
+          <div class="case-section-label">
+            <h2>{title}</h2>
+          </div>
+          <div class="case-section-body">{body}</div>
+        </section>"""
         )
+    flow_html = f"""      <div class="case-flow">
+{chr(10).join(section_blocks)}
+      </div>"""
+    if video_rail_html:
+        body_main = f"""      <div class="case-layout">
+{flow_html}
+{video_rail_html}
+      </div>"""
+    else:
+        body_main = flow_html
 
     prev_link = (
         f"""<a class="pager-link pager-prev" href="{prev_c['slug']}.html">
@@ -1095,11 +1105,8 @@ def write_case(case, index):
       </div>
     </header>
     <div class="wrap case-body">
-{media_html}
 {charts_before}
-      <div class="case-flow">
-{chr(10).join(section_blocks)}
-      </div>
+{body_main}
 {charts_after}
       <nav class="pager" aria-label="Case study pagination">
         {prev_link}

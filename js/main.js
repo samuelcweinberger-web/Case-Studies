@@ -20,3 +20,21 @@ const observer = new IntersectionObserver(
 );
 
 document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+document.querySelectorAll("[data-video-cta]").forEach((btn) => {
+  const frame = btn.closest(".video-loop-frame");
+  const video = frame && frame.querySelector("video");
+  if (!video) return;
+  btn.addEventListener("click", () => {
+    video.currentTime = 0;
+    const playback = video.play();
+    if (playback && typeof playback.catch === "function") playback.catch(() => {});
+    if (typeof video.requestFullscreen === "function") {
+      video.requestFullscreen().catch(() => {});
+    } else if (typeof video.webkitRequestFullscreen === "function") {
+      video.webkitRequestFullscreen();
+    } else if (typeof video.webkitEnterFullscreen === "function") {
+      video.webkitEnterFullscreen();
+    }
+  });
+});

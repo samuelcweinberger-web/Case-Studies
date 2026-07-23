@@ -53,47 +53,46 @@
     </header>
     <div class="wrap case-body">
 
-
       <div class="case-flow">
-      <section class="case-section reveal">
-        <div class="case-section-label">
-          <h2>Situation</h2>
-        </div>
-        <div class="case-section-body"><ul>
+        <section class="case-section reveal">
+          <div class="case-section-label">
+            <h2>Situation</h2>
+          </div>
+          <div class="case-section-body"><ul>
 <li>Data Science built and launched a personalization algorithm; its A/B test showed the experimental group trading ~4% more than control (p<.001).</li>
 <li>The result impressed leadership, who let the algorithm run.</li>
 <li>Weeks later, executives hit a puzzle: event-contract trade volume had plateaued despite meaningful MAU growth.</li>
 <li>No one could explain the disconnect—they asked me to find the “why.”</li>
 </ul></div>
-      </section>
-      <section class="case-section reveal">
-        <div class="case-section-label">
-          <h2>Task</h2>
-        </div>
-        <div class="case-section-body"><ul>
+        </section>
+        <section class="case-section reveal">
+          <div class="case-section-label">
+            <h2>Task</h2>
+          </div>
+          <div class="case-section-body"><ul>
 <li>Map what actually drives and suppresses trade volume, and diagnose the plateau.</li>
 <li>Preliminary analysis surfaced the risk immediately: ~70% of the base traded sports contracts only.</li>
 <li>Higher-value multi-category traders—who trade significantly more—were shrinking fast.</li>
 <li>That set up a seasonal cliff: once college basketball and the NBA season ended, volume had nowhere to go.</li>
 </ul></div>
-      </section>
-      <section class="case-section reveal">
-        <div class="case-section-label">
-          <h2>Action</h2>
-        </div>
-        <div class="case-section-body"><ul>
+        </section>
+        <section class="case-section reveal">
+          <div class="case-section-label">
+            <h2>Action</h2>
+          </div>
+          <div class="case-section-body"><ul>
 <li>Working from a defined research plan, ran behavioral segmentation and interviewed the top 2% of four groups: sports-only traders, multi-category traders, former-multi-category traders who had retreated, and net-new “cold-start” users the algorithm had no history for.</li>
 <li>In-app, users showed me the mechanism directly: the algorithm kept re-surfacing the same events and buried inventory they’d have loved.</li>
 <li>One high-value trader had defected to a competitor for WNBA contracts that Robinhood actually offered but hid so deep in the UI he assumed they didn’t exist.</li>
 <li>Went back to Data Science for the raw experiment data and found the aggregate +4% couldn’t support “personalization works”: the treatment window overlapped the NBA Finals (a major confound), the test was heavily overpowered, and the lift was carried by users with existing trading history.</li>
 <li>A planned cold-start contrast (factorial ANOVA, arm × segment) told the opposite story—for net-new users, control outperformed the personalized experience by 24%.</li>
 </ul></div>
-      </section>
-      <section class="case-section reveal">
-        <div class="case-section-label">
-          <h2>Result</h2>
-        </div>
-        <div class="case-section-body"><ul>
+        </section>
+        <section class="case-section reveal">
+          <div class="case-section-label">
+            <h2>Result</h2>
+          </div>
+          <div class="case-section-body"><ul>
 <li>Core finding: personalization alone can’t cold-start. With no history to draw on, the algorithm funneled new users into the same popular-sports events, starving discovery and manufacturing the seasonal cliff.</li>
 <li>Recommended pairing personalization with explicit customization—users select categories during onboarding and toggle them on or off as interests change, a need ~90% of interviewees raised unprompted.</li>
 <li>Recommended a Watch List giving traders a cross-category home to return to.</li>
@@ -102,7 +101,7 @@
 <li>The improvement held even as the cohort grew by ~300K new signups; churned users overwhelmingly had not adopted the Watch List (~3% had).</li>
 <li>Onboarding customization step recommended and pending product adoption.</li>
 </ul></div>
-      </section>
+        </section>
       </div>
 
       <nav class="pager" aria-label="Case study pagination">
