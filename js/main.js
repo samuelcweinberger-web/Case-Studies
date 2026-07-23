@@ -104,7 +104,7 @@ document.querySelectorAll("[data-video-click]").forEach((frame) => {
 
 document.querySelectorAll("[data-carousel]").forEach((carousel) => {
   const slides = Array.from(carousel.querySelectorAll(".carousel-slide"));
-  if (slides.length < 2) return;
+  if (!slides.length) return;
   const prev = carousel.querySelector("[data-carousel-prev]");
   const next = carousel.querySelector("[data-carousel-next]");
   const current = carousel.querySelector("[data-carousel-current]");
@@ -112,7 +112,11 @@ document.querySelectorAll("[data-carousel]").forEach((carousel) => {
   let index = 0;
   const show = (n) => {
     index = (n + slides.length) % slides.length;
-    slides.forEach((slide, i) => slide.classList.toggle("is-active", i === index));
+    slides.forEach((slide, i) => {
+      const depth = (i - index + slides.length) % slides.length;
+      slide.dataset.depth = String(depth);
+      slide.classList.toggle("is-active", depth === 0);
+    });
     if (current) current.textContent = String(index + 1);
     if (caption) caption.textContent = slides[index].dataset.caption || "";
   };
