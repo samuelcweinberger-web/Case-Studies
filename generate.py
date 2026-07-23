@@ -953,7 +953,7 @@ def write_case(case, index):
 {cells}
       </section>"""
 
-    video_rail_html = ""
+    rail_parts = []
     if case.get("video"):
         v = case["video"]
         vtype = v.get("type", "video/mp4")
@@ -965,8 +965,8 @@ def write_case(case, index):
             if caption
             else ""
         )
-        video_rail_html = f"""      <aside class="case-media-rail">
-        <figure class="video-loop reveal">
+        rail_parts.append(
+            f"""        <figure class="video-loop reveal">
           <div class="video-loop-frame">
             <video class="video-loop-el" autoplay loop muted playsinline preload="metadata"{poster_attr}>
               <source src="../media/{v['src']}" type="{vtype}" />
@@ -978,8 +978,47 @@ def write_case(case, index):
             </button>
           </div>
           {caption_html}
-        </figure>
-      </aside>"""
+        </figure>"""
+        )
+    if case.get("images"):
+        imgs = case["images"]
+        n = len(imgs)
+        slides = []
+        for idx, im in enumerate(imgs):
+            alt = im.get("alt", "")
+            cap = im.get("caption", "")
+            active = " is-active" if idx == 0 else ""
+            slides.append(
+                f'            <img class="carousel-slide{active}" src="../media/{im["src"]}" alt="{alt}" data-caption="{cap}" loading="lazy" />'
+            )
+        controls_html = ""
+        if n > 1:
+            controls_html = f"""
+          <div class="carousel-controls">
+            <button type="button" class="carousel-btn" data-carousel-prev aria-label="Previous image">&#8249;</button>
+            <span class="carousel-count"><span data-carousel-current>1</span> / {n}</span>
+            <button type="button" class="carousel-btn" data-carousel-next aria-label="Next image">&#8250;</button>
+          </div>"""
+        first_cap = imgs[0].get("caption", "")
+        caption_html = (
+            f'\n          <figcaption class="carousel-caption" data-carousel-caption>{first_cap}</figcaption>'
+            if any(im.get("caption") for im in imgs)
+            else ""
+        )
+        rail_parts.append(
+            f"""        <figure class="image-carousel reveal" data-carousel>
+          <div class="carousel-stack">
+{chr(10).join(slides)}
+          </div>{controls_html}{caption_html}
+        </figure>"""
+        )
+    video_rail_html = ""
+    if rail_parts:
+        video_rail_html = (
+            '      <aside class="case-media-rail">\n'
+            + "\n".join(rail_parts)
+            + "\n      </aside>"
+        )
 
     charts_html = ""
     if case.get("charts"):

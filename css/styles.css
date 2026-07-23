@@ -1326,6 +1326,86 @@ body.brand-nfl::before {
   line-height: 1.4;
 }
 
+/* Image carousel (rail) */
+.image-carousel {
+  margin: 0;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.carousel-stack {
+  display: grid;
+  align-items: center;
+  border-radius: 0.9rem;
+  overflow: hidden;
+  background: #000;
+  border: 1px solid var(--line);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+}
+
+.carousel-slide {
+  grid-area: 1 / 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s var(--ease);
+}
+
+.carousel-slide.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+}
+
+.carousel-btn {
+  width: 1.9rem;
+  height: 1.9rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--ink);
+  font-size: 1.15rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s var(--ease), border-color 0.2s var(--ease),
+    color 0.2s var(--ease);
+}
+
+.carousel-btn:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #0c0f12;
+}
+
+.carousel-count {
+  min-width: 3rem;
+  text-align: center;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  color: var(--faint);
+  font-variant-numeric: tabular-nums;
+}
+
+.carousel-caption {
+  margin: 0;
+  color: var(--faint);
+  font-size: 0.82rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
 @media (max-width: 900px) {
   .case-layout {
     grid-template-columns: 1fr;
