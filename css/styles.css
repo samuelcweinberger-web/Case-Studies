@@ -1903,3 +1903,198 @@ body.brand-nfl::before {
     width: min(100%, 240px);
   }
 }
+
+/* Resume page */
+.resume-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.resume-name {
+  margin: 0 0 0.35rem;
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.resume-title {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.resume-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.resume-actions .btn {
+  cursor: pointer;
+}
+
+.resume-summary {
+  max-width: 46rem;
+  color: var(--muted);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+
+.resume-jobs {
+  display: grid;
+  gap: 2.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.resume-job-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  margin-bottom: 1.1rem;
+}
+
+.resume-job-head .company-heading {
+  margin: 0;
+}
+
+.resume-context {
+  color: var(--faint);
+  font-size: 0.9rem;
+}
+
+.resume-role {
+  margin-bottom: 1.5rem;
+}
+
+.resume-role:last-child {
+  margin-bottom: 0;
+}
+
+.resume-role-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.35rem 1rem;
+}
+
+.resume-role-head h4 {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 1rem;
+  font-weight: 650;
+  color: var(--ink);
+}
+
+.resume-role-head a {
+  text-decoration: none;
+}
+
+.resume-role-head a:hover {
+  color: var(--accent);
+}
+
+.resume-dates {
+  color: var(--faint);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.resume-bullets {
+  margin-top: 0.75rem;
+}
+
+.resume-earlier {
+  list-style: none;
+  margin: 0 0 3rem;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+
+.resume-earlier li {
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.resume-earlier p {
+  margin: 0.5rem 0 0;
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+.resume-skills-summary {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.resume-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+@media (max-width: 700px) {
+  .resume-header {
+    align-items: flex-start;
+  }
+}
+
+@media print {
+  .site-header,
+  .site-footer,
+  .resume-actions {
+    display: none !important;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #111;
+  }
+
+  body::before {
+    display: none;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .resume-summary,
+  .resume-earlier p,
+  .skills-list span,
+  .resume-context,
+  .resume-dates {
+    color: #333;
+  }
+
+  .company-heading,
+  .resume-role-head h4,
+  .skills-list strong {
+    color: #000;
+  }
+
+  .pill {
+    border-color: #999;
+    color: #333;
+  }
+
+  .page-section {
+    padding-top: 1rem;
+  }
+}

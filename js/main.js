@@ -102,6 +102,10 @@ document.querySelectorAll("[data-video-click]").forEach((frame) => {
   });
 });
 
+document.querySelectorAll("[data-print]").forEach((btn) => {
+  btn.addEventListener("click", () => window.print());
+});
+
 document.querySelectorAll("[data-carousel]").forEach((carousel) => {
   const slides = Array.from(carousel.querySelectorAll(".carousel-slide"));
   if (!slides.length) return;
