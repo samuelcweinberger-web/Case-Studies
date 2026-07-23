@@ -247,7 +247,7 @@ CASES = [
         "title": "Studying the Users You Can’t Recruit: Fixing Registration Drop-Off",
         "short": "Studied an unrecruitable, churned population through a simulated signup—reordering when SSN and banking are asked lifted registration completion from ~50% to ~65%.",
         "context": "FanDuel · Core Products & Experiences",
-        "year": "2021–2025",
+        "year": "2021–2023",
         "role": "UX Researcher (study lead)",
         "timeline": "Multi-phase (simulation → A/B → production)",
         "methods": "Simulated-app experiment · Step-by-step intention measurement · Third-party panel recruitment · A/B testing · Behavioral theory (foot-in-the-door)",
@@ -289,7 +289,7 @@ CASES = [
         "title": "Benchmarking as a Decision Engine: Measuring Experience Across a Fragmented Portfolio",
         "short": "Built the cross-product benchmarking system the org ran on—surfacing Same Game Parlays, collapsing reporting from quarterly to daily, and growing research into a 32-person team.",
         "context": "FanDuel · Core Products & Experiences",
-        "year": "2021–2025",
+        "year": "2021–2023",
         "role": "UX Researcher (system owner)",
         "timeline": "Ongoing program",
         "methods": "Journey benchmarking · Event-triggered in-app surveys · Behavioral telemetry · Competitive benchmarking · Stakeholder dashboards",
@@ -331,7 +331,7 @@ CASES = [
         "title": "ACH Adoption: Turning a Payments Risk Into a Trust Problem Worth Solving",
         "short": "Diagnosed ACH avoidance as a trust misperception, not mechanics—message reframing nearly doubled ACH adoption from under 20% to ~32% and drained a football-Sunday fraud exploit.",
         "context": "FanDuel · Core Products & Experiences",
-        "year": "2021–2025",
+        "year": "2024–2026",
         "role": "UX Researcher (study lead)",
         "timeline": "Multi-phase (research → A/B → production)",
         "methods": "In-depth interviews · A/B message testing · Behavioral + sentiment pairing · Cross-functional work with content design",
@@ -376,7 +376,7 @@ CASES = [
             ("Total Revenue", "$920K"),
         ],
         "context": "NFL · Fantasy Sports",
-        "year": "2020",
+        "year": "2019–2021",
         "summary": "Developed and shipped Fantasy features available via in-app purchase—converting 45% of active users and generating $920K in direct-to-consumer revenue.",
         "insight": "Fans would pay to win their league—as long as paying never changed the game itself.",
         "stats": [
@@ -428,7 +428,7 @@ CASES = [
             ("Subscribers by 2024", "2.7M"),
         ],
         "context": "NFL · Digital Media &amp; NFL+",
-        "year": "2020",
+        "year": "2019–2021",
         "summary": "Formative research on the NFL’s first direct-to-consumer mobile subscription—NFL+, launched in 2022 to ~1.1M sign-ups.",
         "insight": "Features alone didn’t explain what fans would pay for—motivation to consume content explained why segments chose differently.",
         "stats": [
@@ -476,7 +476,7 @@ CASES = [
         "title": "Intel TrueView 360° Prototype",
         "short": "Tested Intel’s TrueView replay prototype with fans and recommended how to integrate it into the NFL app and monetize it.",
         "context": "NFL Labs · Partner research with Intel",
-        "year": "2019",
+        "year": "2019–2021",
         "summary": "Ran design studios on Intel’s TrueView rotate-the-camera replay prototype and delivered recommendations for how to integrate it into the NFL app and monetize it.",
         "insight": "Perspective control earned its place when fans wanted to understand a play—not as a default for every highlight.",
         "video": {
@@ -624,7 +624,7 @@ def header(active=None, prefix="", brand=None, nav_active=None):
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{title}</title>
-  <meta name="description" content="Samuel Weinberger — applied cognitive and social psychologist turned UX Engineer and Quantitative UX Researcher. Bridging human behavior, analytics, and interactive design." />
+  <meta name="description" content="Samuel Weinberger — applied cognitive and social psychologist turned UX Engineer and Design Researcher. Bridging human behavior, analytics, and interactive design." />
   <link rel="stylesheet" href="{prefix}css/styles.css" />
 </head>
 <body{brand_class}>
@@ -658,7 +658,7 @@ def product_badge(brand_key, prefix="", label_override=None):
 
 
 ABOUT_COPY = """
-          <p>I’m an applied cognitive and social psychologist turned UX Engineer and Quantitative UX Researcher. I specialize in bridging the gap between human behavior, advanced data analytics, and interactive design. My academic background—including graduate research focused on human motivation, persuasion, and systemic behavior change—serves as the foundation for how I approach product strategy.</p>
+          <p>I’m an applied cognitive and social psychologist turned UX Engineer and Design Researcher. I specialize in bridging the gap between human behavior, advanced data analytics, and interactive design. My academic background—including graduate research focused on human motivation, persuasion, and systemic behavior change—serves as the foundation for how I approach product strategy.</p>
           <p>After starting my career in human factors and FDA-regulated medical device research, I stepped into the digital product space. I spent my early UX career at the NFL optimizing the Fantasy mobile app, and later spent four years at FanDuel helping build and scale one of the most successful sportsbooks on the market—including a quarterly product benchmarking program that turned SUPR-Q, Ease of Use, loyalty, and Responsible Gaming into a shared executive scorecard. Most recently, I joined Robinhood to focus on first-time user experience, customer acquisition, and retention within the rapid-fire world of event contracts and prediction markets.</p>
           <p>“UX Engineer” describes a modern hybrid role—and the engineering isn’t backend software. What I engineer is the research operation itself: automated pipelines that field studies in days instead of weeks, telemetry and dashboards that tie what users say to what they actually do, and interactive prototypes built mid-interview so ideas get tested the moment they surface. That infrastructure connects research to analytics, design, and product management, so insights arrive fast enough—and connected enough—to shape product strategy. Working across all four disciplines is what lets me tie every research effort directly to a business objective.</p>
           <p>By integrating generative AI and automated workflows into my practice, I’ve expanded my reach across product, design, and data science. Whether I am orchestrating end-to-end research operations, deploying automated quantitative surveys, or rapidly generating interactive, engineering-ready prototypes mid-interview, I focus on one thing: translating complex human behavior into massive product momentum.</p>
