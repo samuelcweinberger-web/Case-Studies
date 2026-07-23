@@ -38,6 +38,18 @@ CASES = [
         "slug": "first-trade-conversion",
         "num": "01",
         "brand": "robinhood",
+        "images": [
+            {
+                "src": "01-non-converters/featured-before-change.png",
+                "alt": "Featured tab before the change",
+                "caption": "Before change: Featured ranked alphabetically, burying the World Cup behind Bitcoin, carousel flush to the edge.",
+            },
+            {
+                "src": "01-non-converters/featured-after-change.png",
+                "alt": "Featured tab after the change",
+                "caption": "After change: popularity-ranked Featured surfaces the World Cup, offset carousel peeks the next category.",
+            },
+        ],
         "title": "Cracking First-Trade Conversion Before Tip-Off",
         "short": "A five-day sprint that traced first-trade drop-off to findability, not disinterest—recommendations lifted first-trade conversion to a record 88%.",
         "context": "Robinhood · Prediction Markets & Event Contracts",
@@ -127,6 +139,27 @@ CASES = [
         "slug": "diversify-single-category",
         "num": "03",
         "brand": "robinhood",
+        "images": [
+            {
+                "src": "03-category-expansion/order-form-before-change.png",
+                "alt": "Order form before the change",
+                "caption": "Before change: one lever — a dollar amount, buy at market or not at all.",
+            },
+            {
+                "src": "03-category-expansion/order-type-menu.png",
+                "alt": "New order-type menu",
+                "caption": "The new order-type menu introducing the Limit order — set your own price, good for the day.",
+            },
+            {
+                "src": "03-category-expansion/order-form-after-change.png",
+                "alt": "Order form after the change",
+                "caption": "After change: full limit-order controls — price, quantity, expiry, with cost and payout shown before you commit.",
+            },
+        ],
+        "video": {
+            "src": "03-category-expansion/btc-scrub.mp4",
+            "caption": "Scrubbing the BTC contract chart to inspect price at any moment — turning a fast binary market into an informed call, sourced from CF Benchmarks' BRTI.",
+        },
         "title": "From Coin Toss to Informed Call: Getting Single-Category Traders to Diversify",
         "short": "Showed diversification was blocked by confidence, not risk—new decision tools (limit order, Tool Tip) made trying a new category feel informed and lifted multi-category traders 11%.",
         "context": "Robinhood · Prediction Markets & Event Contracts",
@@ -954,32 +987,6 @@ def write_case(case, index):
       </section>"""
 
     rail_parts = []
-    if case.get("video"):
-        v = case["video"]
-        vtype = v.get("type", "video/mp4")
-        poster = v.get("poster")
-        poster_attr = f' poster="../media/{poster}"' if poster else ""
-        caption = v.get("caption", "")
-        caption_html = (
-            f'<figcaption class="video-loop-caption">{caption}</figcaption>'
-            if caption
-            else ""
-        )
-        rail_parts.append(
-            f"""        <figure class="video-loop reveal">
-          <div class="video-loop-frame">
-            <video class="video-loop-el" autoplay loop muted playsinline preload="metadata"{poster_attr}>
-              <source src="../media/{v['src']}" type="{vtype}" />
-              Your browser does not support the video tag.
-            </video>
-            <button type="button" class="video-loop-cta" data-video-cta aria-label="Restart video and expand to full screen">
-              <span class="video-loop-cta-icon" aria-hidden="true">&#10227;</span>
-              <span>Restart &amp; expand</span>
-            </button>
-          </div>
-          {caption_html}
-        </figure>"""
-        )
     if case.get("images"):
         imgs = case["images"]
         n = len(imgs)
@@ -1000,7 +1007,7 @@ def write_case(case, index):
             <button type="button" class="carousel-btn" data-carousel-next aria-label="Next image">&#8250;</button>
           </div>"""
         first_cap = imgs[0].get("caption", "")
-        caption_html = (
+        img_caption_html = (
             f'\n          <figcaption class="carousel-caption" data-carousel-caption>{first_cap}</figcaption>'
             if any(im.get("caption") for im in imgs)
             else ""
@@ -1009,7 +1016,33 @@ def write_case(case, index):
             f"""        <figure class="image-carousel reveal" data-carousel>
           <div class="carousel-stack">
 {chr(10).join(slides)}
-          </div>{controls_html}{caption_html}
+          </div>{controls_html}{img_caption_html}
+        </figure>"""
+        )
+    if case.get("video"):
+        v = case["video"]
+        vtype = v.get("type", "video/mp4")
+        poster = v.get("poster")
+        poster_attr = f' poster="../media/{poster}"' if poster else ""
+        caption = v.get("caption", "")
+        vid_caption_html = (
+            f'<figcaption class="video-loop-caption">{caption}</figcaption>'
+            if caption
+            else ""
+        )
+        rail_parts.append(
+            f"""        <figure class="video-loop reveal">
+          <div class="video-loop-frame">
+            <video class="video-loop-el" autoplay loop muted playsinline preload="metadata"{poster_attr}>
+              <source src="../media/{v['src']}" type="{vtype}" />
+              Your browser does not support the video tag.
+            </video>
+            <button type="button" class="video-loop-cta" data-video-cta aria-label="Restart video and expand to full screen">
+              <span class="video-loop-cta-icon" aria-hidden="true">&#10227;</span>
+              <span>Restart &amp; expand</span>
+            </button>
+          </div>
+          {vid_caption_html}
         </figure>"""
         )
     video_rail_html = ""
