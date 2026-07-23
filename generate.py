@@ -158,6 +158,9 @@ CASES = [
         ],
         "video": {
             "src": "03-category-expansion/btc-scrub.mp4",
+            "poster": "03-category-expansion/btc-scrub-poster.jpg",
+            "mode": "click",
+            "cta": "Click to watch video",
             "caption": "Scrubbing the BTC contract chart to inspect price at any moment — turning a fast binary market into an informed call, sourced from CF Benchmarks' BRTI.",
         },
         "title": "From Coin Toss to Informed Call: Getting Single-Category Traders to Diversify",
@@ -1030,8 +1033,33 @@ def write_case(case, index):
             if caption
             else ""
         )
-        rail_parts.append(
-            f"""        <figure class="video-loop reveal">
+        if v.get("mode") == "click":
+            cta_label = v.get("cta", "Click to watch video")
+            poster_src = f'../media/{poster}' if poster else ""
+            poster_img = (
+                f'<img class="video-click-poster" src="{poster_src}" alt="" loading="lazy" />'
+                if poster
+                else ""
+            )
+            rail_parts.append(
+                f"""        <figure class="video-click reveal">
+          <div class="video-click-frame" data-video-click>
+            {poster_img}
+            <video class="video-click-el" playsinline preload="none"{poster_attr} hidden>
+              <source src="../media/{v['src']}" type="{vtype}" />
+              Your browser does not support the video tag.
+            </video>
+            <button type="button" class="video-click-cta" aria-label="{cta_label}">
+              <span class="video-click-cta-icon" aria-hidden="true">&#9654;</span>
+              <span>{cta_label}</span>
+            </button>
+          </div>
+          {vid_caption_html}
+        </figure>"""
+            )
+        else:
+            rail_parts.append(
+                f"""        <figure class="video-loop reveal">
           <div class="video-loop-frame">
             <video class="video-loop-el" autoplay loop muted playsinline preload="metadata"{poster_attr}>
               <source src="../media/{v['src']}" type="{vtype}" />
@@ -1044,7 +1072,7 @@ def write_case(case, index):
           </div>
           {vid_caption_html}
         </figure>"""
-        )
+            )
     video_rail_html = ""
     if rail_parts:
         video_rail_html = (

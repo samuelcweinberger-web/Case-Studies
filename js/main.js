@@ -39,6 +39,69 @@ document.querySelectorAll("[data-video-cta]").forEach((btn) => {
   });
 });
 
+document.querySelectorAll("[data-video-click]").forEach((frame) => {
+  const video = frame.querySelector("video");
+  const btn = frame.querySelector(".video-click-cta");
+  if (!video || !btn) return;
+
+  const enterFullscreen = () => {
+    if (typeof video.requestFullscreen === "function") {
+      return video.requestFullscreen();
+    }
+    if (typeof video.webkitRequestFullscreen === "function") {
+      video.webkitRequestFullscreen();
+      return Promise.resolve();
+    }
+    if (typeof video.webkitEnterFullscreen === "function") {
+      video.webkitEnterFullscreen();
+      return Promise.resolve();
+    }
+    return Promise.resolve();
+  };
+
+  const resetToPoster = () => {
+    frame.classList.remove("is-playing");
+    video.pause();
+    video.currentTime = 0;
+    video.hidden = true;
+    video.removeAttribute("controls");
+  };
+
+  const playVideo = () => {
+    frame.classList.add("is-playing");
+    video.hidden = false;
+    video.muted = false;
+    video.controls = true;
+    video.currentTime = 0;
+    const playback = video.play();
+    if (playback && typeof playback.catch === "function") {
+      playback.catch(() => {});
+    }
+    enterFullscreen().catch(() => {});
+  };
+
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    playVideo();
+  });
+  frame.addEventListener("click", (e) => {
+    if (e.target === btn || btn.contains(e.target)) return;
+    if (!frame.classList.contains("is-playing")) playVideo();
+  });
+
+  video.addEventListener("ended", resetToPoster);
+  document.addEventListener("fullscreenchange", () => {
+    if (!document.fullscreenElement && frame.classList.contains("is-playing")) {
+      resetToPoster();
+    }
+  });
+  document.addEventListener("webkitfullscreenchange", () => {
+    if (!document.webkitFullscreenElement && frame.classList.contains("is-playing")) {
+      resetToPoster();
+    }
+  });
+});
+
 document.querySelectorAll("[data-carousel]").forEach((carousel) => {
   const slides = Array.from(carousel.querySelectorAll(".carousel-slide"));
   if (slides.length < 2) return;
