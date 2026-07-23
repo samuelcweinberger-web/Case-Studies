@@ -634,6 +634,7 @@ def header(active=None, prefix="", brand=None, nav_active=None):
       <nav class="nav" aria-label="Primary">
         {nav_link("case-studies.html", "Case studies", "cases")}
         {nav_link("skills.html", "Skills", "skills")}
+        {nav_link("research-tools.html", "Research tools", "research-tools")}
         {nav_link("about.html", "About me", "about")}
         <a href="mailto:samuelcweinberger@gmail.com">Contact</a>
       </nav>
@@ -903,9 +904,6 @@ def write_skills_page():
           </ul>
         </section>"""
         )
-    tools = "\n".join(
-        f'          <li class="tool-pill">{tool}</li>' for tool in RESEARCH_TOOLS
-    )
     html = (
         header(active="Skills", nav_active="skills")
         + f"""
@@ -919,8 +917,26 @@ def write_skills_page():
         <div class="skills-grid">
 {chr(10).join(groups)}
         </div>
+      </div>
+    </section>
+  </main>
+"""
+        + footer()
+    )
+    (ROOT / "skills.html").write_text(html)
 
-        <div class="section-head reveal tools-head" id="research-tools">
+
+def write_research_tools_page():
+    tools = "\n".join(
+        f'          <li class="tool-pill">{tool}</li>' for tool in RESEARCH_TOOLS
+    )
+    html = (
+        header(active="Research tools", nav_active="research-tools")
+        + f"""
+  <main>
+    <section class="section page-section" id="research-tools">
+      <div class="wrap">
+        <div class="section-head reveal">
           <h2>Research tools</h2>
           <p>Platforms and languages I use across survey, analytics, experimentation, collaboration, and analysis.</p>
         </div>
@@ -933,7 +949,7 @@ def write_skills_page():
 """
         + footer()
     )
-    (ROOT / "skills.html").write_text(html)
+    (ROOT / "research-tools.html").write_text(html)
 
 
 def write_about_page():
@@ -1225,6 +1241,7 @@ def main():
     write_home()
     write_case_studies_page()
     write_skills_page()
+    write_research_tools_page()
     write_about_page()
     for i, case in enumerate(CASES):
         write_case(case, i)
