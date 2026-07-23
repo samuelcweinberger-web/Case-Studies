@@ -4,13 +4,16 @@
 **Context:** NFL · Digital Media & NFL+  
 **Year:** 2020
 
-
 **Listing blurb:** Formative research on the NFL’s first direct-to-consumer mobile subscription.
 
 ## Summary
 Formative research on the NFL’s first direct-to-consumer mobile subscription—NFL+, launched in 2022 to ~1.1M sign-ups.
 
 > Features alone didn’t explain what fans would pay for—motivation to consume content explained why segments chose differently.
+
+## Headline KPIs
+- **1.1M** — Sign-ups at Launch
+- **2.7M** — Subscribers by 2024
 
 ## Impact KPIs
 - **1.1M** — NFL+ sign-ups after the 2022 launch  _[scale]_

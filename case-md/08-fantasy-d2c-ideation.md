@@ -13,6 +13,10 @@ Developed and shipped Fantasy features available via in-app purchase—convertin
 
 > Fans would pay to win their league—as long as paying never changed the game itself.
 
+## Headline KPIs
+- **45% of users** — Subscriptions Purchased
+- **$920K** — Total Revenue
+
 ## Impact KPIs
 - **$600K** — Direct-to-consumer revenue in the first week  _[revenue]_
 - **$920K** — Direct-to-consumer revenue by season end  _[revenue]_

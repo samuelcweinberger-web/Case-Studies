@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Cold-Start Problem: A Deep Dive Into a Personalization Experiment — Sam Weinberger</title>
+  <meta name="description" content="Samuel Weinberger — applied cognitive and social psychologist turned UX Engineer and Quantitative UX Researcher. Bridging human behavior, analytics, and interactive design." />
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body class="brand-robinhood">
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../index.html">Sam Weinberger</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../case-studies.html" class="is-active">Case studies</a>
+        <a href="../skills.html">Skills</a>
+        <a href="../about.html">About me</a>
+        <a href="mailto:samuelcweinberger@gmail.com">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="case-page">
+    <header class="case-hero">
+      <div class="wrap">
+        <div class="crumb"><a href="../case-studies.html">Case studies</a> <span aria-hidden="true">/</span> 02</div>
+        <span class="product-badge product-robinhood"><span class="product-name">Robinhood</span></span>
+        <h1>The Cold-Start Problem: A Deep Dive Into a Personalization Experiment</h1>
+        
+        
+        
+        <div class="case-meta-line">
+          <span>Robinhood · Prediction Markets & Event Contracts</span>
+          <span class="case-meta-dot" aria-hidden="true">·</span>
+          <span>2026</span>
+        </div>
+        
+        <dl class="case-brief">
+          <div class="brief-item">
+            <dt>Role</dt>
+            <dd>UX Researcher (investigation lead)</dd>
+          </div>
+          <div class="brief-item">
+            <dt>Timeline</dt>
+            <dd>Multi-week deep dive</dd>
+          </div>
+          <div class="brief-item">
+            <dt>Methods</dt>
+            <dd>Behavioral segmentation · AI-moderated interviews · Factorial ANOVA (arm × segment) · Matched-sample analysis · Prototyping (Cursor · GitHub · Figma · Python)</dd>
+          </div>
+        </dl>
+      </div>
+    </header>
+    <div class="wrap case-body">
+
+
+      <div class="case-flow">
+      <section class="case-section reveal">
+        <div class="case-section-label">
+          <h2>Situation</h2>
+        </div>
+        <div class="case-section-body"><ul>
+<li>Data Science built and launched a personalization algorithm; its A/B test showed the experimental group trading ~4% more than control (p<.001).</li>
+<li>The result impressed leadership, who let the algorithm run.</li>
+<li>Weeks later, executives hit a puzzle: event-contract trade volume had plateaued despite meaningful MAU growth.</li>
+<li>No one could explain the disconnect—they asked me to find the “why.”</li>
+</ul></div>
+      </section>
+      <section class="case-section reveal">
+        <div class="case-section-label">
+          <h2>Task</h2>
+        </div>
+        <div class="case-section-body"><ul>
+<li>Map what actually drives and suppresses trade volume, and diagnose the plateau.</li>
+<li>Preliminary analysis surfaced the risk immediately: ~70% of the base traded sports contracts only.</li>
+<li>Higher-value multi-category traders—who trade significantly more—were shrinking fast.</li>
+<li>That set up a seasonal cliff: once college basketball and the NBA season ended, volume had nowhere to go.</li>
+</ul></div>
+      </section>
+      <section class="case-section reveal">
+        <div class="case-section-label">
+          <h2>Action</h2>
+        </div>
+        <div class="case-section-body"><ul>
+<li>Working from a defined research plan, ran behavioral segmentation and interviewed the top 2% of four groups: sports-only traders, multi-category traders, former-multi-category traders who had retreated, and net-new “cold-start” users the algorithm had no history for.</li>
+<li>In-app, users showed me the mechanism directly: the algorithm kept re-surfacing the same events and buried inventory they’d have loved.</li>
+<li>One high-value trader had defected to a competitor for WNBA contracts that Robinhood actually offered but hid so deep in the UI he assumed they didn’t exist.</li>
+<li>Went back to Data Science for the raw experiment data and found the aggregate +4% couldn’t support “personalization works”: the treatment window overlapped the NBA Finals (a major confound), the test was heavily overpowered, and the lift was carried by users with existing trading history.</li>
+<li>A planned cold-start contrast (factorial ANOVA, arm × segment) told the opposite story—for net-new users, control outperformed the personalized experience by 24%.</li>
+</ul></div>
+      </section>
+      <section class="case-section reveal">
+        <div class="case-section-label">
+          <h2>Result</h2>
+        </div>
+        <div class="case-section-body"><ul>
+<li>Core finding: personalization alone can’t cold-start. With no history to draw on, the algorithm funneled new users into the same popular-sports events, starving discovery and manufacturing the seasonal cliff.</li>
+<li>Recommended pairing personalization with explicit customization—users select categories during onboarding and toggle them on or off as interests change, a need ~90% of interviewees raised unprompted.</li>
+<li>Recommended a Watch List giving traders a cross-category home to return to.</li>
+<li>Prototyped both (Cursor, GitHub, Figma, Python); the Watch List shipped in a variant form.</li>
+<li>One-and-done churn among crossover first-traders fell from 54% to 37% in one month.</li>
+<li>The improvement held even as the cohort grew by ~300K new signups; churned users overwhelmingly had not adopted the Watch List (~3% had).</li>
+<li>Onboarding customization step recommended and pending product adoption.</li>
+</ul></div>
+      </section>
+      </div>
+
+      <nav class="pager" aria-label="Case study pagination">
+        <a class="pager-link pager-prev" href="first-trade-conversion.html">
+          <span class="pager-kicker">← Previous</span>
+          <span class="pager-title">Cracking First-Trade Conversion Before Tip-Off</span>
+        </a>
+        <a class="pager-link pager-next" href="diversify-single-category.html">
+          <span class="pager-kicker">Next →</span>
+          <span class="pager-title">From Coin Toss to Informed Call: Getting Single-Category Traders to Diversify</span>
+        </a>
+      </nav>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>© 2026 Sam Weinberger</div>
+      <div><a href="mailto:samuelcweinberger@gmail.com">samuelcweinberger@gmail.com</a></div>
+    </div>
+  </footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>

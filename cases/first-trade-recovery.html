@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Turning a Dead End Into a Second Chance — Sam Weinberger</title>
+  <meta name="description" content="Samuel Weinberger — applied cognitive and social psychologist turned UX Engineer and Quantitative UX Researcher. Bridging human behavior, analytics, and interactive design." />
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body class="brand-robinhood">
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../index.html">Sam Weinberger</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../case-studies.html" class="is-active">Case studies</a>
+        <a href="../skills.html">Skills</a>
+        <a href="../about.html">About me</a>
+        <a href="mailto:samuelcweinberger@gmail.com">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="case-page">
+    <header class="case-hero">
+      <div class="wrap">
+        <div class="crumb"><a href="../case-studies.html">Case studies</a> <span aria-hidden="true">/</span> 04</div>
+        <span class="product-badge product-robinhood"><span class="product-name">Robinhood</span></span>
+        <h1>Turning a Dead End Into a Second Chance</h1>
+        
+        
+        
+        <div class="case-meta-line">
+          <span>Robinhood · Prediction Markets & Event Contracts</span>
+          <span class="case-meta-dot" aria-hidden="true">·</span>
+          <span>2026</span>
+        </div>
+        
+        <dl class="case-brief">
+          <div class="brief-item">
+            <dt>Role</dt>
+            <dd>UX Researcher (investigation lead)</dd>
+          </div>
+          <div class="brief-item">
+            <dt>Timeline</dt>
+            <dd>Interview → data diagnosis → shipped fix</dd>
+          </div>
+          <div class="brief-item">
+            <dt>Methods</dt>
+            <dd>In-depth interviews · Python/SQL prevalence analysis · Churn analysis · Message design with content partners</dd>
+          </div>
+        </dl>
+      </div>
+    </header>
+    <div class="wrap case-body">
+
+
+      <div class="case-flow">
+      <section class="case-section reveal">
+        <div class="case-section-label">
+          <h2>Situation</h2>
+        </div>
+        <div class="case-section-body"><ul>
+<li>A backend error the company could not control, prevent, or fix was interrupting first-time customers mid-attempt on their very first trade.</li>
+<li>The failure produced a blank screen with no recovery path—no explanation, no retry, no way forward; users’ only option was to exit the app entirely.</li>
+<li>It hit 1 in every 5 first-time users and had been happening since prediction markets launched; almost all affected users churned completely and experienced it as a platform failure that destroyed trust.</li>
+<li>That constraint defined the problem: the error couldn’t be eliminated, so the only available lever was the experience surrounding it.</li>
+</ul></div>
+      </section>
+      <section class="case-section reveal">
+        <div class="case-section-label">
+          <h2>Task</h2>
+        </div>
+        <div class="case-section-body"><ul>
+<li>The problem surfaced in an interview—a participant described hitting the dead end firsthand.</li>
+<li>Establish how widespread it actually was, since no one in the company had quantified it.</li>
+<li>Because the error couldn’t be fixed at the source, find what would keep affected users from abandoning entirely despite it still happening—recovering a segment being lost silently, at scale, every month.</li>
+</ul></div>
+      </section>
+      <section class="case-section reveal">
+        <div class="case-section-label">
+          <h2>Action</h2>
+        </div>
+        <div class="case-section-body"><ul>
+<li>Used Python and SQL to diagnose prevalence across the first-trade funnel, confirming it affected 1 in 5 first-time users and was a major driver of onboarding abandonment and 7–8 figure monthly revenue loss.</li>
+<li>Identified a rare and valuable population: the ~10% of affected users who returned and tried again despite the failure.</li>
+<li>Interviewed that group specifically—asking what would have prevented everyone else from dropping off for good.</li>
+<li>Their answer was consistent and specific: a brief explanation of what happened, plus a CTA that kept them inside the app and returned them to the event they’d been trying to trade.</li>
+<li>Worked with content partners to design that messaging: a plain-language explanation of the failure and a recovery path straight back into the trade funnel.</li>
+</ul></div>
+      </section>
+      <section class="case-section reveal">
+        <div class="case-section-label">
+          <h2>Result</h2>
+        </div>
+        <div class="case-section-body"><ul>
+<li>Identified first-time-user friction outside company control that was driving 7–8 figure monthly losses from user abandonment.</li>
+<li>Recommended a simple messaging strategy—a plain-language explanation plus a CTA back to the event they’d been trading.</li>
+<li>Reduced drop-off significantly: abandonment after a failed first-trade attempt fell from roughly 9 in 10 to 3 in 10, recovering 6 of every 10 at-risk users.</li>
+<li>Recovered ~$12M in monthly revenue—roughly 70% of future monthly losses.</li>
+<li>The underlying error was never fixed—it still occurs. The recovery came entirely from redesigning the moment around it, with no incentives, no engineering fix, and no spend.</li>
+</ul></div>
+      </section>
+      </div>
+
+      <nav class="pager" aria-label="Case study pagination">
+        <a class="pager-link pager-prev" href="diversify-single-category.html">
+          <span class="pager-kicker">← Previous</span>
+          <span class="pager-title">From Coin Toss to Informed Call: Getting Single-Category Traders to Diversify</span>
+        </a>
+        <a class="pager-link pager-next" href="registration-dropoff.html">
+          <span class="pager-kicker">Next →</span>
+          <span class="pager-title">Studying the Users You Can’t Recruit: Fixing Registration Drop-Off</span>
+        </a>
+      </nav>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>© 2026 Sam Weinberger</div>
+      <div><a href="mailto:samuelcweinberger@gmail.com">samuelcweinberger@gmail.com</a></div>
+    </div>
+  </footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>
