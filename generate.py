@@ -612,7 +612,7 @@ CASES = [
 
 def header(active=None, prefix="", brand=None, nav_active=None):
     brand_class = f' class="brand-{brand}"' if brand else ""
-    title = "Sam Weinberger — Case Studies" if not active else f"{active} — Sam Weinberger"
+    title = "Sam Weinberger" if not active else f"{active} — Sam Weinberger"
 
     def nav_link(href, label, key):
         cls = ' class="is-active"' if nav_active == key else ""
@@ -737,6 +737,40 @@ SKILLS = [
         ],
     },
 ]
+
+TOOL_ICONS = {
+    "Amplitude": "amplitude.png",
+    "Claude Code": "claude-code.svg",
+    "Coda": "coda.svg",
+    "Confluence": "confluence.svg",
+    "Contentful": "contentful.svg",
+    "Cursor": "cursor.svg",
+    "Displayr": "displayr.png",
+    "FigJam": "figjam.svg",
+    "Figma": "figma.svg",
+    "GitHub": "github.svg",
+    "Glean": "glean.png",
+    "Great Question": "great-question.png",
+    "Jira": "jira.svg",
+    "Listen": "listen.png",
+    "Lucid": "lucid.svg",
+    "Miro": "miro.svg",
+    "Notion": "notion.svg",
+    "Python": "python.svg",
+    "Qualtrics": "qualtrics.svg",
+    "Quantilope": "quantilope.png",
+    "Quantum Metric": "quantum-metric.png",
+    "R": "r.svg",
+    "Salesforce": "salesforce.svg",
+    "SAS": "sas.svg",
+    "Slack": "slack.svg",
+    "SPSS": "spss.svg",
+    "SQL": "sql.svg",
+    "StatSig": "statsig.png",
+    "UserTesting": "usertesting.png",
+    # Major Oak, RedOak, and Roder RDE are internal/proprietary tools with
+    # no public brand marks, so they intentionally have no icon entry here.
+}
 
 RESEARCH_TOOLS = sorted(
     {
@@ -927,9 +961,25 @@ def write_skills_page():
 
 
 def write_research_tools_page():
-    tools = "\n".join(
-        f'          <li class="tool-pill">{tool}</li>' for tool in RESEARCH_TOOLS
-    )
+    tiles = []
+    for tool in RESEARCH_TOOLS:
+        icon_file = TOOL_ICONS.get(tool)
+        if icon_file:
+            icon_html = (
+                f'<span class="tool-icon-swatch">'
+                f'<img src="media/tool-icons/{icon_file}" alt="{tool} logo" loading="lazy" />'
+                f"</span>"
+            )
+        else:
+            initial = tool[0]
+            icon_html = f'<span class="tool-icon-fallback" aria-hidden="true">{initial}</span>'
+        tiles.append(
+            f"""          <li class="tool-icon-tile">
+            {icon_html}
+            <span class="tool-icon-name">{tool}</span>
+          </li>"""
+        )
+    tools = "\n".join(tiles)
     html = (
         header(active="Research tools", nav_active="research-tools")
         + f"""
@@ -940,7 +990,7 @@ def write_research_tools_page():
           <h2>Research tools</h2>
           <p>Platforms and languages I use across survey, analytics, experimentation, collaboration, and analysis.</p>
         </div>
-        <ul class="tools-cloud reveal">
+        <ul class="tool-icon-grid reveal">
 {tools}
         </ul>
       </div>
