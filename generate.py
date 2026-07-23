@@ -634,7 +634,7 @@ def header(active=None, prefix="", brand=None, nav_active=None):
       <nav class="nav" aria-label="Primary">
         {nav_link("case-studies.html", "Case studies", "cases")}
         {nav_link("skills.html", "Skills", "skills")}
-        {nav_link("research-tools.html", "Research tools", "research-tools")}
+        {nav_link("research-tools.html", "Tech Stack", "research-tools")}
         {nav_link("about.html", "About me", "about")}
         {nav_link("resume.html", "Resume", "resume")}
         <a href="mailto:samuelcweinberger@gmail.com">Contact</a>
@@ -664,140 +664,165 @@ ABOUT_COPY = """
           <p>By integrating generative AI and automated workflows into my practice, I’ve expanded my reach across product, design, and data science. Whether I am orchestrating end-to-end research operations, deploying automated quantitative surveys, or rapidly generating interactive, engineering-ready prototypes mid-interview, I focus on one thing: translating complex human behavior into massive product momentum.</p>
 """
 
-RESUME_TITLE = "Quantitative UX Researcher &amp; UX Engineer"
+RESUME_TITLE = "User Experience Research Engineer | AI-Driven Insights"
 
-RESUME_SUMMARY = (
-    "Applied cognitive and social psychologist turned Quantitative UX Researcher and UX Engineer, with 9+ years "
-    "connecting human behavior, advanced analytics, and interactive design to shipped product decisions. Built and "
-    "scaled research operations at Robinhood, FanDuel, and the NFL—pairing rigorous quant methods (survival analysis, "
-    "clustering, RCTs, psychometrics) with AI-enabled research infrastructure that compresses multi-week study "
-    "cycles into days."
+RESUME_CONTACT = {
+    "phone": "(310) 529-7223",
+    "phone_href": "tel:+13105297223",
+    "location": "Los Angeles, CA",
+    "email": "samuelcweinberger@gmail.com",
+    "linkedin_label": "linkedin.com/in/samuelcweinberger",
+    "linkedin_href": "https://www.linkedin.com/in/samuelcweinberger",
+}
+
+RESUME_EDUCATION = [
+    {
+        "name": "Claremont Graduate University",
+        "dates": "2016–2020",
+        "details": "Ph.D. Candidate in Cognitive &amp; Social Psychology · Master of Arts in Psychology, GPA 3.45",
+    },
+    {
+        "name": "University of Southern California",
+        "dates": "2008–2010",
+        "details": "B.A. in Public Policy &amp; Evaluation, GPA 3.65",
+    },
+    {
+        "name": "Stanford University",
+        "dates": "2006–2008",
+        "details": "Communications &amp; Media Studies, GPA 3.88",
+    },
+]
+
+RESUME_ATHLETICS = (
+    "Athletics: NCAA Division 1 Football (Stanford) · NCAA Division 1 Baseball (USC) · "
+    "Team USA, Track Cycling"
 )
 
+# Flat, reverse-chronological list mirroring the "PROFESSIONAL EXPERIENCE" section of the
+# source resume exactly — one entry per job (no earlier/later tiering, no nested roles).
 RESUME_EXPERIENCE = [
     {
         "company": "Robinhood",
         "brand": "robinhood",
-        "context": "Prediction Markets &amp; Event Contracts",
-        "roles": [
-            {
-                "title": "Quantitative UX Researcher (Contractor)",
-                "dates": "2026–Present",
-                "bullets": [
-                    (
-                        "Retention Strategy",
-                        "Used survival analysis to pinpoint when post-first-trade-rejection drop-off occurred, then shipped personalized, loss-aversion-framed messaging that cut it by 60%+ — retaining ~900K users/month and ~$17M in monthly revenue.",
-                    ),
-                    (
-                        "Growth &amp; Acquisition Research",
-                        "Segmented behavioral archetypes via KMeans clustering on product telemetry and validated via A/B/n experiments — driving 4–12% engagement/retention lifts and an 18% trade-volume increase among top-tier customers.",
-                    ),
-                    (
-                        "Rapid Validation",
-                        "Validated a prediction-markets education module in under 48 hours (vs. a 3–4 week cycle) using 100 AI-moderated sessions — 40% of World Cup traders completed the module, and completers traded at a 15% higher rate.",
-                    ),
-                    (
-                        "AI Research Automation",
-                        "Built autonomous AI agents (Claude + MCP + Figma design systems) that generate engineering-ready prototypes live mid-interview and run study lifecycles end to end — compressing a 30-day research cycle to 1 week or less and quadrupling concurrent study capacity.",
-                    ),
-                ],
-            }
+        "context": "Prediction Markets Team",
+        "title": "Quantitative UX Researcher",
+        "dates": "Feb 2026 – July 2026",
+        "bullets": [
+            (
+                "Growth &amp; Expansion",
+                'Combined in-depth interviews and behavioral segmentation to identify key factors limiting prediction market engagement. Designed and tested multifaceted solutions that drove an <a href="cases/diversify-single-category.html">11% increase in engagement in new markets</a>, accounting for ~24% of total trade volume.',
+            ),
+            (
+                "Retention Strategy",
+                'Diagnosed first-time-user friction outside company control that was driving 7–8 figure monthly losses from user abandonment; recommended a simple messaging strategy that reduced drop-off significantly, <a href="cases/first-trade-recovery.html">recovering ~$12M in monthly revenue</a> (70% of projected monthly losses).',
+            ),
+            (
+                "AI Research Automation",
+                'Programmed AI agents supporting UX workflows that produce engineering-ready prototypes, accelerating average research cycles from ~20–30 days to one week or less, improving project capacity 4×, and maximizing high-velocity <a href="case-studies.html#cases-robinhood">A/B testing</a>.',
+            ),
         ],
     },
     {
         "company": "FanDuel Group",
         "brand": "fanduel",
-        "context": "Core Products &amp; Experiences",
-        "roles": [
-            {
-                "title": "Lead UX Researcher",
-                "dates": "2024–2025",
-                "bullets": [
-                    (
-                        "Team Scaling",
-                        "Scaled UX Research from 2 into a 32-person division delivering 200+ studies annually while directing AI-enabled research pipelines that cut turnaround time 75%.",
-                    ),
-                    (
-                        "Trust-First Onboarding",
-                        "Diagnosed a 65% drop-off at wallet/banking setup via triangulated mixed-methods research (Amplitude funnels, 15 moderated sessions, 5,000-respondent MaxDiff) and redesigned KYC with progressive disclosure and trust framing — converting 150K+ stagnant users, generating ~$8M in incremental Q1 2025 handle, and cutting support tickets 30% ($1–$1.5M saved annually).",
-                    ),
-                    (
-                        "Cross-Sell Growth",
-                        "Architected a continuous CX measurement framework (in-app pulse checks, competitive usability with 4,000 users, custom telemetry hooks) to diagnose a cross-sell plateau — doubling cross-sell acquisition in 90 days, lifting MAU 14%, and adding $5M+ in incremental monthly revenue (~$300M projected LTV).",
-                    ),
-                ],
-            },
-            {
-                "title": "Senior UX Researcher",
-                "dates": "2021–2024",
-                "bullets": [
-                    (
-                        "Multi-State Rollout",
-                        "Led message testing across multi-state rollouts, improving conversion and retention in competitive markets and growing total users from 1.5M to 20M+.",
-                    ),
-                    (
-                        "Responsible Gaming",
-                        "Developed and psychometrically validated a proprietary Responsible Gaming Sentiment Scale that earned regulatory approval for predictive user-protection models.",
-                    ),
-                    (
-                        "Acquisition Offers",
-                        "Ran a 1,050-person RCT on first-bet offers proving a $5 offer matched a $50 offer on conversion (~10% lift over control) at 4× lower payout cost — standardizing the offer strategy ahead of state launches.",
-                    ),
-                ],
-            },
+        "context": "Core Products &amp; Experiences Team",
+        "title": "Lead UX Researcher",
+        "dates": "Jan 2024 – Feb 2026",
+        "bullets": [
+            (
+                "Responsible Gaming",
+                "Built and psychometrically validated a proprietary Responsible Gaming Sentiment Scale and the risk-prevention tools for users, raising the share of users that meet regulatory standards from 78% to 92%.",
+            ),
+            (
+                "Wallet Optimization",
+                "Diagnosed a 65% drop-off at wallet/banking setup via triangulated mixed-methods research (Amplitude funnel analysis, moderated interviews, large scale survey) generating ~$8M boost in handle from first-time deposits.",
+            ),
+            (
+                "ACH Adoption",
+                'Identified barriers and developed targeted messaging that <a href="cases/ach-adoption.html">improved ACH adoption from 20% to 32%</a>, reducing account takeovers from 7–8% to under 4%.',
+            ),
+            (
+                "Cross-sell Conversion",
+                "Drove ~150K new Sportsbook customers that generated a 7-figure increase in monthly revenue from solutions recommended to improve promotional offers (i.e., Bet $5 and Get $200).",
+            ),
+            (
+                "Team Scaling",
+                "Scaled UX Research from 2 to 32 researchers, delivering 200+ studies annually while directing AI-enabled research pipelines that cut project turnaround time 75%.",
+            ),
+        ],
+    },
+    {
+        "company": "FanDuel Group",
+        "brand": "fanduel",
+        "context": "Core Products &amp; Experiences Team",
+        "title": "Senior UX Researcher",
+        "dates": "March 2021 – Dec 2023",
+        "bullets": [
+            (
+                "Onboarding &amp; Acquisition",
+                "Identified onboarding friction and developed messaging strategies that cut support tickets by 30% and reduced annual costs by $1.2M, helping grow the user base from 1.5M to +20M.",
+            ),
+            (
+                "Benchmarking &amp; Competitive Analysis",
+                'Architected a <a href="cases/benchmarking-decision-engine.html">continuous and automated measurement framework</a> (in-app pulse checks, competitive usability testing, behavioral event tracking via custom telemetry hooks), directly feeding into product road maps and feature development for Casino, Fantasy, Racing, and Sportsbook products.',
+            ),
         ],
     },
     {
         "company": "NFL",
         "brand": "nfl",
-        "context": "Fantasy App &amp; NFL+",
-        "roles": [
-            {
-                "title": "Senior UX Researcher",
-                "dates": "2018–2021",
-                "bullets": [
-                    (
-                        "Fantasy App &amp; Verizon 5G/AR Research",
-                        "Directed UX research for the NFL Fantasy App and Verizon-powered 5G/AR fan experiences — pairing cognitive task analysis with wearable biometric telemetry at live events — achieving a 25% engagement lift and 18% higher retention.",
-                    ),
-                    (
-                        "SuperStadium",
-                        "Prototype evaluation on immersive AR hardware helped seed the SuperStadium concept, now embedded in the official NFL app and central to a $1B+ NFL–Verizon partnership; 59.6% of Super Bowl LX attendees connected to the experience.",
-                    ),
-                    (
-                        "Fantasy Monetization",
-                        "Proved Fantasy could monetize without breaking free play — a mid-season Tools Package converted 1.4M users (45% of actives) for $600K in week one and $920K by season end.",
-                    ),
-                    (
-                        "NFL+ Pricing &amp; Packaging",
-                        "Shaped NFL+ packaging via design studios and a 2,208-fan national survey — supporting the league's first D2C mobile subscription (~1.1M sign-ups at launch, ~2.7M subscribers by 2024).",
-                    ),
-                    (
-                        "Intel TrueView",
-                        "Ran design studios on Intel's TrueView interactive-replay prototype and delivered Game Pass integration recommendations that guided the next phase of the Intel partnership.",
-                    ),
-                ],
-            }
+        "context": "Fantasy App and NFL+ Team",
+        "title": "Senior UX Researcher",
+        "dates": "Jan 2019 – April 2021",
+        "bullets": [
+            (
+                "Fantasy+ Tools",
+                'Led generative and formative research on a small cross-functional team to develop and test in-app features that shipped — <a href="cases/fantasy-d2c-ideation.html">converting 45% of users and generating $920K in revenue</a>.',
+            ),
+            (
+                "NFL+ Pricing &amp; Packaging",
+                'Evaluated the league\'s first direct-to-consumer mobile subscription and made recommendations that resulted in <a href="cases/nfl-d2c-packaging.html">+1M sign-ups after initial launch</a>.',
+            ),
+            (
+                "Intel TrueView",
+                'Delivered integration and monetization recommendations for the NFL app / Game Pass highlights, giving <a href="cases/intel-trueview.html">NFL Labs and Intel a shared research basis</a> for the next phase of the partnership.',
+            ),
+            (
+                "Verizon 5G SuperStadium",
+                'Directed usability and in-stadium field research connecting Intel technology and 5G Ultra Wideband, generating recommendations that <a href="cases/verizon-superstadium.html">supported the development of NFL\'s VIP Fan Experience</a>.',
+            ),
         ],
     },
-]
-
-RESUME_EARLIER_EXPERIENCE = [
+    {
+        "company": "Claremont Graduate University",
+        "brand": "cgu",
+        "context": "",
+        "title": "Grant Writer and Research Associate",
+        "dates": "Jan 2017 – Sept 2019",
+        "bullets": [
+            (
+                "Grant Funding &amp; Execution",
+                "Awarded $200K in institutional grant funding to develop and evaluate mobile health (mHealth) artifacts and cross-platform applications focused on chronic disease tracking and preventative lifestyle behavior change.",
+            ),
+        ],
+    },
     {
         "company": "Ipsos Healthcare",
-        "context": "Medical Devices &amp; Diabetes Research",
-        "title": "UX Research Analyst",
-        "dates": "2015–2017",
-        "description": "Authored protocols for and moderated a multi-country comparative usability study on a biosimilar insulin glargine pen injector, reshaping the device training protocol—associated with a 27% reduction in device-use errors.",
-        "href": "cases/insulin-pen-usability.html",
+        "brand": "ipsos",
+        "context": "",
+        "title": "User Experience Analyst",
+        "dates": "May 2016 – September 2017",
+        "bullets": [
+            (
+                "Medical Device Usability",
+                'Authored the research protocol and ran end-to-end <a href="cases/insulin-pen-usability.html">comparative usability testing of a biosimilar insulin pen</a> with patients and clinic nurses — moderating simulated-injection sessions, filming, and analyzing behavioral and preference data.',
+            ),
+            (
+                "Research-to-Commercial Impact",
+                "Reshaped the device education protocol for diabetes educators and patients — a change associated with a 27% reduction in device-use errors and improved training time — and turned session footage into field materials used by pharmaceutical reps and educators.",
+            ),
+        ],
     },
-]
-
-RESUME_EDUCATION = [
-    (
-        "Claremont Graduate University",
-        "Graduate research in applied cognitive &amp; social psychology, focused on human motivation, persuasion, and systemic behavior change.",
-    ),
 ]
 
 SKILLS = [
@@ -905,7 +930,7 @@ TOOL_ICONS = {
     "SQL": "sql.svg",
     "StatSig": "statsig.png",
     "UserTesting": "usertesting.png",
-    # Major Oak, RedOak, and Roder RDE are internal/proprietary tools with
+    # Major Oak, RedOak, and Coder RDE are internal/proprietary tools with
     # no public brand marks, so they intentionally have no icon entry here.
 }
 
@@ -935,7 +960,7 @@ RESEARCH_TOOLS = sorted(
         "Quantum Metric",
         "R",
         "RedOak",
-        "Roder RDE",
+        "Coder RDE",
         "Salesforce",
         "SAS",
         "Slack",
@@ -1118,13 +1143,13 @@ def write_research_tools_page():
         )
     tools = "\n".join(tiles)
     html = (
-        header(active="Research tools", nav_active="research-tools")
+        header(active="Tech Stack", nav_active="research-tools")
         + f"""
   <main>
     <section class="section page-section" id="research-tools">
       <div class="wrap">
         <div class="section-head reveal">
-          <h2>Research tools</h2>
+          <h2>Tech Stack</h2>
           <p>Platforms and languages I use across survey, analytics, experimentation, collaboration, and analysis.</p>
         </div>
         <ul class="tool-icon-grid reveal">
@@ -1186,52 +1211,47 @@ def write_resume_page():
 {items}
           </ul>"""
 
+    contact_items = [
+        f'<a href="{RESUME_CONTACT["phone_href"]}">{RESUME_CONTACT["phone"]}</a>',
+        f'<span>{RESUME_CONTACT["location"]}</span>',
+        f'<a href="mailto:{RESUME_CONTACT["email"]}">{RESUME_CONTACT["email"]}</a>',
+        f'<a href="{RESUME_CONTACT["linkedin_href"]}" target="_blank" rel="noopener">{RESUME_CONTACT["linkedin_label"]}</a>',
+    ]
+    contact_html = f'<span class="case-meta-dot" aria-hidden="true">·</span>\n          '.join(
+        contact_items
+    )
+
+    education_rows = "\n".join(
+        f"""          <li>
+            <div class="resume-role-head">
+              <h4>{edu['name']}</h4>
+              <span class="resume-dates">{edu['dates']}</span>
+            </div>
+            <p>{edu['details']}</p>
+          </li>"""
+        for edu in RESUME_EDUCATION
+    )
+
     job_blocks = []
     for job in RESUME_EXPERIENCE:
-        role_blocks = []
-        for role in job["roles"]:
-            role_blocks.append(
-                f"""          <div class="resume-role">
-            <div class="resume-role-head">
-              <h4>{role['title']}</h4>
-              <span class="resume-dates">{role['dates']}</span>
-            </div>
-{bullets_html(role['bullets'])}
-          </div>"""
-            )
+        context_html = (
+            f'<span class="resume-context">{job["context"]}</span>' if job.get("context") else ""
+        )
         job_blocks.append(
             f"""        <section class="resume-job company-{job['brand']} reveal">
           <div class="resume-job-head">
             <h3 class="company-heading">{job['company']}</h3>
-            <span class="resume-context">{job['context']}</span>
+            {context_html}
           </div>
-{chr(10).join(role_blocks)}
-        </section>"""
-        )
-
-    earlier_rows = []
-    for job in RESUME_EARLIER_EXPERIENCE:
-        earlier_rows.append(
-            f"""          <li>
+          <div class="resume-role">
             <div class="resume-role-head">
-              <h4><a href="{job['href']}">{job['company']}</a> — {job['title']}</h4>
+              <h4>{job['title']}</h4>
               <span class="resume-dates">{job['dates']}</span>
             </div>
-            <p>{job['description']}</p>
-          </li>"""
+{bullets_html(job['bullets'])}
+          </div>
+        </section>"""
         )
-
-    education_rows = "\n".join(
-        f"""          <li>
-            <strong>{name}</strong>
-            <span>{desc}</span>
-          </li>"""
-        for name, desc in RESUME_EDUCATION
-    )
-
-    skill_pills = "\n".join(
-        f'            <span class="pill">{group["title"]}</span>' for group in SKILLS
-    )
 
     html = (
         header(active="Resume", nav_active="resume")
@@ -1243,47 +1263,30 @@ def write_resume_page():
           <div>
             <h1 class="resume-name">Sam Weinberger</h1>
             <p class="resume-title">{RESUME_TITLE}</p>
+            <p class="resume-contact">
+          {contact_html}
+            </p>
           </div>
           <div class="resume-actions">
-            <a class="btn btn-ghost" href="mailto:samuelcweinberger@gmail.com">Email me</a>
+            <a class="btn btn-ghost" href="skills.html">View skills</a>
+            <a class="btn btn-ghost" href="mailto:{RESUME_CONTACT['email']}">Email me</a>
             <button type="button" class="btn btn-primary" data-print>Print / Save as PDF</button>
           </div>
         </div>
-        <p class="resume-summary reveal">{RESUME_SUMMARY}</p>
-
-        <div class="section-head reveal">
-          <h2>Experience</h2>
-        </div>
-        <div class="resume-jobs">
-{chr(10).join(job_blocks)}
-        </div>
-
-        <div class="section-head reveal">
-          <h2>Earlier experience</h2>
-        </div>
-        <ul class="resume-earlier reveal">
-{chr(10).join(earlier_rows)}
-        </ul>
 
         <div class="section-head reveal">
           <h2>Education</h2>
         </div>
-        <ul class="skills-list reveal">
+        <ul class="resume-earlier reveal">
 {education_rows}
         </ul>
+        <p class="resume-athletics reveal">{RESUME_ATHLETICS}</p>
 
         <div class="section-head reveal">
-          <h2>Skills &amp; tools</h2>
-          <p>Full breakdowns live on the Skills and Research tools pages—summarized here by category.</p>
+          <h2>Professional experience</h2>
         </div>
-        <div class="resume-skills-summary reveal">
-          <div class="pill-row">
-{skill_pills}
-          </div>
-          <div class="resume-links">
-            <a class="btn btn-ghost" href="skills.html">View full skills breakdown</a>
-            <a class="btn btn-ghost" href="research-tools.html">View research tools</a>
-          </div>
+        <div class="resume-jobs">
+{chr(10).join(job_blocks)}
         </div>
       </div>
     </section>
