@@ -371,6 +371,11 @@ CASES = [
         "title": "NFL Fantasy Mobile App",
         "subtitle": "Monetizing Fantasy Football — The Tools Package",
         "short": "Developed and shipped features available via in-app purchase—converting 45% of users and generating $920K.",
+        "media_image": {
+            "src": "fantasy/fantasy-plus-upsell.png",
+            "alt": "NFL Fantasy Tools Package in-app purchase upsell screen",
+            "caption": "The Tools Package in-app upsell inside the NFL Fantasy app.",
+        },
         "headline_kpis": [
             ("Subscriptions Purchased", "45% of users"),
             ("Total Revenue", "$920K"),
@@ -528,6 +533,11 @@ CASES = [
         "year": "2019–2021",
         "summary": "NFL Labs partnered with Verizon 5G to explore next-generation ways to deepen in-stadium fan engagement. I directed usability and field research on the SuperStadium experience—an in-stadium-only concept pairing cognitive task analysis with field observation during live events—that later morphed into the VIP Fan Experience.",
         "insight": "In-stadium fans didn’t want a second screen—they wanted the stadium itself to become the interface.",
+        "video": {
+            "src": "nfl-intel/superstadium-demo.mp4",
+            "poster": "nfl-intel/superstadium-poster.jpg",
+            "caption": "Verizon 5G SuperStadium — in-stadium fan experience demo.",
+        },
         "stats": [
             ("25% increase", "Engagement lift from Fantasy App &amp; 5G/AR research", "conversion"),
             ("18% increase", "Retention from Fantasy App &amp; 5G/AR research", "conversion"),
@@ -610,8 +620,13 @@ CASES = [
 ]
 
 
-def header(active=None, prefix="", brand=None, nav_active=None):
-    brand_class = f' class="brand-{brand}"' if brand else ""
+def header(active=None, prefix="", brand=None, nav_active=None, body_classes=None):
+    classes = []
+    if brand:
+        classes.append(f"brand-{brand}")
+    if body_classes:
+        classes.extend(body_classes)
+    brand_class = f' class="{" ".join(classes)}"' if classes else ""
     title = "Sam Weinberger" if not active else f"{active} — Sam Weinberger"
 
     def nav_link(href, label, key):
@@ -1297,7 +1312,209 @@ def write_resume_page():
     (ROOT / "resume.html").write_text(html)
 
 
+def render_nfl_media(case):
+    """Reference-style framed media player for NFL case pages.
+
+    Video cases render a poster + big centered play button that opens the
+    click-to-play video (reusing the shared [data-video-click] JS handler).
+    Image cases render the same white-framed box without a play button.
+    When no media exists a tasteful placeholder is shown instead.
+    """
+    v = case.get("video")
+    if v:
+        poster = v.get("poster")
+        poster_src = f"../media/{poster}" if poster else ""
+        poster_img = (
+            f'<img class="video-click-poster" src="{poster_src}" alt="" loading="lazy" />'
+            if poster
+            else ""
+        )
+        vtype = v.get("type", "video/mp4")
+        poster_attr = f' poster="{poster_src}"' if poster else ""
+        caption = v.get("caption", "")
+        cap_html = (
+            f'<figcaption class="case-nfl-media-caption">{caption}</figcaption>'
+            if caption
+            else ""
+        )
+        return f"""      <figure class="case-nfl-media case-nfl-video reveal">
+        <div class="case-nfl-media-frame video-click-frame" data-video-click>
+          {poster_img}
+          <video class="video-click-el" playsinline preload="none"{poster_attr} hidden>
+            <source src="../media/{v['src']}" type="{vtype}" />
+            Your browser does not support the video tag.
+          </video>
+          <button type="button" class="video-click-cta case-nfl-play" aria-label="Play video">
+            <span class="case-nfl-play-icon" aria-hidden="true">&#9654;</span>
+          </button>
+        </div>
+        {cap_html}
+      </figure>"""
+
+    img = case.get("media_image")
+    if img:
+        cap = img.get("caption", "")
+        cap_html = (
+            f'<figcaption class="case-nfl-media-caption">{cap}</figcaption>'
+            if cap
+            else ""
+        )
+        return f"""      <figure class="case-nfl-media case-nfl-image reveal">
+        <div class="case-nfl-media-frame">
+          <img class="case-nfl-media-img" src="../media/{img['src']}" alt="{img.get('alt', '')}" loading="lazy" />
+        </div>
+        {cap_html}
+      </figure>"""
+
+    return """      <figure class="case-nfl-media case-nfl-image reveal">
+        <div class="case-nfl-media-frame case-nfl-media-placeholder">
+          <span class="case-nfl-placeholder-text">Image coming soon</span>
+        </div>
+      </figure>"""
+
+
+def write_case_nfl(case, index):
+    """Render an NFL case page using the blue geometric reference layout."""
+    prev_c = CASES[index - 1] if index > 0 else None
+    next_c = CASES[index + 1] if index < len(CASES) - 1 else None
+
+    badge = product_badge(
+        case["brand"], prefix="../", label_override=case.get("badge_label")
+    )
+    subtitle_html = (
+        f'<p class="case-nfl-subtitle">{case["subtitle"]}</p>'
+        if case.get("subtitle")
+        else ""
+    )
+    insight_html = (
+        f'<p class="case-nfl-insight">{case["insight"]}</p>' if case.get("insight") else ""
+    )
+
+    headline_html = ""
+    if case.get("headline_kpis"):
+        items = "\n".join(
+            f"""            <div class="case-nfl-metric">
+              <span class="case-nfl-metric-value">{value}</span>
+              <span class="case-nfl-metric-label">{label}</span>
+            </div>"""
+            for label, value in case["headline_kpis"]
+        )
+        headline_html = f"""          <div class="case-nfl-metrics" aria-label="Headline results">
+{items}
+          </div>"""
+
+    section_blocks = []
+    for title, body in case["sections"]:
+        section_blocks.append(
+            f"""          <div class="case-nfl-block">
+            <h2 class="case-nfl-lead">{title}</h2>
+            <div class="case-nfl-block-body">{body}</div>
+          </div>"""
+        )
+
+    brief_rows = []
+    for key, label in (("role", "Role"), ("timeline", "Timeline"), ("methods", "Methods")):
+        if case.get(key):
+            brief_rows.append((label, case[key]))
+    brief_html = ""
+    if brief_rows:
+        items = "\n".join(
+            f"""            <div class="case-nfl-brief-item">
+              <dt>{label}</dt>
+              <dd>{value}</dd>
+            </div>"""
+            for label, value in brief_rows
+        )
+        brief_html = f"""          <dl class="case-nfl-brief">
+{items}
+          </dl>"""
+
+    meta_html = f"""          <div class="case-nfl-meta">
+            <span>{case['context']}</span>
+            <span class="case-meta-dot" aria-hidden="true">·</span>
+            <span>{case['year']}</span>
+          </div>
+{brief_html}"""
+
+    stats_html = ""
+    if case.get("stats"):
+        normalized = [normalize_stat(s) for s in case["stats"]]
+        cells = "\n".join(
+            f"""          <div class="case-nfl-stat case-nfl-stat--{k}">
+            <span class="case-nfl-stat-value">{v}</span>
+            <span class="case-nfl-stat-label">{l}</span>
+          </div>"""
+            for v, l, k in normalized
+        )
+        stats_html = f"""      <div class="case-nfl-stats reveal" aria-label="Key outcomes">
+{cells}
+      </div>"""
+
+    media_html = render_nfl_media(case)
+
+    prev_link = (
+        f"""<a class="pager-link pager-prev" href="{prev_c['slug']}.html">
+          <span class="pager-kicker">← Previous</span>
+          <span class="pager-title">{prev_c['title']}</span>
+        </a>"""
+        if prev_c
+        else "<span></span>"
+    )
+    next_link = (
+        f"""<a class="pager-link pager-next" href="{next_c['slug']}.html">
+          <span class="pager-kicker">Next →</span>
+          <span class="pager-title">{next_c['title']}</span>
+        </a>"""
+        if next_c
+        else "<span></span>"
+    )
+
+    html = (
+        header(
+            active=case["title"],
+            prefix="../",
+            brand=case["brand"],
+            nav_active="cases",
+            body_classes=["case-nfl"],
+        )
+        + f"""
+  <main class="case-page case-nfl-page">
+    <div class="wrap case-nfl-wrap">
+      <div class="crumb"><a href="../case-studies.html">Case studies</a> <span aria-hidden="true">/</span> {case['num']}</div>
+      <div class="case-nfl-grid">
+        <div class="case-nfl-left reveal">
+          {badge}
+          <h1 class="case-nfl-title">{case['title']}</h1>
+          <span class="case-nfl-underline" aria-hidden="true"></span>
+          {subtitle_html}
+          <div class="case-nfl-box">
+            {insight_html}
+{headline_html}
+{chr(10).join(section_blocks)}
+{meta_html}
+          </div>
+        </div>
+        <div class="case-nfl-right">
+{media_html}
+{stats_html}
+        </div>
+      </div>
+      <nav class="pager" aria-label="Case study pagination">
+        {prev_link}
+        {next_link}
+      </nav>
+    </div>
+  </main>
+"""
+        + footer(prefix="../")
+    )
+    (CASES_DIR / f"{case['slug']}.html").write_text(html)
+
+
 def write_case(case, index):
+    if case["brand"] == "nfl":
+        write_case_nfl(case, index)
+        return
     prev_c = CASES[index - 1] if index > 0 else None
     next_c = CASES[index + 1] if index < len(CASES) - 1 else None
 

@@ -2075,6 +2075,455 @@ body.brand-nfl::before {
   }
 }
 
+/* ============================================================
+   NFL reference-style case layout (scoped to body.case-nfl)
+   Blue geometric background, accent-underlined title, bordered
+   content box, and a white-framed media player. This treatment
+   is intentionally scoped ONLY to the four NFL case pages and
+   does not affect the global theme or any non-NFL page.
+   ============================================================ */
+body.case-nfl {
+  --nfl-ink: #ffffff;
+  --nfl-soft: rgba(255, 255, 255, 0.88);
+  --nfl-faint: rgba(255, 255, 255, 0.66);
+  --nfl-border: rgba(255, 255, 255, 0.34);
+  background: #1f63cf;
+}
+
+/* Blue faceted / angular geometric background */
+body.case-nfl::before {
+  display: block;
+  opacity: 1;
+  background:
+    linear-gradient(118deg, rgba(255, 255, 255, 0.10) 0 26%, transparent 26% 100%),
+    linear-gradient(305deg, rgba(255, 255, 255, 0.07) 0 30%, transparent 30% 100%),
+    linear-gradient(196deg, rgba(9, 34, 96, 0.42) 0 46%, transparent 46% 100%),
+    linear-gradient(146deg, rgba(11, 52, 132, 0.40) 58%, transparent 58% 100%),
+    linear-gradient(122deg, #34ace6 0%, #2b83dc 40%, #234fca 72%, #213fc0 100%);
+}
+
+body.case-nfl .site-header {
+  background: rgba(20, 62, 150, 0.55);
+  border-bottom-color: rgba(255, 255, 255, 0.14);
+}
+
+body.case-nfl .site-footer {
+  background: rgba(9, 32, 84, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.case-nfl-page {
+  padding: 0;
+}
+
+.case-nfl-wrap {
+  padding-top: 3rem;
+  padding-bottom: 4rem;
+}
+
+.case-nfl .crumb,
+.case-nfl .crumb a {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.case-nfl .crumb a:hover {
+  color: #fff;
+}
+
+.case-nfl-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(0, 1fr);
+  gap: 3rem;
+  align-items: start;
+  margin-top: 1.5rem;
+}
+
+.case-nfl-left .product-badge {
+  margin-bottom: 1rem;
+}
+
+.case-nfl-title {
+  margin: 0.4rem 0 0;
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: clamp(2rem, 3.6vw, 3rem);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: #fff;
+  max-width: 18ch;
+}
+
+.case-nfl-underline {
+  display: block;
+  width: 200px;
+  max-width: 62%;
+  height: 5px;
+  margin: 1.1rem 0 0;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.case-nfl-subtitle {
+  margin: 1rem 0 0;
+  max-width: 40ch;
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.case-nfl-box {
+  margin-top: 1.75rem;
+  padding: 1.7rem 1.9rem;
+  border: 1px solid var(--nfl-border);
+  border-radius: 5px;
+  color: var(--nfl-soft);
+}
+
+.case-nfl-insight {
+  margin: 0 0 1.2rem;
+  font-weight: 700;
+  font-size: 1.06rem;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.case-nfl-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem 2.6rem;
+  margin: 0 0 1.5rem;
+  padding-bottom: 1.3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.case-nfl-metric {
+  display: grid;
+  gap: 0.28rem;
+}
+
+.case-nfl-metric-value {
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: 1.75rem;
+  line-height: 1;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+
+.case-nfl-metric-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--nfl-faint);
+}
+
+.case-nfl-block {
+  margin: 0 0 1.35rem;
+}
+
+.case-nfl-block:last-of-type {
+  margin-bottom: 0;
+}
+
+.case-nfl-lead {
+  margin: 0 0 0.55rem;
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 1.02rem;
+  letter-spacing: 0.01em;
+  color: #fff;
+}
+
+.case-nfl-lead::after {
+  content: ":";
+}
+
+.case-nfl-block-body {
+  font-size: 0.95rem;
+  line-height: 1.62;
+  color: var(--nfl-soft);
+}
+
+.case-nfl-block-body > :first-child {
+  margin-top: 0;
+}
+
+.case-nfl-block-body > :last-child {
+  margin-bottom: 0;
+}
+
+.case-nfl-block-body p {
+  margin: 0 0 0.85rem;
+}
+
+.case-nfl-block-body ul {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.case-nfl-block-body li {
+  position: relative;
+  padding-left: 1.15rem;
+}
+
+.case-nfl-block-body li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.case-nfl-block-body strong {
+  color: #fff;
+  font-weight: 700;
+}
+
+.case-nfl-block-body a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.case-nfl-meta {
+  margin-top: 1.5rem;
+  padding-top: 1.15rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--nfl-faint);
+}
+
+.case-nfl .case-meta-dot {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.case-nfl-brief {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: 1rem 1.6rem;
+  margin: 1.1rem 0 0;
+}
+
+.case-nfl-brief-item {
+  margin: 0;
+}
+
+.case-nfl-brief dt {
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.62);
+  margin-bottom: 0.25rem;
+}
+
+.case-nfl-brief dd {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Right column — framed media player */
+.case-nfl-right {
+  display: grid;
+  gap: 1.5rem;
+  align-content: start;
+  margin-top: 4.75rem;
+}
+
+.case-nfl-media {
+  margin: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.case-nfl-media-frame {
+  position: relative;
+  background: #000;
+  border: 10px solid #fff;
+  box-shadow: 0 26px 64px rgba(0, 0, 0, 0.42);
+  overflow: hidden;
+}
+
+.case-nfl-video .case-nfl-media-frame {
+  aspect-ratio: 16 / 9;
+  cursor: pointer;
+}
+
+.case-nfl-media-frame .video-click-poster,
+.case-nfl-media-frame .video-click-el {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.case-nfl-media-frame .video-click-el[hidden] {
+  display: none;
+}
+
+.case-nfl-media-frame.is-playing .video-click-el {
+  position: relative;
+  object-fit: contain;
+  background: #000;
+}
+
+/* Large centered circular play button (overrides base pill CTA) */
+.case-nfl .video-click-cta.case-nfl-play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+  width: 92px;
+  height: 92px;
+  padding: 0;
+  border-radius: 50%;
+  background: rgba(200, 208, 218, 0.28);
+  border: 3px solid rgba(255, 255, 255, 0.85);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;
+  white-space: normal;
+}
+
+.case-nfl .video-click-cta.case-nfl-play:hover {
+  transform: translate(-50%, -50%) scale(1.06);
+  background: rgba(230, 236, 244, 0.4);
+  filter: none;
+}
+
+.case-nfl-play-icon {
+  font-size: 2rem;
+  line-height: 1;
+  margin-left: 5px;
+}
+
+/* Framed image (no play button) */
+.case-nfl-image .case-nfl-media-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 560px;
+  background: #0b1a33;
+}
+
+.case-nfl-media-img {
+  display: block;
+  max-width: 100%;
+  max-height: 540px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.case-nfl-media-placeholder {
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: repeating-linear-gradient(
+    45deg,
+    #0d2247,
+    #0d2247 12px,
+    #102a54 12px,
+    #102a54 24px
+  );
+}
+
+.case-nfl-placeholder-text {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+}
+
+.case-nfl-media-caption {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.8rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.case-nfl-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.case-nfl-stat {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.95rem 1.05rem;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.case-nfl-stat-value {
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: 1.4rem;
+  line-height: 1.1;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+
+.case-nfl-stat-label {
+  font-size: 0.75rem;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.case-nfl .pager {
+  margin-top: 2.5rem;
+  border-top-color: rgba(255, 255, 255, 0.2);
+}
+
+.case-nfl .pager-kicker {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.case-nfl .pager-title {
+  color: #fff;
+}
+
+.case-nfl .pager-link:hover .pager-kicker,
+.case-nfl .pager-link:hover .pager-title {
+  color: #fff;
+  opacity: 0.85;
+}
+
+@media (max-width: 900px) {
+  .case-nfl-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .case-nfl-right {
+    order: -1;
+    margin-top: 0;
+    max-width: 34rem;
+  }
+}
+
 @media print {
   .site-header,
   .site-footer,
