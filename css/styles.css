@@ -1949,8 +1949,15 @@ body.brand-nfl::before {
   color: var(--accent);
 }
 
-.resume-athletics {
+.resume-athletics-list {
   margin: -2rem 0 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.resume-athletics {
+  margin: 0;
   color: var(--faint);
   font-size: 0.88rem;
   display: flex;
@@ -2748,6 +2755,14 @@ body.case-nfl .site-footer {
   max-height: 1.85rem;
 }
 .brand-chip-lg.brand-chip-usc img {
+  max-height: 2.5rem;
+}
+
+/* Stanford block-S-with-tree mark is portrait; match the USC/NFL height. */
+.brand-chip-stanford img {
+  max-height: 1.85rem;
+}
+.brand-chip-lg.brand-chip-stanford img {
   max-height: 2.5rem;
 }
 

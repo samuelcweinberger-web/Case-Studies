@@ -43,6 +43,7 @@ BRAND_LOGOS = {
     "intel": "brands/intel-official.svg",
     "verizon": "brands/verizon-official.svg",
     "usc": "brands/usc-trojans.svg",
+    "stanford": "brands/stanford-cardinal.svg",
 }
 
 
@@ -823,7 +824,10 @@ RESUME_EDUCATION = [
     },
 ]
 
-RESUME_ATHLETICS = "Division 1 Baseball — Pitcher"
+RESUME_ATHLETICS = [
+    {"brand": "stanford", "label": "Stanford Cardinal", "text": "Division 1 Football — Linebacker"},
+    {"brand": "usc", "label": "USC Trojans", "text": "Division 1 Baseball — Pitcher"},
+]
 
 # Flat, reverse-chronological list mirroring the "PROFESSIONAL EXPERIENCE" section of the
 # source resume exactly — one entry per job (no earlier/later tiering, no nested roles).
@@ -881,7 +885,7 @@ RESUME_EXPERIENCE = [
     {
         "company": "FanDuel Group",
         "brand": "fanduel",
-        "context": "Core Products &amp; Experiences Team",
+        "context": "",
         "title": "Senior UX Researcher",
         "dates": "March 2021 – Dec 2023",
         "bullets": [
@@ -1297,10 +1301,8 @@ MEDIA_SECTIONS = [
         "title": "FanDuel — Quarterly Benchmarking",
         "blurb": "The product benchmarking program that turned SUPR-Q, Ease of Use, loyalty, and Responsible Gaming into a shared executive scorecard.",
         "items": [
-            {"type": "image", "src": "benchmarking/q2-2023-exec-summary.jpg", "caption": "Executive summary — the quarterly scorecard leadership reviewed."},
-            {"type": "image", "src": "benchmarking/q2-2023-metrics-dashboard.jpg", "caption": "Metrics dashboard tracking benchmark KPIs across products."},
-            {"type": "image", "src": "benchmarking/q2-2023-all-products-a.jpg", "caption": "Cross-product comparison across the FanDuel portfolio."},
             {"type": "image", "src": "benchmarking/q1-2022-supr-q-trend.jpg", "caption": "SUPR-Q trend line over quarters."},
+            {"type": "image", "src": "benchmarking/q2-2023-all-products-a.jpg", "caption": "Cross-product comparison across the FanDuel portfolio."},
             {"type": "image", "src": "benchmarking/q1-2022-competitor-supr.jpg", "caption": "Competitor SUPR-Q comparison for the sportsbook category."},
             {"type": "image", "src": "benchmarking/q1-2022-rg-scores.jpg", "caption": "Responsible Gaming scores tracked alongside usability and loyalty."},
         ],
@@ -1678,6 +1680,13 @@ def write_education_page():
           </li>"""
         for edu in RESUME_EDUCATION
     )
+    athletics_rows = "\n".join(
+        f"""          <p class="resume-athletics">
+            {brand_logo_chip(a['brand'], label=a['label'])}
+            <span>{a['text']}</span>
+          </p>"""
+        for a in RESUME_ATHLETICS
+    )
     html = (
         header(active="Education", nav_active="education")
         + f"""
@@ -1691,10 +1700,9 @@ def write_education_page():
         <ul class="resume-earlier reveal">
 {education_rows}
         </ul>
-        <p class="resume-athletics reveal">
-          {brand_logo_chip("usc", label="USC Trojans")}
-          <span>{RESUME_ATHLETICS}</span>
-        </p>
+        <div class="resume-athletics-list reveal">
+{athletics_rows}
+        </div>
       </div>
     </section>
   </main>
