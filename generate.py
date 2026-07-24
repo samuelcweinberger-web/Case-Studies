@@ -657,6 +657,7 @@ def header(active=None, prefix="", brand=None, nav_active=None, body_classes=Non
         {nav_link("research-tools.html", "Tech Stack", "research-tools")}
         {nav_link("about.html", "About me", "about")}
         {nav_link("resume.html", "Resume", "resume")}
+        {nav_link("education.html", "Education", "education")}
         <a href="mailto:samuelcweinberger@gmail.com">Contact</a>
       </nav>
     </div>
@@ -1241,17 +1242,6 @@ def write_resume_page():
         contact_items
     )
 
-    education_rows = "\n".join(
-        f"""          <li>
-            <div class="resume-role-head">
-              <h4>{edu['name']}</h4>
-              <span class="resume-dates">{edu['dates']}</span>
-            </div>
-            <p>{edu['details']}</p>
-          </li>"""
-        for edu in RESUME_EDUCATION
-    )
-
     job_blocks = []
     for job in RESUME_EXPERIENCE:
         context_html = (
@@ -1288,19 +1278,12 @@ def write_resume_page():
             </p>
           </div>
           <div class="resume-actions">
+            <a class="btn btn-ghost" href="education.html">View education</a>
             <a class="btn btn-ghost" href="skills.html">View skills</a>
             <a class="btn btn-ghost" href="mailto:{RESUME_CONTACT['email']}">Email me</a>
             <button type="button" class="btn btn-primary" data-print>Print / Save as PDF</button>
           </div>
         </div>
-
-        <div class="section-head reveal">
-          <h2>Education</h2>
-        </div>
-        <ul class="resume-earlier reveal">
-{education_rows}
-        </ul>
-        <p class="resume-athletics reveal">{RESUME_ATHLETICS}</p>
 
         <div class="section-head reveal">
           <h2>Professional experience</h2>
@@ -1315,6 +1298,40 @@ def write_resume_page():
         + footer()
     )
     (ROOT / "resume.html").write_text(html)
+
+
+def write_education_page():
+    education_rows = "\n".join(
+        f"""          <li>
+            <div class="resume-role-head">
+              <h4>{edu['name']}</h4>
+              <span class="resume-dates">{edu['dates']}</span>
+            </div>
+            <p>{edu['details']}</p>
+          </li>"""
+        for edu in RESUME_EDUCATION
+    )
+    html = (
+        header(active="Education", nav_active="education")
+        + f"""
+  <main>
+    <section class="section page-section resume-page" id="education">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2>Education</h2>
+          <p>Graduate and undergraduate study in cognitive and social psychology, public policy, and communications—alongside a Division 1 and international athletics background.</p>
+        </div>
+        <ul class="resume-earlier reveal">
+{education_rows}
+        </ul>
+        <p class="resume-athletics reveal">{RESUME_ATHLETICS}</p>
+      </div>
+    </section>
+  </main>
+"""
+        + footer()
+    )
+    (ROOT / "education.html").write_text(html)
 
 
 def render_nfl_media(case):
@@ -1801,6 +1818,7 @@ def main():
     write_research_tools_page()
     write_about_page()
     write_resume_page()
+    write_education_page()
     for i, case in enumerate(CASES):
         write_case(case, i)
     print(f"Wrote home + section pages + {len(CASES)} case pages")
