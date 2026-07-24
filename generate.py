@@ -371,10 +371,10 @@ CASES = [
         "title": "NFL Fantasy Mobile App",
         "subtitle": "Monetizing Fantasy Football — The Tools Package",
         "short": "Developed and shipped features available via in-app purchase—converting 45% of users and generating $920K.",
-        "media_image": {
-            "src": "fantasy/fantasy-plus-upsell.png",
-            "alt": "NFL Fantasy Tools Package in-app purchase upsell screen",
-            "caption": "The Tools Package in-app upsell inside the NFL Fantasy app.",
+        "brand_card": {
+            "logo": "nfl/nfl-fantasy-logo.png",
+            "logo_alt": "NFL Fantasy logo",
+            "tagline": "In-App Tools Package",
         },
         "headline_kpis": [
             ("Subscriptions Purchased", "45% of users"),
