@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cracking First-Trade Conversion Before Tip-Off — Sam Weinberger</title>
+  <title>Why Approved Traders Never Placed Their First Trade — Sam Weinberger</title>
   <meta name="description" content="Samuel Weinberger — applied cognitive and social psychologist turned UX Engineer and Design Researcher. Bridging human behavior, analytics, and interactive design." />
   <link rel="stylesheet" href="../css/styles.css" />
 </head>
@@ -28,7 +28,7 @@
       <div class="wrap">
         <div class="crumb"><a href="../case-studies.html">Case studies</a> <span aria-hidden="true">/</span> 01</div>
         <span class="product-badge product-robinhood"><span class="product-name">Robinhood</span></span>
-        <h1>Cracking First-Trade Conversion Before Tip-Off</h1>
+        <h1>Why Approved Traders Never Placed Their First Trade</h1>
         
         
         
@@ -45,11 +45,11 @@
           </div>
           <div class="brief-item">
             <dt>Timeline</dt>
-            <dd>5 business days</dd>
+            <dd>~1 week (vs. typical 3–4 weeks)</dd>
           </div>
           <div class="brief-item">
             <dt>Methods</dt>
-            <dd>AI-moderated interviews (Listen Labs) · Large-scale survey · Third-party panel · Funnel analysis · LLM + Claude/Python synthesis</dd>
+            <dd>AI-moderated interviews (Listen Labs) · Matched converter/non-converter design · Funnel analysis · Claude/Python/SQL deep dive</dd>
           </div>
         </dl>
       </div>
@@ -63,11 +63,11 @@
             <h2>Situation</h2>
           </div>
           <div class="case-section-body"><ul>
-<li>Robinhood opened event-contract trading to its 27M+ customers.</li>
-<li>~950K approved brokerage and crypto users—“non-converters”—had funded accounts but never placed a first trade, and no one could explain why.</li>
-<li>Leadership was split ahead of the NCAA tournament and FIFA World Cup: build for both, build only for the World Cup, or skip both.</li>
-<li>Some stakeholders were wary that a fee-cheaper competitor made the investment feel like wasted spend.</li>
-<li>A recent re-org left the design team with roughly a one-week build window—the call couldn’t wait.</li>
+<li>Robinhood opened event-contract trading to its 27M+ customers, but crossover from traditional traders (stocks, futures, crypto) was low — only a small share moved into event contracts.</li>
+<li>A large group of existing customers went through the steps to get approved to trade event contracts, then never placed a first trade.</li>
+<li>These “non-converters” stayed active on Robinhood otherwise — still trading and investing as before, just not in prediction markets — so disinterest didn’t explain it.</li>
+<li>They accounted for more than half of all registered prediction-market users.</li>
+<li>The question: what drove them in, and what drove them out before a first trade?</li>
 </ul></div>
         </section>
         <section class="case-section reveal">
@@ -75,9 +75,11 @@
             <h2>Task</h2>
           </div>
           <div class="case-section-body"><ul>
-<li>Started March 2nd, kicked off two days later with five business days to deliver.</li>
-<li>Answer four questions: why approved users stall before a first trade; which levers re-engage non-converters; what design changes lift conversion; how strong appetite was for the two tent-pole events.</li>
-<li>Output had to be decision-ready in time for designers to ship before tip-off.</li>
+<li>Kicked off within two days of the request; typical turnaround for this study type was 3–4 weeks.</li>
+<li>Answer where users dropped off (home page, event-details page, or order form), why approved users stall before a first trade, and what low-effort design changes would lift first-trade conversion.</li>
+<li>Determine whether barriers differed by trader type (stocks, futures, crypto).</li>
+<li>Determine whether non-converters returned to the prediction-market section only to leave again without trading.</li>
+<li>Output had to be design-specific recommendations that were minimal effort and low cost.</li>
 </ul></div>
         </section>
         <section class="case-section reveal">
@@ -85,50 +87,61 @@
             <h2>Action</h2>
           </div>
           <div class="case-section-body"><ul>
-<li>Paired AI-moderated 1:1 interviews with a large-scale survey across internal and third-party panels.</li>
-<li>Trained the AI moderator to teach event-contract concepts and adapt follow-ups to each participant in real time.</li>
-<li>Recruited converters and non-converters from a 50K internal list, plus 50 external users from a 10K panel.</li>
-<li>Had a complete sample answering all four questions within two hours of launch.</li>
-<li>A prior funnel analysis had already revealed the pattern: non-converters weren’t disinterested—they returned repeatedly, navigated featured markets, searched, and left without opening an event.</li>
-<li>Synthesized findings with our internal LLM alongside Claude and Python into a one-page executive summary per stakeholder—under 48 hours end to end.</li>
+<li>Ran AI-moderated interviews via Listen Labs with two matched groups of similar background: 25 converters (placed a first trade) and 25 non-converters (had not).</li>
+<li>Trained the AI moderator to adapt follow-ups to each participant in real time.</li>
+<li>Recruited both groups from a 50K internal list — all active futures, crypto, and stock traders.</li>
+<li>Paired the qualitative signal with funnel analysis and a Claude/Python/SQL deep dive into engagement behavior.</li>
 </ul></div>
         </section>
         <section class="case-section reveal">
           <div class="case-section-label">
             <h2>Result</h2>
           </div>
-          <div class="case-section-body"><ul>
-<li>The barrier was findability, not disinterest, and it broke in two places: the category row gave no signal that more markets existed off-screen, and search dead-ended because tournament contracts hadn’t been built.</li>
-<li>Recommended three changes: rank Featured by popularity (page views, trades, notional volume) instead of alphabetically; offset the category carousel so the next category peeks into view; build tournament assets so search by team, sport, or event returns real markets.</li>
-<li>Appetite ran high among both traders and non-traders, and net-new activation intent was strong—so the team built for the tournaments.</li>
-<li>~630K additional brokerage and crypto users registered in the days before tip-off.</li>
-<li>First-trade conversion spiked to a record 88%.</li>
-<li>~480K prior non-converters (63%) placed a first trade—at zero re-engagement cost.</li>
-<li>~220M college-basketball event contracts traded (~$400M notional); 1.3M users traded them.</li>
+          <div class="case-section-body"><p>The two groups arrived at the app for different reasons, and the design only worked for one of them:</p>
+<ul>
+<li>Converters came in looking for a specific event. They already knew what they wanted, so they used the search bar to find it and place a trade.</li>
+<li>Non-converters came in to browse. They were looking for something to catch their interest but never found it, so they left. Most never used search, because they didn’t know what to type.</li>
+<li>Non-converters gave up on the home page. They didn’t know the row of category buttons at the top held more categories, and they didn’t realize the Featured and Newly Listed rows could be swiped sideways to reveal more events. So they never saw the markets that might have interested them.</li>
+<li>Interest was split fairly evenly in both groups: a little over half leaned toward sports, and the rest toward commodities, elections, and politics. The home page needed to speak to both, instead of using an alphabetical order that highlighted neither.</li>
+</ul>
+<p>Recommended five low-effort, low-cost design changes:</p>
+<ul>
+<li>Offset the top category bar so hidden category pills peek into view, cueing that more categories exist.</li>
+<li>Offset the frame on the Featured and Newly Listed rows so the next card is partly visible, signaling the rows are swipeable.</li>
+<li>Add a non-sports carousel above Newly Listed — dedicated space for commodities, elections, and politics.</li>
+<li>Add a sports-focused section below Newly Listed for the slightly-larger sports-first half.</li>
+<li>Rank every row by a popularity-and-recency system — weighting page views first, surfacing the most current high-interest events earliest, and diverting soon-but-less-viewed events to the Live section.</li>
+</ul>
+<p><strong>What happened after the changes shipped.</strong> The changes recovered a large share of the stalled customers and improved two separate measures the business tracked. Each is described below in plain terms.</p>
+<ul>
+<li><strong>Half the stalled group finally traded.</strong> Of the roughly 900,000 approved customers who had never traded, about 480,000 placed their first trade.</li>
+<li><strong>More people traded in the same sitting they signed up — up from 57% to about 66%.</strong> The company wanted customers to place their first trade in the same session they got approved, without leaving the app and coming back. (This measure counts only people who finish in one sitting, which usually takes a few minutes; it excludes new customers who need a manual review first.) This mattered because customers who trade in that first sitting go on to trade about 15% more than those who don’t.</li>
+<li><strong>Nearly everyone who traded within a day did so quickly — 88%.</strong> A second measure looked at customers who placed a first trade within 24 hours of being approved; that figure reached 88%. The 24-hour mark mattered because separate research showed that customers who trade within a day stay more engaged over time than those who take longer.</li>
 </ul></div>
         </section>
       </div>
       <aside class="case-media-rail">
         <figure class="image-carousel reveal" data-carousel>
           <div class="carousel-stack">
-            <img class="carousel-slide is-active" src="../media/01-non-converters/featured-before-change.png" alt="Featured tab before the change" data-caption="Before change: Featured ranked alphabetically, burying the World Cup behind Bitcoin, carousel flush to the edge." loading="lazy" />
-            <img class="carousel-slide" src="../media/01-non-converters/featured-after-change.png" alt="Featured tab after the change" data-caption="After change: popularity-ranked Featured surfaces the World Cup, offset carousel peeks the next category." loading="lazy" />
+            <img class="carousel-slide is-active" src="../media/01-non-converters/featured-before-change.png" alt="Prediction markets home before the change" data-caption="Before: the Featured card and category row sit flush to the edge — no signal more exists off-screen." loading="lazy" />
+            <img class="carousel-slide" src="../media/01-non-converters/featured-after-change.png" alt="Prediction markets home after the change" data-caption="After: offsetting the frame lets the next card peek in, cueing a sideways swipe." loading="lazy" />
+            <img class="carousel-slide" src="../media/01-non-converters/featured-non-sports-carousel.png" alt="New non-sports carousel above Newly Listed" data-caption="After: a dedicated non-sports carousel (Politics, Crypto, Technology, Commodities) added above Newly Listed." loading="lazy" />
           </div>
           <div class="carousel-controls">
             <button type="button" class="carousel-btn" data-carousel-prev aria-label="Previous image">&#8249;</button>
-            <span class="carousel-count"><span data-carousel-current>1</span> / 2</span>
+            <span class="carousel-count"><span data-carousel-current>1</span> / 3</span>
             <button type="button" class="carousel-btn" data-carousel-next aria-label="Next image">&#8250;</button>
           </div>
-          <figcaption class="carousel-caption" data-carousel-caption>Before change: Featured ranked alphabetically, burying the World Cup behind Bitcoin, carousel flush to the edge.</figcaption>
+          <figcaption class="carousel-caption" data-carousel-caption>Before: the Featured card and category row sit flush to the edge — no signal more exists off-screen.</figcaption>
         </figure>
       </aside>
       </div>
 
       <nav class="pager" aria-label="Case study pagination">
         <span></span>
-        <a class="pager-link pager-next" href="cold-start-personalization.html">
+        <a class="pager-link pager-next" href="first-trade-recovery.html">
           <span class="pager-kicker">Next →</span>
-          <span class="pager-title">The Cold-Start Problem: A Deep Dive Into a Personalization Experiment</span>
+          <span class="pager-title">Turning a Dead End Into a Second Chance</span>
         </a>
       </nav>
     </div>

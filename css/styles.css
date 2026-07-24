@@ -2462,6 +2462,24 @@ body.case-nfl .site-footer {
   text-align: center;
 }
 
+/* Grouped screenshot strip — multiple source images sharing one caption,
+   rendered side by side inside the NFL blue layout's media column. */
+.case-nfl-gallery-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+  align-items: start;
+}
+
+.case-nfl-gallery-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 6px solid #fff;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.4);
+  background: #0b1a33;
+}
+
 /* Brand hero card — sleek NFL+ black product title card in the media slot.
    The source wordmark is white/red on pure black, so the card keeps a pure
    black center (the logo box merges seamlessly) and layers subtle blue

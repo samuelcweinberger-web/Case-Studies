@@ -41,97 +41,115 @@ CASES = [
         "images": [
             {
                 "src": "01-non-converters/featured-before-change.png",
-                "alt": "Featured tab before the change",
-                "caption": "Before change: Featured ranked alphabetically, burying the World Cup behind Bitcoin, carousel flush to the edge.",
+                "alt": "Prediction markets home before the change",
+                "caption": "Before: the Featured card and category row sit flush to the edge — no signal more exists off-screen.",
             },
             {
                 "src": "01-non-converters/featured-after-change.png",
-                "alt": "Featured tab after the change",
-                "caption": "After change: popularity-ranked Featured surfaces the World Cup, offset carousel peeks the next category.",
+                "alt": "Prediction markets home after the change",
+                "caption": "After: offsetting the frame lets the next card peek in, cueing a sideways swipe.",
+            },
+            {
+                "src": "01-non-converters/featured-non-sports-carousel.png",
+                "alt": "New non-sports carousel above Newly Listed",
+                "caption": "After: a dedicated non-sports carousel (Politics, Crypto, Technology, Commodities) added above Newly Listed.",
             },
         ],
-        "title": "Cracking First-Trade Conversion Before Tip-Off",
-        "short": "A five-day sprint that traced first-trade drop-off to findability, not disinterest—recommendations lifted first-trade conversion to a record 88%.",
+        "title": "Why Approved Traders Never Placed Their First Trade",
+        "short": "Approved traders kept signing up for prediction markets but never placed a first trade—matched interviews traced it to findability on the home page, and five low-effort design changes brought ~480K stalled customers back to a first trade.",
         "context": "Robinhood · Prediction Markets & Event Contracts",
         "year": "2026",
         "role": "UX Researcher (study lead)",
-        "timeline": "5 business days",
-        "methods": "AI-moderated interviews (Listen Labs) · Large-scale survey · Third-party panel · Funnel analysis · LLM + Claude/Python synthesis",
-        "summary": "With a one-week build window before the NCAA tournament and World Cup, I ran a five-day study proving first-trade drop-off was a findability problem—recommendations helped lift first-trade conversion to a record 88%.",
+        "timeline": "~1 week (vs. typical 3–4 weeks)",
+        "methods": "AI-moderated interviews (Listen Labs) · Matched converter/non-converter design · Funnel analysis · Claude/Python/SQL deep dive",
+        "summary": "A large group of approved customers went through every step to trade event contracts, then never placed a first trade. A one-week matched study showed the barrier was findability on the home page—and five low-effort changes brought roughly 480K stalled customers back to a first trade.",
         "stats": [],
         "sections": [
             ("Situation", """<ul>
-<li>Robinhood opened event-contract trading to its 27M+ customers.</li>
-<li>~950K approved brokerage and crypto users—“non-converters”—had funded accounts but never placed a first trade, and no one could explain why.</li>
-<li>Leadership was split ahead of the NCAA tournament and FIFA World Cup: build for both, build only for the World Cup, or skip both.</li>
-<li>Some stakeholders were wary that a fee-cheaper competitor made the investment feel like wasted spend.</li>
-<li>A recent re-org left the design team with roughly a one-week build window—the call couldn’t wait.</li>
+<li>Robinhood opened event-contract trading to its 27M+ customers, but crossover from traditional traders (stocks, futures, crypto) was low — only a small share moved into event contracts.</li>
+<li>A large group of existing customers went through the steps to get approved to trade event contracts, then never placed a first trade.</li>
+<li>These “non-converters” stayed active on Robinhood otherwise — still trading and investing as before, just not in prediction markets — so disinterest didn’t explain it.</li>
+<li>They accounted for more than half of all registered prediction-market users.</li>
+<li>The question: what drove them in, and what drove them out before a first trade?</li>
 </ul>"""),
             ("Task", """<ul>
-<li>Started March 2nd, kicked off two days later with five business days to deliver.</li>
-<li>Answer four questions: why approved users stall before a first trade; which levers re-engage non-converters; what design changes lift conversion; how strong appetite was for the two tent-pole events.</li>
-<li>Output had to be decision-ready in time for designers to ship before tip-off.</li>
+<li>Kicked off within two days of the request; typical turnaround for this study type was 3–4 weeks.</li>
+<li>Answer where users dropped off (home page, event-details page, or order form), why approved users stall before a first trade, and what low-effort design changes would lift first-trade conversion.</li>
+<li>Determine whether barriers differed by trader type (stocks, futures, crypto).</li>
+<li>Determine whether non-converters returned to the prediction-market section only to leave again without trading.</li>
+<li>Output had to be design-specific recommendations that were minimal effort and low cost.</li>
 </ul>"""),
             ("Action", """<ul>
-<li>Paired AI-moderated 1:1 interviews with a large-scale survey across internal and third-party panels.</li>
-<li>Trained the AI moderator to teach event-contract concepts and adapt follow-ups to each participant in real time.</li>
-<li>Recruited converters and non-converters from a 50K internal list, plus 50 external users from a 10K panel.</li>
-<li>Had a complete sample answering all four questions within two hours of launch.</li>
-<li>A prior funnel analysis had already revealed the pattern: non-converters weren’t disinterested—they returned repeatedly, navigated featured markets, searched, and left without opening an event.</li>
-<li>Synthesized findings with our internal LLM alongside Claude and Python into a one-page executive summary per stakeholder—under 48 hours end to end.</li>
+<li>Ran AI-moderated interviews via Listen Labs with two matched groups of similar background: 25 converters (placed a first trade) and 25 non-converters (had not).</li>
+<li>Trained the AI moderator to adapt follow-ups to each participant in real time.</li>
+<li>Recruited both groups from a 50K internal list — all active futures, crypto, and stock traders.</li>
+<li>Paired the qualitative signal with funnel analysis and a Claude/Python/SQL deep dive into engagement behavior.</li>
 </ul>"""),
-            ("Result", """<ul>
-<li>The barrier was findability, not disinterest, and it broke in two places: the category row gave no signal that more markets existed off-screen, and search dead-ended because tournament contracts hadn’t been built.</li>
-<li>Recommended three changes: rank Featured by popularity (page views, trades, notional volume) instead of alphabetically; offset the category carousel so the next category peeks into view; build tournament assets so search by team, sport, or event returns real markets.</li>
-<li>Appetite ran high among both traders and non-traders, and net-new activation intent was strong—so the team built for the tournaments.</li>
-<li>~630K additional brokerage and crypto users registered in the days before tip-off.</li>
-<li>First-trade conversion spiked to a record 88%.</li>
-<li>~480K prior non-converters (63%) placed a first trade—at zero re-engagement cost.</li>
-<li>~220M college-basketball event contracts traded (~$400M notional); 1.3M users traded them.</li>
+            ("Result", """<p>The two groups arrived at the app for different reasons, and the design only worked for one of them:</p>
+<ul>
+<li>Converters came in looking for a specific event. They already knew what they wanted, so they used the search bar to find it and place a trade.</li>
+<li>Non-converters came in to browse. They were looking for something to catch their interest but never found it, so they left. Most never used search, because they didn’t know what to type.</li>
+<li>Non-converters gave up on the home page. They didn’t know the row of category buttons at the top held more categories, and they didn’t realize the Featured and Newly Listed rows could be swiped sideways to reveal more events. So they never saw the markets that might have interested them.</li>
+<li>Interest was split fairly evenly in both groups: a little over half leaned toward sports, and the rest toward commodities, elections, and politics. The home page needed to speak to both, instead of using an alphabetical order that highlighted neither.</li>
+</ul>
+<p>Recommended five low-effort, low-cost design changes:</p>
+<ul>
+<li>Offset the top category bar so hidden category pills peek into view, cueing that more categories exist.</li>
+<li>Offset the frame on the Featured and Newly Listed rows so the next card is partly visible, signaling the rows are swipeable.</li>
+<li>Add a non-sports carousel above Newly Listed — dedicated space for commodities, elections, and politics.</li>
+<li>Add a sports-focused section below Newly Listed for the slightly-larger sports-first half.</li>
+<li>Rank every row by a popularity-and-recency system — weighting page views first, surfacing the most current high-interest events earliest, and diverting soon-but-less-viewed events to the Live section.</li>
+</ul>
+<p><strong>What happened after the changes shipped.</strong> The changes recovered a large share of the stalled customers and improved two separate measures the business tracked. Each is described below in plain terms.</p>
+<ul>
+<li><strong>Half the stalled group finally traded.</strong> Of the roughly 900,000 approved customers who had never traded, about 480,000 placed their first trade.</li>
+<li><strong>More people traded in the same sitting they signed up — up from 57% to about 66%.</strong> The company wanted customers to place their first trade in the same session they got approved, without leaving the app and coming back. (This measure counts only people who finish in one sitting, which usually takes a few minutes; it excludes new customers who need a manual review first.) This mattered because customers who trade in that first sitting go on to trade about 15% more than those who don’t.</li>
+<li><strong>Nearly everyone who traded within a day did so quickly — 88%.</strong> A second measure looked at customers who placed a first trade within 24 hours of being approved; that figure reached 88%. The 24-hour mark mattered because separate research showed that customers who trade within a day stay more engaged over time than those who take longer.</li>
 </ul>"""),
         ],
     },
     {
-        "slug": "cold-start-personalization",
+        "slug": "first-trade-recovery",
         "num": "02",
         "brand": "robinhood",
-        "title": "The Cold-Start Problem: A Deep Dive Into a Personalization Experiment",
-        "short": "Re-examined a celebrated personalization A/B test, proved it couldn’t cold-start new users, and reframed the roadmap—cutting one-and-done churn from 54% to 37%.",
+        "title": "Turning a Dead End Into a Second Chance",
+        "short": "A backend failure the company couldn’t fix was silently churning 1 in 5 first-time traders. Redesigning the moment around the error—a plain-language message and a path back to the trade—won back 6 of every 10 at-risk users and ~$12M in monthly revenue.",
         "context": "Robinhood · Prediction Markets & Event Contracts",
         "year": "2026",
         "role": "UX Researcher (investigation lead)",
-        "timeline": "Multi-week deep dive",
-        "methods": "Behavioral segmentation · AI-moderated interviews · Factorial ANOVA (arm × segment) · Matched-sample analysis · Prototyping (Cursor · GitHub · Figma · Python)",
-        "summary": "A personalization algorithm looked like a win (+4% in its A/B test) but trade volume had plateaued. My re-analysis showed it couldn’t cold-start new users, and the fixes I recommended cut one-and-done churn from 54% to 37%.",
+        "timeline": "Interview → data diagnosis → shipped fix",
+        "methods": "In-depth interviews · Python/SQL prevalence analysis · Churn analysis · Message design with content partners",
+        "summary": "A backend failure the company couldn’t control was silently churning 1 in 5 first-time traders. Redesigning the moment around the error—with no engineering fix or spend—kept 6 of every 10 at-risk users and recovered about $12M in monthly revenue.",
         "stats": [],
         "sections": [
             ("Situation", """<ul>
-<li>Data Science built and launched a personalization algorithm; its A/B test showed the experimental group trading ~4% more than control (p<.001).</li>
-<li>The result impressed leadership, who let the algorithm run.</li>
-<li>Weeks later, executives hit a puzzle: event-contract trade volume had plateaued despite meaningful MAU growth.</li>
-<li>No one could explain the disconnect—they asked me to find the “why.”</li>
+<li>A backend error the company could not control, prevent, or fix was interrupting first-time customers mid-attempt on their very first trade.</li>
+<li>The failure produced a blank screen with no recovery path — no explanation, no retry, no way forward.</li>
+<li>Users’ only option was to exit the app entirely.</li>
+<li>It hit 1 in every 5 first-time users, and it had been happening since prediction markets launched.</li>
+<li>Almost all affected users churned completely and never came back.</li>
+<li>Users experienced it as a platform failure, and it destroyed their trust.</li>
+<li>That constraint defined the problem: the error couldn’t be eliminated, so the only available lever was the experience surrounding it.</li>
 </ul>"""),
             ("Task", """<ul>
-<li>Map what actually drives and suppresses trade volume, and diagnose the plateau.</li>
-<li>Preliminary analysis surfaced the risk immediately: ~70% of the base traded sports contracts only.</li>
-<li>Higher-value multi-category traders—who trade significantly more—were shrinking fast.</li>
-<li>That set up a seasonal cliff: once college basketball and the NBA season ended, volume had nowhere to go.</li>
+<li>The problem surfaced in an interview — a participant described hitting the dead end firsthand.</li>
+<li>Establish how widespread it actually was, since no one in the company had quantified it.</li>
+<li>Because the error couldn’t be fixed at the source, find what would keep affected users from abandoning entirely despite it still happening.</li>
+<li>Recover a customer segment that was being lost silently, at scale, every month.</li>
 </ul>"""),
             ("Action", """<ul>
-<li>Working from a defined research plan, ran behavioral segmentation and interviewed the top 2% of four groups: sports-only traders, multi-category traders, former-multi-category traders who had retreated, and net-new “cold-start” users the algorithm had no history for.</li>
-<li>In-app, users showed me the mechanism directly: the algorithm kept re-surfacing the same events and buried inventory they’d have loved.</li>
-<li>One high-value trader had defected to a competitor for WNBA contracts that Robinhood actually offered but hid so deep in the UI he assumed they didn’t exist.</li>
-<li>Went back to Data Science for the raw experiment data and found the aggregate +4% couldn’t support “personalization works”: the treatment window overlapped the NBA Finals (a major confound), the test was heavily overpowered, and the lift was carried by users with existing trading history.</li>
-<li>A planned cold-start contrast (factorial ANOVA, arm × segment) told the opposite story—for net-new users, control outperformed the personalized experience by 24%.</li>
+<li>Used Python and SQL to diagnose prevalence across the first-trade funnel, confirming it affected 1 in 5 first-time users and was a major driver of onboarding abandonment and 7–8 figure monthly revenue loss.</li>
+<li>Identified a rare and valuable population: the ~10% of affected users who returned and tried again despite the failure.</li>
+<li>Interviewed that group specifically — asking what would have prevented everyone else from dropping off for good.</li>
+<li>Their answer was consistent and specific: a brief explanation of what happened, plus a CTA that kept them inside the app and returned them to the event they’d been trying to trade.</li>
+<li>Worked with content partners to design that messaging: a plain-language explanation of the failure and a recovery path straight back into the trade funnel.</li>
 </ul>"""),
             ("Result", """<ul>
-<li>Core finding: personalization alone can’t cold-start. With no history to draw on, the algorithm funneled new users into the same popular-sports events, starving discovery and manufacturing the seasonal cliff.</li>
-<li>Recommended pairing personalization with explicit customization—users select categories during onboarding and toggle them on or off as interests change, a need ~90% of interviewees raised unprompted.</li>
-<li>Recommended a Watch List giving traders a cross-category home to return to.</li>
-<li>Prototyped both (Cursor, GitHub, Figma, Python); the Watch List shipped in a variant form.</li>
-<li>One-and-done churn among crossover first-traders fell from 54% to 37% in one month.</li>
-<li>The improvement held even as the cohort grew by ~300K new signups; churned users overwhelmingly had not adopted the Watch List (~3% had).</li>
-<li>Onboarding customization step recommended and pending product adoption.</li>
+<li><strong>The problem was a failure the company couldn’t fix, and it was costing millions a month.</strong> New customers were hitting a technical error the company had no control over, and most of them left for good. The lost business ran into the tens of millions of dollars a month.</li>
+<li><strong>The fix was a simple message, not an engineering change.</strong> I recommended showing customers a short, plain explanation of what went wrong, plus a button that took them straight back to the event they’d been trying to trade — instead of leaving them stuck on a blank screen with no way forward.</li>
+<li><strong>Far fewer people gave up.</strong> Before, about 9 out of 10 customers who hit the error abandoned the app. After the change, that dropped to about 3 out of 10 — meaning 6 of every 10 customers who would have been lost were kept.</li>
+<li>This recovered about $12 million in revenue a month, roughly 70% of what the company had been on track to lose.</li>
+<li>The underlying error was never fixed — it still happens. The entire recovery came from redesigning what customers see when it happens, with no financial incentives, no engineering fix, and no added spend.</li>
 </ul>"""),
         ],
     },
@@ -143,7 +161,7 @@ CASES = [
             {
                 "src": "03-category-expansion/order-form-before-change.png",
                 "alt": "Order form before the change",
-                "caption": "Before change: one lever — a dollar amount, buy at market or not at all.",
+                "caption": "Before: one lever — a dollar amount, buy at the market price or not at all.",
             },
             {
                 "src": "03-category-expansion/order-type-menu.png",
@@ -153,7 +171,7 @@ CASES = [
             {
                 "src": "03-category-expansion/order-form-after-change.png",
                 "alt": "Order form after the change",
-                "caption": "After change: full limit-order controls — price, quantity, expiry, with cost and payout shown before you commit.",
+                "caption": "After: full limit-order controls — set price, quantity, and expiry, with cost and payout shown before you commit.",
             },
         ],
         "video": {
@@ -161,83 +179,109 @@ CASES = [
             "poster": "03-category-expansion/btc-scrub-poster.jpg",
             "mode": "click",
             "cta": "Click to watch video",
-            "caption": "Scrubbing the BTC contract chart to inspect price at any moment — turning a fast binary market into an informed call, sourced from CF Benchmarks' BRTI.",
+            "caption": "Scrubbing the Bitcoin chart to inspect the price at any moment, sourced from CF Benchmarks’ BRTI.",
         },
         "title": "From Coin Toss to Informed Call: Getting Single-Category Traders to Diversify",
-        "short": "Showed diversification was blocked by confidence, not risk—new decision tools (limit order, Tool Tip) made trying a new category feel informed and lifted multi-category traders 11%.",
+        "short": "About 70% of users traded a single category, mostly sports. The real blocker wasn’t risk or knowledge but confidence—new decision tools (a limit order and a chart Tool Tip) made trying a new category feel informed and lifted multi-category trading 11%.",
         "context": "Robinhood · Prediction Markets & Event Contracts",
         "year": "2026",
         "role": "UX Researcher (study lead)",
         "timeline": "Follow-on deep dive",
-        "methods": "In-depth interviews · Scenario-based probing · Behavioral segmentation · Concept testing · Competitive analysis · Prototyping (Figma)",
-        "summary": "Single-category traders wouldn’t diversify because unfamiliar categories felt like a coin toss. New decision tools—a limit order and a chart Tool Tip—made trying a new category feel informed and lifted multi-category traders 11%.",
+        "methods": "In-depth interviews · Behavioral segmentation · Scenario-based probing · Usability testing · Concept testing · Competitive analysis · Prototyping (Figma)",
+        "summary": "Single-category traders wouldn’t diversify because unfamiliar categories felt like a coin toss. Surfacing tools that were already in the app—a limit order and a chart Tool Tip—made trying a new category feel informed and lifted the share of multi-category traders 11%.",
         "stats": [],
         "sections": [
             ("Situation", """<ul>
-<li>Previous research indicated ~70% of users traded a single prediction-market category, overwhelmingly sports.</li>
-<li>The company wanted them to expand into other categories—the trading-app version of “diversify your portfolio.”</li>
+<li>Previous research showed about 70% of users traded a single prediction-market category, overwhelmingly sports.</li>
+<li>The company wanted them to expand into other categories — the trading-app version of “diversify your portfolio.”</li>
 <li>Initial research surfaced the two usual suspects as the most-reported barriers: risk-aversion and lack of knowledge.</li>
 <li>These were the same reasons the org reflexively met with education modules and risk-free promotions.</li>
 </ul>"""),
             ("Task", """<ul>
-<li>Understand the real difference between sports-only and multi-category traders—what motivates expansion versus avoidance—rather than accept the surface explanation.</li>
+<li>Understand the real difference between sports-only and multi-category traders — what actually blocks expansion — rather than accept the surface explanation.</li>
 <li>If risk-aversion and knowledge gaps weren’t the true blockers, the company was spending on the wrong fixes.</li>
-<li>Find what would genuinely move single-category traders into new domains.</li>
+<li>Find what would genuinely move single-category traders into new categories.</li>
 </ul>"""),
             ("Action", """<ul>
-<li>Interviewed both sports-only and multi-category traders; found “risk-averse” and “don’t know enough” were proxies for confidence—users didn’t believe they could win.</li>
-<li>The binary win/lose nature of event contracts made unfamiliar categories feel like a coin toss, too much like gambling—and a core part of these users’ identity was informed decision-making, distancing themselves from the “gambler” stereotype.</li>
-<li>Walking participants through scenarios in low-knowledge categories revealed that several tools and pieces of information they’d need already existed in the app but were undiscovered.</li>
-<li>Hypothesized that of the 70% “sports-only,” only ~10% are truly sports-only, while ~60% would explore if they could find something that sparked their interest.</li>
+<li>Interviewed both sports-only and multi-category traders, and paired that with behavioral segmentation of the single-category group.</li>
+<li>Behavioral analysis split the sports-only population into two clear segments:
+<ul>
+<li>About 60% were exploring but never trading. They visited other categories’ event pages and looked around, but never placed a trade outside sports.</li>
+<li>About 40% never explored at all. They came in, went straight to the sports event they wanted, traded, and left — staying within sports every time.</li>
+</ul>
+</li>
+<li>For the exploring 60%, interviews showed “risk-averse” and “don’t know enough” were really about confidence — they didn’t believe they could win. The binary win/lose nature of event contracts made unfamiliar categories feel like a coin toss, too close to gambling — which mattered because these users saw themselves as informed decision-makers and wanted to distance themselves from the “gambler” stereotype.</li>
+<li>Walking them through scenarios in unfamiliar categories revealed that the tools and information they’d need to feel confident already existed in the app but were hidden or undiscovered.</li>
+<li>For the 40% who never explored, the issue was different: personalization kept recommending more of what they already traded (more sports), so it never exposed them to anything new — and their engagement narrowed and dropped off when their main sport’s season ended.</li>
+<li>Identified a time-horizon barrier unique to sports-only traders: they like sports because an event starts and settles quickly, so their money isn’t tied up. A long-dated market (like “who wins the 2028 election”) locks up funds for months, which they actively avoid — so most non-sports categories felt like money-jail.</li>
+<li>Ran usability testing on the 15-minute Bitcoin market to see whether a fast-settling non-sports event would satisfy that quick-turnaround need — it did.</li>
 </ul>"""),
-            ("Result", """<ul>
-<li>The barrier was that trading a new category felt like a bet, not an informed decision—and the tools to change that were either hidden or missing.</li>
-<li>The platform had no limit order—the definitional tool of a controlled trade; on my recommendation it was built into the order form, reaching ~24% of total trade volume within two weeks.</li>
-<li>On the fast, binary BTC 15-minute contract, pricing history lived inside the chart but wasn’t surfaced; recommended surfacing it and turning “Source: BRTI” into a tappable link so skeptical traders could verify provenance themselves.</li>
-<li>Concept-tested Tool Tip—a one-time feature prompting users to hold and scrub the chart to inspect price at any moment; it drew a night-and-day shift in willingness, shipped, and lifted multi-category traders 11%.</li>
-<li>Together, these changes did what education modules and promotions never could: made trying a new category feel less like a bet and more like an informed decision. Further recommendations are on the Q4 roadmap in build/test.</li>
+            ("Result", """<p>The real barrier for the exploring majority: trading a new category felt like a gamble, not an informed choice — and the tools that would make it feel informed were either hidden in the app or missing entirely. The recommendations below are ordered by how easily they could be acted on.</p>
+<p><strong>Lowest-hanging fruit — tell people about tools that already existed.</strong> The fastest wins required no new capability, just surfacing what was buried:</p>
+<ul>
+<li><strong>Point users to the limit order.</strong> The limit order lets a trader set the price they’re willing to pay instead of taking whatever the market offers, but it was buried deep in the order form and few users ever reached it. After it was surfaced and added to the order form, limit orders made up about 24% of all trading volume within two weeks.</li>
+<li><strong>Show where the price comes from, and how to see its history.</strong> On the 15-minute Bitcoin market, the price history was on the chart but wasn’t presented as decision support, and the source wasn’t clearly credited. I recommended making the pricing history easier to find and turning the “Source: BRTI” label into a tappable link to the independent benchmark, so skeptical traders could verify it themselves.</li>
+<li><strong>For sports-only traders specifically — surface fast-settling non-sports events.</strong> Because these users avoid anything that ties up their money, I recommended surfacing quick-turnaround non-sports markets like the 15-minute Bitcoin event. Usability testing confirmed this satisfied their need for a fast start-to-finish window — giving them a non-sports on-ramp that didn’t feel like money-jail.</li>
+<li><strong>Teach the chart-scrub.</strong> Testing the Bitcoin event surfaced the next problem: users didn’t know they could press and drag along the chart to see the price at any point in time. I concept-tested Tool Tip, a one-time prompt that shows them this is possible. In testing it clearly changed how willing people were to engage, and after it shipped, the share of people trading in more than one category rose 11%.</li>
+</ul>
+<ul>
+<li>Further recommendations were added to the Q4 roadmap and are being built and tested now.</li>
+<li>This study is what led to the deeper dive into personalization that followed. The 40% who never explored turned out to be a cold-start problem in miniature: whatever a user happens to trade first becomes the only kind of event the system shows them, which quietly locks in a single-category habit from day one. That finding is why the next study focused entirely on personalization — and why the customization features (letting users choose what they see, rather than having their first trade decide it) are being built for Q4.</li>
+<li>Together, these changes did what education pop-ups and free-money promotions never managed to: they made trying a new category feel less like a gamble and more like an informed decision.</li>
+</ul>
+<p><strong>The three features, briefly:</strong></p>
+<ul>
+<li><strong>Limit order</strong> — added to the order form; lets a trader set their own price. Closed a gap competitors already had.</li>
+<li><strong>Tool Tip</strong> — a one-time prompt showing users they can press and drag the chart to inspect the price at any moment. Appears once, then disappears. This was the change behind the 11% lift.</li>
+<li><strong>“Source: BRTI” link</strong> — a tappable link on the Bitcoin market that lets users verify where the price comes from.</li>
 </ul>"""),
         ],
     },
     {
-        "slug": "first-trade-recovery",
+        "slug": "cold-start-personalization",
         "num": "04",
         "brand": "robinhood",
-        "title": "Turning a Dead End Into a Second Chance",
-        "short": "An unfixable backend error was churning 1 in 5 first-time traders—a recovery message alone won back 6 in 10, recovering ~$12M in monthly revenue.",
+        "title": "The Cold-Start Problem: A Deep Dive Into a Personalization Experiment",
+        "short": "A personalization algorithm looked like a win (+4% in its A/B test) but trade volume had plateaued. Re-analysis showed it couldn’t cold-start new users; the fixes I recommended cut post-first-trade drop-off from 54% to 37%.",
         "context": "Robinhood · Prediction Markets & Event Contracts",
         "year": "2026",
         "role": "UX Researcher (investigation lead)",
-        "timeline": "Interview → data diagnosis → shipped fix",
-        "methods": "In-depth interviews · Python/SQL prevalence analysis · Churn analysis · Message design with content partners",
-        "summary": "A backend failure the company couldn’t fix was silently churning 1 in 5 first-time traders. Redesigning the moment around the error—with no engineering fix or spend—won back 6 of every 10 at-risk users and ~$12M in monthly revenue.",
+        "timeline": "Multi-week deep dive",
+        "methods": "Behavioral segmentation · AI-moderated interviews · Factorial ANOVA (arm × segment) · Matched-sample analysis · Prototyping (Cursor · GitHub · Figma · Python)",
+        "summary": "A personalization algorithm looked like a win (+4% in its A/B test), yet trade volume had plateaued. My re-analysis showed it couldn’t cold-start new users, and the fixes I recommended cut post-first-trade drop-off from 54% to 37%.",
         "stats": [],
         "sections": [
             ("Situation", """<ul>
-<li>A backend error the company could not control, prevent, or fix was interrupting first-time customers mid-attempt on their very first trade.</li>
-<li>The failure produced a blank screen with no recovery path—no explanation, no retry, no way forward; users’ only option was to exit the app entirely.</li>
-<li>It hit 1 in every 5 first-time users and had been happening since prediction markets launched; almost all affected users churned completely and experienced it as a platform failure that destroyed trust.</li>
-<li>That constraint defined the problem: the error couldn’t be eliminated, so the only available lever was the experience surrounding it.</li>
+<li>Data Science built and launched a personalization algorithm; its A/B test showed the experimental group trading ~4% more than control (p&lt;.001).</li>
+<li>The result impressed leadership, who let the algorithm run.</li>
+<li>Weeks later, executives hit a puzzle: event-contract trade volume had plateaued despite meaningful MAU growth.</li>
+<li>No one could explain the disconnect — they asked me to find the “why.”</li>
 </ul>"""),
             ("Task", """<ul>
-<li>The problem surfaced in an interview—a participant described hitting the dead end firsthand.</li>
-<li>Establish how widespread it actually was, since no one in the company had quantified it.</li>
-<li>Because the error couldn’t be fixed at the source, find what would keep affected users from abandoning entirely despite it still happening—recovering a segment being lost silently, at scale, every month.</li>
+<li>Map what actually drives and suppresses trade volume, and diagnose the plateau.</li>
+<li>Preliminary analysis surfaced the risk immediately: ~70% of the base traded sports contracts only.</li>
+<li>Higher-value multi-category traders — who trade significantly more — were shrinking fast.</li>
+<li>That set up a seasonal cliff: once college basketball and the NBA season ended, volume had nowhere to go.</li>
 </ul>"""),
             ("Action", """<ul>
-<li>Used Python and SQL to diagnose prevalence across the first-trade funnel, confirming it affected 1 in 5 first-time users and was a major driver of onboarding abandonment and 7–8 figure monthly revenue loss.</li>
-<li>Identified a rare and valuable population: the ~10% of affected users who returned and tried again despite the failure.</li>
-<li>Interviewed that group specifically—asking what would have prevented everyone else from dropping off for good.</li>
-<li>Their answer was consistent and specific: a brief explanation of what happened, plus a CTA that kept them inside the app and returned them to the event they’d been trying to trade.</li>
-<li>Worked with content partners to design that messaging: a plain-language explanation of the failure and a recovery path straight back into the trade funnel.</li>
+<li>Working from a defined research plan, ran behavioral segmentation and interviewed the top 2% of four groups: sports-only traders, multi-category traders, former-multi-category traders who had retreated, and net-new “cold-start” users the algorithm had no history for.</li>
+<li>In-app, users showed me the mechanism directly: the algorithm kept re-surfacing the same events and buried inventory they’d have loved.</li>
+<li>One high-value trader had defected to a competitor for WNBA contracts that Robinhood actually offered but hid so deep in the UI he assumed they didn’t exist.</li>
+<li>Went back to Data Science for the raw experiment data and found the aggregate +4% couldn’t support “personalization works”: the treatment window overlapped the NBA Finals (a major confound), the test was heavily overpowered, and the lift was carried by users with existing trading history.</li>
+<li>A planned cold-start contrast (factorial ANOVA, arm × segment) told the opposite story — for net-new users, control outperformed the personalized experience by 24%.</li>
 </ul>"""),
             ("Result", """<ul>
-<li>Identified first-time-user friction outside company control that was driving 7–8 figure monthly losses from user abandonment.</li>
-<li>Recommended a simple messaging strategy—a plain-language explanation plus a CTA back to the event they’d been trading.</li>
-<li>Reduced drop-off significantly: abandonment after a failed first-trade attempt fell from roughly 9 in 10 to 3 in 10, recovering 6 of every 10 at-risk users.</li>
-<li>Recovered ~$12M in monthly revenue—roughly 70% of future monthly losses.</li>
-<li>The underlying error was never fixed—it still occurs. The recovery came entirely from redesigning the moment around it, with no incentives, no engineering fix, and no spend.</li>
-</ul>"""),
+<li><strong>The main finding: personalization can’t get a brand-new user started.</strong> With no past behavior to learn from, the algorithm kept showing new users the same popular sports events. That left them nothing new to discover, and it set up the seasonal drop-off — when sports seasons ended, these users had nowhere else to go.</li>
+<li><strong>Recommendation 1 — let users choose their own categories.</strong> Rather than rely on the algorithm alone, let people pick the categories they care about when they sign up, and turn them on or off as their interests change. About 90% of the people interviewed asked for this without being prompted.</li>
+<li><strong>Recommendation 2 — add a Watch List.</strong> Give traders one place to save events across categories and come back to, so they always have a reason to return.</li>
+<li>I built working prototypes of both (using Cursor, GitHub, Figma, and Python). The Watch List design moved into beta testing.</li>
+</ul>
+<p><strong>What the A/B test showed</strong></p>
+<ul>
+<li><strong>The Watch List cut drop-off after a first trade.</strong> In the control group (no Watch List), 54% of users dropped off after placing a trade; with the Watch List, only 37% dropped off after their first trade.</li>
+<li>The customization idea — letting users pick their own categories — was recommended and is being built, with those options planned for release in Q4.</li>
+</ul>
+<p class="callout">Note: The watchlist designs that shaped this work are in beta testing and not yet fully live in prediction markets, so any visuals reflect the existing investing-side watchlist that set the framework for the initial prediction-markets design.</p>"""),
         ],
     },
     {
@@ -245,18 +289,18 @@ CASES = [
         "num": "05",
         "brand": "fanduel",
         "title": "Studying the Users You Can’t Recruit: Fixing Registration Drop-Off",
-        "short": "Studied an unrecruitable, churned population through a simulated signup—reordering when SSN and banking are asked lifted registration completion from ~50% to ~65%.",
+        "short": "More than half of prospective customers abandoned registration on every state launch, and they couldn’t be recruited. A simulated-app study localized the drop and a reordered flow lifted completion from ~50% to ~65% in production.",
         "context": "FanDuel · Core Products & Experiences",
         "year": "2021–2023",
         "role": "UX Researcher (study lead)",
         "timeline": "Multi-phase (simulation → A/B → production)",
         "methods": "Simulated-app experiment · Step-by-step intention measurement · Third-party panel recruitment · A/B testing · Behavioral theory (foot-in-the-door)",
-        "summary": "More than half of prospective FanDuel customers abandoned registration on every state launch, and they couldn’t be recruited. A simulated-app study localized the drop and a reordered flow lifted completion from ~50% to ~65% in production.",
+        "summary": "More than half of prospective FanDuel customers abandoned registration on every state launch—and they couldn’t be recruited to study. A simulated-app experiment localized the drop, and reordering when SSN and banking are asked lifted completion from ~50% to ~65% in production.",
         "stats": [],
         "sections": [
             ("Situation", """<ul>
 <li>Every time FanDuel launched in a new state, more than half of prospective customers failed to complete the registration funnel.</li>
-<li>The people who abandoned were the ones the business most needed to understand—but because they never finished signing up, they couldn’t be recruited for any study.</li>
+<li>The people who abandoned were the ones the business most needed to understand — but because they never finished signing up, they couldn’t be recruited for any study.</li>
 <li>Users who did complete registration couldn’t explain the drop-off either; they hadn’t experienced it as a blocker.</li>
 <li>This was a top priority because benchmarking had flagged registration and login as the two highest-leverage steps in the entire experience.</li>
 <li>The company was scaling fast, growing from ~1.5M users when I began to 20M+ by the time I left.</li>
@@ -269,16 +313,18 @@ CASES = [
             ("Action", """<ul>
 <li>Had engineers build a simulated onboarding flow mirroring our real registration steps, framed as an e-commerce app.</li>
 <li>Recruited a screened third-party panel across three interest levels (strong, medium, minimal).</li>
-<li>Participants moved through the flow one step at a time, giving qualitative feedback and rating behavioral intention to continue after each step—localizing the drop to exactly two steps: providing Social Security details and banking information.</li>
-<li>Key insight: our live funnel asked for SSN first and banking last—participants described deep distrust at handing over an SSN before they’d even seen the product, judging fraud and identity-theft risk not worth it for an unfamiliar sportsbook.</li>
-<li>Hypothesized that the order of requests was itself driving abandonment (foot-in-the-door: small, easily accepted requests first increase the likelihood of a larger request later) and tested it with an A/B experiment (two homogeneous samples, N=500) comparing SSN-first against SSN-later.</li>
+<li>Participants moved through the flow one step at a time, giving qualitative feedback and rating behavioral intention to continue after each step.</li>
+<li>That localized the drop in intention to exactly two steps: providing Social Security details and banking information.</li>
+<li>Key insight: our live funnel asked for SSN first and banking last — participants described deep distrust at handing over an SSN before they’d even seen the product, judging fraud and identity-theft risk not worth it for an unfamiliar sportsbook.</li>
+<li>Hypothesized that the order of requests was itself driving abandonment, grounded in the foot-in-the-door principle (small, easily accepted requests first increase the likelihood of a larger request later).</li>
+<li>Tested it with an A/B experiment (two homogeneous samples, N=500) comparing SSN-first against SSN-later.</li>
 </ul>"""),
             ("Result", """<ul>
-<li>Asking for email, name, and address before SSN and banking nearly doubled completion in simulation—from 30% to 58% (N=500 per arm).</li>
-<li>The reordered flow shipped to production and held up on real launches, lifting completion from ~50% to ~65%.</li>
-<li>Became the reordered standard applied to every subsequent state rollout.</li>
-<li>Method breakthrough: studied an unrecruitable, churned population via a simulated-app proxy—ethically and compliance-safe.</li>
-<li>Registration and login were a top investment area as FanDuel scaled from ~1.5M to 20M+ users during this period.</li>
+<li><strong>Changing the order of the questions nearly doubled sign-ups in testing.</strong> When the flow asked for email, name, and address first — and saved the Social Security number and banking details for later — completion rose from 30% to 58% in the simulation (500 people in each version).</li>
+<li><strong>The same fix worked just as well with real customers.</strong> Once the reordered flow went live, completion climbed from about 50% to about 65%.</li>
+<li><strong>It became the standard.</strong> Every new-state launch afterward used the reordered flow.</li>
+<li><strong>The method itself was the breakthrough.</strong> It made it possible to study people who had quit and couldn’t be recruited — by watching new participants go through a stand-in version of the flow — without any ethical or compliance problems.</li>
+<li>Registration and login stayed a top area of investment while FanDuel grew from about 1.5 million to more than 20 million registered users during this period.</li>
 </ul>"""),
         ],
     },
@@ -287,18 +333,19 @@ CASES = [
         "num": "06",
         "brand": "fanduel",
         "title": "Benchmarking as a Decision Engine: Measuring Experience Across a Fragmented Portfolio",
-        "short": "Built the cross-product benchmarking system the org ran on—surfacing Same Game Parlays, collapsing reporting from quarterly to daily, and growing research into a 32-person team.",
+        "short": "FanDuel’s products were siloed with no shared baseline. I built continuous cross-product benchmarking that became the reference point the org used to decide where to invest—surfacing Same Game Parlays and growing research into a 32-person team.",
         "context": "FanDuel · Core Products & Experiences",
         "year": "2021–2023",
         "role": "UX Researcher (system owner)",
         "timeline": "Ongoing program",
         "methods": "Journey benchmarking · Event-triggered in-app surveys · Behavioral telemetry · Competitive benchmarking · Stakeholder dashboards",
-        "summary": "FanDuel’s products were siloed with no shared baseline. I built continuous cross-product benchmarking that became the strategic document the org ran on—surfacing Same Game Parlays and growing research into a 32-person team.",
+        "summary": "FanDuel’s products were siloed with no shared baseline. I built continuous cross-product benchmarking that became the reference point the organization used to decide where to invest—surfacing Same Game Parlays and growing research into a 32-person team.",
         "stats": [],
         "sections": [
             ("Situation", """<ul>
 <li>FanDuel’s products were siloed, and no research ran across them.</li>
-<li>Designers and product managers shipped changes with no shared baseline and no feedback loop—no way to know whether a change had helped or hurt the experience.</li>
+<li>Designers and product managers shipped changes with no shared baseline and no feedback loop.</li>
+<li>No way to know whether a change had helped or hurt the experience.</li>
 <li>No way to compare one product’s health against another, or against the competition.</li>
 <li>The organization was, in effect, flying blind.</li>
 </ul>"""),
@@ -308,19 +355,28 @@ CASES = [
 <li>Give leadership a basis for prioritizing where to invest scarce design and research capacity across the portfolio.</li>
 </ul>"""),
             ("Action", """<ul>
-<li>Built continuous journey benchmarking across the journeys every vertical shares—onboarding, promotional engagement, deposits and withdrawals, bet selection and placement, in-play, and outcome tracking.</li>
+<li>Built continuous journey benchmarking across the journeys every vertical shares — onboarding, promotional engagement, deposits and withdrawals, bet selection and placement, in-play, and outcome tracking.</li>
 <li>Instrumented with event-triggered in-app surveys and behavioral tracking that fired at high-friction moments and fed stakeholder dashboards.</li>
 <li>Retained ownership of the instruments, data, and reporting layer.</li>
 <li>Designed it to measure on three levels at once: each product’s improvement over time, products compared against one another, and every product benchmarked consistently against its main competitors.</li>
 </ul>"""),
-            ("Result", """<ul>
-<li>The system became the strategic document the product organization ran on.</li>
-<li>Led to Same Game Parlays—FanDuel’s most valuable feature—by exposing the opportunity gap (users rating FanDuel vs. rivals like DraftKings on the same dimensions) and validating the concept through development.</li>
-<li>Pinpointed Onboarding and Login as the highest-leverage journey step—carrying both conversion cost and jurisdictional compliance risk (state-based registration, location controls, users logged out mid-bet-placement).</li>
-<li>Connected specific pain points to customer-support costs, translating UX friction into the dollar language leadership acts on.</li>
-<li>Fused sentiment with behavior in one pipeline and collapsed reporting from quarterly to daily, enabling a continuous build-measure loop; unified a fractured product suite into one comparable ecosystem and strengthened cross-sell.</li>
-<li>Grew research into a 32-person team by creating org-wide demand that outstripped capacity, and defined the standardized journeys that became the foundation for Core Products & Experiences—the team I now lead.</li>
-<li>Seeded the Responsible Gaming program (dedicated RG metric, tools, and risk-factor identification—developed in a separate case).</li>
+            ("Result", """<p>The system became the reference point the whole product organization used to decide where to invest.</p>
+<p><strong>What it uncovered</strong></p>
+<ul>
+<li><strong>It led to Same Game Parlays, FanDuel’s most valuable feature.</strong> By having customers rate FanDuel against rivals like DraftKings on the same measures, the system exposed a gap in what FanDuel offered — and the research then helped shape and confirm the feature as it was built.</li>
+<li><strong>It showed that onboarding and login were the most important place to improve.</strong> This step cost the company the most sign-ups and also carried the most legal risk — customers had to register state by state, location had to be verified, and some were getting logged out in the middle of placing a bet.</li>
+<li>It tied specific frustrations to support costs, which put customer-experience problems in the dollar terms leadership responds to.</li>
+</ul>
+<p><strong>What it created</strong></p>
+<ul>
+<li><strong>One combined view of how customers felt and how they behaved.</strong> The system could show, for example, how people felt about a feature they weren’t actually using — and it moved reporting from once a quarter to every day, so teams could make a change and see the effect quickly.</li>
+<li><strong>One shared way to compare every product.</strong> It turned a set of disconnected products into a single comparable picture, fed every team’s plans, and helped move customers between products.</li>
+</ul>
+<p><strong>What it grew into</strong></p>
+<ul>
+<li><strong>A 32-person research team.</strong> The system gave every product group a clear view of their gaps, which created more demand for research than the existing team could handle — and that demand is what justified growing it.</li>
+<li><strong>A new cross-functional team, Core Products &amp; Experiences, which I now lead.</strong> The standardized customer journeys the system defined became that team’s foundation.</li>
+<li>The starting point for the Responsible Gaming program — its dedicated measure, tools, and risk detection (covered in a separate case study).</li>
 </ul>"""),
         ],
     },
@@ -329,20 +385,22 @@ CASES = [
         "num": "07",
         "brand": "fanduel",
         "title": "ACH Adoption: Turning a Payments Risk Into a Trust Problem Worth Solving",
-        "short": "Diagnosed ACH avoidance as a trust misperception, not mechanics—message reframing nearly doubled ACH adoption from under 20% to ~32% and drained a football-Sunday fraud exploit.",
+        "short": "Customers avoided ACH—the safer deposit method—because bank numbers felt least secure. Reframing the message (not adding incentives) roughly doubled ACH adoption from under 20% to ~32%, draining a costly football-Sunday debit exploit.",
         "context": "FanDuel · Core Products & Experiences",
         "year": "2024–2026",
         "role": "UX Researcher (study lead)",
         "timeline": "Multi-phase (research → A/B → production)",
         "methods": "In-depth interviews · A/B message testing · Behavioral + sentiment pairing · Cross-functional work with content design",
-        "summary": "Customers avoided ACH—the safer deposit method—because bank numbers felt least secure. Reframing the message (not adding incentives) nearly doubled ACH adoption from <20% to ~32%, draining a costly debit-float exploit.",
+        "summary": "Customers avoided ACH—the safer deposit method—because entering bank numbers felt least secure. Reframing the message rather than adding incentives roughly doubled ACH adoption from under 20% to about 32%, draining a costly football-Sunday debit exploit.",
         "stats": [],
         "sections": [
             ("Situation", """<ul>
-<li>Customers frequently deposited via debit card on Sundays during football, when banks were closed and their other pending transactions hadn’t posted—so accounts looked funded when they weren’t.</li>
-<li>Bets settled the next day as those transactions cleared, sometimes leaving the bank unable to transfer funds; if the customer had lost, they were left with a negative balance many never repaid.</li>
+<li>Customers frequently deposited via debit card on Sundays during football, when banks were closed.</li>
+<li>Their other pending transactions hadn’t posted yet — so accounts looked funded when they weren’t.</li>
+<li>Bets settled the next day as those transactions cleared, sometimes leaving the bank unable to transfer funds.</li>
+<li>If the customer had lost, they were left with a negative balance many never repaid.</li>
 <li>This cost the company directly and incentivized fraud, with bad actors opening new accounts under others’ information to keep exploiting the gap.</li>
-<li>ACH deposits—tied to a verifiable bank balance—would close it, but adoption sat below 20%.</li>
+<li>ACH deposits — tied to a verifiable bank balance — would close it, but adoption sat below 20%.</li>
 </ul>"""),
             ("Task", """<ul>
 <li>Understand why customers avoided ACH despite it being the safer, more stable deposit method.</li>
@@ -351,249 +409,30 @@ CASES = [
 </ul>"""),
             ("Action", """<ul>
 <li>Ran interviews to understand the avoidance and paired that qualitative signal with behavioral data.</li>
-<li>Surfaced a counterintuitive root cause: customers perceived entering bank routing and account numbers as the least secure way to pay—riskier, in their minds, than the debit card they were used to.</li>
+<li>Surfaced a counterintuitive root cause: customers perceived entering bank routing and account numbers as the least secure way to pay — riskier, in their minds, than the debit card they were used to.</li>
 <li>Since the barrier was perception rather than mechanics, partnered with the content design team (copywriters) to explore message framing and tone conveying how ACH is actually safer and more secure.</li>
 <li>A/B tested the variations to find what genuinely moved behavior.</li>
 </ul>"""),
             ("Result", """<ul>
-<li>ACH adoption rose from <20% to ~32%—nearly doubled—by correcting the security misperception rather than adding incentives or friction.</li>
-<li>Because ACH ties to a verifiable balance, the shift directly drained the football-Sunday debit exploit.</li>
-<li>Reduced unrecoverable negative balances and the fraudulent account creation it had motivated.</li>
-<li>Root cause was a perception problem—bank numbers felt least secure—not a mechanical or incentive one.</li>
-<li>A cross-functional win with content design: message framing + tone, validated by A/B testing paired with interview sentiment.</li>
+<li><strong>Roughly twice as many customers started using bank transfers.</strong> Adoption of ACH (paying directly from a bank account) rose from under 20% to about 32%.</li>
+<li><strong>The fix was to correct a false impression, not to add rewards or extra steps.</strong> Customers had believed that typing in bank account and routing numbers was the least safe way to pay — less safe than the debit card they were used to, which is the opposite of the truth. Better wording, developed with the content design team and tested head-to-head, changed that belief.</li>
+<li><strong>This directly shrank the Sunday-football problem.</strong> Because a bank transfer is tied to money the customer actually has, moving people onto it removed much of the gap that let bets get placed against funds that weren’t really there.</li>
+<li>It reduced two costly outcomes: customers left owing money they never paid back, and the fraud that came with it — people opening new accounts under other identities to keep exploiting the gap.</li>
 </ul>"""),
         ],
     },
     {
-        "slug": "fantasy-d2c-ideation",
-        "num": "08",
-        "brand": "nfl",
-        "title": "NFL Fantasy Mobile App",
-        "subtitle": "Monetizing Fantasy Football — The Tools Package",
-        "short": "Developed and shipped features available via in-app purchase—converting 45% of users and generating $920K.",
-        "brand_card": {
-            "logo": "nfl/nfl-fantasy-logo.png",
-            "logo_alt": "NFL Fantasy logo",
-            "tagline": "In-App Tools Package",
-        },
-        "headline_kpis": [
-            ("Subscriptions Purchased", "45% of users"),
-            ("Total Revenue", "$920K"),
-        ],
-        "context": "NFL · Fantasy Sports",
-        "year": "2019–2021",
-        "summary": "Developed and shipped Fantasy features available via in-app purchase—converting 45% of active users and generating $920K in direct-to-consumer revenue.",
-        "insight": "Fans would pay to win their league—as long as paying never changed the game itself.",
-        "stats": [
-            ("$600K", "Direct-to-consumer revenue in the first week", "revenue"),
-            ("$920K", "Direct-to-consumer revenue by season end", "revenue"),
-            ("1.4M (45%)", "Active Fantasy users who bought the Tools Package", "scale"),
-        ],
-        "sections": [
-            (
-                "Situation",
-                """<ul>
-<li>Fantasy was a free flywheel into the NFL app; revenue lived elsewhere.</li>
-<li>High engagement and unmet needs suggested users might pay—if monetization never broke free core play.</li>
-</ul>""",
-            ),
-            (
-                "Task",
-                """<ul>
-<li>Prove direct Fantasy monetization inside hard guardrails (no pay-to-win, core game intact, no charging for competitor freebies).</li>
-<li>Prioritize tools likely to drive repeat purchases.</li>
-</ul>""",
-            ),
-            (
-                "Action",
-                """<ul>
-<li>Ran a design-thinking cycle plus a large survey to find the top tools season-long players would pay for.</li>
-<li>Mapped competitor gaps and NFL-only advantages (NGS, Pro content, league identity).</li>
-<li>Shipped a mid-season Tools Package with a five-person team and 10+ A/B tests on in-app upsells.</li>
-</ul>""",
-            ),
-            (
-                "Result",
-                """<ul>
-<li>$600K DTC in week one; 1.4M buyers (45% of active users).</li>
-<li>$920K by season end as more users purchased.</li>
-<li>Tools shipped inside existing Fantasy surfaces without fragmenting the free experience.</li>
-</ul>""",
-            ),
-        ],
-    },
-    {
-        "slug": "nfl-d2c-packaging",
-        "num": "09",
-        "brand": "nfl",
-        "title": "Pricing &amp; Packaging: D2C Subscription for NFL+",
-        "short": "Formative research on the NFL’s first direct-to-consumer mobile subscription.",
-        "brand_card": {
-            "logo": "nfl/nflplus-logo.png",
-            "logo_alt": "NFL+ logo",
-            "tagline": "Direct-to-Consumer Subscription",
-        },
-        "headline_kpis": [
-            ("Sign-ups at Launch", "1.1M"),
-            ("Subscribers by 2024", "2.7M"),
-        ],
-        "context": "NFL · Digital Media &amp; NFL+",
-        "year": "2019–2021",
-        "summary": "Formative research on the NFL’s first direct-to-consumer mobile subscription—NFL+, launched in 2022 to ~1.1M sign-ups.",
-        "insight": "Features alone didn’t explain what fans would pay for—motivation to consume content explained why segments chose differently.",
-        "stats": [
-            ("1.1M", "NFL+ sign-ups after the 2022 launch", "scale"),
-            ("~2.7M", "NFL+ subscribers heading into the 2024 season", "scale"),
-        ],
-        "sections": [
-            (
-                "Situation",
-                """<ul>
-<li>The NFL was preparing NFL+—its first D2C mobile subscription—against Club+, League Pass, Club Pass, and Mobile RedZone.</li>
-<li>Product and media strategy needed empirical packaging and pricing guidance before launch.</li>
-</ul>""",
-            ),
-            (
-                "Task",
-                """<ul>
-<li>Evaluate five alternate NFL+ packaging configurations.</li>
-<li>Explain preference differences across fan segments with a motivation-to-consume measure.</li>
-</ul>""",
-            ),
-            (
-                "Action",
-                """<ul>
-<li>Ran Design Studios (24 fans) with MoSCoW sorting and package ranking before/after price reveal.</li>
-<li>Fielded a 2,208-fan national survey on features and competitor usage.</li>
-<li>Analyzed reach/preference (TURF-style) and MaxDiff motivation dimensions in SPSS.</li>
-</ul>""",
-            ),
-            (
-                "Result",
-                """<ul>
-<li>Recommendations supported the first NFL+ mobile subscription offering.</li>
-<li>~1.1M sign-ups after the 2022 launch; later footprint ~2.7M heading into 2024.</li>
-<li>Partnered with NFL Media and Product Strategy on the packaging blueprint.</li>
-</ul>""",
-            ),
-        ],
-    },
-    {
-        "slug": "intel-trueview",
-        "num": "10",
-        "brand": "nfl",
-        "badge_label": "NFL Labs",
-        "title": "Intel TrueView 360° Prototype",
-        "short": "Tested Intel’s TrueView replay prototype with fans and recommended how to integrate it into the NFL app and monetize it.",
-        "context": "NFL Labs · Partner research with Intel",
-        "year": "2019–2021",
-        "summary": "Ran design studios on Intel’s TrueView rotate-the-camera replay prototype and delivered recommendations for how to integrate it into the NFL app and monetize it.",
-        "insight": "Perspective control earned its place when fans wanted to understand a play—not as a default for every highlight.",
-        "video": {
-            "src": "nfl-intel/trueview-prototype.mp4",
-            "poster": "intel-trueview-poster.png",
-            "caption": "Intel TrueView prototype — rotate-the-camera replay.",
-        },
-        "stats": [],
-        "sections": [
-            (
-                "Situation",
-                """<ul>
-<li>Intel’s TrueView prototype let fans rotate the camera around a recorded play.</li>
-<li>NFL Labs needed a clear appetite read before investing further in partner integration.</li>
-</ul>""",
-            ),
-            (
-                "Task",
-                """<ul>
-<li>Put the working prototype in front of fans and learn how they used it.</li>
-<li>Turn findings into product recommendations for Labs and Intel.</li>
-</ul>""",
-            ),
-            (
-                "Action",
-                """<ul>
-<li>Ran design studios where fans tried the live TrueView prototype.</li>
-<li>Captured when perspective control helped vs. when a normal highlight was enough.</li>
-<li>Translated findings into Game Pass / condensed-replay recommendations.</li>
-</ul>""",
-            ),
-            (
-                "Result",
-                """<ul>
-<li>Delivered an appetite read plus concrete interactive-replay recommendations.</li>
-<li>Gave Labs and Intel a shared research basis for next partnership steps.</li>
-</ul>""",
-            ),
-        ],
-    },
-    {
-        "slug": "verizon-superstadium",
-        "num": "11",
-        "brand": "nfl",
-        "badge_label": "NFL Labs",
-        "title": "Verizon 5G SuperStadium — In-Stadium Fan Experience",
-        "short": "Partnered with Verizon 5G to test the SuperStadium experience—an in-stadium-only, next-generation experience for live NFL games that later morphed into the VIP Fan Experience.",
-        "context": "NFL Labs · Verizon 5G partnership",
-        "year": "2019–2021",
-        "summary": "NFL Labs partnered with Verizon 5G to explore next-generation ways to deepen in-stadium fan engagement. I directed usability and field research on the SuperStadium experience—an in-stadium-only concept pairing cognitive task analysis with field observation during live events—that later morphed into the VIP Fan Experience.",
-        "insight": "In-stadium fans didn’t want a second screen—they wanted the stadium itself to become the interface.",
-        "video": {
-            "src": "nfl-intel/superstadium-demo.mp4",
-            "poster": "nfl-intel/superstadium-poster.jpg",
-            "caption": "Verizon 5G SuperStadium — in-stadium fan experience demo.",
-        },
-        "stats": [
-            ("25% increase", "Engagement lift from Fantasy App &amp; 5G/AR research", "conversion"),
-            ("18% increase", "Retention from Fantasy App &amp; 5G/AR research", "conversion"),
-            ("59.6%", "Super Bowl LX attendees connected to SuperStadium", "conversion"),
-            ("$1B+", "NFL–Verizon technology partnership", "revenue"),
-        ],
-        "sections": [
-            (
-                "Situation",
-                """<ul>
-<li>NFL Labs wanted next-generation ways to deepen live and in-stadium fan engagement with partner technology.</li>
-<li>Verizon 5G opened the door to real-time AR overlays and multi-angle viewing inside the stadium.</li>
-</ul>""",
-            ),
-            (
-                "Task",
-                """<ul>
-<li>Direct usability and field research on Verizon-powered 5G/AR/VR fan experiences for in-stadium use.</li>
-<li>Turn findings into a concrete product direction Labs could formalize with Verizon.</li>
-</ul>""",
-            ),
-            (
-                "Action",
-                """<ul>
-<li>Ran cognitive task analysis and in-stadium field research during live events to capture real fan behavior.</li>
-<li>Ran prototype and usability evaluation on immersive AR hardware with Verizon’s innovation team.</li>
-<li>Shaped the product direction: multi-angle live/replay views, Next Gen Stats AR overlays, and in-stadium navigation over 5G Ultra Wideband.</li>
-</ul>""",
-            ),
-            (
-                "Result",
-                """<ul>
-<li>Fantasy App and 5G/AR research achieved a 25% engagement lift and 18% higher retention.</li>
-<li>Helped seed SuperStadium—now embedded in the official NFL app and central to a $1B+ NFL–Verizon partnership.</li>
-<li>At Super Bowl LX, 59.6% of attendees were actively connected to the SuperStadium experience.</li>
-</ul>""",
-            ),
-        ],
-    },
-    {
         "slug": "insulin-pen-usability",
-        "num": "12",
+        "num": "08",
         "brand": "ipsos",
         "title": "Insulin Pen Usability: Turning Device Research Into Commercial Evidence",
-        "short": "Authored and ran a multi-country comparative usability study of a biosimilar insulin pen—reshaping device training and cutting device-use errors 27%.",
+        "short": "A pharma company needed defensible evidence of where its biosimilar insulin pen stood against market leaders. My multi-country comparative usability study reshaped device training and was linked to a 27% reduction in device-use errors.",
         "context": "Ipsos Healthcare · Medical Devices & Diabetes Research",
         "year": "2015–2017",
         "role": "UX Research Analyst (protocol author, moderator, analyst)",
         "timeline": "Multi-country study",
         "methods": "Comparative usability testing · Simulated-injection task protocol · In-person moderation · Cognitive debriefing · Video capture · Follow-up interviews",
-        "summary": "A pharma company needed defensible evidence of where its biosimilar insulin pen stood against market leaders. My multi-country comparative usability study reshaped the device training protocol and was associated with a 27% reduction in device-use errors.",
+        "summary": "A pharma company needed defensible evidence of where its biosimilar insulin pen stood against market leaders. My multi-country comparative usability study reshaped the device training protocol and was linked to a 27% reduction in device-use errors.",
         "stats": [],
         "sections": [
             ("Situation", """<ul>
@@ -609,17 +448,260 @@ CASES = [
 </ul>"""),
             ("Action", """<ul>
 <li>Authored the research protocol and built the study materials.</li>
-<li>Moderated in-person usability sessions with patients and nurses recruited from a local clinic; participants performed simulated injections with each device in randomized order.</li>
+<li>Moderated in-person usability sessions with patients and nurses recruited from a local clinic.</li>
+<li>Participants performed simulated injections with each device in randomized order.</li>
 <li>Captured performance data (task completion, whether injections were performed correctly, time on task) alongside structured preference ratings across handling, dose selection, dose reading, injection force, and confidence.</li>
-<li>Filmed the sessions and conducted follow-up interviews to capture the reasoning behind participants’ ratings, then analyzed the combined behavioral and attitudinal data.</li>
+<li>Filmed the sessions and conducted follow-up interviews to capture the reasoning behind participants’ ratings.</li>
+<li>Analyzed the combined behavioral and attitudinal data.</li>
 </ul>"""),
             ("Result", """<ul>
-<li>Central contribution: showed that how the device is taught mattered as much as the device itself.</li>
-<li>Findings reshaped how the device education protocol is presented to educators and patients—a change associated with a 27% reduction in device-use errors and meaningful improvement in training time.</li>
-<li>Session footage and follow-up interviews became commercial assets in their own right—the raw material for field materials used by pharmaceutical representatives and diabetes educators.</li>
-<li>Produced comparative evidence across patients and certified diabetes educators to support launch messaging and market access.</li>
-<li>Owned the study end to end: protocol, materials, moderation, filming, follow-up interviews, and analysis.</li>
+<li><strong>The main insight: how the device is taught matters as much as the device itself.</strong> The way patients and educators were trained turned out to be just as important as the pen’s design.</li>
+<li><strong>The research changed how the device is taught — and that change was linked to fewer mistakes.</strong> After the training approach for educators and patients was reshaped based on the findings, device-use errors were about 27% lower and training took less time. (The study is linked to these improvements; it isn’t claiming to be the sole cause.)</li>
+<li><strong>The recordings became marketing material.</strong> The filmed sessions and follow-up interviews were used to build the training and sales materials that pharmaceutical representatives and diabetes educators used in the field.</li>
+<li><strong>The study gave the company evidence it could compare.</strong> It produced side-by-side results across patients and certified diabetes educators, supporting both launch messaging and the case for getting the device covered and paid for.</li>
+<li>I ran the whole study: writing the plan, building the materials, moderating the sessions, filming, conducting the follow-up interviews, and analyzing the data.</li>
 </ul>"""),
+        ],
+    },
+    {
+        "slug": "fantasy-d2c-ideation",
+        "num": "09",
+        "brand": "nfl",
+        "title": "NFL Fantasy Mobile App",
+        "subtitle": "Monetizing Fantasy Football — The Tools Package",
+        "short": "Developed and shipped Fantasy features available via in-app purchase—$600K in the first week, $920K in total revenue in 2020, bought by 1.4M users (45% of active users).",
+        "brand_card": {
+            "logo": "nfl/nfl-fantasy-logo.png",
+            "logo_alt": "NFL Fantasy logo",
+            "tagline": "In-App Tools Package",
+        },
+        "media_gallery": [
+            {
+                "src": "fantasy/tools-package.png",
+                "alt": "The Tools Package inside the Fantasy app",
+                "caption": "The Tools Package, shipped inside the Fantasy app — waiver tools, most-added players, and upgrade prompts.",
+            },
+            {
+                "row": [
+                    {"src": "fantasy/lineup-view.png", "alt": "The all-new Lineup View"},
+                    {"src": "fantasy/player-lists.png", "alt": "Personalized player lists"},
+                    {"src": "fantasy/backups.png", "alt": "Set your backups to avoid last-minute inactives"},
+                ],
+                "caption": "Feature set: the all-new Lineup View, personalized player lists, and backups to avoid last-minute inactives.",
+            },
+        ],
+        "headline_kpis": [
+            ("Total Revenue (2020)", "$920K"),
+            ("Active Users Who Bought", "1.4M (45%)"),
+        ],
+        "context": "NFL · NFL Fantasy App · Fantasy Sports",
+        "year": "2019–2021",
+        "role": "UX Researcher (study lead) · 5-person cross-functional team (2 designers, 1 researcher, 1 PM, 1 engineer)",
+        "methods": "In-depth interviews · Large-scale survey · MaxDiff · Design-thinking · Static-concept testing · A/B testing",
+        "summary": "Developed and shipped Fantasy features sold via in-app purchase—$600K in direct-to-consumer sales in the first week, $920K in total revenue in 2020, bought by 1.4M users (45% of active users), and later folded into NFL+.",
+        "insight": "Fans would pay to win their league—as long as paying never changed the game itself.",
+        "stats": [
+            ("$600K", "Direct-to-consumer sales in the first week", "revenue"),
+            ("$920K", "Total revenue in 2020", "revenue"),
+            ("1.4M (45%)", "Active Fantasy users who bought the Tools Package", "scale"),
+        ],
+        "sections": [
+            (
+                "Situation",
+                """<ul>
+<li>Fantasy Football was a free feature that pulled fans into the NFL app, but the app’s actual revenue came from elsewhere.</li>
+<li>Engagement was high and players had needs the free game didn’t meet — a sign they might pay, as long as paying never interfered with the core game everyone came for.</li>
+</ul>""",
+            ),
+            (
+                "Task",
+                """<ul>
+<li>Prove that Fantasy could make money directly, within strict guardrails: no pay-to-win, the core game left intact, and no charging for things competitors gave away free.</li>
+<li>Focus on the tools most likely to earn repeat purchases, not one-time buys.</li>
+</ul>""",
+            ),
+            (
+                "Action",
+                """<ul>
+<li>Started with interviews to understand what players actually needed, then validated it at scale with a large survey.</li>
+<li>Used MaxDiff analysis to find which combinations of tools were most in demand and most likely to convert.</li>
+<li>Designed and tested static versions of the features, upsells, and different call-to-action placements and messaging.</li>
+<li>Landed on two ways to buy: the full bundle, or “à la carte” — one tool at a time. The tools included automatic lineup optimization, automatic injured-player replacement, and an auto-draft feature.</li>
+<li>Ran A/B tests on the in-app upsells to tune what converted.</li>
+</ul>""",
+            ),
+            (
+                "Result",
+                """<ul>
+<li>The Tools Package sold immediately — $600K in direct-to-consumer sales in its first week.</li>
+<li>It reached $920K in total revenue in 2020, bought by 1.4 million users (45% of active users).</li>
+<li>It never broke the free game. The paid tools lived inside the existing Fantasy screens, so the free experience stayed whole.</li>
+<li>It became part of NFL+. The Tools Package was later folded into the NFL+ subscription in 2022.</li>
+</ul>""",
+            ),
+        ],
+    },
+    {
+        "slug": "nfl-d2c-packaging",
+        "num": "10",
+        "brand": "nfl",
+        "title": "Pricing &amp; Packaging: The NFL+ Subscription",
+        "short": "Formative research on the NFL’s first direct-to-consumer mobile subscription—NFL+, launched in 2022 to ~1.1M sign-ups and ~2.7M subscribers by 2024.",
+        "brand_card": {
+            "logo": "nfl/nflplus-logo.png",
+            "logo_alt": "NFL+ logo",
+            "tagline": "Direct-to-Consumer Subscription",
+        },
+        "headline_kpis": [
+            ("Sign-ups at Launch", "1.1M"),
+            ("Subscribers by 2024", "~2.7M"),
+        ],
+        "context": "NFL · Digital Media &amp; NFL+",
+        "year": "2019–2021",
+        "role": "UX Researcher (study lead)",
+        "methods": "Design Studios · MoSCoW sorting · Package ranking · National survey (N=2,208) · TURF analysis · MaxDiff · SPSS",
+        "summary": "Formative research on the NFL’s first direct-to-consumer mobile subscription—NFL+, launched in 2022 to about 1.1M sign-ups and grew to roughly 2.7M subscribers heading into 2024.",
+        "insight": "Features alone didn’t explain what fans would pay for—a measure of what motivates fans to subscribe explained why segments chose differently.",
+        "stats": [
+            ("1.1M", "NFL+ sign-ups in 2022", "scale"),
+            ("~2.7M", "NFL+ subscribers heading into 2024", "scale"),
+        ],
+        "sections": [
+            (
+                "Situation",
+                """<ul>
+<li>The NFL was preparing NFL+, its first direct-to-consumer mobile subscription, in a field that already included Club+, League Pass, Club Pass, and Mobile RedZone.</li>
+<li>Before launch, product and media strategy needed evidence — not instinct — for how to package and price it.</li>
+</ul>""",
+            ),
+            (
+                "Task",
+                """<ul>
+<li>Evaluate five different ways NFL+ could be packaged.</li>
+<li>Explain why different fan segments preferred different packages, using a measure of what actually motivates fans to subscribe.</li>
+</ul>""",
+            ),
+            (
+                "Action",
+                """<ul>
+<li>Ran Design Studios with 24 fans, using MoSCoW sorting (Must / Should / Could / Won’t Have) and package ranking both before and after fans saw the prices.</li>
+<li>Fielded a national survey of 2,208 fans on the features they wanted and the competitor services they already used.</li>
+<li>Analyzed which features had the broadest appeal (a TURF-style reach analysis) and what most motivated subscription (MaxDiff), all in SPSS.</li>
+</ul>""",
+            ),
+            (
+                "Result",
+                """<ul>
+<li>The research shaped the NFL’s first-ever mobile subscription. The packaging and pricing recommendations became the basis for the initial NFL+ offering.</li>
+<li>It launched to about 1.1 million sign-ups in 2022 and grew to roughly 2.7 million subscribers heading into 2024.</li>
+<li>It was a cross-team effort. The packaging blueprint was built in partnership with NFL Media and Product Strategy.</li>
+</ul>""",
+            ),
+        ],
+    },
+    {
+        "slug": "intel-trueview",
+        "num": "11",
+        "brand": "nfl",
+        "badge_label": "NFL Labs",
+        "title": "Intel TrueView 360° Prototype",
+        "short": "Tested Intel’s TrueView rotate-the-camera replay prototype with fans and delivered recommendations for how to integrate it into the NFL app and Game Pass.",
+        "context": "NFL Labs · Partner research with Intel",
+        "year": "2019–2021",
+        "role": "UX Researcher (study lead)",
+        "methods": "Design studios · Live-prototype testing · Behavioral observation",
+        "summary": "Ran design studios on Intel’s TrueView rotate-the-camera replay prototype and delivered a clear read on fan appetite plus concrete recommendations for how an interactive replay should work in Game Pass and condensed-replay experiences.",
+        "insight": "Perspective control earned its place when fans wanted to understand a play—not as a default for every highlight.",
+        "video": {
+            "src": "nfl-intel/trueview-prototype.mp4",
+            "poster": "intel-trueview-poster.png",
+            "caption": "The Intel TrueView prototype — rotate the camera around a recorded play. (Click to watch.)",
+        },
+        "stats": [],
+        "sections": [
+            (
+                "Situation",
+                """<ul>
+<li>Intel’s TrueView prototype let fans rotate the camera all the way around a recorded play.</li>
+<li>Before investing further in the partnership, NFL Labs needed a clear read on whether fans actually wanted this.</li>
+</ul>""",
+            ),
+            (
+                "Task",
+                """<ul>
+<li>Put the working prototype in front of real fans and learn how they used it.</li>
+<li>Turn what we learned into concrete product recommendations for both NFL Labs and Intel.</li>
+</ul>""",
+            ),
+            (
+                "Action",
+                """<ul>
+<li>Ran design studios where fans tried the live TrueView prototype hands-on.</li>
+<li>Captured the moments when controlling the camera angle genuinely helped — and the moments when a normal highlight was all fans wanted.</li>
+<li>Translated those findings into recommendations for Game Pass and condensed-replay experiences.</li>
+</ul>""",
+            ),
+            (
+                "Result",
+                """<ul>
+<li>Answered whether fans actually wanted the feature. The study delivered a clear read on fan appetite, plus specific recommendations for how an interactive replay should work.</li>
+<li>Gave both partners a shared starting point. NFL Labs and Intel came away with a common research basis for deciding their next steps together.</li>
+</ul>""",
+            ),
+        ],
+    },
+    {
+        "slug": "verizon-superstadium",
+        "num": "12",
+        "brand": "nfl",
+        "badge_label": "NFL Labs",
+        "title": "Verizon 5G SuperStadium: The In-Stadium Fan Experience",
+        "short": "Led usability and in-stadium field research on Verizon 5G’s SuperStadium experience—now built into the official NFL app and central to a $1B+ NFL–Verizon partnership.",
+        "context": "NFL Labs · Verizon 5G partnership",
+        "year": "2019–2021",
+        "role": "UX Researcher (study lead)",
+        "methods": "Cognitive task analysis · In-stadium field research · Immersive-AR prototype &amp; usability evaluation",
+        "summary": "NFL Labs partnered with Verizon 5G to explore next-generation in-stadium fan engagement. I led usability and field research—cognitive task analysis plus in-stadium field observation at SoFi Stadium during an LA Rams game—that helped seed SuperStadium, now built into the official NFL app.",
+        "insight": "In-stadium fans didn’t want a second screen—they wanted the stadium itself to become the interface.",
+        "video": {
+            "src": "nfl-intel/superstadium-demo.mp4",
+            "poster": "nfl-intel/superstadium-poster.jpg",
+            "caption": "SuperStadium — multi-angle views and Next Gen Stats AR overlays from your seat. (Click to watch.)",
+        },
+        "stats": [
+            ("$1B+", "NFL–Verizon technology partnership", "revenue"),
+            ("59.6%", "Super Bowl LX attendees connected to SuperStadium", "conversion"),
+        ],
+        "sections": [
+            (
+                "Situation",
+                """<ul>
+<li>NFL Labs wanted next-generation ways to deepen how fans engage during live games, especially inside the stadium.</li>
+<li>Verizon’s 5G network made new experiences possible: real-time AR overlays and multi-angle viewing from your seat.</li>
+</ul>""",
+            ),
+            (
+                "Task",
+                """<ul>
+<li>Lead usability and field research on the Verizon-powered 5G, AR, and VR fan experiences built for in-stadium use.</li>
+<li>Turn the findings into a concrete product direction NFL Labs could formalize with Verizon.</li>
+</ul>""",
+            ),
+            (
+                "Action",
+                """<ul>
+<li>Ran cognitive task analysis and in-stadium field research during live events — capturing real fan behavior at SoFi Stadium during an LA Rams game.</li>
+<li>Ran prototype and usability testing on immersive AR hardware alongside Verizon’s innovation team.</li>
+<li>Shaped the product direction: multi-angle live and replay views, Next Gen Stats AR overlays, and in-stadium navigation running over 5G Ultra Wideband.</li>
+</ul>""",
+            ),
+            (
+                "Result",
+                """<ul>
+<li>The research helped seed SuperStadium, which is now built into the official NFL app and sits at the center of a $1 billion-plus partnership between the NFL and Verizon.</li>
+<li>Fans used it at the sport’s biggest event. At Super Bowl LX, 59.6% of attendees were actively connected to the SuperStadium experience.</li>
+</ul>""",
+            ),
         ],
     },
 ]
@@ -1012,9 +1094,9 @@ def build_case_blocks(case_href_prefix="cases/"):
     company_order = [
         ("robinhood", "Robinhood"),
         ("fanduel", "FanDuel"),
+        ("ipsos", "Ipsos Healthcare"),
         ("nfl", "NFL"),
         ("burkmont", "Burkmont Analytics · Phoenix Suns"),
-        ("ipsos", "Ipsos Healthcare"),
         ("cgu", "Claremont Colleges"),
     ]
     case_blocks = []
@@ -1091,7 +1173,7 @@ def write_case_studies_page():
       <div class="wrap">
         <div class="section-head reveal">
           <h2>Case studies</h2>
-          <p>Ten studies across Robinhood, FanDuel, and the NFL—each tied to a shipped product decision and a measured outcome.</p>
+          <p>Twelve studies across Robinhood, FanDuel, Ipsos Healthcare, and the NFL—each tied to a shipped product decision and a measured outcome.</p>
         </div>
 {chr(10).join(case_blocks)}
       </div>
@@ -1419,6 +1501,51 @@ def render_nfl_media(case):
       </figure>"""
 
 
+def render_nfl_gallery(case):
+    """Render additional framed product screenshots for an NFL case.
+
+    Each entry in ``media_gallery`` is either a single image (src/alt/caption)
+    rendered in the standard white NFL frame, or a grouped row
+    ({"row": [imgs], "caption": ...}) rendered as a side-by-side strip that
+    shares one caption. This lets NFL cases keep their brand_card/video hero
+    while still surfacing the source document's embedded screenshots.
+    """
+    gallery = case.get("media_gallery")
+    if not gallery:
+        return ""
+    figs = []
+    for item in gallery:
+        caption = item.get("caption", "")
+        cap_html = (
+            f'<figcaption class="case-nfl-media-caption">{caption}</figcaption>'
+            if caption
+            else ""
+        )
+        if "row" in item:
+            imgs = "\n".join(
+                f'            <img class="case-nfl-gallery-img" src="../media/{im["src"]}" alt="{im.get("alt", "")}" loading="lazy" />'
+                for im in item["row"]
+            )
+            figs.append(
+                f"""      <figure class="case-nfl-media case-nfl-gallery-row reveal">
+        <div class="case-nfl-gallery-strip">
+{imgs}
+        </div>
+        {cap_html}
+      </figure>"""
+            )
+        else:
+            figs.append(
+                f"""      <figure class="case-nfl-media case-nfl-image reveal">
+        <div class="case-nfl-media-frame">
+          <img class="case-nfl-media-img" src="../media/{item['src']}" alt="{item.get('alt', '')}" loading="lazy" />
+        </div>
+        {cap_html}
+      </figure>"""
+            )
+    return "\n".join(figs)
+
+
 def write_case_nfl(case, index):
     """Render an NFL case page using the blue geometric reference layout."""
     prev_c = CASES[index - 1] if index > 0 else None
@@ -1497,6 +1624,7 @@ def write_case_nfl(case, index):
       </div>"""
 
     media_html = render_nfl_media(case)
+    gallery_html = render_nfl_gallery(case)
 
     prev_link = (
         f"""<a class="pager-link pager-prev" href="{prev_c['slug']}.html">
@@ -1542,6 +1670,7 @@ def write_case_nfl(case, index):
         </div>
         <div class="case-nfl-right">
 {media_html}
+{gallery_html}
 {stats_html}
         </div>
       </div>

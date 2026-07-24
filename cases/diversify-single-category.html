@@ -49,7 +49,7 @@
           </div>
           <div class="brief-item">
             <dt>Methods</dt>
-            <dd>In-depth interviews · Scenario-based probing · Behavioral segmentation · Concept testing · Competitive analysis · Prototyping (Figma)</dd>
+            <dd>In-depth interviews · Behavioral segmentation · Scenario-based probing · Usability testing · Concept testing · Competitive analysis · Prototyping (Figma)</dd>
           </div>
         </dl>
       </div>
@@ -63,8 +63,8 @@
             <h2>Situation</h2>
           </div>
           <div class="case-section-body"><ul>
-<li>Previous research indicated ~70% of users traded a single prediction-market category, overwhelmingly sports.</li>
-<li>The company wanted them to expand into other categories—the trading-app version of “diversify your portfolio.”</li>
+<li>Previous research showed about 70% of users traded a single prediction-market category, overwhelmingly sports.</li>
+<li>The company wanted them to expand into other categories — the trading-app version of “diversify your portfolio.”</li>
 <li>Initial research surfaced the two usual suspects as the most-reported barriers: risk-aversion and lack of knowledge.</li>
 <li>These were the same reasons the org reflexively met with education modules and risk-free promotions.</li>
 </ul></div>
@@ -74,9 +74,9 @@
             <h2>Task</h2>
           </div>
           <div class="case-section-body"><ul>
-<li>Understand the real difference between sports-only and multi-category traders—what motivates expansion versus avoidance—rather than accept the surface explanation.</li>
+<li>Understand the real difference between sports-only and multi-category traders — what actually blocks expansion — rather than accept the surface explanation.</li>
 <li>If risk-aversion and knowledge gaps weren’t the true blockers, the company was spending on the wrong fixes.</li>
-<li>Find what would genuinely move single-category traders into new domains.</li>
+<li>Find what would genuinely move single-category traders into new categories.</li>
 </ul></div>
         </section>
         <section class="case-section reveal">
@@ -84,38 +84,58 @@
             <h2>Action</h2>
           </div>
           <div class="case-section-body"><ul>
-<li>Interviewed both sports-only and multi-category traders; found “risk-averse” and “don’t know enough” were proxies for confidence—users didn’t believe they could win.</li>
-<li>The binary win/lose nature of event contracts made unfamiliar categories feel like a coin toss, too much like gambling—and a core part of these users’ identity was informed decision-making, distancing themselves from the “gambler” stereotype.</li>
-<li>Walking participants through scenarios in low-knowledge categories revealed that several tools and pieces of information they’d need already existed in the app but were undiscovered.</li>
-<li>Hypothesized that of the 70% “sports-only,” only ~10% are truly sports-only, while ~60% would explore if they could find something that sparked their interest.</li>
+<li>Interviewed both sports-only and multi-category traders, and paired that with behavioral segmentation of the single-category group.</li>
+<li>Behavioral analysis split the sports-only population into two clear segments:
+<ul>
+<li>About 60% were exploring but never trading. They visited other categories’ event pages and looked around, but never placed a trade outside sports.</li>
+<li>About 40% never explored at all. They came in, went straight to the sports event they wanted, traded, and left — staying within sports every time.</li>
+</ul>
+</li>
+<li>For the exploring 60%, interviews showed “risk-averse” and “don’t know enough” were really about confidence — they didn’t believe they could win. The binary win/lose nature of event contracts made unfamiliar categories feel like a coin toss, too close to gambling — which mattered because these users saw themselves as informed decision-makers and wanted to distance themselves from the “gambler” stereotype.</li>
+<li>Walking them through scenarios in unfamiliar categories revealed that the tools and information they’d need to feel confident already existed in the app but were hidden or undiscovered.</li>
+<li>For the 40% who never explored, the issue was different: personalization kept recommending more of what they already traded (more sports), so it never exposed them to anything new — and their engagement narrowed and dropped off when their main sport’s season ended.</li>
+<li>Identified a time-horizon barrier unique to sports-only traders: they like sports because an event starts and settles quickly, so their money isn’t tied up. A long-dated market (like “who wins the 2028 election”) locks up funds for months, which they actively avoid — so most non-sports categories felt like money-jail.</li>
+<li>Ran usability testing on the 15-minute Bitcoin market to see whether a fast-settling non-sports event would satisfy that quick-turnaround need — it did.</li>
 </ul></div>
         </section>
         <section class="case-section reveal">
           <div class="case-section-label">
             <h2>Result</h2>
           </div>
-          <div class="case-section-body"><ul>
-<li>The barrier was that trading a new category felt like a bet, not an informed decision—and the tools to change that were either hidden or missing.</li>
-<li>The platform had no limit order—the definitional tool of a controlled trade; on my recommendation it was built into the order form, reaching ~24% of total trade volume within two weeks.</li>
-<li>On the fast, binary BTC 15-minute contract, pricing history lived inside the chart but wasn’t surfaced; recommended surfacing it and turning “Source: BRTI” into a tappable link so skeptical traders could verify provenance themselves.</li>
-<li>Concept-tested Tool Tip—a one-time feature prompting users to hold and scrub the chart to inspect price at any moment; it drew a night-and-day shift in willingness, shipped, and lifted multi-category traders 11%.</li>
-<li>Together, these changes did what education modules and promotions never could: made trying a new category feel less like a bet and more like an informed decision. Further recommendations are on the Q4 roadmap in build/test.</li>
+          <div class="case-section-body"><p>The real barrier for the exploring majority: trading a new category felt like a gamble, not an informed choice — and the tools that would make it feel informed were either hidden in the app or missing entirely. The recommendations below are ordered by how easily they could be acted on.</p>
+<p><strong>Lowest-hanging fruit — tell people about tools that already existed.</strong> The fastest wins required no new capability, just surfacing what was buried:</p>
+<ul>
+<li><strong>Point users to the limit order.</strong> The limit order lets a trader set the price they’re willing to pay instead of taking whatever the market offers, but it was buried deep in the order form and few users ever reached it. After it was surfaced and added to the order form, limit orders made up about 24% of all trading volume within two weeks.</li>
+<li><strong>Show where the price comes from, and how to see its history.</strong> On the 15-minute Bitcoin market, the price history was on the chart but wasn’t presented as decision support, and the source wasn’t clearly credited. I recommended making the pricing history easier to find and turning the “Source: BRTI” label into a tappable link to the independent benchmark, so skeptical traders could verify it themselves.</li>
+<li><strong>For sports-only traders specifically — surface fast-settling non-sports events.</strong> Because these users avoid anything that ties up their money, I recommended surfacing quick-turnaround non-sports markets like the 15-minute Bitcoin event. Usability testing confirmed this satisfied their need for a fast start-to-finish window — giving them a non-sports on-ramp that didn’t feel like money-jail.</li>
+<li><strong>Teach the chart-scrub.</strong> Testing the Bitcoin event surfaced the next problem: users didn’t know they could press and drag along the chart to see the price at any point in time. I concept-tested Tool Tip, a one-time prompt that shows them this is possible. In testing it clearly changed how willing people were to engage, and after it shipped, the share of people trading in more than one category rose 11%.</li>
+</ul>
+<ul>
+<li>Further recommendations were added to the Q4 roadmap and are being built and tested now.</li>
+<li>This study is what led to the deeper dive into personalization that followed. The 40% who never explored turned out to be a cold-start problem in miniature: whatever a user happens to trade first becomes the only kind of event the system shows them, which quietly locks in a single-category habit from day one. That finding is why the next study focused entirely on personalization — and why the customization features (letting users choose what they see, rather than having their first trade decide it) are being built for Q4.</li>
+<li>Together, these changes did what education pop-ups and free-money promotions never managed to: they made trying a new category feel less like a gamble and more like an informed decision.</li>
+</ul>
+<p><strong>The three features, briefly:</strong></p>
+<ul>
+<li><strong>Limit order</strong> — added to the order form; lets a trader set their own price. Closed a gap competitors already had.</li>
+<li><strong>Tool Tip</strong> — a one-time prompt showing users they can press and drag the chart to inspect the price at any moment. Appears once, then disappears. This was the change behind the 11% lift.</li>
+<li><strong>“Source: BRTI” link</strong> — a tappable link on the Bitcoin market that lets users verify where the price comes from.</li>
 </ul></div>
         </section>
       </div>
       <aside class="case-media-rail">
         <figure class="image-carousel reveal" data-carousel>
           <div class="carousel-stack">
-            <img class="carousel-slide is-active" src="../media/03-category-expansion/order-form-before-change.png" alt="Order form before the change" data-caption="Before change: one lever — a dollar amount, buy at market or not at all." loading="lazy" />
+            <img class="carousel-slide is-active" src="../media/03-category-expansion/order-form-before-change.png" alt="Order form before the change" data-caption="Before: one lever — a dollar amount, buy at the market price or not at all." loading="lazy" />
             <img class="carousel-slide" src="../media/03-category-expansion/order-type-menu.png" alt="New order-type menu" data-caption="The new order-type menu introducing the Limit order — set your own price, good for the day." loading="lazy" />
-            <img class="carousel-slide" src="../media/03-category-expansion/order-form-after-change.png" alt="Order form after the change" data-caption="After change: full limit-order controls — price, quantity, expiry, with cost and payout shown before you commit." loading="lazy" />
+            <img class="carousel-slide" src="../media/03-category-expansion/order-form-after-change.png" alt="Order form after the change" data-caption="After: full limit-order controls — set price, quantity, and expiry, with cost and payout shown before you commit." loading="lazy" />
           </div>
           <div class="carousel-controls">
             <button type="button" class="carousel-btn" data-carousel-prev aria-label="Previous image">&#8249;</button>
             <span class="carousel-count"><span data-carousel-current>1</span> / 3</span>
             <button type="button" class="carousel-btn" data-carousel-next aria-label="Next image">&#8250;</button>
           </div>
-          <figcaption class="carousel-caption" data-carousel-caption>Before change: one lever — a dollar amount, buy at market or not at all.</figcaption>
+          <figcaption class="carousel-caption" data-carousel-caption>Before: one lever — a dollar amount, buy at the market price or not at all.</figcaption>
         </figure>
         <figure class="video-click reveal">
           <div class="video-click-frame" data-video-click>
@@ -129,19 +149,19 @@
               <span>Click to watch video</span>
             </button>
           </div>
-          <figcaption class="video-loop-caption">Scrubbing the BTC contract chart to inspect price at any moment — turning a fast binary market into an informed call, sourced from CF Benchmarks' BRTI.</figcaption>
+          <figcaption class="video-loop-caption">Scrubbing the Bitcoin chart to inspect the price at any moment, sourced from CF Benchmarks’ BRTI.</figcaption>
         </figure>
       </aside>
       </div>
 
       <nav class="pager" aria-label="Case study pagination">
-        <a class="pager-link pager-prev" href="cold-start-personalization.html">
+        <a class="pager-link pager-prev" href="first-trade-recovery.html">
           <span class="pager-kicker">← Previous</span>
-          <span class="pager-title">The Cold-Start Problem: A Deep Dive Into a Personalization Experiment</span>
-        </a>
-        <a class="pager-link pager-next" href="first-trade-recovery.html">
-          <span class="pager-kicker">Next →</span>
           <span class="pager-title">Turning a Dead End Into a Second Chance</span>
+        </a>
+        <a class="pager-link pager-next" href="cold-start-personalization.html">
+          <span class="pager-kicker">Next →</span>
+          <span class="pager-title">The Cold-Start Problem: A Deep Dive Into a Personalization Experiment</span>
         </a>
       </nav>
     </div>

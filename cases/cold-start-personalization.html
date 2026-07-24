@@ -26,7 +26,7 @@
   <main class="case-page">
     <header class="case-hero">
       <div class="wrap">
-        <div class="crumb"><a href="../case-studies.html">Case studies</a> <span aria-hidden="true">/</span> 02</div>
+        <div class="crumb"><a href="../case-studies.html">Case studies</a> <span aria-hidden="true">/</span> 04</div>
         <span class="product-badge product-robinhood"><span class="product-name">Robinhood</span></span>
         <h1>The Cold-Start Problem: A Deep Dive Into a Personalization Experiment</h1>
         
@@ -62,10 +62,10 @@
             <h2>Situation</h2>
           </div>
           <div class="case-section-body"><ul>
-<li>Data Science built and launched a personalization algorithm; its A/B test showed the experimental group trading ~4% more than control (p<.001).</li>
+<li>Data Science built and launched a personalization algorithm; its A/B test showed the experimental group trading ~4% more than control (p&lt;.001).</li>
 <li>The result impressed leadership, who let the algorithm run.</li>
 <li>Weeks later, executives hit a puzzle: event-contract trade volume had plateaued despite meaningful MAU growth.</li>
-<li>No one could explain the disconnect—they asked me to find the “why.”</li>
+<li>No one could explain the disconnect — they asked me to find the “why.”</li>
 </ul></div>
         </section>
         <section class="case-section reveal">
@@ -75,7 +75,7 @@
           <div class="case-section-body"><ul>
 <li>Map what actually drives and suppresses trade volume, and diagnose the plateau.</li>
 <li>Preliminary analysis surfaced the risk immediately: ~70% of the base traded sports contracts only.</li>
-<li>Higher-value multi-category traders—who trade significantly more—were shrinking fast.</li>
+<li>Higher-value multi-category traders — who trade significantly more — were shrinking fast.</li>
 <li>That set up a seasonal cliff: once college basketball and the NBA season ended, volume had nowhere to go.</li>
 </ul></div>
         </section>
@@ -88,7 +88,7 @@
 <li>In-app, users showed me the mechanism directly: the algorithm kept re-surfacing the same events and buried inventory they’d have loved.</li>
 <li>One high-value trader had defected to a competitor for WNBA contracts that Robinhood actually offered but hid so deep in the UI he assumed they didn’t exist.</li>
 <li>Went back to Data Science for the raw experiment data and found the aggregate +4% couldn’t support “personalization works”: the treatment window overlapped the NBA Finals (a major confound), the test was heavily overpowered, and the lift was carried by users with existing trading history.</li>
-<li>A planned cold-start contrast (factorial ANOVA, arm × segment) told the opposite story—for net-new users, control outperformed the personalized experience by 24%.</li>
+<li>A planned cold-start contrast (factorial ANOVA, arm × segment) told the opposite story — for net-new users, control outperformed the personalized experience by 24%.</li>
 </ul></div>
         </section>
         <section class="case-section reveal">
@@ -96,25 +96,28 @@
             <h2>Result</h2>
           </div>
           <div class="case-section-body"><ul>
-<li>Core finding: personalization alone can’t cold-start. With no history to draw on, the algorithm funneled new users into the same popular-sports events, starving discovery and manufacturing the seasonal cliff.</li>
-<li>Recommended pairing personalization with explicit customization—users select categories during onboarding and toggle them on or off as interests change, a need ~90% of interviewees raised unprompted.</li>
-<li>Recommended a Watch List giving traders a cross-category home to return to.</li>
-<li>Prototyped both (Cursor, GitHub, Figma, Python); the Watch List shipped in a variant form.</li>
-<li>One-and-done churn among crossover first-traders fell from 54% to 37% in one month.</li>
-<li>The improvement held even as the cohort grew by ~300K new signups; churned users overwhelmingly had not adopted the Watch List (~3% had).</li>
-<li>Onboarding customization step recommended and pending product adoption.</li>
-</ul></div>
+<li><strong>The main finding: personalization can’t get a brand-new user started.</strong> With no past behavior to learn from, the algorithm kept showing new users the same popular sports events. That left them nothing new to discover, and it set up the seasonal drop-off — when sports seasons ended, these users had nowhere else to go.</li>
+<li><strong>Recommendation 1 — let users choose their own categories.</strong> Rather than rely on the algorithm alone, let people pick the categories they care about when they sign up, and turn them on or off as their interests change. About 90% of the people interviewed asked for this without being prompted.</li>
+<li><strong>Recommendation 2 — add a Watch List.</strong> Give traders one place to save events across categories and come back to, so they always have a reason to return.</li>
+<li>I built working prototypes of both (using Cursor, GitHub, Figma, and Python). The Watch List design moved into beta testing.</li>
+</ul>
+<p><strong>What the A/B test showed</strong></p>
+<ul>
+<li><strong>The Watch List cut drop-off after a first trade.</strong> In the control group (no Watch List), 54% of users dropped off after placing a trade; with the Watch List, only 37% dropped off after their first trade.</li>
+<li>The customization idea — letting users pick their own categories — was recommended and is being built, with those options planned for release in Q4.</li>
+</ul>
+<p class="callout">Note: The watchlist designs that shaped this work are in beta testing and not yet fully live in prediction markets, so any visuals reflect the existing investing-side watchlist that set the framework for the initial prediction-markets design.</p></div>
         </section>
       </div>
 
       <nav class="pager" aria-label="Case study pagination">
-        <a class="pager-link pager-prev" href="first-trade-conversion.html">
+        <a class="pager-link pager-prev" href="diversify-single-category.html">
           <span class="pager-kicker">← Previous</span>
-          <span class="pager-title">Cracking First-Trade Conversion Before Tip-Off</span>
-        </a>
-        <a class="pager-link pager-next" href="diversify-single-category.html">
-          <span class="pager-kicker">Next →</span>
           <span class="pager-title">From Coin Toss to Informed Call: Getting Single-Category Traders to Diversify</span>
+        </a>
+        <a class="pager-link pager-next" href="registration-dropoff.html">
+          <span class="pager-kicker">Next →</span>
+          <span class="pager-title">Studying the Users You Can’t Recruit: Fixing Registration Drop-Off</span>
         </a>
       </nav>
     </div>
