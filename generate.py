@@ -428,6 +428,11 @@ CASES = [
         "brand": "nfl",
         "title": "Pricing &amp; Packaging: D2C Subscription for NFL+",
         "short": "Formative research on the NFL’s first direct-to-consumer mobile subscription.",
+        "brand_card": {
+            "logo": "nfl/nflplus-logo.png",
+            "logo_alt": "NFL+ logo",
+            "tagline": "Direct-to-Consumer Subscription",
+        },
         "headline_kpis": [
             ("Sign-ups at Launch", "1.1M"),
             ("Subscribers by 2024", "2.7M"),
@@ -1320,6 +1325,30 @@ def render_nfl_media(case):
     Image cases render the same white-framed box without a play button.
     When no media exists a tasteful placeholder is shown instead.
     """
+    card = case.get("brand_card")
+    if card:
+        tagline = card.get("tagline", "")
+        tagline_html = (
+            f'<span class="case-nfl-brandcard-tagline">{tagline}</span>'
+            if tagline
+            else ""
+        )
+        divider_html = (
+            '<span class="case-nfl-brandcard-divider" aria-hidden="true"></span>'
+            if tagline
+            else ""
+        )
+        return f"""      <figure class="case-nfl-media case-nfl-brandcard reveal">
+        <div class="case-nfl-media-frame case-nfl-brandcard-frame">
+          <span class="case-nfl-brandcard-facet" aria-hidden="true"></span>
+          <div class="case-nfl-brandcard-inner">
+            <img class="case-nfl-brandcard-logo" src="../media/{card['logo']}" alt="{card.get('logo_alt', '')}" />
+            {divider_html}
+            {tagline_html}
+          </div>
+        </div>
+      </figure>"""
+
     v = case.get("video")
     if v:
         poster = v.get("poster")

@@ -2462,6 +2462,69 @@ body.case-nfl .site-footer {
   text-align: center;
 }
 
+/* Brand hero card — sleek NFL+ black product title card in the media slot.
+   The source wordmark is white/red on pure black, so the card keeps a pure
+   black center (the logo box merges seamlessly) and layers subtle blue
+   geometric facets into the corners to echo the page's motif. */
+.case-nfl-brandcard-frame {
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    linear-gradient(122deg, rgba(96, 170, 240, 0.16) 0 20%, transparent 20% 100%),
+    linear-gradient(305deg, rgba(43, 131, 220, 0.22) 0 24%, transparent 24% 100%),
+    linear-gradient(196deg, rgba(11, 52, 132, 0.34) 0 28%, transparent 28% 100%),
+    linear-gradient(146deg, transparent 72%, rgba(9, 34, 96, 0.34) 72%),
+    #000;
+}
+
+/* Faceted blue sheen in the upper corner echoing the page geometry */
+.case-nfl-brandcard-facet {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(210deg, rgba(90, 165, 235, 0.16) 0 16%, transparent 16% 100%);
+}
+
+.case-nfl-brandcard-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.05rem;
+  padding: 2.2rem 2rem;
+  text-align: center;
+}
+
+.case-nfl-brandcard-logo {
+  display: block;
+  width: min(50%, 190px);
+  height: auto;
+  /* Preserve native aspect ratio; keep display size modest so the small
+     raster wordmark stays crisp. The source PNG is fully opaque black, so
+     no drop-shadow/blend is used — it would only outline the box. The mark
+     merges into the pure-black card center for a seamless title card. */
+}
+
+.case-nfl-brandcard-divider {
+  width: 46px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, transparent, rgba(120, 180, 240, 0.85), transparent);
+}
+
+.case-nfl-brandcard-tagline {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.74);
+}
+
 .case-nfl-stats {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
