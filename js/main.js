@@ -106,6 +106,63 @@ document.querySelectorAll("[data-print]").forEach((btn) => {
   btn.addEventListener("click", () => window.print());
 });
 
+// Per-product case carousels on the case-studies index. The track scrolls
+// natively (works with JS off); this just wires the prev/next controls and
+// keeps their state in sync with scroll position.
+document.querySelectorAll("[data-pcarousel]").forEach((carousel) => {
+  const track = carousel.querySelector("[data-pcar-track]");
+  const prev = carousel.querySelector("[data-pcar-prev]");
+  const next = carousel.querySelector("[data-pcar-next]");
+  if (!track) return;
+
+  const step = () => {
+    const card = track.querySelector(".case-card");
+    const gap = parseFloat(getComputedStyle(track).columnGap || "0") || 20;
+    const cardW = card ? card.getBoundingClientRect().width + gap : track.clientWidth * 0.8;
+    return Math.max(cardW, track.clientWidth * 0.6);
+  };
+
+  const update = () => {
+    const overflowing = track.scrollWidth - track.clientWidth > 4;
+    carousel.classList.toggle("has-overflow", overflowing);
+    if (!overflowing) {
+      if (prev) prev.hidden = true;
+      if (next) next.hidden = true;
+      return;
+    }
+    const maxScroll = track.scrollWidth - track.clientWidth;
+    const atStart = track.scrollLeft <= 2;
+    const atEnd = track.scrollLeft >= maxScroll - 2;
+    if (prev) {
+      prev.hidden = false;
+      prev.disabled = atStart;
+    }
+    if (next) {
+      next.hidden = false;
+      next.disabled = atEnd;
+    }
+  };
+
+  if (prev) prev.addEventListener("click", () => track.scrollBy({ left: -step(), behavior: "smooth" }));
+  if (next) next.addEventListener("click", () => track.scrollBy({ left: step(), behavior: "smooth" }));
+
+  track.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight") {
+      e.preventDefault();
+      track.scrollBy({ left: step(), behavior: "smooth" });
+    } else if (e.key === "ArrowLeft") {
+      e.preventDefault();
+      track.scrollBy({ left: -step(), behavior: "smooth" });
+    }
+  });
+
+  track.addEventListener("scroll", () => {
+    window.requestAnimationFrame(update);
+  }, { passive: true });
+  window.addEventListener("resize", () => window.requestAnimationFrame(update), { passive: true });
+  update();
+});
+
 document.querySelectorAll("[data-carousel]").forEach((carousel) => {
   const slides = Array.from(carousel.querySelectorAll(".carousel-slide"));
   if (!slides.length) return;

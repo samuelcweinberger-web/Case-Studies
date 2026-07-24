@@ -1,4 +1,6 @@
 .extract/
+.tools/
+.scratch/
 .DS_Store
 *.log
 media/*.mp4

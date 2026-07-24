@@ -33,6 +33,33 @@ BRANDS = {
     },
 }
 
+# Official brand marks (SVG) sourced into media/brands/. Rendered on a light
+# "chip" so trademarked marks stay crisp and legible on the dark theme.
+BRAND_LOGOS = {
+    "robinhood": "brands/robinhood-official.svg",
+    "fanduel": "brands/fanduel-official.svg",
+    "nfl": "brands/nfl-official.svg",
+    "ipsos": "brands/ipsos-official.svg",
+    "intel": "brands/intel-official.svg",
+    "verizon": "brands/verizon-official.svg",
+}
+
+
+def brand_logo_chip(brand_key, prefix="", label=None, extra_class=""):
+    """Official brand mark inside a light chip (crisp on the dark theme)."""
+    logo = BRAND_LOGOS.get(brand_key)
+    if not logo:
+        return ""
+    alt = label or BRANDS.get(brand_key, {}).get("label", brand_key)
+    cls = f"brand-chip brand-chip-{brand_key}"
+    if extra_class:
+        cls += f" {extra_class}"
+    return (
+        f'<span class="{cls}">'
+        f'<img src="{prefix}media/{logo}" alt="{alt} logo" loading="lazy" />'
+        f"</span>"
+    )
+
 CASES = [
     {
         "slug": "first-trade-conversion",
@@ -735,6 +762,7 @@ def header(active=None, prefix="", brand=None, nav_active=None, body_classes=Non
       <a class="brand" href="{prefix}index.html">Sam Weinberger</a>
       <nav class="nav" aria-label="Primary">
         {nav_link("case-studies.html", "Case studies", "cases")}
+        {nav_link("media.html", "Media", "media")}
         {nav_link("skills.html", "Skills", "skills")}
         {nav_link("research-tools.html", "Tech Stack", "research-tools")}
         {nav_link("about.html", "About me", "about")}
@@ -1090,7 +1118,13 @@ def footer(prefix=""):
 """
 
 
-def build_case_blocks(case_href_prefix="cases/"):
+def build_case_blocks(case_href_prefix="cases/", prefix=""):
+    """Each company group is a horizontally scrollable carousel of case cards.
+
+    The track is a native scroll-snap row (works with JS disabled); the
+    prev/next buttons are progressively enhanced by the [data-pcarousel]
+    handler in js/main.js. Group headers carry the official brand logo.
+    """
     company_order = [
         ("robinhood", "Robinhood"),
         ("fanduel", "FanDuel"),
@@ -1102,27 +1136,38 @@ def build_case_blocks(case_href_prefix="cases/"):
     case_blocks = []
     for brand_key, brand_label in company_order:
         brand_cases = [c for c in CASES if c["brand"] == brand_key]
-        rows = []
+        cards = []
         for c in brand_cases:
             badge = product_badge(c["brand"])
-            rows.append(
-                f"""    <a class="case-row case-{c['brand']} reveal" href="{case_href_prefix}{c['slug']}.html">
-      <div class="case-num">{c['num']}</div>
-      <div>
-        {badge}
-        <h3>{c['title']}</h3>
-        <p>{c['short']}</p>
-      </div>
-      <div class="case-meta">{c['year']}</div>
-    </a>"""
+            cards.append(
+                f"""            <a class="case-card case-{c['brand']} reveal" href="{case_href_prefix}{c['slug']}.html">
+              <div class="case-card-top">
+                <span class="case-num">{c['num']}</span>
+                <span class="case-meta">{c['year']}</span>
+              </div>
+              {badge}
+              <h3>{c['title']}</h3>
+              <p>{c['short']}</p>
+              <span class="case-card-cue">Read case <span aria-hidden="true">&rarr;</span></span>
+            </a>"""
             )
-        if not rows:
+        if not cards:
             continue
+        logo_chip = brand_logo_chip(brand_key, prefix=prefix, label=brand_label)
+        head_logo = (
+            f'          {logo_chip}\n' if logo_chip else ""
+        )
         case_blocks.append(
             f"""        <div class="company-group company-{brand_key} reveal" id="cases-{brand_key}">
-          <h3 class="company-heading">{brand_label}</h3>
-          <div class="case-list">
-{chr(10).join(rows)}
+          <div class="company-group-head">
+{head_logo}            <h3 class="company-heading">{brand_label}</h3>
+          </div>
+          <div class="product-carousel" data-pcarousel>
+            <button type="button" class="pcar-btn pcar-prev" data-pcar-prev aria-label="Scroll to previous {brand_label} cases">&#8249;</button>
+            <div class="pcar-track" data-pcar-track tabindex="0" role="group" aria-label="{brand_label} case studies">
+{chr(10).join(cards)}
+            </div>
+            <button type="button" class="pcar-btn pcar-next" data-pcar-next aria-label="Scroll to more {brand_label} cases">&#8250;</button>
           </div>
         </div>"""
         )
@@ -1132,7 +1177,7 @@ def build_case_blocks(case_href_prefix="cases/"):
 def write_home():
     html = (
         header(nav_active="home")
-        + """
+        + f"""
   <main>
     <section class="hero hero-page">
       <div class="hero-media" aria-hidden="true"></div>
@@ -1143,11 +1188,11 @@ def write_home():
         <p class="hero-role">UX Engineer and Design Researcher</p>
         <p class="hero-lede">Applied Cognitive and Social Psychologist with 9+ years of mixed-methods research across fintech, sports media, and healthcare—connecting usability, field research, and AI-augmented workflows to product and revenue outcomes.</p>
         <div class="brand-strip" aria-label="Brands worked with">
-          <a href="case-studies.html#cases-robinhood" title="Robinhood case studies"><img src="media/brands/robinhood.png" alt="Robinhood" /></a>
-          <a href="case-studies.html#cases-fanduel" title="FanDuel case studies"><img src="media/brands/fanduel.png" alt="FanDuel" /></a>
-          <a href="case-studies.html#cases-nfl" title="NFL case studies"><img src="media/brands/nfl.png" alt="NFL" /></a>
-          <a href="case-studies.html" title="Ipsos Healthcare (case study forthcoming)"><img src="media/brands/ipsos.png" alt="Ipsos" /></a>
-          <a href="case-studies.html" title="Claremont Colleges (case study forthcoming)"><img src="media/brands/cgu.png" alt="Claremont Graduate University" /></a>
+          <a href="case-studies.html#cases-robinhood" title="Robinhood case studies">{brand_logo_chip("robinhood", extra_class="brand-chip-lg")}</a>
+          <a href="case-studies.html#cases-fanduel" title="FanDuel case studies">{brand_logo_chip("fanduel", extra_class="brand-chip-lg")}</a>
+          <a href="case-studies.html#cases-nfl" title="NFL case studies">{brand_logo_chip("nfl", extra_class="brand-chip-lg")}</a>
+          <a href="case-studies.html#cases-ipsos" title="Ipsos Healthcare case study">{brand_logo_chip("ipsos", extra_class="brand-chip-lg")}</a>
+          <a href="case-studies.html" title="Claremont Colleges (case study forthcoming)"><span class="brand-chip brand-chip-lg brand-chip-cgu"><img src="media/brands/cgu.png" alt="Claremont Graduate University logo" loading="lazy" /></span></a>
         </div>
         <div class="hero-actions">
           <a class="btn btn-primary" href="case-studies.html">View case studies</a>
@@ -1183,6 +1228,251 @@ def write_case_studies_page():
         + footer()
     )
     (ROOT / "case-studies.html").write_text(html)
+
+
+# --- Media / gallery page ----------------------------------------------------
+
+# Featured "design studio" clip. Identified from frame analysis of the candidate
+# Intel videos: this is the higher-quality source recording of the NFL Design
+# "Research Design Studio" co-design session (name tents, "How might we
+# enhance/upgrade NFL Game Replay Experiences?", group sketching / concept
+# critique), compressed for the web. Duration of source ≈ 2:34.
+# NOTE: `description` below is an editable DRAFT — refine the copy freely.
+MEDIA_DESIGN_STUDIO = {
+    "src": "nfl-intel/design-studio.mp4",
+    "poster": "nfl-intel/design-studio-poster.jpg",
+    "caption": "Running Design Studios: Watch this 2.5-min clip",
+    "description": (
+        "A design studio is a structured, collaborative co-design workshop where "
+        "researchers, designers, cross-functional partners, and sometimes users "
+        "rapidly sketch, share, and critique multiple solution concepts side by "
+        "side—turning a room full of divergent ideas into an aligned product "
+        "direction in a single working session."
+    ),
+}
+
+MEDIA_SECTIONS = [
+    {
+        "id": "nfl-labs-prototypes",
+        "title": "NFL Labs — Immersive Prototypes",
+        "blurb": "Partner research with Intel and Verizon: the TrueView 360° replay prototype and the Verizon 5G in-stadium experience.",
+        "items": [
+            {
+                "type": "video",
+                "src": "nfl-intel/sizzle-reel.mp4",
+                "poster": "nfl-intel/sizzle-reel-poster.jpg",
+                "caption": "Intel TrueView — Sizzle Reel: the NFL Design “Research Design Studio” program and TrueView concept, cut as a highlight reel.",
+            },
+            {
+                "type": "video",
+                "src": "nfl-intel/intel-prototype.mp4",
+                "poster": "nfl-intel/intel-prototype-poster.jpg",
+                "caption": "Intel TrueView — “Be the Player.” The volumetric replay prototype fans tested hands-on: pick a player and see the play from their perspective.",
+            },
+            {
+                "type": "video",
+                "src": "nfl-intel/verizon-5g-prototype.mp4",
+                "poster": "nfl-intel/verizon-5g-prototype-poster.jpg",
+                "caption": "Verizon 5G SuperStadium — multi-angle in-stadium viewing, the raw camera angles behind the from-your-seat experience.",
+            },
+            {
+                "type": "video",
+                "src": "nfl-intel/superstadium-demo.mp4",
+                "poster": "nfl-intel/superstadium-poster.jpg",
+                "caption": "SuperStadium in the NFL app — multi-angle views and Next Gen Stats AR overlays on a phone.",
+            },
+        ],
+    },
+    {
+        "id": "robinhood",
+        "title": "Robinhood — Prediction Markets",
+        "blurb": "Home-page findability and order-form changes that brought stalled traders back to a first trade and helped single-category traders diversify.",
+        "items": [
+            {"type": "image", "src": "01-non-converters/featured-before-change.png", "caption": "Before: the Featured card and category row sit flush to the edge — no signal that more exists off-screen."},
+            {"type": "image", "src": "01-non-converters/featured-after-change.png", "caption": "After: offsetting the frame lets the next card peek in, cueing a sideways swipe."},
+            {"type": "image", "src": "01-non-converters/featured-non-sports-carousel.png", "caption": "After: a dedicated non-sports carousel (Politics, Crypto, Technology, Commodities) added above Newly Listed."},
+            {"type": "image", "src": "03-category-expansion/order-form-before-change.png", "caption": "Before: one lever — a dollar amount, buy at the market price or not at all."},
+            {"type": "image", "src": "03-category-expansion/order-type-menu.png", "caption": "The new order-type menu introducing the Limit order — set your own price, good for the day."},
+            {"type": "image", "src": "03-category-expansion/order-form-after-change.png", "caption": "After: full limit-order controls — set price, quantity, and expiry, with cost and payout shown before you commit."},
+            {"type": "video", "src": "03-category-expansion/btc-scrub.mp4", "poster": "03-category-expansion/btc-scrub-poster.jpg", "caption": "Scrubbing the Bitcoin chart to inspect the price at any moment, sourced from CF Benchmarks’ BRTI."},
+        ],
+    },
+    {
+        "id": "fanduel",
+        "title": "FanDuel — Quarterly Benchmarking",
+        "blurb": "The product benchmarking program that turned SUPR-Q, Ease of Use, loyalty, and Responsible Gaming into a shared executive scorecard.",
+        "items": [
+            {"type": "image", "src": "benchmarking/q2-2023-exec-summary.jpg", "caption": "Executive summary — the quarterly scorecard leadership reviewed."},
+            {"type": "image", "src": "benchmarking/q2-2023-metrics-dashboard.jpg", "caption": "Metrics dashboard tracking benchmark KPIs across products."},
+            {"type": "image", "src": "benchmarking/q2-2023-all-products-a.jpg", "caption": "Cross-product comparison across the FanDuel portfolio."},
+            {"type": "image", "src": "benchmarking/q1-2022-supr-q-trend.jpg", "caption": "SUPR-Q trend line over quarters."},
+            {"type": "image", "src": "benchmarking/q1-2022-competitor-supr.jpg", "caption": "Competitor SUPR-Q comparison for the sportsbook category."},
+            {"type": "image", "src": "benchmarking/q1-2022-rg-scores.jpg", "caption": "Responsible Gaming scores tracked alongside usability and loyalty."},
+        ],
+    },
+    {
+        "id": "nfl-fantasy",
+        "title": "NFL Fantasy — The Tools Package",
+        "blurb": "Fantasy features sold via in-app purchase — later folded into NFL+.",
+        "items": [
+            {"type": "image", "src": "fantasy/tools-package.png", "caption": "The Tools Package inside the Fantasy app — waiver tools, most-added players, and upgrade prompts."},
+            {"type": "image", "src": "fantasy/lineup-view.png", "caption": "The all-new Lineup View."},
+            {"type": "image", "src": "fantasy/player-lists.png", "caption": "Personalized player lists."},
+            {"type": "image", "src": "fantasy/backups.png", "caption": "Set your backups to avoid last-minute inactives."},
+            {"type": "image", "src": "fantasy/optimize-team.png", "caption": "Optimize-team tooling from the paid package."},
+            {"type": "image", "src": "fantasy/personalized-lists.png", "caption": "Personalized recommendation lists surfaced to buyers."},
+            {"type": "image", "src": "fantasy/fantasy-plus-upsell.png", "caption": "The in-app upsell used to convert free players — A/B tested for placement and messaging."},
+        ],
+    },
+    {
+        "id": "nfl-labs-research",
+        "title": "NFL Labs — Personas & Concept Boards",
+        "blurb": "Research artifacts from the TrueView and SuperStadium studies: fan personas, target population, and design-studio concept slides.",
+        "items": [
+            {"type": "image", "src": "nfl-intel/persona-jake-profile.png", "caption": "Fan persona “Jake” — profile used to frame the TrueView study."},
+            {"type": "image", "src": "nfl-intel/persona-jake-empathy-map.png", "caption": "Empathy map for the “Jake” persona."},
+            {"type": "image", "src": "nfl-intel/persona-target-population.png", "caption": "Target-population definition for recruiting."},
+            {"type": "image", "src": "nfl-intel/slide-28-persona-example.jpg", "caption": "Persona example from the research readout."},
+            {"type": "image", "src": "nfl-intel/slide-29-persona-method.jpg", "caption": "Persona method — how the segments were built."},
+            {"type": "image", "src": "nfl-intel/slide-19-prototype.jpg", "caption": "Prototype concept board (1 of 2)."},
+            {"type": "image", "src": "nfl-intel/slide-20-prototype.jpg", "caption": "Prototype concept board (2 of 2)."},
+        ],
+    },
+]
+
+# Official + sub-brand marks shown at the foot of the gallery.
+MEDIA_BRAND_MARKS = [
+    ("robinhood", "brands/robinhood-official.svg", "Robinhood"),
+    ("fanduel", "brands/fanduel-official.svg", "FanDuel"),
+    ("nfl", "brands/nfl-official.svg", "NFL"),
+    ("intel", "brands/intel-official.svg", "Intel"),
+    ("verizon", "brands/verizon-official.svg", "Verizon"),
+    ("ipsos", "brands/ipsos-official.svg", "Ipsos"),
+    ("nfl", "nfl/nfl-fantasy-logo.png", "NFL Fantasy"),
+    ("nfl", "nfl/nflplus-logo.png", "NFL+"),
+]
+
+
+def render_media_video(item, big=False):
+    poster = item.get("poster")
+    poster_src = f"media/{poster}" if poster else ""
+    poster_img = (
+        f'<img class="video-click-poster" src="{poster_src}" alt="" loading="lazy" />'
+        if poster
+        else ""
+    )
+    poster_attr = f' poster="{poster_src}"' if poster else ""
+    caption = item.get("caption", "")
+    cap_html = f'<figcaption class="media-caption">{caption}</figcaption>' if caption else ""
+    frame_cls = "media-frame video-click-frame"
+    return f"""      <figure class="media-item media-video{' media-item-feature' if big else ''} reveal">
+        <div class="{frame_cls}" data-video-click>
+          {poster_img}
+          <video class="video-click-el" playsinline preload="none"{poster_attr} hidden>
+            <source src="media/{item['src']}" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <button type="button" class="video-click-cta media-play" aria-label="Play video">
+            <span class="video-click-cta-icon" aria-hidden="true">&#9654;</span>
+            <span>Play</span>
+          </button>
+        </div>
+        {cap_html}
+      </figure>"""
+
+
+def render_media_image(item):
+    caption = item.get("caption", "")
+    alt = item.get("alt", caption)
+    cap_html = f'<figcaption class="media-caption">{caption}</figcaption>' if caption else ""
+    return f"""      <figure class="media-item media-image reveal">
+        <div class="media-frame">
+          <img class="media-img" src="media/{item['src']}" alt="{alt}" loading="lazy" />
+        </div>
+        {cap_html}
+      </figure>"""
+
+
+def render_media_item(item, big=False):
+    if item["type"] == "video":
+        return render_media_video(item, big=big)
+    return render_media_image(item)
+
+
+def write_media_page():
+    ds = MEDIA_DESIGN_STUDIO
+    featured = f"""        <section class="media-featured reveal" id="design-studio" aria-labelledby="design-studio-title">
+          <div class="media-featured-head">
+            <span class="media-kicker">Featured</span>
+            <h3 id="design-studio-title">Running Design Studios</h3>
+          </div>
+          <figure class="media-item media-video media-item-feature">
+            <div class="media-frame media-frame-feature video-click-frame" data-video-click>
+              <img class="video-click-poster" src="media/{ds['poster']}" alt="" loading="lazy" />
+              <video class="video-click-el" playsinline preload="none" poster="media/{ds['poster']}" hidden>
+                <source src="media/{ds['src']}" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <button type="button" class="video-click-cta media-play media-play-feature" aria-label="Play the design studio clip">
+                <span class="video-click-cta-icon" aria-hidden="true">&#9654;</span>
+                <span>{ds['caption']}</span>
+              </button>
+            </div>
+            <figcaption class="media-caption media-caption-feature">{ds['description']}</figcaption>
+          </figure>
+        </section>"""
+
+    section_blocks = []
+    for sec in MEDIA_SECTIONS:
+        items_html = "\n".join(render_media_item(it) for it in sec["items"])
+        section_blocks.append(
+            f"""        <section class="media-section reveal" id="media-{sec['id']}" aria-labelledby="media-{sec['id']}-title">
+          <div class="media-section-head">
+            <h3 id="media-{sec['id']}-title">{sec['title']}</h3>
+            <p>{sec['blurb']}</p>
+          </div>
+          <div class="media-grid">
+{items_html}
+          </div>
+        </section>"""
+        )
+
+    mark_cells = "\n".join(
+        f'            <span class="brand-chip brand-chip-{key} brand-chip-lg" title="{label}"><img src="media/{src}" alt="{label} logo" loading="lazy" /></span>'
+        if src.endswith(".svg")
+        else f'            <span class="brand-chip brand-chip-lg" title="{label}"><img src="media/{src}" alt="{label} logo" loading="lazy" /></span>'
+        for key, src, label in MEDIA_BRAND_MARKS
+    )
+    marks_block = f"""        <section class="media-section media-marks reveal" id="media-brand-marks" aria-labelledby="media-marks-title">
+          <div class="media-section-head">
+            <h3 id="media-marks-title">Brand marks</h3>
+            <p>Official marks of the brands featured across these studies, used for portfolio identification.</p>
+          </div>
+          <div class="media-mark-row">
+{mark_cells}
+          </div>
+        </section>"""
+
+    html = (
+        header(active="Media", nav_active="media")
+        + f"""
+  <main>
+    <section class="section page-section" id="media">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2>Media &amp; gallery</h2>
+          <p>Prototypes, product screens, and research artifacts from across the case studies—collected in one place.</p>
+        </div>
+{featured}
+{chr(10).join(section_blocks)}
+{marks_block}
+      </div>
+    </section>
+  </main>
+"""
+        + footer()
+    )
+    (ROOT / "media.html").write_text(html)
 
 
 def write_skills_page():
@@ -1943,6 +2233,7 @@ def main():
     CASES_DIR.mkdir(parents=True, exist_ok=True)
     write_home()
     write_case_studies_page()
+    write_media_page()
     write_skills_page()
     write_research_tools_page()
     write_about_page()
