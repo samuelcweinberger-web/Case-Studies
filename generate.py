@@ -1139,7 +1139,6 @@ def build_case_blocks(case_href_prefix="cases/", prefix=""):
                 f"""            <a class="case-card case-{c['brand']} reveal" href="{case_href_prefix}{c['slug']}.html">
               <div class="case-card-top">
                 <span class="case-num">{c['num']}</span>
-                <span class="case-meta">{c['year']}</span>
               </div>
               {badge}
               <h3>{c['title']}</h3>
@@ -1937,8 +1936,6 @@ def write_case_nfl(case, index):
 
     meta_html = f"""          <div class="case-nfl-meta">
             <span>{case['context']}</span>
-            <span class="case-meta-dot" aria-hidden="true">·</span>
-            <span>{case['year']}</span>
           </div>
 {brief_html}"""
 
@@ -2250,8 +2247,6 @@ def write_case(case, index):
         {headline_html}
         <div class="case-meta-line">
           <span>{case['context']}</span>
-          <span class="case-meta-dot" aria-hidden="true">·</span>
-          <span>{case['year']}</span>
         </div>
         {brief_html}
       </div>
