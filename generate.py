@@ -42,6 +42,7 @@ BRAND_LOGOS = {
     "ipsos": "brands/ipsos-official.svg",
     "intel": "brands/intel-official.svg",
     "verizon": "brands/verizon-official.svg",
+    "usc": "brands/usc-trojans.svg",
 }
 
 
@@ -761,14 +762,14 @@ def header(active=None, prefix="", brand=None, nav_active=None, body_classes=Non
     <div class="wrap">
       <a class="brand" href="{prefix}index.html">Sam Weinberger</a>
       <nav class="nav" aria-label="Primary">
+        {nav_link("about.html", "About me", "about")}
+        {nav_link("resume.html", "Professional Experience", "resume")}
         {nav_link("case-studies.html", "Case studies", "cases")}
         {nav_link("media.html", "Media", "media")}
-        {nav_link("skills.html", "Skills", "skills")}
         {nav_link("research-tools.html", "Tech Stack", "research-tools")}
-        {nav_link("about.html", "About me", "about")}
-        {nav_link("resume.html", "Resume", "resume")}
+        {nav_link("skills.html", "Skills", "skills")}
         {nav_link("education.html", "Education", "education")}
-        <a href="mailto:samuelcweinberger@gmail.com">Contact</a>
+        {nav_link("contact.html", "Contact", "contact")}
       </nav>
     </div>
   </header>
@@ -810,7 +811,7 @@ RESUME_EDUCATION = [
     {
         "name": "Claremont Graduate University",
         "dates": "2016–2020",
-        "details": "Ph.D. Candidate in Cognitive &amp; Social Psychology · Master of Arts in Psychology, GPA 3.45",
+        "details": "Ph.D., Cognitive &amp; Social Psychology (ABD) · Master of Arts in Psychology, GPA 3.45",
     },
     {
         "name": "University of Southern California",
@@ -824,10 +825,7 @@ RESUME_EDUCATION = [
     },
 ]
 
-RESUME_ATHLETICS = (
-    "Athletics: NCAA Division 1 Football (Stanford) · NCAA Division 1 Baseball (USC) · "
-    "Team USA, Track Cycling"
-)
+RESUME_ATHLETICS = "Division 1 Baseball — Pitcher"
 
 # Flat, reverse-chronological list mirroring the "PROFESSIONAL EXPERIENCE" section of the
 # source resume exactly — one entry per job (no earlier/later tiering, no nested roles).
@@ -1636,7 +1634,7 @@ def write_resume_page():
         )
 
     html = (
-        header(active="Resume", nav_active="resume")
+        header(active="Professional Experience", nav_active="resume")
         + f"""
   <main>
     <section class="section page-section resume-page" id="resume">
@@ -1691,12 +1689,15 @@ def write_education_page():
       <div class="wrap">
         <div class="section-head reveal">
           <h2>Education</h2>
-          <p>Graduate and undergraduate study in cognitive and social psychology, public policy, and communications—alongside a Division 1 and international athletics background.</p>
+          <p>Graduate and undergraduate study in cognitive and social psychology, public policy, and communications—alongside a Division 1 athletics background.</p>
         </div>
         <ul class="resume-earlier reveal">
 {education_rows}
         </ul>
-        <p class="resume-athletics reveal">{RESUME_ATHLETICS}</p>
+        <p class="resume-athletics reveal">
+          {brand_logo_chip("usc", label="USC Trojans")}
+          <span>{RESUME_ATHLETICS}</span>
+        </p>
       </div>
     </section>
   </main>
@@ -1704,6 +1705,50 @@ def write_education_page():
         + footer()
     )
     (ROOT / "education.html").write_text(html)
+
+
+def write_contact_page():
+    c = RESUME_CONTACT
+    contact_rows = [
+        ("Email", f'<a href="mailto:{c["email"]}">{c["email"]}</a>'),
+        (
+            "LinkedIn",
+            f'<a href="{c["linkedin_href"]}" target="_blank" rel="noopener">{c["linkedin_label"]}</a>',
+        ),
+        ("Phone", f'<a href="{c["phone_href"]}">{c["phone"]}</a>'),
+        ("Location", f'<span>{c["location"]}</span>'),
+    ]
+    rows_html = "\n".join(
+        f"""          <li>
+            <span class="contact-label">{label}</span>
+            <span class="contact-value">{value}</span>
+          </li>"""
+        for label, value in contact_rows
+    )
+    html = (
+        header(active="Contact", nav_active="contact")
+        + f"""
+  <main>
+    <section class="section page-section resume-page" id="contact">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2>Contact</h2>
+          <p>Always happy to talk research, UX engineering, and product strategy. The fastest way to reach me is email.</p>
+        </div>
+        <ul class="contact-list reveal">
+{rows_html}
+        </ul>
+        <div class="resume-actions reveal">
+          <a class="btn btn-primary" href="mailto:{c['email']}">Email me</a>
+          <a class="btn btn-ghost" href="{c['linkedin_href']}" target="_blank" rel="noopener">Connect on LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+"""
+        + footer()
+    )
+    (ROOT / "contact.html").write_text(html)
 
 
 def render_nfl_media(case):
@@ -2239,6 +2284,7 @@ def main():
     write_about_page()
     write_resume_page()
     write_education_page()
+    write_contact_page()
     for i, case in enumerate(CASES):
         write_case(case, i)
     print(f"Wrote home + section pages + {len(CASES)} case pages")

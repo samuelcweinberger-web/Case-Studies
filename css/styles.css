@@ -1953,6 +1953,9 @@ body.brand-nfl::before {
   margin: -2rem 0 3rem;
   color: var(--faint);
   font-size: 0.88rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 .resume-actions {
@@ -2056,6 +2059,40 @@ body.brand-nfl::before {
   color: var(--muted);
   font-size: 0.98rem;
   line-height: 1.55;
+}
+
+.contact-list {
+  list-style: none;
+  margin: 0 0 2.5rem;
+  padding: 0;
+  border-top: 1px solid var(--line);
+  max-width: 34rem;
+}
+
+.contact-list li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.25rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.contact-label {
+  min-width: 6rem;
+  color: var(--faint);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.contact-value,
+.contact-value a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.contact-value a:hover {
+  color: var(--accent);
 }
 
 .resume-skills-summary {
@@ -2704,6 +2741,14 @@ body.case-nfl .site-footer {
 }
 .brand-chip-cgu img {
   border-radius: 0.35rem;
+}
+
+/* USC interlocking "SC" mark is portrait, like the NFL shield. */
+.brand-chip-usc img {
+  max-height: 1.85rem;
+}
+.brand-chip-lg.brand-chip-usc img {
+  max-height: 2.5rem;
 }
 
 /* Homepage brand row now hosts chips. */
