@@ -836,7 +836,7 @@ RESUME_EXPERIENCE = [
         "company": "Robinhood",
         "brand": "robinhood",
         "context": "Prediction Markets Team",
-        "title": "Quantitative UX Researcher",
+        "title": "User Experience Research Engineer",
         "dates": "Feb 2026 – July 2026",
         "bullets": [
             (
@@ -1321,20 +1321,6 @@ MEDIA_SECTIONS = [
             {"type": "image", "src": "fantasy/fantasy-plus-upsell.png", "caption": "The in-app upsell used to convert free players — A/B tested for placement and messaging."},
         ],
     },
-    {
-        "id": "nfl-labs-research",
-        "title": "NFL Labs — Personas & Concept Boards",
-        "blurb": "Research artifacts from the TrueView and SuperStadium studies: fan personas, target population, and design-studio concept slides.",
-        "items": [
-            {"type": "image", "src": "nfl-intel/persona-jake-profile.png", "caption": "Fan persona “Jake” — profile used to frame the TrueView study."},
-            {"type": "image", "src": "nfl-intel/persona-jake-empathy-map.png", "caption": "Empathy map for the “Jake” persona."},
-            {"type": "image", "src": "nfl-intel/persona-target-population.png", "caption": "Target-population definition for recruiting."},
-            {"type": "image", "src": "nfl-intel/slide-28-persona-example.jpg", "caption": "Persona example from the research readout."},
-            {"type": "image", "src": "nfl-intel/slide-29-persona-method.jpg", "caption": "Persona method — how the segments were built."},
-            {"type": "image", "src": "nfl-intel/slide-19-prototype.jpg", "caption": "Prototype concept board (1 of 2)."},
-            {"type": "image", "src": "nfl-intel/slide-20-prototype.jpg", "caption": "Prototype concept board (2 of 2)."},
-        ],
-    },
 ]
 
 # Official + sub-brand marks shown at the foot of the gallery.
@@ -1458,7 +1444,6 @@ def write_media_page():
       <div class="wrap">
         <div class="section-head reveal">
           <h2>Media &amp; gallery</h2>
-          <p>Prototypes, product screens, and research artifacts from across the case studies—collected in one place.</p>
         </div>
 {featured}
 {chr(10).join(section_blocks)}
@@ -1650,7 +1635,7 @@ def write_resume_page():
             <a class="btn btn-ghost" href="education.html">View education</a>
             <a class="btn btn-ghost" href="skills.html">View skills</a>
             <a class="btn btn-ghost" href="mailto:{RESUME_CONTACT['email']}">Email me</a>
-            <button type="button" class="btn btn-primary" data-print>Print / Save as PDF</button>
+            <a class="btn btn-primary" href="Samuel-Weinberger-Resume.pdf" download="Samuel-Weinberger-Resume.pdf">Download resume</a>
           </div>
         </div>
 
