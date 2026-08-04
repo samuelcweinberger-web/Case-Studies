@@ -243,9 +243,9 @@ img {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.75rem 1rem;
+  gap: 0.65rem;
   margin: 1.15rem 0 0;
-  max-width: 40rem;
+  max-width: 48rem;
   opacity: 0;
   animation: rise 1s var(--ease) 0.48s forwards;
 }
@@ -254,7 +254,7 @@ img {
   display: inline-flex;
   align-items: center;
   text-decoration: none;
-  border-radius: 0.35rem;
+  border-radius: 0.55rem;
   transition: transform 0.25s var(--ease), opacity 0.2s ease;
 }
 
@@ -267,23 +267,28 @@ img {
   outline-offset: 4px;
 }
 
-.brand-strip img {
-  height: 2rem;
+/* Full-bleed brand tiles supplied for the homepage strip. */
+.brand-strip .brand-tile {
+  display: block;
+  height: 2.75rem;
   width: auto;
-  max-width: 7.5rem;
+  max-width: 8.75rem;
   object-fit: contain;
-  opacity: 0.92;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.35));
+  border-radius: 0.55rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.32);
+  opacity: 0.96;
   transition: opacity 0.2s ease;
 }
 
-.brand-strip a:hover img {
+.brand-strip a:hover .brand-tile {
   opacity: 1;
 }
 
-.brand-strip img[alt="Robinhood"] {
-  height: 2.75rem;
-  max-width: 12rem;
+.brand-strip .brand-tile[alt="NFL+"],
+.brand-strip .brand-tile[alt="Ipsos"] {
+  width: 2.75rem;
+  max-width: 2.75rem;
+  object-fit: cover;
 }
 
 .notable-logos img[alt="Robinhood"] {
@@ -296,36 +301,6 @@ img {
   height: 2.35rem;
   max-width: 2.35rem;
   border-radius: 0.35rem;
-}
-
-.brand-strip img[alt="NFL"] {
-  height: 2.5rem;
-}
-
-.brand-strip img[alt="Verizon 5G"] {
-  height: 2.35rem;
-  max-width: 5.5rem;
-  background: rgba(255, 255, 255, 0.92);
-  padding: 0.2rem 0.35rem;
-  border-radius: 0.25rem;
-}
-
-.brand-strip img[alt="Ipsos"] {
-  height: 2.5rem;
-  max-width: 5rem;
-  border-radius: 0.35rem;
-}
-
-.brand-strip img[alt="Merck"] {
-  height: 1.85rem;
-  max-width: 6.5rem;
-  border-radius: 0.2rem;
-}
-
-.brand-strip img[alt="Claremont Graduate University"] {
-  height: 2.5rem;
-  max-width: 2.5rem;
-  border-radius: 50%;
 }
 
 .notable-logo-link {
@@ -2766,10 +2741,6 @@ body.case-nfl .site-footer {
   max-height: 2.5rem;
 }
 
-/* Homepage brand row now hosts chips. */
-.brand-strip .brand-chip img {
-  height: auto;
-}
 
 /* ============================================================
    Case-studies index — per-product carousels

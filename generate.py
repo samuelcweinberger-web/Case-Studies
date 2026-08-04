@@ -997,17 +997,8 @@ SKILLS = [
                 "Implicit Association Testing (IAT)",
                 "Programmatically building tests in Python to capture subconscious emotional biases toward sports teams or app branding.",
             ),
-        ],
-    },
-    {
-        "title": "Sports-Specific &amp; In-the-Wild Methodologies",
-        "items": [
             (
-                "Biometric &amp; Psychophysiological Tracking",
-                "Integrating mobile app testing with wearable telemetry data (heart rate variability, galvanic skin response) using Python to measure user stress during live sporting events.",
-            ),
-            (
-                "Digital Diary Studies for Sports Seasons",
+                "Season-long Diary Studies",
                 "Structuring longitudinal studies to evaluate fluctuating fan sentiment and feature adoption across a season.",
             ),
         ],
@@ -1187,11 +1178,13 @@ def write_home():
         <p class="hero-role">UX Engineer and Design Researcher</p>
         <p class="hero-lede">Applied Cognitive and Social Psychologist with 9+ years of mixed-methods research across fintech, sports media, and healthcare—connecting usability, field research, and AI-augmented workflows to product and revenue outcomes.</p>
         <div class="brand-strip" aria-label="Brands worked with">
-          <a href="case-studies.html#cases-robinhood" title="Robinhood case studies">{brand_logo_chip("robinhood", extra_class="brand-chip-lg")}</a>
-          <a href="case-studies.html#cases-fanduel" title="FanDuel case studies">{brand_logo_chip("fanduel", extra_class="brand-chip-lg")}</a>
-          <a href="case-studies.html#cases-nfl" title="NFL case studies">{brand_logo_chip("nfl", extra_class="brand-chip-lg")}</a>
-          <a href="case-studies.html#cases-ipsos" title="Ipsos Healthcare case study">{brand_logo_chip("ipsos", extra_class="brand-chip-lg")}</a>
-          <a href="case-studies.html" title="Claremont Colleges (case study forthcoming)"><span class="brand-chip brand-chip-lg brand-chip-cgu"><img src="media/brands/cgu.png" alt="Claremont Graduate University logo" loading="lazy" /></span></a>
+          <a href="case-studies.html#cases-robinhood" title="Robinhood case studies"><img class="brand-tile" src="media/brands/robinhood-home.png" alt="Robinhood" loading="lazy" /></a>
+          <a href="case-studies.html#cases-fanduel" title="FanDuel case studies"><img class="brand-tile" src="media/brands/fanduel-home.png" alt="FanDuel" loading="lazy" /></a>
+          <a href="cases/fantasy-d2c-ideation.html" title="NFL Fantasy case study"><img class="brand-tile" src="media/brands/nfl-fantasy-home.png" alt="NFL Fantasy" loading="lazy" /></a>
+          <a href="cases/nfl-d2c-packaging.html" title="NFL+ case study"><img class="brand-tile" src="media/brands/nfl-plus-home.png" alt="NFL+" loading="lazy" /></a>
+          <a href="cases/insulin-pen-usability.html" title="Ipsos Healthcare case study"><img class="brand-tile" src="media/brands/ipsos-home.png" alt="Ipsos" loading="lazy" /></a>
+          <a href="cases/verizon-superstadium.html" title="Verizon 5G SuperStadium case study"><img class="brand-tile" src="media/brands/verizon-5g-home.png" alt="Verizon 5G" loading="lazy" /></a>
+          <a href="cases/intel-trueview.html" title="Intel TrueView case study"><img class="brand-tile" src="media/brands/intel-home.png" alt="Intel" loading="lazy" /></a>
         </div>
         <div class="hero-actions">
           <a class="btn btn-primary" href="case-studies.html">View case studies</a>
