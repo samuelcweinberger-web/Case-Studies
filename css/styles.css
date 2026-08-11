@@ -2140,6 +2140,17 @@ body.brand-nfl::before {
 }
 
 /* Pager */
+/* Discreet end-of-case company attribution — small, low-contrast, sits
+   between the last section and the pager. */
+.case-company-note {
+  margin: 3rem 0 1.5rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--faint);
+  opacity: 0.85;
+}
+
 .pager {
   display: flex;
   justify-content: space-between;
@@ -3160,21 +3171,6 @@ body.case-nfl .site-footer {
 /* ============================================================
    Case-studies index — per-product carousels
    ============================================================ */
-.company-group-head {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
-}
-
-/* One quiet identifier per group: a small muted text label, no logo,
-   overriding the brand-colored heading tints used elsewhere. */
-.company-group-head .company-heading {
-  margin: 0;
-  font-size: 0.78rem;
-  color: var(--faint);
-}
-
 .product-carousel {
   position: relative;
 }
@@ -3291,21 +3287,6 @@ body.case-nfl .site-footer {
 }
 .case-card:hover .case-card-cue {
   color: var(--ink);
-}
-
-/* Subtle text-only company cue — quiet by design (no chip, no logo). */
-.case-card-brand {
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--faint);
-  opacity: 0.65;
-  white-space: nowrap;
-}
-.case-card:hover .case-card-brand {
-  opacity: 0.9;
-  color: var(--faint);
 }
 
 /* Per-company accents mirror the existing index color language. */
@@ -3634,9 +3615,6 @@ html[data-theme="light"] .company-nfl .company-heading { color: #013369; }
 html[data-theme="light"] .company-ipsos .company-heading { color: #96742c; }
 html[data-theme="light"] .company-cgu .company-heading { color: #7d5834; }
 html[data-theme="light"] .company-burkmont .company-heading { color: #c24e12; }
-
-/* Case-index group headers stay quiet in light mode too. */
-html[data-theme="light"] .company-group-head .company-heading { color: var(--faint); }
 
 /* Case cards & rows — titles go ink; accents darken. */
 html[data-theme="light"] .case-card h3,

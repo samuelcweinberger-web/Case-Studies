@@ -61,7 +61,7 @@ CASES = [
         ],
         "title": "Why Approved Traders Never Placed Their First Trade",
         "short": "Approved traders kept signing up for prediction markets but never placed a first trade—matched interviews traced it to findability on the home page, and five low-effort design changes brought hundreds of thousands of stalled customers back to a first trade.",
-        "context": "Robinhood · Prediction Markets & Event Contracts",
+        "context": "Prediction Markets & Event Contracts",
         "year": "2026",
         "role": "UX Researcher (study lead)",
         "timeline": "~1 week (vs. typical 3–4 weeks)",
@@ -118,7 +118,7 @@ CASES = [
         "brand": "robinhood",
         "title": "Turning a Dead End Into a Second Chance",
         "short": "A backend failure the company couldn’t fix was silently churning 1 in 5 first-time traders. Redesigning the moment around the error—a plain-language message and a path back to the trade—won back 6 of every 10 at-risk users and roughly 70% of the revenue that had been at risk.",
-        "context": "Robinhood · Prediction Markets & Event Contracts",
+        "context": "Prediction Markets & Event Contracts",
         "year": "2026",
         "role": "UX Researcher (investigation lead)",
         "timeline": "Interview → data diagnosis → shipped fix",
@@ -185,9 +185,9 @@ CASES = [
             "cta": "Click to watch video",
             "caption": "Scrubbing the Bitcoin chart to inspect the price at any moment, sourced from CF Benchmarks’ BRTI.",
         },
-        "title": "From Coin Toss to Informed Call: Getting Single-Category Traders to Diversify",
+        "title": "Getting Single-Category Traders to Explore New Markets",
         "short": "Most users traded a single category, mostly sports. The real blocker wasn’t risk or knowledge but confidence—new decision tools (a limit order and a chart Tool Tip) made trying a new category feel informed and lifted multi-category trading 11%.",
-        "context": "Robinhood · Prediction Markets & Event Contracts",
+        "context": "Prediction Markets & Event Contracts",
         "year": "2026",
         "role": "UX Researcher (study lead)",
         "timeline": "Follow-on deep dive",
@@ -247,7 +247,7 @@ CASES = [
         "brand": "robinhood",
         "title": "The Cold-Start Problem: A Deep Dive Into a Personalization Experiment",
         "short": "A personalization algorithm looked like a win (+4% in its A/B test) but trade volume had plateaued. Re-analysis showed it couldn’t cold-start new users; the fixes I recommended cut post-first-trade drop-off by nearly a third.",
-        "context": "Robinhood · Prediction Markets & Event Contracts",
+        "context": "Prediction Markets & Event Contracts",
         "year": "2026",
         "role": "UX Researcher (investigation lead)",
         "timeline": "Multi-week deep dive",
@@ -294,7 +294,7 @@ CASES = [
         "brand": "fanduel",
         "title": "Studying the Users You Can’t Recruit: Fixing Registration Drop-Off",
         "short": "More than half of prospective customers abandoned registration on every state launch, and they couldn’t be recruited. A simulated-app study localized the drop and a reordered flow lifted production completion by roughly a third.",
-        "context": "FanDuel · Core Products & Experiences",
+        "context": "Core Products & Experiences",
         "year": "2021–2023",
         "role": "UX Researcher (study lead)",
         "timeline": "Multi-phase (simulation → A/B → production)",
@@ -337,8 +337,8 @@ CASES = [
         "num": "06",
         "brand": "fanduel",
         "title": "Benchmarking as a Decision Engine: Measuring Experience Across Multiple Apps",
-        "short": "FanDuel’s products were siloed with no shared baseline. I built continuous cross-product benchmarking that became the reference point the org used to decide where to invest—surfacing Same Game Parlays and growing research into a 32-person team.",
-        "context": "FanDuel · Core Products & Experiences",
+        "short": "The company’s products were siloed with no shared baseline. I built continuous cross-product benchmarking that became the reference point the org used to decide where to invest—surfacing Same Game Parlays and growing research into a 32-person team.",
+        "context": "Core Products & Experiences",
         "year": "2021–2023",
         "role": "UX Researcher (system owner)",
         "timeline": "Ongoing program",
@@ -413,7 +413,7 @@ CASES = [
         "brand": "fanduel",
         "title": "Wallet Journeys: Increasing ACH Adoption",
         "short": "Customers avoided ACH—the safer deposit method—because bank numbers felt least secure. Reframing the message (not adding incentives) roughly doubled ACH adoption, draining a costly football-Sunday debit exploit.",
-        "context": "FanDuel · Core Products & Experiences",
+        "context": "Core Products & Experiences",
         "year": "2024–2026",
         "role": "UX Researcher (study lead)",
         "timeline": "Multi-phase (research → A/B → production)",
@@ -486,7 +486,7 @@ CASES = [
             ("First-Year Revenue", "Six figures"),
             ("Active Users Who Bought", "Nearly half"),
         ],
-        "context": "NFL · NFL Fantasy App · Fantasy Sports",
+        "context": "Fantasy App · Fantasy Sports",
         "year": "2019–2021",
         "role": "UX Researcher (study lead) · 5-person cross-functional team (2 designers, 1 researcher, 1 PM, 1 engineer)",
         "methods": "In-depth interviews · Large-scale survey · MaxDiff · Design-thinking · Static-concept testing · A/B testing",
@@ -546,7 +546,7 @@ CASES = [
             ("Sign-ups at Launch", "1.1M"),
             ("Subscribers by 2024", "~2.7M"),
         ],
-        "context": "NFL · Digital Media &amp; NFL+",
+        "context": "Digital Media &amp; Streaming",
         "year": "2019–2021",
         "role": "UX Researcher (study lead)",
         "methods": "Design Studios · MoSCoW sorting · Package ranking · National survey (N=2,208) · TURF analysis · MaxDiff · SPSS",
@@ -596,7 +596,7 @@ CASES = [
         "badge_label": "NFL Labs",
         "title": "Intel TrueView 360° Prototype",
         "short": "Tested Intel’s TrueView rotate-the-camera replay prototype with fans and delivered recommendations for how to integrate it into the NFL app and Game Pass.",
-        "context": "NFL Labs · Partner research with Intel",
+        "context": "Labs · Partner research",
         "year": "2019–2021",
         "role": "UX Researcher (study lead)",
         "methods": "Design studios · Live-prototype testing · Behavioral observation",
@@ -665,7 +665,7 @@ CASES = [
         "badge_label": "NFL Labs",
         "title": "Verizon 5G SuperStadium: The In-Stadium Fan Experience",
         "short": "Led usability and in-stadium field research on Verizon 5G’s SuperStadium experience—now built into the official NFL app and central to a $1B+ NFL–Verizon partnership.",
-        "context": "NFL Labs · Verizon 5G partnership",
+        "context": "Labs · 5G partnership",
         "year": "2019–2021",
         "role": "UX Researcher (study lead)",
         "methods": "Cognitive task analysis · In-stadium field research · Immersive-AR prototype &amp; usability evaluation",
@@ -1134,8 +1134,8 @@ def build_case_blocks(case_href_prefix="cases/", prefix=""):
 
     The track is a native scroll-snap row (works with JS disabled); the
     prev/next buttons are progressively enhanced by the [data-pcarousel]
-    handler in js/main.js. Group headers carry a quiet text-only company label;
-    each card names the company once, subtly, next to the "Read case" cue.
+    handler in js/main.js. Groups are deliberately unlabeled — the company is
+    only disclosed at the end of each case page. Brand accent colors stay.
     """
     company_order = [
         ("robinhood", "Robinhood"),
@@ -1154,7 +1154,8 @@ def build_case_blocks(case_href_prefix="cases/", prefix=""):
         "cgu": "healthcare",
     }
     case_blocks = []
-    for brand_key, brand_label in company_order:
+    group_num = 0
+    for brand_key, _brand_label in company_order:
         brand_cases = [c for c in CASES if c["brand"] == brand_key]
         cards = []
         for c in brand_cases:
@@ -1163,23 +1164,22 @@ def build_case_blocks(case_href_prefix="cases/", prefix=""):
               <span class="case-num">{c['num']}</span>
               <h3>{c['title']}</h3>
               <p>{c['short']}</p>
-              <span class="case-card-cue"><span class="case-card-cue-label">Read case <span aria-hidden="true">&rarr;</span></span><span class="case-card-brand">{brand_label}</span></span>
+              <span class="case-card-cue"><span class="case-card-cue-label">Read case <span aria-hidden="true">&rarr;</span></span></span>
             </a>"""
             )
         if not cards:
             continue
+        group_num += 1
+        group_label = f"Case study group {group_num}"
         industry = industries.get(brand_key, "other")
         case_blocks.append(
             f"""        <div class="company-group company-{brand_key} reveal" id="cases-{brand_key}" data-industry="{industry}">
-          <div class="company-group-head">
-            <h3 class="company-heading">{brand_label}</h3>
-          </div>
           <div class="product-carousel" data-pcarousel>
-            <button type="button" class="pcar-btn pcar-prev" data-pcar-prev aria-label="Scroll to previous {brand_label} cases">&#8249;</button>
-            <div class="pcar-track" data-pcar-track tabindex="0" role="group" aria-label="{brand_label} case studies">
+            <button type="button" class="pcar-btn pcar-prev" data-pcar-prev aria-label="Scroll to previous cases in this group">&#8249;</button>
+            <div class="pcar-track" data-pcar-track tabindex="0" role="group" aria-label="{group_label}">
 {chr(10).join(cards)}
             </div>
-            <button type="button" class="pcar-btn pcar-next" data-pcar-next aria-label="Scroll to more {brand_label} cases">&#8250;</button>
+            <button type="button" class="pcar-btn pcar-next" data-pcar-next aria-label="Scroll to more cases in this group">&#8250;</button>
           </div>
         </div>"""
         )
@@ -1202,12 +1202,6 @@ HOME_INDEX_OUTCOMES = {
     "verizon-superstadium": "Usability and in-stadium field research that helped seed SuperStadium, now built into the official NFL app.",
 }
 
-HOME_INDEX_BRAND_SHORT = {
-    "robinhood": "Robinhood",
-    "fanduel": "FanDuel",
-    "nfl": "NFL",
-}
-
 HOME_INDEX_INDUSTRY = {
     "robinhood": "fintech",
     "fanduel": "fintech",
@@ -1224,7 +1218,6 @@ def build_home_index_rows():
         if not outcome:
             continue
         brand_key = case["brand"]
-        meta_label = case.get("badge_label") or HOME_INDEX_BRAND_SHORT.get(brand_key, brand_key)
         industry = HOME_INDEX_INDUSTRY.get(brand_key, "other")
         rows.append(
             f"""          <li class="idx-row reveal" data-industry="{industry}">
@@ -1234,7 +1227,7 @@ def build_home_index_rows():
                 <span class="idx-title">{case["title"]}</span>
                 <span class="idx-unfold"><span class="idx-outcome">{outcome}</span></span>
               </span>
-              <span class="idx-meta">{meta_label} &middot; {case["year"]}</span>
+              <span class="idx-meta">{case["year"]}</span>
               <span class="idx-arrow" aria-hidden="true">&rarr;</span>
             </a>
           </li>"""
@@ -1338,7 +1331,7 @@ def write_case_studies_page():
       <div class="wrap">
         <div class="section-head reveal">
           <h2>Case studies</h2>
-          <p>Eleven studies across Robinhood, FanDuel, and the NFL—each tied to a shipped product decision and a measured outcome.</p>
+          <p>Eleven studies across fintech and sports media—each tied to a shipped product decision and a measured outcome.</p>
         </div>
         <div class="filter-bar reveal" data-case-filters role="group" aria-label="Filter case studies by industry">
           <button type="button" class="filter-pill is-active" data-filter="all" aria-pressed="true">All</button>
@@ -1923,6 +1916,7 @@ def write_case_nfl(case, index):
 {stats_html}
         </div>
       </div>
+      {company_note_html(case)}
       <nav class="pager" aria-label="Case study pagination">
         {prev_link}
         {next_link}
@@ -1933,6 +1927,29 @@ def write_case_nfl(case, index):
         + footer(prefix="../")
     )
     (CASES_DIR / f"{case['slug']}.html").write_text(html)
+
+
+# Quiet end-of-case company attribution. The company is intentionally not
+# announced anywhere else on the case-study pages or listings.
+CASE_COMPANY_NOTES = {
+    "robinhood": "This work was conducted at Robinhood.",
+    "fanduel": "This work was conducted at FanDuel.",
+    "nfl": "This work was conducted at the NFL.",
+}
+
+CASE_COMPANY_NOTE_OVERRIDES = {
+    "intel-trueview": "This work was conducted at the NFL, in partnership with Intel.",
+    "verizon-superstadium": "This work was conducted at the NFL, in partnership with Verizon.",
+}
+
+
+def company_note_html(case):
+    note = CASE_COMPANY_NOTE_OVERRIDES.get(case["slug"]) or CASE_COMPANY_NOTES.get(
+        case["brand"]
+    )
+    if not note:
+        return ""
+    return f'<p class="case-company-note">{note}</p>'
 
 
 def _section_slug(title):
@@ -2197,6 +2214,7 @@ def write_case(case, index):
 {charts_before}
 {body_main}
 {charts_after}
+      {company_note_html(case)}
       <nav class="pager" aria-label="Case study pagination">
         {prev_link}
         {next_link}
