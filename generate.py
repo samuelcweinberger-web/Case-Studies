@@ -1249,21 +1249,130 @@ def build_case_blocks(case_href_prefix="cases/", prefix=""):
     return case_blocks
 
 
+# One-line outcomes for the home-page case index. Kept faithful to each
+# case's summary; shown when a row expands on hover/focus (always on touch).
+HOME_INDEX_OUTCOMES = {
+    "first-trade-conversion": "Five low-effort design changes brought hundreds of thousands of stalled traders back to a first trade.",
+    "first-trade-recovery": "Redesigning one error moment&mdash;no engineering fix&mdash;kept 6 of every 10 at-risk users and recovered most of the revenue at risk.",
+    "diversify-single-category": "Surfacing tools already in the app lifted the share of multi-category traders 11%.",
+    "cold-start-personalization": "A re-analysis caught a cold-start blind spot; the recommended fixes cut post-first-trade drop-off by nearly a third.",
+    "registration-dropoff": "A simulated-app experiment localized the drop; reordering when SSN and banking are asked lifted completion by roughly a third.",
+    "benchmarking-decision-engine": "Cross-product benchmarking became the organization&rsquo;s investment reference point&mdash;and grew research into a 32-person team.",
+    "ach-adoption": "Reframing the message&mdash;no incentives&mdash;roughly doubled ACH adoption and drained a costly football-Sunday debit exploit.",
+    "fantasy-d2c-ideation": "Nearly $1M in first-year revenue from Fantasy features bought by more than a million players.",
+    "nfl-d2c-packaging": "Formative research behind NFL+, launched to ~1.1M sign-ups and roughly 2.7M subscribers heading into 2024.",
+    "intel-trueview": "Design studios on Intel&rsquo;s volumetric replay prototype delivered a clear read on fan appetite for interactive replay.",
+    "verizon-superstadium": "Usability and in-stadium field research that helped seed SuperStadium, now built into the official NFL app.",
+    "insulin-pen-usability": "A multi-country comparative usability study reshaped device training and was linked to a 27% reduction in use errors.",
+}
+
+HOME_INDEX_BRAND_SHORT = {
+    "robinhood": "Robinhood",
+    "fanduel": "FanDuel",
+    "nfl": "NFL",
+    "ipsos": "Ipsos Healthcare",
+}
+
+HOME_INDEX_INDUSTRY = {
+    "robinhood": "fintech",
+    "fanduel": "fintech",
+    "nfl": "sports-media",
+    "ipsos": "healthcare",
+}
+
+
+def build_home_index_rows():
+    """Title-first typographic index of the case studies for the home page."""
+    rows = []
+    for case in CASES:
+        slug = case["slug"]
+        outcome = HOME_INDEX_OUTCOMES.get(slug)
+        if not outcome:
+            continue
+        brand_key = case["brand"]
+        meta_label = case.get("badge_label") or HOME_INDEX_BRAND_SHORT.get(brand_key, brand_key)
+        industry = HOME_INDEX_INDUSTRY.get(brand_key, "other")
+        rows.append(
+            f"""          <li class="idx-row reveal" data-industry="{industry}">
+            <a href="cases/{slug}.html">
+              <span class="idx-num" aria-hidden="true">{case["num"]}</span>
+              <span class="idx-main">
+                <span class="idx-title">{case["title"]}</span>
+                <span class="idx-unfold"><span class="idx-outcome">{outcome}</span></span>
+              </span>
+              <span class="idx-meta">{meta_label} &middot; {case["year"]}</span>
+              <span class="idx-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </li>"""
+        )
+    return rows
+
+
 def write_home():
+    index_rows = build_home_index_rows()
     html = (
         header(nav_active="home", page_path="")
         + f"""
   <main>
-    <section class="hero hero-page">
-      <div class="hero-media" aria-hidden="true"></div>
-      <div class="hero-atmosphere" aria-hidden="true"></div>
+    <section class="hero hero-page hero-cinema">
+      <div class="hero-media" aria-hidden="true">
+        <video
+          class="hero-video"
+          data-hero-video
+          muted
+          loop
+          playsinline
+          preload="none"
+          poster="media/nfl-intel/sizzle-reel-poster.jpg"
+          tabindex="-1"
+          disablepictureinpicture
+        >
+          <source src="media/nfl-intel/sizzle-reel.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="hero-scrim" aria-hidden="true"></div>
       <div class="wrap hero-copy">
-        <div class="hero-kicker">AI-Driven Insights</div>
+        <p class="hero-kicker">AI-Driven Insights</p>
         <h1 class="hero-brand">Sam<br />Weinberger</h1>
         <p class="hero-role">UX Design Research | Research Engineer</p>
         <p class="hero-status"><span class="hero-status-dot" aria-hidden="true"></span>Most recently: Prediction Markets @ Robinhood</p>
-        <p class="hero-lede">9+ years of mixed-methods research across fintech, sports media, and healthcare—connecting insights to product and revenue outcomes.</p>
-        <div class="brand-strip" aria-label="Brands worked with">
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#work">Explore the work</a>
+        </div>
+      </div>
+      <a class="hero-scroll-cue" href="#statement" aria-label="Scroll down to read more"><span class="hero-scroll-line" aria-hidden="true"></span></a>
+    </section>
+
+    <section class="home-statement" id="statement" aria-label="Introduction">
+      <div class="wrap">
+        <p class="statement-line reveal">9+ years of mixed-methods research across fintech, sports media, and healthcare.</p>
+        <p class="statement-line reveal">Every study here ends the same way&mdash;</p>
+        <p class="statement-line statement-em reveal">a shipped product decision and a measured outcome.</p>
+      </div>
+    </section>
+
+    <section class="home-index" id="work" aria-label="Case study index">
+      <div class="wrap">
+        <header class="index-head reveal">
+          <p class="index-kicker">Index &middot; Twelve case studies</p>
+          <div class="index-paths" role="group" aria-label="Choose a path through the work">
+            <button type="button" class="path-link is-active" data-path="all" aria-pressed="true">All</button>
+            <button type="button" class="path-link" data-path="fintech" aria-pressed="false">Fintech</button>
+            <button type="button" class="path-link" data-path="sports-media" aria-pressed="false">Sports &amp; Media</button>
+            <button type="button" class="path-link" data-path="healthcare" aria-pressed="false">Healthcare</button>
+          </div>
+        </header>
+        <ol class="idx-list" data-case-index>
+{chr(10).join(index_rows)}
+        </ol>
+        <p class="index-foot reveal"><a href="case-studies.html">Prefer pictures? Browse the gallery view &rarr;</a></p>
+      </div>
+    </section>
+
+    <section class="brand-band" aria-label="Brands worked with">
+      <div class="wrap reveal">
+        <p class="brand-band-label">Selected work across</p>
+        <div class="brand-strip">
           <a href="case-studies.html#cases-robinhood" title="Robinhood case studies"><img class="brand-tile" src="media/brands/robinhood-home.png" alt="Robinhood" loading="lazy" decoding="async" /></a>
           <a href="case-studies.html#cases-fanduel" title="FanDuel case studies"><img class="brand-tile" src="media/brands/fanduel-home.png" alt="FanDuel" loading="lazy" decoding="async" /></a>
           <a href="cases/fantasy-d2c-ideation.html" title="NFL Fantasy case study"><img class="brand-tile" src="media/brands/nfl-fantasy-home.png" alt="NFL Fantasy" loading="lazy" decoding="async" /></a>
@@ -1271,11 +1380,6 @@ def write_home():
           <a href="cases/insulin-pen-usability.html" title="Ipsos Healthcare case study"><img class="brand-tile" src="media/brands/ipsos-home.png" alt="Ipsos" loading="lazy" decoding="async" /></a>
           <a href="cases/verizon-superstadium.html" title="Verizon 5G SuperStadium case study"><img class="brand-tile" src="media/brands/verizon-5g-home.png" alt="Verizon 5G" loading="lazy" decoding="async" /></a>
           <a href="cases/intel-trueview.html" title="Intel TrueView case study"><img class="brand-tile" src="media/brands/intel-home.png" alt="Intel" loading="lazy" decoding="async" /></a>
-        </div>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="case-studies.html">View case studies</a>
-          <a class="btn btn-ghost" href="skills.html">Skills</a>
-          <a class="btn btn-ghost" href="about.html">About me</a>
         </div>
       </div>
     </section>

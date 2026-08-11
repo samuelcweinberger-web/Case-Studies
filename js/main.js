@@ -238,6 +238,81 @@ document.querySelectorAll("[data-pcarousel]").forEach((carousel) => {
   update();
 });
 
+// Cinematic hero background — the sizzle-reel <video> ships with
+// preload="none" and a poster, so no video bytes move until this decides
+// playback is appropriate: wide viewport, motion allowed, no data-saver.
+// Small screens and reduced-motion users just keep the poster frame.
+const heroVideo = document.querySelector("[data-hero-video]");
+if (heroVideo) {
+  const wideViewport = window.matchMedia("(min-width: 780px)");
+  const saveData = navigator.connection && navigator.connection.saveData;
+
+  const startHeroVideo = () => {
+    if (heroVideo.dataset.started) return;
+    heroVideo.dataset.started = "true";
+    heroVideo.muted = true;
+    heroVideo.preload = "auto";
+    const playback = heroVideo.play();
+    if (playback && typeof playback.catch === "function") playback.catch(() => {});
+  };
+
+  heroVideo.addEventListener(
+    "playing",
+    () => heroVideo.classList.add("is-playing"),
+    { once: true }
+  );
+
+  if (!prefersReducedMotion && !saveData) {
+    if (wideViewport.matches) {
+      startHeroVideo();
+    } else if (typeof wideViewport.addEventListener === "function") {
+      wideViewport.addEventListener("change", (e) => {
+        if (e.matches) startHeroVideo();
+      });
+    }
+
+    // Don't keep decoding video the visitor has scrolled past.
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!heroVideo.dataset.started) return;
+            if (entry.isIntersecting) {
+              const playback = heroVideo.play();
+              if (playback && typeof playback.catch === "function") playback.catch(() => {});
+            } else {
+              heroVideo.pause();
+            }
+          });
+        },
+        { threshold: 0.05 }
+      ).observe(heroVideo);
+    }
+  }
+}
+
+// "Choose your path" filter over the typographic case index on the home page.
+document.querySelectorAll("[data-case-index]").forEach((list) => {
+  const rows = Array.from(list.querySelectorAll(".idx-row"));
+  const links = Array.from(document.querySelectorAll(".path-link"));
+  if (!links.length) return;
+  links.forEach((link) => {
+    link.addEventListener("click", () => {
+      const path = link.dataset.path;
+      links.forEach((l) => {
+        const active = l === link;
+        l.classList.toggle("is-active", active);
+        l.setAttribute("aria-pressed", String(active));
+      });
+      rows.forEach((row) => {
+        const show = path === "all" || row.dataset.industry === path;
+        row.classList.toggle("is-hidden", !show);
+        if (show) row.classList.add("is-visible");
+      });
+    });
+  });
+});
+
 document.querySelectorAll("[data-carousel]").forEach((carousel) => {
   const slides = Array.from(carousel.querySelectorAll(".carousel-slide"));
   if (!slides.length) return;

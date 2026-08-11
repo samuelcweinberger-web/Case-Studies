@@ -50,16 +50,196 @@
   </header>
 
   <main>
-    <section class="hero hero-page">
-      <div class="hero-media" aria-hidden="true"></div>
-      <div class="hero-atmosphere" aria-hidden="true"></div>
+    <section class="hero hero-page hero-cinema">
+      <div class="hero-media" aria-hidden="true">
+        <video
+          class="hero-video"
+          data-hero-video
+          muted
+          loop
+          playsinline
+          preload="none"
+          poster="media/nfl-intel/sizzle-reel-poster.jpg"
+          tabindex="-1"
+          disablepictureinpicture
+        >
+          <source src="media/nfl-intel/sizzle-reel.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="hero-scrim" aria-hidden="true"></div>
       <div class="wrap hero-copy">
-        <div class="hero-kicker">AI-Driven Insights</div>
+        <p class="hero-kicker">AI-Driven Insights</p>
         <h1 class="hero-brand">Sam<br />Weinberger</h1>
         <p class="hero-role">UX Design Research | Research Engineer</p>
         <p class="hero-status"><span class="hero-status-dot" aria-hidden="true"></span>Most recently: Prediction Markets @ Robinhood</p>
-        <p class="hero-lede">9+ years of mixed-methods research across fintech, sports media, and healthcare—connecting insights to product and revenue outcomes.</p>
-        <div class="brand-strip" aria-label="Brands worked with">
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#work">Explore the work</a>
+        </div>
+      </div>
+      <a class="hero-scroll-cue" href="#statement" aria-label="Scroll down to read more"><span class="hero-scroll-line" aria-hidden="true"></span></a>
+    </section>
+
+    <section class="home-statement" id="statement" aria-label="Introduction">
+      <div class="wrap">
+        <p class="statement-line reveal">9+ years of mixed-methods research across fintech, sports media, and healthcare.</p>
+        <p class="statement-line reveal">Every study here ends the same way&mdash;</p>
+        <p class="statement-line statement-em reveal">a shipped product decision and a measured outcome.</p>
+      </div>
+    </section>
+
+    <section class="home-index" id="work" aria-label="Case study index">
+      <div class="wrap">
+        <header class="index-head reveal">
+          <p class="index-kicker">Index &middot; Twelve case studies</p>
+          <div class="index-paths" role="group" aria-label="Choose a path through the work">
+            <button type="button" class="path-link is-active" data-path="all" aria-pressed="true">All</button>
+            <button type="button" class="path-link" data-path="fintech" aria-pressed="false">Fintech</button>
+            <button type="button" class="path-link" data-path="sports-media" aria-pressed="false">Sports &amp; Media</button>
+            <button type="button" class="path-link" data-path="healthcare" aria-pressed="false">Healthcare</button>
+          </div>
+        </header>
+        <ol class="idx-list" data-case-index>
+          <li class="idx-row reveal" data-industry="fintech">
+            <a href="cases/first-trade-conversion.html">
+              <span class="idx-num" aria-hidden="true">01</span>
+              <span class="idx-main">
+                <span class="idx-title">Why Approved Traders Never Placed Their First Trade</span>
+                <span class="idx-unfold"><span class="idx-outcome">Five low-effort design changes brought hundreds of thousands of stalled traders back to a first trade.</span></span>
+              </span>
+              <span class="idx-meta">Robinhood &middot; 2026</span>
+              <span class="idx-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </li>
+          <li class="idx-row reveal" data-industry="fintech">
+            <a href="cases/first-trade-recovery.html">
+              <span class="idx-num" aria-hidden="true">02</span>
+              <span class="idx-main">
+                <span class="idx-title">Turning a Dead End Into a Second Chance</span>
+                <span class="idx-unfold"><span class="idx-outcome">Redesigning one error moment&mdash;no engineering fix&mdash;kept 6 of every 10 at-risk users and recovered most of the revenue at risk.</span></span>
+              </span>
+              <span class="idx-meta">Robinhood &middot; 2026</span>
+              <span class="idx-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </li>
+          <li class="idx-row reveal" data-industry="fintech">
+            <a href="cases/diversify-single-category.html">
+              <span class="idx-num" aria-hidden="true">03</span>
+              <span class="idx-main">
+                <span class="idx-title">From Coin Toss to Informed Call: Getting Single-Category Traders to Diversify</span>
+                <span class="idx-unfold"><span class="idx-outcome">Surfacing tools already in the app lifted the share of multi-category traders 11%.</span></span>
+              </span>
+              <span class="idx-meta">Robinhood &middot; 2026</span>
+              <span class="idx-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </li>
+          <li class="idx-row reveal" data-industry="fintech">
+            <a href="cases/cold-start-personalization.html">
+              <span class="idx-num" aria-hidden="true">04</span>
+              <span class="idx-main">
+                <span class="idx-title">The Cold-Start Problem: A Deep Dive Into a Personalization Experiment</span>
+                <span class="idx-unfold"><span class="idx-outcome">A re-analysis caught a cold-start blind spot; the recommended fixes cut post-first-trade drop-off by nearly a third.</span></span>
+              </span>
+              <span class="idx-meta">Robinhood &middot; 2026</span>
+              <span class="idx-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </li>
+          <li class="idx-row reveal" data-industry="fintech">
+            <a href="cases/registration-dropoff.html">
+              <span class="idx-num" aria-hidden="true">05</span>
+              <span class="idx-main">
+                <span class="idx-title">Studying the Users You Can’t Recruit: Fixing Registration Drop-Off</span>
+                <span class="idx-unfold"><span class="idx-outcome">A simulated-app experiment localized the drop; reordering when SSN and banking are asked lifted completion by roughly a third.</span></span>
+              </span>
+              <span class="idx-meta">FanDuel &middot; 2021–2023</span>
+              <span class="idx-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </li>
+          <li class="idx-row reveal" data-industry="fintech">
+            <a href="cases/benchmarking-decision-engine.html">
+              <span class="idx-num" aria-hidden="true">06</span>
+              <span class="idx-main">
+                <span class="idx-title">Benchmarking as a Decision Engine: Measuring Experience Across a Fragmented Portfolio</span>
+                <span class="idx-unfold"><span class="idx-outcome">Cross-product benchmarking became the organization&rsquo;s investment reference point&mdash;and grew research into a 32-person team.</span></span>
+              </span>
+              <span class="idx-meta">FanDuel &middot; 2021–2023</span>
+              <span class="idx-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </li>
+          <li class="idx-row reveal" data-industry="fintech">
+            <a href="cases/ach-adoption.html">
+              <span class="idx-num" aria-hidden="true">07</span>
+              <span class="idx-main">
+                <span class="idx-title">ACH Adoption: Turning a Payments Risk Into a Trust Problem Worth Solving</span>
+                <span class="idx-unfold"><span class="idx-outcome">Reframing the message&mdash;no incentives&mdash;roughly doubled ACH adoption and drained a costly football-Sunday debit exploit.</span></span>
+              </span>
+              <span class="idx-meta">FanDuel &middot; 2024–2026</span>
+              <span class="idx-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </li>
+          <li class="idx-row reveal" data-industry="sports-media">
+            <a href="cases/fantasy-d2c-ideation.html">
+              <span class="idx-num" aria-hidden="true">08</span>
+              <span class="idx-main">
+                <span class="idx-title">NFL Fantasy Mobile App</span>
+                <span class="idx-unfold"><span class="idx-outcome">Nearly $1M in first-year revenue from Fantasy features bought by more than a million players.</span></span>
+              </span>
+              <span class="idx-meta">NFL &middot; 2019–2021</span>
+              <span class="idx-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </li>
+          <li class="idx-row reveal" data-industry="sports-media">
+            <a href="cases/nfl-d2c-packaging.html">
+              <span class="idx-num" aria-hidden="true">09</span>
+              <span class="idx-main">
+                <span class="idx-title">Pricing &amp; Packaging: The NFL+ Subscription</span>
+                <span class="idx-unfold"><span class="idx-outcome">Formative research behind NFL+, launched to ~1.1M sign-ups and roughly 2.7M subscribers heading into 2024.</span></span>
+              </span>
+              <span class="idx-meta">NFL &middot; 2019–2021</span>
+              <span class="idx-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </li>
+          <li class="idx-row reveal" data-industry="sports-media">
+            <a href="cases/intel-trueview.html">
+              <span class="idx-num" aria-hidden="true">10</span>
+              <span class="idx-main">
+                <span class="idx-title">Intel TrueView 360° Prototype</span>
+                <span class="idx-unfold"><span class="idx-outcome">Design studios on Intel&rsquo;s volumetric replay prototype delivered a clear read on fan appetite for interactive replay.</span></span>
+              </span>
+              <span class="idx-meta">NFL Labs &middot; 2019–2021</span>
+              <span class="idx-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </li>
+          <li class="idx-row reveal" data-industry="sports-media">
+            <a href="cases/verizon-superstadium.html">
+              <span class="idx-num" aria-hidden="true">11</span>
+              <span class="idx-main">
+                <span class="idx-title">Verizon 5G SuperStadium: The In-Stadium Fan Experience</span>
+                <span class="idx-unfold"><span class="idx-outcome">Usability and in-stadium field research that helped seed SuperStadium, now built into the official NFL app.</span></span>
+              </span>
+              <span class="idx-meta">NFL Labs &middot; 2019–2021</span>
+              <span class="idx-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </li>
+          <li class="idx-row reveal" data-industry="healthcare">
+            <a href="cases/insulin-pen-usability.html">
+              <span class="idx-num" aria-hidden="true">12</span>
+              <span class="idx-main">
+                <span class="idx-title">Insulin Pen Usability: Turning Device Research Into Commercial Evidence</span>
+                <span class="idx-unfold"><span class="idx-outcome">A multi-country comparative usability study reshaped device training and was linked to a 27% reduction in use errors.</span></span>
+              </span>
+              <span class="idx-meta">Ipsos Healthcare &middot; 2015–2017</span>
+              <span class="idx-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </li>
+        </ol>
+        <p class="index-foot reveal"><a href="case-studies.html">Prefer pictures? Browse the gallery view &rarr;</a></p>
+      </div>
+    </section>
+
+    <section class="brand-band" aria-label="Brands worked with">
+      <div class="wrap reveal">
+        <p class="brand-band-label">Selected work across</p>
+        <div class="brand-strip">
           <a href="case-studies.html#cases-robinhood" title="Robinhood case studies"><img class="brand-tile" src="media/brands/robinhood-home.png" alt="Robinhood" loading="lazy" decoding="async" /></a>
           <a href="case-studies.html#cases-fanduel" title="FanDuel case studies"><img class="brand-tile" src="media/brands/fanduel-home.png" alt="FanDuel" loading="lazy" decoding="async" /></a>
           <a href="cases/fantasy-d2c-ideation.html" title="NFL Fantasy case study"><img class="brand-tile" src="media/brands/nfl-fantasy-home.png" alt="NFL Fantasy" loading="lazy" decoding="async" /></a>
@@ -67,11 +247,6 @@
           <a href="cases/insulin-pen-usability.html" title="Ipsos Healthcare case study"><img class="brand-tile" src="media/brands/ipsos-home.png" alt="Ipsos" loading="lazy" decoding="async" /></a>
           <a href="cases/verizon-superstadium.html" title="Verizon 5G SuperStadium case study"><img class="brand-tile" src="media/brands/verizon-5g-home.png" alt="Verizon 5G" loading="lazy" decoding="async" /></a>
           <a href="cases/intel-trueview.html" title="Intel TrueView case study"><img class="brand-tile" src="media/brands/intel-home.png" alt="Intel" loading="lazy" decoding="async" /></a>
-        </div>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="case-studies.html">View case studies</a>
-          <a class="btn btn-ghost" href="skills.html">Skills</a>
-          <a class="btn btn-ghost" href="about.html">About me</a>
         </div>
       </div>
     </section>
