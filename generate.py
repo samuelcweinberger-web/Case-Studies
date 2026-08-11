@@ -33,34 +33,9 @@ BRANDS = {
     },
 }
 
-# Official brand marks (SVG) sourced into media/brands/. Rendered on a light
-# "chip" so trademarked marks stay crisp and legible on the dark theme.
-BRAND_LOGOS = {
-    "robinhood": "brands/robinhood-official.svg",
-    "fanduel": "brands/fanduel-official.svg",
-    "nfl": "brands/nfl-official.svg",
-    "ipsos": "brands/ipsos-official.svg",
-    "intel": "brands/intel-official.svg",
-    "verizon": "brands/verizon-official.svg",
-    "usc": "brands/usc-trojans.svg",
-    "stanford": "brands/stanford-cardinal.svg",
-}
-
-
-def brand_logo_chip(brand_key, prefix="", label=None, extra_class=""):
-    """Official brand mark inside a light chip (crisp on the dark theme)."""
-    logo = BRAND_LOGOS.get(brand_key)
-    if not logo:
-        return ""
-    alt = label or BRANDS.get(brand_key, {}).get("label", brand_key)
-    cls = f"brand-chip brand-chip-{brand_key}"
-    if extra_class:
-        cls += f" {extra_class}"
-    return (
-        f'<span class="{cls}">'
-        f'<img src="{prefix}media/{logo}" alt="{alt} logo" loading="lazy" decoding="async" />'
-        f"</span>"
-    )
+# No third-party logo/wordmark images are used anywhere on the site — company
+# identity is rendered typographically (plain text names) to avoid trademark
+# and copyright issues. Brand accent COLORS are kept; colors aren't logos.
 
 CASES = [
     {
@@ -458,8 +433,7 @@ CASES = [
         "subtitle": "Monetizing Fantasy Football — The Tools Package",
         "short": "Developed and shipped Fantasy features available via in-app purchase—nearly $1M in first-year revenue, most of it in launch week, bought by more than a million players (nearly half of active users).",
         "brand_card": {
-            "logo": "nfl/nfl-fantasy-logo.png",
-            "logo_alt": "NFL Fantasy logo",
+            "wordmark": "NFL Fantasy",
             "tagline": "In-App Tools Package",
         },
         "media_gallery": [
@@ -534,8 +508,7 @@ CASES = [
         "title": "Pricing &amp; Packaging: The NFL+ Subscription",
         "short": "Formative research on the NFL’s first direct-to-consumer mobile subscription—NFL+, launched in 2022 to ~1.1M sign-ups and ~2.7M subscribers by 2024.",
         "brand_card": {
-            "logo": "nfl/nflplus-logo.png",
-            "logo_alt": "NFL+ logo",
+            "wordmark": "NFL+",
             "tagline": "Direct-to-Consumer Subscription",
         },
         "headline_kpis": [
@@ -711,47 +684,11 @@ FONTS_URL = (
 # Inline (pre-paint) theme resolution so the light theme never flashes dark
 # and vice versa. Stored choice wins; otherwise follow prefers-color-scheme.
 THEME_SCRIPT = (
-    "(function(){try{var t=localStorage.getItem('theme');"
+    "(function(){document.documentElement.classList.add('js');"
+    "try{var t=localStorage.getItem('theme');"
     "if(t!=='light'&&t!=='dark'){t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}"
     "document.documentElement.setAttribute('data-theme',t);}catch(e){}})();"
 )
-
-# Case-study passcode gate, pre-paint half. One case study is free; the slug
-# of that first case is remembered so revisits stay free. Any *other* case
-# sets data-case-locked, which CSS uses to hide the content and show the
-# gate dialog (wired up by js/gate.js). Deliberately client-side only —
-# the HTML source remains readable to anyone determined.
-def gate_script(slug):
-    return (
-        "(function(){try{"
-        "if(localStorage.getItem('caseGateUnlocked')==='true')return;"
-        f"var s='{slug}';"
-        "var f=localStorage.getItem('caseGateFreeSlug');"
-        "if(!f){localStorage.setItem('caseGateFreeSlug',s);return;}"
-        "if(f!==s){document.documentElement.setAttribute('data-case-locked','');}"
-        "}catch(e){}})();"
-    )
-
-
-GATE_MODAL = """  <div class="case-gate" data-case-gate role="dialog" aria-modal="true" aria-labelledby="case-gate-title" aria-describedby="case-gate-desc">
-    <div class="case-gate-card">
-      <p class="case-gate-kicker">Protected case study</p>
-      <h2 class="case-gate-title" id="case-gate-title">Please enter the passcode to view</h2>
-      <p class="case-gate-desc" id="case-gate-desc">You&rsquo;ve read your complimentary case study. Enter the passcode to unlock the full library&mdash;or request one, it only takes a moment.</p>
-      <form class="case-gate-form" data-gate-form novalidate>
-        <label class="visually-hidden" for="case-gate-code">Passcode</label>
-        <input class="case-gate-input" id="case-gate-code" name="passcode" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Enter passcode" />
-        <button type="submit" class="btn btn-primary">Unlock</button>
-      </form>
-      <p class="case-gate-error" data-gate-error role="alert" hidden>That passcode isn&rsquo;t quite right&mdash;please try again.</p>
-      <p class="case-gate-or">Don&rsquo;t have a passcode?</p>
-      <div class="case-gate-request">
-        <a class="btn btn-linkedin" href="https://www.linkedin.com/in/samuelcweinberger" target="_blank" rel="noopener">Request access on LinkedIn</a>
-        <a class="btn btn-ghost" href="mailto:samuelcweinberger@gmail.com?subject=Portfolio%20passcode%20request">Request via email</a>
-      </div>
-    </div>
-  </div>
-"""
 
 SUN_ICON = (
     '<svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" width="16" height="16" fill="none" '
@@ -774,7 +711,7 @@ def _meta_escape(text):
 
 
 def header(active=None, prefix="", brand=None, nav_active=None, body_classes=None,
-           page_path="", description=None, gate_slug=None):
+           page_path="", description=None):
     classes = []
     if brand:
         classes.append(f"brand-{brand}")
@@ -799,7 +736,7 @@ def header(active=None, prefix="", brand=None, nav_active=None, body_classes=Non
   <title>{title}</title>
   <meta name="description" content="{desc}" />
   <meta name="color-scheme" content="dark light" />
-  <script>{THEME_SCRIPT}</script>{(chr(10) + '  <script>' + gate_script(gate_slug) + '</script>') if gate_slug else ''}
+  <script>{THEME_SCRIPT}</script>
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Sam Weinberger" />
   <meta property="og:title" content="{og_title}" />
@@ -849,12 +786,6 @@ def normalize_stat(item):
     if len(item) == 3:
         return item[0], item[1], item[2]
     return item[0], item[1], "default"
-
-
-def product_badge(brand_key, prefix="", label_override=None):
-    meta = BRANDS[brand_key]
-    label = label_override or meta["label"]
-    return f'<span class="product-badge product-{brand_key}"><span class="product-name">{label}</span></span>'
 
 
 ABOUT_COPY = """
@@ -1090,40 +1021,6 @@ SKILLS = [
     },
 ]
 
-TOOL_ICONS = {
-    "Amplitude": "amplitude.png",
-    "Claude Code": "claude-code.svg",
-    "Coda": "coda.svg",
-    "Confluence": "confluence.svg",
-    "Contentful": "contentful.svg",
-    "Cursor": "cursor.svg",
-    "Displayr": "displayr.png",
-    "FigJam": "figjam.svg",
-    "Figma": "figma.svg",
-    "GitHub": "github.svg",
-    "Glean": "glean.png",
-    "Great Question": "great-question.png",
-    "Jira": "jira.svg",
-    "Listen": "listen.png",
-    "Lucid": "lucid.svg",
-    "Miro": "miro.svg",
-    "Notion": "notion.svg",
-    "Python": "python.svg",
-    "Qualtrics": "qualtrics.svg",
-    "Quantilope": "quantilope.png",
-    "Quantum Metric": "quantum-metric.png",
-    "R": "r.svg",
-    "Salesforce": "salesforce.svg",
-    "SAS": "sas.svg",
-    "Slack": "slack.svg",
-    "SPSS": "spss.svg",
-    "SQL": "sql.svg",
-    "StatSig": "statsig.png",
-    "UserTesting": "usertesting.png",
-    # Major Oak, RedOak, and Coder RDE are internal/proprietary tools with
-    # no public brand marks, so they intentionally have no icon entry here.
-}
-
 RESEARCH_TOOLS = sorted(
     {
         "Amplitude",
@@ -1163,8 +1060,7 @@ RESEARCH_TOOLS = sorted(
 )
 
 
-def footer(prefix="", gated=False):
-    gate_html = f"{GATE_MODAL}  <script src=\"{prefix}js/gate.js\" defer></script>\n" if gated else ""
+def footer(prefix=""):
     return f"""
   <footer class="site-footer">
     <div class="wrap">
@@ -1172,7 +1068,7 @@ def footer(prefix="", gated=False):
       <div><a href="mailto:samuelcweinberger@gmail.com">samuelcweinberger@gmail.com</a></div>
     </div>
   </footer>
-{gate_html}  <script src="{prefix}js/main.js"></script>
+  <script src="{prefix}js/main.js"></script>
 </body>
 </html>
 """
@@ -1183,7 +1079,8 @@ def build_case_blocks(case_href_prefix="cases/", prefix=""):
 
     The track is a native scroll-snap row (works with JS disabled); the
     prev/next buttons are progressively enhanced by the [data-pcarousel]
-    handler in js/main.js. Group headers carry the official brand logo.
+    handler in js/main.js. Group headers carry a quiet text-only company label;
+    each card names the company once, subtly, next to the "Read case" cue.
     """
     company_order = [
         ("robinhood", "Robinhood"),
@@ -1206,33 +1103,21 @@ def build_case_blocks(case_href_prefix="cases/", prefix=""):
         brand_cases = [c for c in CASES if c["brand"] == brand_key]
         cards = []
         for c in brand_cases:
-            badge = product_badge(c["brand"])
-            card_chip = brand_logo_chip(
-                c["brand"], prefix=prefix, extra_class="brand-chip-card"
-            )
             cards.append(
                 f"""            <a class="case-card case-{c['brand']} reveal" href="{case_href_prefix}{c['slug']}.html">
-              <div class="case-card-top">
-                <span class="case-num">{c['num']}</span>
-                {card_chip}
-              </div>
-              {badge}
+              <span class="case-num">{c['num']}</span>
               <h3>{c['title']}</h3>
               <p>{c['short']}</p>
-              <span class="case-card-cue">Read case <span aria-hidden="true">&rarr;</span></span>
+              <span class="case-card-cue"><span class="case-card-cue-label">Read case <span aria-hidden="true">&rarr;</span></span><span class="case-card-brand">{brand_label}</span></span>
             </a>"""
             )
         if not cards:
             continue
-        logo_chip = brand_logo_chip(brand_key, prefix=prefix, label=brand_label)
-        head_logo = (
-            f'          {logo_chip}\n' if logo_chip else ""
-        )
         industry = industries.get(brand_key, "other")
         case_blocks.append(
             f"""        <div class="company-group company-{brand_key} reveal" id="cases-{brand_key}" data-industry="{industry}">
           <div class="company-group-head">
-{head_logo}            <h3 class="company-heading">{brand_label}</h3>
+            <h3 class="company-heading">{brand_label}</h3>
           </div>
           <div class="product-carousel" data-pcarousel>
             <button type="button" class="pcar-btn pcar-prev" data-pcar-prev aria-label="Scroll to previous {brand_label} cases">&#8249;</button>
@@ -1362,12 +1247,12 @@ def write_home():
       <div class="wrap reveal">
         <p class="brand-band-label">Selected work across</p>
         <div class="brand-strip">
-          <a href="case-studies.html#cases-robinhood" title="Robinhood case studies"><img class="brand-tile" src="media/brands/robinhood-home.png" alt="Robinhood" loading="lazy" decoding="async" /></a>
-          <a href="case-studies.html#cases-fanduel" title="FanDuel case studies"><img class="brand-tile" src="media/brands/fanduel-home.png" alt="FanDuel" loading="lazy" decoding="async" /></a>
-          <a href="cases/fantasy-d2c-ideation.html" title="NFL Fantasy case study"><img class="brand-tile" src="media/brands/nfl-fantasy-home.png" alt="NFL Fantasy" loading="lazy" decoding="async" /></a>
-          <a href="cases/nfl-d2c-packaging.html" title="NFL+ case study"><img class="brand-tile" src="media/brands/nfl-plus-home.png" alt="NFL+" loading="lazy" decoding="async" /></a>
-          <a href="cases/verizon-superstadium.html" title="Verizon 5G SuperStadium case study"><img class="brand-tile" src="media/brands/verizon-5g-home.png" alt="Verizon 5G" loading="lazy" decoding="async" /></a>
-          <a href="cases/intel-trueview.html" title="Intel TrueView case study"><img class="brand-tile" src="media/brands/intel-home.png" alt="Intel" loading="lazy" decoding="async" /></a>
+          <a class="brand-name" href="case-studies.html#cases-robinhood" title="Robinhood case studies">Robinhood</a>
+          <a class="brand-name" href="case-studies.html#cases-fanduel" title="FanDuel case studies">FanDuel</a>
+          <a class="brand-name" href="cases/fantasy-d2c-ideation.html" title="NFL Fantasy case study">NFL Fantasy</a>
+          <a class="brand-name" href="cases/nfl-d2c-packaging.html" title="NFL+ case study">NFL+</a>
+          <a class="brand-name" href="cases/verizon-superstadium.html" title="Verizon 5G SuperStadium case study">Verizon</a>
+          <a class="brand-name" href="cases/intel-trueview.html" title="Intel TrueView case study">Intel</a>
         </div>
       </div>
     </section>
@@ -1662,16 +1547,8 @@ def write_skills_page():
 def write_research_tools_page():
     tiles = []
     for tool in RESEARCH_TOOLS:
-        icon_file = TOOL_ICONS.get(tool)
-        if icon_file:
-            icon_html = (
-                f'<span class="tool-icon-swatch">'
-                f'<img src="media/tool-icons/{icon_file}" alt="{tool} logo" loading="lazy" decoding="async" />'
-                f"</span>"
-            )
-        else:
-            initial = tool[0]
-            icon_html = f'<span class="tool-icon-fallback" aria-hidden="true">{initial}</span>'
+        # Typographic initial only — no third-party tool logos (copyright).
+        icon_html = f'<span class="tool-icon-fallback" aria-hidden="true">{tool[0]}</span>'
         tiles.append(
             f"""          <li class="tool-icon-tile">
             {icon_html}
@@ -1846,7 +1723,7 @@ def write_education_page():
     )
     athletics_rows = "\n".join(
         f"""          <p class="resume-athletics">
-            {brand_logo_chip(a['brand'], label=a['label'])}
+            <span class="athletics-team athletics-{a['brand']}">{a['label']}</span>
             <span>{a['text']}</span>
           </p>"""
         for a in RESUME_ATHLETICS
@@ -1955,7 +1832,7 @@ def render_nfl_media(case):
         <div class="case-nfl-media-frame case-nfl-brandcard-frame">
           <span class="case-nfl-brandcard-facet" aria-hidden="true"></span>
           <div class="case-nfl-brandcard-inner">
-            <img class="case-nfl-brandcard-logo" src="../media/{card['logo']}" alt="{card.get('logo_alt', '')}" />
+            <span class="case-nfl-brandcard-wordmark">{card['wordmark']}</span>
             {divider_html}
             {tagline_html}
           </div>
@@ -2065,9 +1942,6 @@ def write_case_nfl(case, index):
     prev_c = CASES[index - 1] if index > 0 else None
     next_c = CASES[index + 1] if index < len(CASES) - 1 else None
 
-    badge = product_badge(
-        case["brand"], prefix="../", label_override=case.get("badge_label")
-    )
     subtitle_html = (
         f'<p class="case-nfl-subtitle">{case["subtitle"]}</p>'
         if case.get("subtitle")
@@ -2164,7 +2038,6 @@ def write_case_nfl(case, index):
             body_classes=["case-nfl"],
             page_path=f"cases/{case['slug']}.html",
             description=case.get("short") or case.get("summary"),
-            gate_slug=case["slug"],
         )
         + f"""
   <main class="case-page case-nfl-page">
@@ -2172,7 +2045,6 @@ def write_case_nfl(case, index):
       <div class="crumb"><a href="../case-studies.html">Case studies</a> <span aria-hidden="true">/</span> {case['num']}</div>
       <div class="case-nfl-grid">
         <div class="case-nfl-left reveal">
-          {badge}
           <h1 class="case-nfl-title">{case['title']}</h1>
           <span class="case-nfl-underline" aria-hidden="true"></span>
           {subtitle_html}
@@ -2196,7 +2068,7 @@ def write_case_nfl(case, index):
     </div>
   </main>
 """
-        + footer(prefix="../", gated=True)
+        + footer(prefix="../")
     )
     (CASES_DIR / f"{case['slug']}.html").write_text(html)
 
@@ -2397,9 +2269,6 @@ def write_case(case, index):
         if next_c
         else "<span></span>"
     )
-    badge = product_badge(
-        case["brand"], prefix="../", label_override=case.get("badge_label")
-    )
     subtitle_html = (
         f'<p class="case-subtitle">{case["subtitle"]}</p>' if case.get("subtitle") else ""
     )
@@ -2446,14 +2315,12 @@ def write_case(case, index):
             nav_active="cases",
             page_path=f"cases/{case['slug']}.html",
             description=case.get("short") or case.get("summary"),
-            gate_slug=case["slug"],
         )
         + f"""
   <main class="case-page">{toc_html}
     <header class="case-hero">
       <div class="wrap">
         <div class="crumb"><a href="../case-studies.html">Case studies</a> <span aria-hidden="true">/</span> {case['num']}</div>
-        {badge}
         <h1>{case['title']}</h1>
         {subtitle_html}
         {hero_desc_html}
@@ -2475,7 +2342,7 @@ def write_case(case, index):
     </div>
   </main>
 """
-        + footer(prefix="../", gated=True)
+        + footer(prefix="../")
     )
     (CASES_DIR / f"{case['slug']}.html").write_text(html)
 

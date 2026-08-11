@@ -6,7 +6,7 @@
   <title>Sam Weinberger</title>
   <meta name="description" content="Samuel Weinberger — applied cognitive and social psychologist turned UX Design Researcher and Research Engineer. Bridging human behavior, analytics, and interactive design." />
   <meta name="color-scheme" content="dark light" />
-  <script>(function(){try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark'){t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+  <script>(function(){document.documentElement.classList.add('js');try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark'){t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Sam Weinberger" />
   <meta property="og:title" content="Sam Weinberger" />
@@ -224,12 +224,12 @@
       <div class="wrap reveal">
         <p class="brand-band-label">Selected work across</p>
         <div class="brand-strip">
-          <a href="case-studies.html#cases-robinhood" title="Robinhood case studies"><img class="brand-tile" src="media/brands/robinhood-home.png" alt="Robinhood" loading="lazy" decoding="async" /></a>
-          <a href="case-studies.html#cases-fanduel" title="FanDuel case studies"><img class="brand-tile" src="media/brands/fanduel-home.png" alt="FanDuel" loading="lazy" decoding="async" /></a>
-          <a href="cases/fantasy-d2c-ideation.html" title="NFL Fantasy case study"><img class="brand-tile" src="media/brands/nfl-fantasy-home.png" alt="NFL Fantasy" loading="lazy" decoding="async" /></a>
-          <a href="cases/nfl-d2c-packaging.html" title="NFL+ case study"><img class="brand-tile" src="media/brands/nfl-plus-home.png" alt="NFL+" loading="lazy" decoding="async" /></a>
-          <a href="cases/verizon-superstadium.html" title="Verizon 5G SuperStadium case study"><img class="brand-tile" src="media/brands/verizon-5g-home.png" alt="Verizon 5G" loading="lazy" decoding="async" /></a>
-          <a href="cases/intel-trueview.html" title="Intel TrueView case study"><img class="brand-tile" src="media/brands/intel-home.png" alt="Intel" loading="lazy" decoding="async" /></a>
+          <a class="brand-name" href="case-studies.html#cases-robinhood" title="Robinhood case studies">Robinhood</a>
+          <a class="brand-name" href="case-studies.html#cases-fanduel" title="FanDuel case studies">FanDuel</a>
+          <a class="brand-name" href="cases/fantasy-d2c-ideation.html" title="NFL Fantasy case study">NFL Fantasy</a>
+          <a class="brand-name" href="cases/nfl-d2c-packaging.html" title="NFL+ case study">NFL+</a>
+          <a class="brand-name" href="cases/verizon-superstadium.html" title="Verizon 5G SuperStadium case study">Verizon</a>
+          <a class="brand-name" href="cases/intel-trueview.html" title="Intel TrueView case study">Intel</a>
         </div>
       </div>
     </section>

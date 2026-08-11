@@ -375,50 +375,29 @@ html[data-theme="light"] .theme-icon-sun {
 .brand-strip {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  gap: 0.85rem;
+  align-items: baseline;
+  gap: 0.5rem 1.6rem;
   margin: 1.1rem 0 0;
 }
 
-.brand-strip a {
-  display: inline-flex;
-  align-items: center;
+/* Text-only company names — no third-party logo images anywhere on the site. */
+.brand-strip .brand-name {
+  font-family: var(--display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--muted);
   text-decoration: none;
-  border-radius: 0.55rem;
-  transition: transform 0.25s var(--ease), opacity 0.2s ease;
+  transition: color 0.2s ease;
 }
 
-.brand-strip a:hover {
-  transform: translateY(-2px);
+.brand-strip .brand-name:hover {
+  color: var(--ink);
 }
 
-.brand-strip a:focus-visible {
+.brand-strip .brand-name:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 4px;
-}
-
-/* Full-bleed brand tiles supplied for the homepage strip. */
-.brand-strip .brand-tile {
-  display: block;
-  height: 2.75rem;
-  width: auto;
-  max-width: 8.75rem;
-  object-fit: contain;
-  border-radius: 0.55rem;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.32);
-  opacity: 0.96;
-  transition: opacity 0.2s ease;
-}
-
-.brand-strip a:hover .brand-tile {
-  opacity: 1;
-}
-
-.brand-strip .brand-tile[alt="NFL+"],
-.brand-strip .brand-tile[alt="Ipsos"] {
-  width: 2.75rem;
-  max-width: 2.75rem;
-  object-fit: cover;
 }
 
 .notable-logos img[alt="Robinhood"] {
@@ -875,74 +854,6 @@ html[data-theme="light"] .theme-icon-sun {
   color: var(--faint);
   font-size: 0.85rem;
   white-space: nowrap;
-}
-
-/* Product brand identity */
-.product-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  margin-bottom: 0.55rem;
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  text-transform: none;
-}
-
-.product-mark {
-  width: 1.15rem;
-  height: 1.15rem;
-  object-fit: contain;
-  flex-shrink: 0;
-}
-
-.product-mark-rh {
-  display: inline-block;
-  width: 0.85rem;
-  height: 0.85rem;
-  border-radius: 50%;
-  background: #00c805;
-  box-shadow: 0 0 0 2px rgba(0, 200, 5, 0.25);
-}
-
-.product-mark-nfl {
-  display: inline-block;
-  width: 0.85rem;
-  height: 0.85rem;
-  border-radius: 0.15rem;
-  background: linear-gradient(135deg, #013369 50%, #d50a0a 50%);
-}
-
-.product-robinhood .product-name { color: #00c805; }
-.product-fanduel .product-name { color: #4c9aff; }
-.product-nfl .product-name { color: #ffffff; }
-.product-intel .product-name { color: #ffffff; }
-.product-ipsos .product-name { color: #c4a35a; }
-.product-cgu .product-name { color: #a67c52; }
-.product-burkmont .product-name { color: #e8a87c; }
-
-.product-mark-ipsos-img,
-.product-mark-cgu-img {
-  width: 22px;
-  height: 22px;
-  object-fit: contain;
-  border-radius: 0.2rem;
-}
-
-.product-mark-burkmont {
-  display: inline-block;
-  width: 0.85rem;
-  height: 0.85rem;
-  border-radius: 0.15rem;
-  background: linear-gradient(135deg, #1a1a1a 40%, #e56020 40%);
-}
-
-.product-mark-intel {
-  display: inline-block;
-  width: 0.85rem;
-  height: 0.85rem;
-  border-radius: 0.12rem;
-  background: linear-gradient(135deg, #0071c5 0%, #00c7fd 100%);
 }
 
 .company-group {
@@ -1404,22 +1315,6 @@ body.brand-nfl::before {
   transform: translateY(-1px);
 }
 
-.tool-icon-swatch {
-  width: 34px;
-  height: 34px;
-  display: grid;
-  place-items: center;
-  background: #f4f4f2;
-  border-radius: 0.4rem;
-  flex-shrink: 0;
-}
-
-.tool-icon-swatch img {
-  width: 22px;
-  height: 22px;
-  object-fit: contain;
-}
-
 .tool-icon-fallback {
   width: 34px;
   height: 34px;
@@ -1483,10 +1378,6 @@ body.brand-nfl::before {
 
 .crumb a:hover {
   color: var(--ink);
-}
-
-.case-hero .product-badge {
-  margin-bottom: 0.9rem;
 }
 
 .case-hero h1 {
@@ -2307,13 +2198,15 @@ body.brand-nfl::before {
   color: #f0f3f6;
 }
 
-.reveal {
+/* Scroll-reveal only applies when JS is running (html.js is set by the
+   inline pre-paint script); without JS the content is simply visible. */
+html.js .reveal {
   opacity: 0;
   transform: translateY(18px);
   transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
 }
 
-.reveal.is-visible {
+html.js .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -2454,6 +2347,13 @@ body.brand-nfl::before {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+}
+
+/* Team names are plain text (no athletics logos — copyright). */
+.athletics-team {
+  font-weight: 600;
+  color: var(--muted);
+  white-space: nowrap;
 }
 
 .resume-athletics {
@@ -2680,10 +2580,6 @@ body.case-nfl .site-footer {
   gap: 3rem;
   align-items: start;
   margin-top: 1.5rem;
-}
-
-.case-nfl-left .product-badge {
-  margin-bottom: 1rem;
 }
 
 .case-nfl-title {
@@ -3024,10 +2920,10 @@ body.case-nfl .site-footer {
   background: #0b1a33;
 }
 
-/* Brand hero card — sleek NFL+ black product title card in the media slot.
-   The source wordmark is white/red on pure black, so the card keeps a pure
-   black center (the logo box merges seamlessly) and layers subtle blue
-   geometric facets into the corners to echo the page's motif. */
+/* Brand hero card — sleek black product title card in the media slot.
+   The product name is set typographically (no logo image); the card keeps a
+   pure black center and layers subtle blue geometric facets into the corners
+   to echo the page's motif. */
 .case-nfl-brandcard-frame {
   aspect-ratio: 16 / 9;
   display: flex;
@@ -3061,14 +2957,14 @@ body.case-nfl .site-footer {
   text-align: center;
 }
 
-.case-nfl-brandcard-logo {
-  display: block;
-  width: min(50%, 190px);
-  height: auto;
-  /* Preserve native aspect ratio; keep display size modest so the small
-     raster wordmark stays crisp. The source PNG is fully opaque black, so
-     no drop-shadow/blend is used — it would only outline the box. The mark
-     merges into the pure-black card center for a seamless title card. */
+/* Typographic product wordmark — plain text, no logo image (copyright). */
+.case-nfl-brandcard-wordmark {
+  font-family: var(--display);
+  font-size: clamp(1.9rem, 4.2vw, 2.6rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  color: #ffffff;
 }
 
 .case-nfl-brandcard-divider {
@@ -3203,71 +3099,6 @@ body.case-nfl .site-footer {
 }
 
 /* ============================================================
-   Official brand marks — light "chip" so trademarked marks stay
-   crisp and legible on the dark theme.
-   ============================================================ */
-.brand-chip {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 2.3rem;
-  padding: 0 0.6rem;
-  background: #ffffff;
-  border-radius: 0.6rem;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.28);
-}
-
-.brand-chip img {
-  height: auto;
-  width: auto;
-  max-height: 1.45rem;
-  max-width: 7.5rem;
-  object-fit: contain;
-  opacity: 1;
-  filter: none;
-}
-
-.brand-chip-lg {
-  height: 3rem;
-  padding: 0 0.8rem;
-  border-radius: 0.7rem;
-}
-
-.brand-chip-lg img {
-  max-height: 1.95rem;
-  max-width: 9rem;
-}
-
-/* Portrait shield reads better a touch taller than the wordmarks. */
-.brand-chip-nfl img {
-  max-height: 1.85rem;
-}
-.brand-chip-lg.brand-chip-nfl img {
-  max-height: 2.5rem;
-}
-.brand-chip-cgu img {
-  border-radius: 0.35rem;
-}
-
-/* USC interlocking "SC" mark is portrait, like the NFL shield. */
-.brand-chip-usc img {
-  max-height: 1.85rem;
-}
-.brand-chip-lg.brand-chip-usc img {
-  max-height: 2.5rem;
-}
-
-/* Stanford block-S-with-tree mark is portrait; match the USC/NFL height. */
-.brand-chip-stanford img {
-  max-height: 1.85rem;
-}
-.brand-chip-lg.brand-chip-stanford img {
-  max-height: 2.5rem;
-}
-
-
-/* ============================================================
    Case-studies index — industry filter pills
    ============================================================ */
 .filter-bar {
@@ -3336,8 +3167,12 @@ body.case-nfl .site-footer {
   margin-bottom: 1rem;
 }
 
+/* One quiet identifier per group: a small muted text label, no logo,
+   overriding the brand-colored heading tints used elsewhere. */
 .company-group-head .company-heading {
   margin: 0;
+  font-size: 0.78rem;
+  color: var(--faint);
 }
 
 .product-carousel {
@@ -3422,33 +3257,6 @@ body.case-nfl .site-footer {
   box-shadow: 0 16px 34px rgba(0, 0, 0, 0.4);
 }
 
-/* Small brand mark chip in the card's top-right corner. */
-.brand-chip-card {
-  height: 1.65rem;
-  padding: 0 0.45rem;
-  border-radius: 0.45rem;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.25);
-}
-
-.brand-chip-card img {
-  max-height: 1rem;
-  max-width: 4.25rem;
-}
-
-.brand-chip-card.brand-chip-nfl img {
-  max-height: 1.3rem;
-}
-
-.case-card-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.case-card .product-badge {
-  margin-bottom: 0.15rem;
-}
-
 .case-card h3 {
   margin: 0.1rem 0 0;
   font-family: var(--display);
@@ -3472,6 +3280,10 @@ body.case-nfl .site-footer {
 .case-card-cue {
   margin-top: auto;
   padding-top: 0.65rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
   font-size: 0.82rem;
   font-weight: 600;
   color: var(--faint);
@@ -3479,6 +3291,21 @@ body.case-nfl .site-footer {
 }
 .case-card:hover .case-card-cue {
   color: var(--ink);
+}
+
+/* Subtle text-only company cue — quiet by design (no chip, no logo). */
+.case-card-brand {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--faint);
+  opacity: 0.65;
+  white-space: nowrap;
+}
+.case-card:hover .case-card-brand {
+  opacity: 0.9;
+  color: var(--faint);
 }
 
 /* Per-company accents mirror the existing index color language. */
@@ -3690,7 +3517,7 @@ body.case-nfl .site-footer {
     navigation: none;
   }
 
-  .reveal {
+  html.js .reveal {
     opacity: 1;
     transform: none;
     transition: none;
@@ -3800,17 +3627,7 @@ html[data-theme="light"] .btn-ghost:hover {
   border-color: rgba(23, 27, 32, 0.32);
 }
 
-html[data-theme="light"] .brand-strip .brand-tile {
-  box-shadow: 0 2px 10px rgba(24, 30, 38, 0.16);
-}
-
-/* Brand chips: keep the white chip, soften the halo for paper. */
-html[data-theme="light"] .brand-chip {
-  border-color: rgba(23, 27, 32, 0.1);
-  box-shadow: 0 2px 8px rgba(24, 30, 38, 0.12);
-}
-
-/* Company headings / badges — darken brand tints for contrast on paper. */
+/* Company headings — darken brand tints for contrast on paper. */
 html[data-theme="light"] .company-robinhood .company-heading { color: #009606; }
 html[data-theme="light"] .company-fanduel .company-heading { color: #1668d6; }
 html[data-theme="light"] .company-nfl .company-heading { color: #013369; }
@@ -3818,13 +3635,8 @@ html[data-theme="light"] .company-ipsos .company-heading { color: #96742c; }
 html[data-theme="light"] .company-cgu .company-heading { color: #7d5834; }
 html[data-theme="light"] .company-burkmont .company-heading { color: #c24e12; }
 
-html[data-theme="light"] .product-robinhood .product-name { color: #009606; }
-html[data-theme="light"] .product-fanduel .product-name { color: #1668d6; }
-html[data-theme="light"] .product-nfl .product-name { color: #013369; }
-html[data-theme="light"] .product-intel .product-name { color: #0068b5; }
-html[data-theme="light"] .product-ipsos .product-name { color: #96742c; }
-html[data-theme="light"] .product-cgu .product-name { color: #7d5834; }
-html[data-theme="light"] .product-burkmont .product-name { color: #c24e12; }
+/* Case-index group headers stay quiet in light mode too. */
+html[data-theme="light"] .company-group-head .company-heading { color: var(--faint); }
 
 /* Case cards & rows — titles go ink; accents darken. */
 html[data-theme="light"] .case-card h3,
@@ -3949,171 +3761,3 @@ html[data-theme="light"] body.case-nfl .site-header {
   background: rgba(20, 62, 150, 0.55);
 }
 
-/* ============================================================
-   Case-study passcode gate. While html[data-case-locked] is set
-   (by the inline head script on case pages), the case content is
-   hidden entirely and the gate dialog covers the viewport. The
-   dialog is styled like the site's cards and works in both themes.
-   ============================================================ */
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-.case-gate {
-  display: none;
-}
-
-html[data-case-locked] body {
-  overflow: hidden;
-}
-
-/* Content is removed from the layout while locked — nothing readable
-   behind or beneath the scrim, and nothing to scroll to. */
-html[data-case-locked] main {
-  display: none;
-}
-
-html[data-case-locked] .case-gate {
-  display: grid;
-  /* One explicit column clamped to the viewport so the card can never
-     exceed it (a bare auto column would let the card overflow on phones). */
-  grid-template-columns: minmax(0, 30rem);
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  inset: 0;
-  z-index: 60;
-  padding: 1.25rem;
-  overflow-y: auto;
-  background: rgba(7, 9, 12, 0.7);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-}
-
-.case-gate-card {
-  width: 100%;
-  background: var(--bg-soft);
-  border: 1px solid var(--line);
-  border-radius: 1.1rem;
-  padding: 2.1rem 2.1rem 2rem;
-  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.5);
-  animation: rise 0.5s var(--ease);
-}
-
-.case-gate-kicker {
-  margin: 0;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--faint);
-}
-
-.case-gate-title {
-  margin: 0.7rem 0 0;
-  font-family: var(--display);
-  font-weight: 500;
-  font-size: 1.55rem;
-  line-height: 1.25;
-  letter-spacing: -0.015em;
-  color: var(--ink);
-}
-
-.case-gate-desc {
-  margin: 0.65rem 0 0;
-  color: var(--muted);
-  font-size: 0.96rem;
-  line-height: 1.6;
-}
-
-.case-gate-form {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  margin-top: 1.35rem;
-}
-
-.case-gate-input {
-  flex: 1 1 11rem;
-  min-width: 0;
-  padding: 0.8rem 1.1rem;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: var(--bg);
-  color: var(--ink);
-  font-family: var(--sans);
-  font-size: 0.95rem;
-}
-
-.case-gate-input::placeholder {
-  color: var(--faint);
-}
-
-.case-gate-input:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-}
-
-.case-gate-input[aria-invalid="true"] {
-  border-color: #e5484d;
-}
-
-.case-gate-error {
-  margin: 0.65rem 0 0;
-  font-size: 0.88rem;
-  color: #ff8a80;
-}
-
-.case-gate-or {
-  margin: 1.5rem 0 0;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--faint);
-}
-
-.case-gate-request {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  margin-top: 0.7rem;
-}
-
-.btn-linkedin {
-  background: #0a66c2;
-  color: #ffffff;
-}
-
-.btn-linkedin:hover {
-  background: #0c74db;
-}
-
-html[data-theme="light"] .case-gate-error {
-  color: #b42318;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .case-gate-card {
-    animation: none;
-  }
-}
-
-@media (max-width: 560px) {
-  .case-gate-card {
-    padding: 1.6rem 1.4rem 1.5rem;
-  }
-
-  .case-gate-request .btn {
-    width: 100%;
-    justify-content: center;
-  }
-}
