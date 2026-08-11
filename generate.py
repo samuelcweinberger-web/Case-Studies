@@ -1174,7 +1174,7 @@ def write_home():
       <div class="wrap hero-copy">
         <div class="hero-kicker">AI-Driven Insights</div>
         <h1 class="hero-brand">Sam<br />Weinberger</h1>
-        <p class="hero-role">UX Engineer and Design Researcher</p>
+        <p class="hero-role">UX Design Research | Research Engineer</p>
         <p class="hero-lede">Applied Cognitive and Social Psychologist with 9+ years of mixed-methods research across fintech, sports media, and healthcare—connecting usability, field research, and AI-augmented workflows to product and revenue outcomes.</p>
         <div class="brand-strip" aria-label="Brands worked with">
           <a href="case-studies.html#cases-robinhood" title="Robinhood case studies"><img class="brand-tile" src="media/brands/robinhood-home.png" alt="Robinhood" loading="lazy" /></a>
