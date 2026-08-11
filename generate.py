@@ -754,7 +754,7 @@ def header(active=None, prefix="", brand=None, nav_active=None, body_classes=Non
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{title}</title>
-  <meta name="description" content="Samuel Weinberger — applied cognitive and social psychologist turned UX Engineer and Design Researcher. Bridging human behavior, analytics, and interactive design." />
+  <meta name="description" content="Samuel Weinberger — applied cognitive and social psychologist turned UX Design Researcher and Research Engineer. Bridging human behavior, analytics, and interactive design." />
   <link rel="stylesheet" href="{prefix}css/styles.css" />
 </head>
 <body{brand_class}>
@@ -790,7 +790,7 @@ def product_badge(brand_key, prefix="", label_override=None):
 
 
 ABOUT_COPY = """
-          <p>I’m an applied cognitive and social psychologist turned UX Engineer and Design Researcher. My graduate work in human motivation, persuasion, and behavior change is the foundation for how I approach product strategy—bridging human behavior, data analytics, and interactive design. From FDA-regulated medical device research to the NFL Fantasy app, four years scaling FanDuel’s sportsbook, and now Robinhood’s prediction markets, I’ve run mixed-methods research across healthcare, sports media, and fintech—always tying insights to product and revenue outcomes.</p>
+          <p>I’m an applied cognitive and social psychologist turned UX Design Researcher and Research Engineer. My graduate work in human motivation, persuasion, and behavior change is the foundation for how I approach product strategy—bridging human behavior, data analytics, and interactive design. From FDA-regulated medical device research to the NFL Fantasy app, four years scaling FanDuel’s sportsbook, and now Robinhood’s prediction markets, I’ve run mixed-methods research across healthcare, sports media, and fintech—always tying insights to product and revenue outcomes.</p>
           <p>The “engineering” in my title isn’t backend software; it’s the research operation itself. I build automated pipelines that field studies in days, telemetry and dashboards that connect what users say to what they actually do, and interactive prototypes built mid-interview—increasingly augmented by generative AI. That infrastructure links research to analytics, design, and product, so insights arrive fast enough to shape strategy and turn complex human behavior into product momentum.</p>
 """
 
