@@ -716,6 +716,43 @@ THEME_SCRIPT = (
     "document.documentElement.setAttribute('data-theme',t);}catch(e){}})();"
 )
 
+# Case-study passcode gate, pre-paint half. One case study is free; the slug
+# of that first case is remembered so revisits stay free. Any *other* case
+# sets data-case-locked, which CSS uses to hide the content and show the
+# gate dialog (wired up by js/gate.js). Deliberately client-side only —
+# the HTML source remains readable to anyone determined.
+def gate_script(slug):
+    return (
+        "(function(){try{"
+        "if(localStorage.getItem('caseGateUnlocked')==='true')return;"
+        f"var s='{slug}';"
+        "var f=localStorage.getItem('caseGateFreeSlug');"
+        "if(!f){localStorage.setItem('caseGateFreeSlug',s);return;}"
+        "if(f!==s){document.documentElement.setAttribute('data-case-locked','');}"
+        "}catch(e){}})();"
+    )
+
+
+GATE_MODAL = """  <div class="case-gate" data-case-gate role="dialog" aria-modal="true" aria-labelledby="case-gate-title" aria-describedby="case-gate-desc">
+    <div class="case-gate-card">
+      <p class="case-gate-kicker">Protected case study</p>
+      <h2 class="case-gate-title" id="case-gate-title">Please enter the passcode to view</h2>
+      <p class="case-gate-desc" id="case-gate-desc">You&rsquo;ve read your complimentary case study. Enter the passcode to unlock the full library&mdash;or request one, it only takes a moment.</p>
+      <form class="case-gate-form" data-gate-form novalidate>
+        <label class="visually-hidden" for="case-gate-code">Passcode</label>
+        <input class="case-gate-input" id="case-gate-code" name="passcode" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Enter passcode" />
+        <button type="submit" class="btn btn-primary">Unlock</button>
+      </form>
+      <p class="case-gate-error" data-gate-error role="alert" hidden>That passcode isn&rsquo;t quite right&mdash;please try again.</p>
+      <p class="case-gate-or">Don&rsquo;t have a passcode?</p>
+      <div class="case-gate-request">
+        <a class="btn btn-linkedin" href="https://www.linkedin.com/in/samuelcweinberger" target="_blank" rel="noopener">Request access on LinkedIn</a>
+        <a class="btn btn-ghost" href="mailto:samuelcweinberger@gmail.com?subject=Portfolio%20passcode%20request">Request via email</a>
+      </div>
+    </div>
+  </div>
+"""
+
 SUN_ICON = (
     '<svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" width="16" height="16" fill="none" '
     'stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">'
@@ -737,7 +774,7 @@ def _meta_escape(text):
 
 
 def header(active=None, prefix="", brand=None, nav_active=None, body_classes=None,
-           page_path="", description=None):
+           page_path="", description=None, gate_slug=None):
     classes = []
     if brand:
         classes.append(f"brand-{brand}")
@@ -762,7 +799,7 @@ def header(active=None, prefix="", brand=None, nav_active=None, body_classes=Non
   <title>{title}</title>
   <meta name="description" content="{desc}" />
   <meta name="color-scheme" content="dark light" />
-  <script>{THEME_SCRIPT}</script>
+  <script>{THEME_SCRIPT}</script>{(chr(10) + '  <script>' + gate_script(gate_slug) + '</script>') if gate_slug else ''}
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Sam Weinberger" />
   <meta property="og:title" content="{og_title}" />
@@ -1125,7 +1162,8 @@ RESEARCH_TOOLS = sorted(
 )
 
 
-def footer(prefix=""):
+def footer(prefix="", gated=False):
+    gate_html = f"{GATE_MODAL}  <script src=\"{prefix}js/gate.js\" defer></script>\n" if gated else ""
     return f"""
   <footer class="site-footer">
     <div class="wrap">
@@ -1133,7 +1171,7 @@ def footer(prefix=""):
       <div><a href="mailto:samuelcweinberger@gmail.com">samuelcweinberger@gmail.com</a></div>
     </div>
   </footer>
-  <script src="{prefix}js/main.js"></script>
+{gate_html}  <script src="{prefix}js/main.js"></script>
 </body>
 </html>
 """
@@ -2122,6 +2160,7 @@ def write_case_nfl(case, index):
             body_classes=["case-nfl"],
             page_path=f"cases/{case['slug']}.html",
             description=case.get("short") or case.get("summary"),
+            gate_slug=case["slug"],
         )
         + f"""
   <main class="case-page case-nfl-page">
@@ -2153,7 +2192,7 @@ def write_case_nfl(case, index):
     </div>
   </main>
 """
-        + footer(prefix="../")
+        + footer(prefix="../", gated=True)
     )
     (CASES_DIR / f"{case['slug']}.html").write_text(html)
 
@@ -2403,6 +2442,7 @@ def write_case(case, index):
             nav_active="cases",
             page_path=f"cases/{case['slug']}.html",
             description=case.get("short") or case.get("summary"),
+            gate_slug=case["slug"],
         )
         + f"""
   <main class="case-page">{toc_html}
@@ -2431,7 +2471,7 @@ def write_case(case, index):
     </div>
   </main>
 """
-        + footer(prefix="../")
+        + footer(prefix="../", gated=True)
     )
     (CASES_DIR / f"{case['slug']}.html").write_text(html)
 

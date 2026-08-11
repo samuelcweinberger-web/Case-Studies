@@ -7,6 +7,7 @@
   <meta name="description" content="Led usability and in-stadium field research on Verizon 5G’s SuperStadium experience—now built into the official NFL app and central to a $1B+ NFL–Verizon partnership." />
   <meta name="color-scheme" content="dark light" />
   <script>(function(){try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark'){t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+  <script>(function(){try{if(localStorage.getItem('caseGateUnlocked')==='true')return;var s='verizon-superstadium';var f=localStorage.getItem('caseGateFreeSlug');if(!f){localStorage.setItem('caseGateFreeSlug',s);return;}if(f!==s){document.documentElement.setAttribute('data-case-locked','');}}catch(e){}})();</script>
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Sam Weinberger" />
   <meta property="og:title" content="Verizon 5G SuperStadium: The In-Stadium Fan Experience — Sam Weinberger" />
@@ -148,6 +149,25 @@
       <div><a href="mailto:samuelcweinberger@gmail.com">samuelcweinberger@gmail.com</a></div>
     </div>
   </footer>
+  <div class="case-gate" data-case-gate role="dialog" aria-modal="true" aria-labelledby="case-gate-title" aria-describedby="case-gate-desc">
+    <div class="case-gate-card">
+      <p class="case-gate-kicker">Protected case study</p>
+      <h2 class="case-gate-title" id="case-gate-title">Please enter the passcode to view</h2>
+      <p class="case-gate-desc" id="case-gate-desc">You&rsquo;ve read your complimentary case study. Enter the passcode to unlock the full library&mdash;or request one, it only takes a moment.</p>
+      <form class="case-gate-form" data-gate-form novalidate>
+        <label class="visually-hidden" for="case-gate-code">Passcode</label>
+        <input class="case-gate-input" id="case-gate-code" name="passcode" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Enter passcode" />
+        <button type="submit" class="btn btn-primary">Unlock</button>
+      </form>
+      <p class="case-gate-error" data-gate-error role="alert" hidden>That passcode isn&rsquo;t quite right&mdash;please try again.</p>
+      <p class="case-gate-or">Don&rsquo;t have a passcode?</p>
+      <div class="case-gate-request">
+        <a class="btn btn-linkedin" href="https://www.linkedin.com/in/samuelcweinberger" target="_blank" rel="noopener">Request access on LinkedIn</a>
+        <a class="btn btn-ghost" href="mailto:samuelcweinberger@gmail.com?subject=Portfolio%20passcode%20request">Request via email</a>
+      </div>
+    </div>
+  </div>
+  <script src="../js/gate.js" defer></script>
   <script src="../js/main.js"></script>
 </body>
 </html>
