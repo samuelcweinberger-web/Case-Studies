@@ -840,11 +840,11 @@ RESUME_EXPERIENCE = [
         "bullets": [
             (
                 "Growth &amp; Expansion",
-                'Combined in-depth interviews and behavioral segmentation to identify key factors limiting prediction market engagement. Designed and tested multifaceted solutions that drove an <a href="cases/diversify-single-category.html">11% increase in engagement in new markets</a>, accounting for ~24% of total trade volume.',
+                'Combined in-depth interviews and behavioral segmentation to identify key factors limiting prediction market engagement. Designed and tested multifaceted solutions that drove an <a href="cases/diversify-single-category.html">11% increase in engagement in new markets</a>, with the new tools quickly becoming a meaningful share of total trade volume.',
             ),
             (
                 "Retention Strategy",
-                'Diagnosed first-time-user friction outside company control that was driving 7–8 figure monthly losses from user abandonment; recommended a simple messaging strategy that reduced drop-off significantly, <a href="cases/first-trade-recovery.html">recovering ~$12M in monthly revenue</a> (70% of projected monthly losses).',
+                'Diagnosed first-time-user friction outside company control that was driving substantial monthly losses from user abandonment; recommended a simple messaging strategy that reduced drop-off significantly, <a href="cases/first-trade-recovery.html">recovering roughly 70% of projected monthly losses</a>.',
             ),
             (
                 "AI Research Automation",
@@ -861,19 +861,19 @@ RESUME_EXPERIENCE = [
         "bullets": [
             (
                 "Responsible Gaming",
-                "Built and psychometrically validated a proprietary Responsible Gaming Sentiment Scale and the risk-prevention tools for users, raising the share of users that meet regulatory standards from 78% to 92%.",
+                "Built and psychometrically validated a proprietary Responsible Gaming Sentiment Scale and the risk-prevention tools for users, raising the share of users that meet regulatory standards by double digits to more than 9 in 10.",
             ),
             (
                 "Wallet Optimization",
-                "Diagnosed a 65% drop-off at wallet/banking setup via triangulated mixed-methods research (Amplitude funnel analysis, moderated interviews, large scale survey) generating ~$8M boost in handle from first-time deposits.",
+                "Diagnosed steep drop-off at wallet/banking setup via triangulated mixed-methods research (Amplitude funnel analysis, moderated interviews, large scale survey) generating a multimillion-dollar boost in handle from first-time deposits.",
             ),
             (
                 "ACH Adoption",
-                'Identified barriers and developed targeted messaging that <a href="cases/ach-adoption.html">improved ACH adoption from 20% to 32%</a>, reducing account takeovers from 7–8% to under 4%.',
+                'Identified barriers and developed targeted messaging that <a href="cases/ach-adoption.html">roughly doubled ACH adoption</a>, cutting account takeovers roughly in half.',
             ),
             (
                 "Cross-sell Conversion",
-                "Drove ~150K new Sportsbook customers that generated a 7-figure increase in monthly revenue from solutions recommended to improve promotional offers (i.e., Bet $5 and Get $200).",
+                "Drove 100K+ new Sportsbook customers that generated a 7-figure increase in monthly revenue from solutions recommended to improve promotional offers (i.e., Bet $5 and Get $200).",
             ),
             (
                 "Team Scaling",
@@ -890,7 +890,7 @@ RESUME_EXPERIENCE = [
         "bullets": [
             (
                 "Onboarding &amp; Acquisition",
-                "Identified onboarding friction and developed messaging strategies that cut support tickets by 30% and reduced annual costs by $1.2M, helping grow the user base from 1.5M to +20M.",
+                "Identified onboarding friction and developed messaging strategies that cut support tickets by 30% and reduced annual costs by seven figures, helping grow the user base from 1.5M to +20M.",
             ),
             (
                 "Benchmarking &amp; Competitive Analysis",
@@ -907,7 +907,7 @@ RESUME_EXPERIENCE = [
         "bullets": [
             (
                 "Fantasy+ Tools",
-                'Led generative and formative research on a small cross-functional team to develop and test in-app features that shipped — <a href="cases/fantasy-d2c-ideation.html">converting 45% of users and generating $920K in revenue</a>.',
+                'Led generative and formative research on a small cross-functional team to develop and test in-app features that shipped — <a href="cases/fantasy-d2c-ideation.html">converting nearly half of active users and generating nearly $1M in revenue</a>.',
             ),
             (
                 "NFL+ Pricing &amp; Packaging",
