@@ -4,7 +4,28 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Media — Sam Weinberger</title>
-  <meta name="description" content="Samuel Weinberger — applied cognitive and social psychologist turned UX Design Researcher and Research Engineer. Bridging human behavior, analytics, and interactive design." />
+  <meta name="description" content="Media and gallery — immersive prototypes with Intel and Verizon, Robinhood prediction-market design changes, FanDuel benchmarking, and NFL Fantasy tools." />
+  <meta name="color-scheme" content="dark light" />
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark'){t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Sam Weinberger" />
+  <meta property="og:title" content="Media — Sam Weinberger" />
+  <meta property="og:description" content="Media and gallery — immersive prototypes with Intel and Verizon, Robinhood prediction-market design changes, FanDuel benchmarking, and NFL Fantasy tools." />
+  <meta property="og:url" content="https://samuelcweinberger-web.github.io/Case-Studies/media.html" />
+  <meta property="og:image" content="https://samuelcweinberger-web.github.io/Case-Studies/media/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Media — Sam Weinberger" />
+  <meta name="twitter:description" content="Media and gallery — immersive prototypes with Intel and Verizon, Robinhood prediction-market design changes, FanDuel benchmarking, and NFL Fantasy tools." />
+  <meta name="twitter:image" content="https://samuelcweinberger-web.github.io/Case-Studies/media/og-card.png" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon.png" type="image/png" sizes="64x64" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..750&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..750&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&display=swap" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -20,6 +41,10 @@
         <a href="skills.html">Skills</a>
         <a href="education.html">Education</a>
         <a href="contact.html">Contact</a>
+        <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch between dark and light theme">
+          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.4"/><path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M5.3 5.3l1.7 1.7M17 17l1.7 1.7M18.7 5.3L17 7M7 17l-1.7 1.7"/></svg>
+          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M20.6 14.6A8.7 8.7 0 0 1 9.4 3.4a8.7 8.7 0 1 0 11.2 11.2z"/></svg>
+        </button>
       </nav>
     </div>
   </header>
@@ -37,7 +62,7 @@
           </div>
           <figure class="media-item media-video media-item-feature">
             <div class="media-frame media-frame-feature video-click-frame" data-video-click>
-              <img class="video-click-poster" src="media/nfl-intel/design-studio-poster.jpg" alt="" loading="lazy" />
+              <img class="video-click-poster" src="media/nfl-intel/design-studio-poster.jpg" alt="" loading="lazy" decoding="async" />
               <video class="video-click-el" playsinline preload="none" poster="media/nfl-intel/design-studio-poster.jpg" hidden>
                 <source src="media/nfl-intel/design-studio.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
@@ -58,7 +83,7 @@
           <div class="media-grid">
       <figure class="media-item media-video reveal">
         <div class="media-frame video-click-frame" data-video-click>
-          <img class="video-click-poster" src="media/nfl-intel/sizzle-reel-poster.jpg" alt="" loading="lazy" />
+          <img class="video-click-poster" src="media/nfl-intel/sizzle-reel-poster.jpg" alt="" loading="lazy" decoding="async" />
           <video class="video-click-el" playsinline preload="none" poster="media/nfl-intel/sizzle-reel-poster.jpg" hidden>
             <source src="media/nfl-intel/sizzle-reel.mp4" type="video/mp4" />
             Your browser does not support the video tag.
@@ -72,7 +97,7 @@
       </figure>
       <figure class="media-item media-video reveal">
         <div class="media-frame video-click-frame" data-video-click>
-          <img class="video-click-poster" src="media/nfl-intel/intel-prototype-poster.jpg" alt="" loading="lazy" />
+          <img class="video-click-poster" src="media/nfl-intel/intel-prototype-poster.jpg" alt="" loading="lazy" decoding="async" />
           <video class="video-click-el" playsinline preload="none" poster="media/nfl-intel/intel-prototype-poster.jpg" hidden>
             <source src="media/nfl-intel/intel-prototype.mp4" type="video/mp4" />
             Your browser does not support the video tag.
@@ -86,7 +111,7 @@
       </figure>
       <figure class="media-item media-video reveal">
         <div class="media-frame video-click-frame" data-video-click>
-          <img class="video-click-poster" src="media/nfl-intel/verizon-5g-prototype-poster.jpg" alt="" loading="lazy" />
+          <img class="video-click-poster" src="media/nfl-intel/verizon-5g-prototype-poster.jpg" alt="" loading="lazy" decoding="async" />
           <video class="video-click-el" playsinline preload="none" poster="media/nfl-intel/verizon-5g-prototype-poster.jpg" hidden>
             <source src="media/nfl-intel/verizon-5g-prototype.mp4" type="video/mp4" />
             Your browser does not support the video tag.
@@ -100,7 +125,7 @@
       </figure>
       <figure class="media-item media-video reveal">
         <div class="media-frame video-click-frame" data-video-click>
-          <img class="video-click-poster" src="media/nfl-intel/superstadium-poster.jpg" alt="" loading="lazy" />
+          <img class="video-click-poster" src="media/nfl-intel/superstadium-poster.jpg" alt="" loading="lazy" decoding="async" />
           <video class="video-click-el" playsinline preload="none" poster="media/nfl-intel/superstadium-poster.jpg" hidden>
             <source src="media/nfl-intel/superstadium-demo.mp4" type="video/mp4" />
             Your browser does not support the video tag.
@@ -122,43 +147,43 @@
           <div class="media-grid">
       <figure class="media-item media-image reveal">
         <div class="media-frame">
-          <img class="media-img" src="media/01-non-converters/featured-before-change.png" alt="Before: the Featured card and category row sit flush to the edge — no signal that more exists off-screen." loading="lazy" />
+          <img class="media-img" src="media/01-non-converters/featured-before-change.png" alt="Before: the Featured card and category row sit flush to the edge — no signal that more exists off-screen." loading="lazy" decoding="async" />
         </div>
         <figcaption class="media-caption">Before: the Featured card and category row sit flush to the edge — no signal that more exists off-screen.</figcaption>
       </figure>
       <figure class="media-item media-image reveal">
         <div class="media-frame">
-          <img class="media-img" src="media/01-non-converters/featured-after-change.png" alt="After: offsetting the frame lets the next card peek in, cueing a sideways swipe." loading="lazy" />
+          <img class="media-img" src="media/01-non-converters/featured-after-change.png" alt="After: offsetting the frame lets the next card peek in, cueing a sideways swipe." loading="lazy" decoding="async" />
         </div>
         <figcaption class="media-caption">After: offsetting the frame lets the next card peek in, cueing a sideways swipe.</figcaption>
       </figure>
       <figure class="media-item media-image reveal">
         <div class="media-frame">
-          <img class="media-img" src="media/01-non-converters/featured-non-sports-carousel.png" alt="After: a dedicated non-sports carousel (Politics, Crypto, Technology, Commodities) added above Newly Listed." loading="lazy" />
+          <img class="media-img" src="media/01-non-converters/featured-non-sports-carousel.png" alt="After: a dedicated non-sports carousel (Politics, Crypto, Technology, Commodities) added above Newly Listed." loading="lazy" decoding="async" />
         </div>
         <figcaption class="media-caption">After: a dedicated non-sports carousel (Politics, Crypto, Technology, Commodities) added above Newly Listed.</figcaption>
       </figure>
       <figure class="media-item media-image reveal">
         <div class="media-frame">
-          <img class="media-img" src="media/03-category-expansion/order-form-before-change.png" alt="Before: one lever — a dollar amount, buy at the market price or not at all." loading="lazy" />
+          <img class="media-img" src="media/03-category-expansion/order-form-before-change.png" alt="Before: one lever — a dollar amount, buy at the market price or not at all." loading="lazy" decoding="async" />
         </div>
         <figcaption class="media-caption">Before: one lever — a dollar amount, buy at the market price or not at all.</figcaption>
       </figure>
       <figure class="media-item media-image reveal">
         <div class="media-frame">
-          <img class="media-img" src="media/03-category-expansion/order-type-menu.png" alt="The new order-type menu introducing the Limit order — set your own price, good for the day." loading="lazy" />
+          <img class="media-img" src="media/03-category-expansion/order-type-menu.png" alt="The new order-type menu introducing the Limit order — set your own price, good for the day." loading="lazy" decoding="async" />
         </div>
         <figcaption class="media-caption">The new order-type menu introducing the Limit order — set your own price, good for the day.</figcaption>
       </figure>
       <figure class="media-item media-image reveal">
         <div class="media-frame">
-          <img class="media-img" src="media/03-category-expansion/order-form-after-change.png" alt="After: full limit-order controls — set price, quantity, and expiry, with cost and payout shown before you commit." loading="lazy" />
+          <img class="media-img" src="media/03-category-expansion/order-form-after-change.png" alt="After: full limit-order controls — set price, quantity, and expiry, with cost and payout shown before you commit." loading="lazy" decoding="async" />
         </div>
         <figcaption class="media-caption">After: full limit-order controls — set price, quantity, and expiry, with cost and payout shown before you commit.</figcaption>
       </figure>
       <figure class="media-item media-video reveal">
         <div class="media-frame video-click-frame" data-video-click>
-          <img class="video-click-poster" src="media/03-category-expansion/btc-scrub-poster.jpg" alt="" loading="lazy" />
+          <img class="video-click-poster" src="media/03-category-expansion/btc-scrub-poster.jpg" alt="" loading="lazy" decoding="async" />
           <video class="video-click-el" playsinline preload="none" poster="media/03-category-expansion/btc-scrub-poster.jpg" hidden>
             <source src="media/03-category-expansion/btc-scrub.mp4" type="video/mp4" />
             Your browser does not support the video tag.
@@ -180,25 +205,25 @@
           <div class="media-grid">
       <figure class="media-item media-image reveal">
         <div class="media-frame">
-          <img class="media-img" src="media/benchmarking/q1-2022-supr-q-trend.jpg" alt="SUPR-Q trend line over quarters." loading="lazy" />
+          <img class="media-img" src="media/benchmarking/q1-2022-supr-q-trend.jpg" alt="SUPR-Q trend line over quarters." loading="lazy" decoding="async" />
         </div>
         <figcaption class="media-caption">SUPR-Q trend line over quarters.</figcaption>
       </figure>
       <figure class="media-item media-image reveal">
         <div class="media-frame">
-          <img class="media-img" src="media/benchmarking/q2-2023-all-products-a.jpg" alt="Cross-product comparison across the FanDuel portfolio." loading="lazy" />
+          <img class="media-img" src="media/benchmarking/q2-2023-all-products-a.jpg" alt="Cross-product comparison across the FanDuel portfolio." loading="lazy" decoding="async" />
         </div>
         <figcaption class="media-caption">Cross-product comparison across the FanDuel portfolio.</figcaption>
       </figure>
       <figure class="media-item media-image reveal">
         <div class="media-frame">
-          <img class="media-img" src="media/benchmarking/q1-2022-competitor-supr.jpg" alt="Competitor SUPR-Q comparison for the sportsbook category." loading="lazy" />
+          <img class="media-img" src="media/benchmarking/q1-2022-competitor-supr.jpg" alt="Competitor SUPR-Q comparison for the sportsbook category." loading="lazy" decoding="async" />
         </div>
         <figcaption class="media-caption">Competitor SUPR-Q comparison for the sportsbook category.</figcaption>
       </figure>
       <figure class="media-item media-image reveal">
         <div class="media-frame">
-          <img class="media-img" src="media/benchmarking/q1-2022-rg-scores.jpg" alt="Responsible Gaming scores tracked alongside usability and loyalty." loading="lazy" />
+          <img class="media-img" src="media/benchmarking/q1-2022-rg-scores.jpg" alt="Responsible Gaming scores tracked alongside usability and loyalty." loading="lazy" decoding="async" />
         </div>
         <figcaption class="media-caption">Responsible Gaming scores tracked alongside usability and loyalty.</figcaption>
       </figure>
@@ -212,43 +237,43 @@
           <div class="media-grid">
       <figure class="media-item media-image reveal">
         <div class="media-frame">
-          <img class="media-img" src="media/fantasy/tools-package.png" alt="The Tools Package inside the Fantasy app — waiver tools, most-added players, and upgrade prompts." loading="lazy" />
+          <img class="media-img" src="media/fantasy/tools-package.png" alt="The Tools Package inside the Fantasy app — waiver tools, most-added players, and upgrade prompts." loading="lazy" decoding="async" />
         </div>
         <figcaption class="media-caption">The Tools Package inside the Fantasy app — waiver tools, most-added players, and upgrade prompts.</figcaption>
       </figure>
       <figure class="media-item media-image reveal">
         <div class="media-frame">
-          <img class="media-img" src="media/fantasy/lineup-view.png" alt="The all-new Lineup View." loading="lazy" />
+          <img class="media-img" src="media/fantasy/lineup-view.png" alt="The all-new Lineup View." loading="lazy" decoding="async" />
         </div>
         <figcaption class="media-caption">The all-new Lineup View.</figcaption>
       </figure>
       <figure class="media-item media-image reveal">
         <div class="media-frame">
-          <img class="media-img" src="media/fantasy/player-lists.png" alt="Personalized player lists." loading="lazy" />
+          <img class="media-img" src="media/fantasy/player-lists.png" alt="Personalized player lists." loading="lazy" decoding="async" />
         </div>
         <figcaption class="media-caption">Personalized player lists.</figcaption>
       </figure>
       <figure class="media-item media-image reveal">
         <div class="media-frame">
-          <img class="media-img" src="media/fantasy/backups.png" alt="Set your backups to avoid last-minute inactives." loading="lazy" />
+          <img class="media-img" src="media/fantasy/backups.png" alt="Set your backups to avoid last-minute inactives." loading="lazy" decoding="async" />
         </div>
         <figcaption class="media-caption">Set your backups to avoid last-minute inactives.</figcaption>
       </figure>
       <figure class="media-item media-image reveal">
         <div class="media-frame">
-          <img class="media-img" src="media/fantasy/optimize-team.png" alt="Optimize-team tooling from the paid package." loading="lazy" />
+          <img class="media-img" src="media/fantasy/optimize-team.png" alt="Optimize-team tooling from the paid package." loading="lazy" decoding="async" />
         </div>
         <figcaption class="media-caption">Optimize-team tooling from the paid package.</figcaption>
       </figure>
       <figure class="media-item media-image reveal">
         <div class="media-frame">
-          <img class="media-img" src="media/fantasy/personalized-lists.png" alt="Personalized recommendation lists surfaced to buyers." loading="lazy" />
+          <img class="media-img" src="media/fantasy/personalized-lists.png" alt="Personalized recommendation lists surfaced to buyers." loading="lazy" decoding="async" />
         </div>
         <figcaption class="media-caption">Personalized recommendation lists surfaced to buyers.</figcaption>
       </figure>
       <figure class="media-item media-image reveal">
         <div class="media-frame">
-          <img class="media-img" src="media/fantasy/fantasy-plus-upsell.png" alt="The in-app upsell used to convert free players — A/B tested for placement and messaging." loading="lazy" />
+          <img class="media-img" src="media/fantasy/fantasy-plus-upsell.png" alt="The in-app upsell used to convert free players — A/B tested for placement and messaging." loading="lazy" decoding="async" />
         </div>
         <figcaption class="media-caption">The in-app upsell used to convert free players — A/B tested for placement and messaging.</figcaption>
       </figure>

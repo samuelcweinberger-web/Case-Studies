@@ -58,7 +58,7 @@ def brand_logo_chip(brand_key, prefix="", label=None, extra_class=""):
         cls += f" {extra_class}"
     return (
         f'<span class="{cls}">'
-        f'<img src="{prefix}media/{logo}" alt="{alt} logo" loading="lazy" />'
+        f'<img src="{prefix}media/{logo}" alt="{alt} logo" loading="lazy" decoding="async" />'
         f"</span>"
     )
 
@@ -735,7 +735,51 @@ CASES = [
 ]
 
 
-def header(active=None, prefix="", brand=None, nav_active=None, body_classes=None):
+SITE_URL = "https://samuelcweinberger-web.github.io/Case-Studies/"
+
+DEFAULT_DESCRIPTION = (
+    "Samuel Weinberger — applied cognitive and social psychologist turned UX Design "
+    "Researcher and Research Engineer. Bridging human behavior, analytics, and "
+    "interactive design."
+)
+
+FONTS_URL = (
+    "https://fonts.googleapis.com/css2"
+    "?family=Inter:opsz,wght@14..32,400..750"
+    "&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500"
+    "&display=swap"
+)
+
+# Inline (pre-paint) theme resolution so the light theme never flashes dark
+# and vice versa. Stored choice wins; otherwise follow prefers-color-scheme.
+THEME_SCRIPT = (
+    "(function(){try{var t=localStorage.getItem('theme');"
+    "if(t!=='light'&&t!=='dark'){t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}"
+    "document.documentElement.setAttribute('data-theme',t);}catch(e){}})();"
+)
+
+SUN_ICON = (
+    '<svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" width="16" height="16" fill="none" '
+    'stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">'
+    '<circle cx="12" cy="12" r="4.4"/>'
+    '<path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M5.3 5.3l1.7 1.7M17 17l1.7 1.7M18.7 5.3L17 7M7 17l-1.7 1.7"/>'
+    "</svg>"
+)
+
+MOON_ICON = (
+    '<svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" width="16" height="16" '
+    'fill="currentColor" aria-hidden="true">'
+    '<path d="M20.6 14.6A8.7 8.7 0 0 1 9.4 3.4a8.7 8.7 0 1 0 11.2 11.2z"/>'
+    "</svg>"
+)
+
+
+def _meta_escape(text):
+    return text.replace("&", "&amp;").replace('"', "&quot;")
+
+
+def header(active=None, prefix="", brand=None, nav_active=None, body_classes=None,
+           page_path="", description=None):
     classes = []
     if brand:
         classes.append(f"brand-{brand}")
@@ -743,6 +787,10 @@ def header(active=None, prefix="", brand=None, nav_active=None, body_classes=Non
         classes.extend(body_classes)
     brand_class = f' class="{" ".join(classes)}"' if classes else ""
     title = "Sam Weinberger" if not active else f"{active} — Sam Weinberger"
+    desc = _meta_escape(description or DEFAULT_DESCRIPTION)
+    og_title = _meta_escape(title)
+    og_url = f"{SITE_URL}{page_path}"
+    og_image = f"{SITE_URL}media/og-card.png"
 
     def nav_link(href, label, key):
         cls = ' class="is-active"' if nav_active == key else ""
@@ -754,7 +802,28 @@ def header(active=None, prefix="", brand=None, nav_active=None, body_classes=Non
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{title}</title>
-  <meta name="description" content="Samuel Weinberger — applied cognitive and social psychologist turned UX Design Researcher and Research Engineer. Bridging human behavior, analytics, and interactive design." />
+  <meta name="description" content="{desc}" />
+  <meta name="color-scheme" content="dark light" />
+  <script>{THEME_SCRIPT}</script>
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Sam Weinberger" />
+  <meta property="og:title" content="{og_title}" />
+  <meta property="og:description" content="{desc}" />
+  <meta property="og:url" content="{og_url}" />
+  <meta property="og:image" content="{og_image}" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{og_title}" />
+  <meta name="twitter:description" content="{desc}" />
+  <meta name="twitter:image" content="{og_image}" />
+  <link rel="icon" href="{prefix}favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="{prefix}favicon.png" type="image/png" sizes="64x64" />
+  <link rel="apple-touch-icon" href="{prefix}apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="{FONTS_URL}" />
+  <link rel="stylesheet" href="{FONTS_URL}" />
   <link rel="stylesheet" href="{prefix}css/styles.css" />
 </head>
 <body{brand_class}>
@@ -770,6 +839,10 @@ def header(active=None, prefix="", brand=None, nav_active=None, body_classes=Non
         {nav_link("skills.html", "Skills", "skills")}
         {nav_link("education.html", "Education", "education")}
         {nav_link("contact.html", "Contact", "contact")}
+        <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch between dark and light theme">
+          {SUN_ICON}
+          {MOON_ICON}
+        </button>
       </nav>
     </div>
   </header>
@@ -1123,16 +1196,28 @@ def build_case_blocks(case_href_prefix="cases/", prefix=""):
         ("burkmont", "Burkmont Analytics · Phoenix Suns"),
         ("cgu", "Claremont Colleges"),
     ]
+    industries = {
+        "robinhood": "fintech",
+        "fanduel": "fintech",
+        "nfl": "sports-media",
+        "burkmont": "sports-media",
+        "ipsos": "healthcare",
+        "cgu": "healthcare",
+    }
     case_blocks = []
     for brand_key, brand_label in company_order:
         brand_cases = [c for c in CASES if c["brand"] == brand_key]
         cards = []
         for c in brand_cases:
             badge = product_badge(c["brand"])
+            card_chip = brand_logo_chip(
+                c["brand"], prefix=prefix, extra_class="brand-chip-card"
+            )
             cards.append(
                 f"""            <a class="case-card case-{c['brand']} reveal" href="{case_href_prefix}{c['slug']}.html">
               <div class="case-card-top">
                 <span class="case-num">{c['num']}</span>
+                {card_chip}
               </div>
               {badge}
               <h3>{c['title']}</h3>
@@ -1146,8 +1231,9 @@ def build_case_blocks(case_href_prefix="cases/", prefix=""):
         head_logo = (
             f'          {logo_chip}\n' if logo_chip else ""
         )
+        industry = industries.get(brand_key, "other")
         case_blocks.append(
-            f"""        <div class="company-group company-{brand_key} reveal" id="cases-{brand_key}">
+            f"""        <div class="company-group company-{brand_key} reveal" id="cases-{brand_key}" data-industry="{industry}">
           <div class="company-group-head">
 {head_logo}            <h3 class="company-heading">{brand_label}</h3>
           </div>
@@ -1165,7 +1251,7 @@ def build_case_blocks(case_href_prefix="cases/", prefix=""):
 
 def write_home():
     html = (
-        header(nav_active="home")
+        header(nav_active="home", page_path="")
         + f"""
   <main>
     <section class="hero hero-page">
@@ -1175,15 +1261,16 @@ def write_home():
         <div class="hero-kicker">AI-Driven Insights</div>
         <h1 class="hero-brand">Sam<br />Weinberger</h1>
         <p class="hero-role">UX Design Research | Research Engineer</p>
+        <p class="hero-status"><span class="hero-status-dot" aria-hidden="true"></span>Most recently: Prediction Markets @ Robinhood</p>
         <p class="hero-lede">9+ years of mixed-methods research across fintech, sports media, and healthcare—connecting insights to product and revenue outcomes.</p>
         <div class="brand-strip" aria-label="Brands worked with">
-          <a href="case-studies.html#cases-robinhood" title="Robinhood case studies"><img class="brand-tile" src="media/brands/robinhood-home.png" alt="Robinhood" loading="lazy" /></a>
-          <a href="case-studies.html#cases-fanduel" title="FanDuel case studies"><img class="brand-tile" src="media/brands/fanduel-home.png" alt="FanDuel" loading="lazy" /></a>
-          <a href="cases/fantasy-d2c-ideation.html" title="NFL Fantasy case study"><img class="brand-tile" src="media/brands/nfl-fantasy-home.png" alt="NFL Fantasy" loading="lazy" /></a>
-          <a href="cases/nfl-d2c-packaging.html" title="NFL+ case study"><img class="brand-tile" src="media/brands/nfl-plus-home.png" alt="NFL+" loading="lazy" /></a>
-          <a href="cases/insulin-pen-usability.html" title="Ipsos Healthcare case study"><img class="brand-tile" src="media/brands/ipsos-home.png" alt="Ipsos" loading="lazy" /></a>
-          <a href="cases/verizon-superstadium.html" title="Verizon 5G SuperStadium case study"><img class="brand-tile" src="media/brands/verizon-5g-home.png" alt="Verizon 5G" loading="lazy" /></a>
-          <a href="cases/intel-trueview.html" title="Intel TrueView case study"><img class="brand-tile" src="media/brands/intel-home.png" alt="Intel" loading="lazy" /></a>
+          <a href="case-studies.html#cases-robinhood" title="Robinhood case studies"><img class="brand-tile" src="media/brands/robinhood-home.png" alt="Robinhood" loading="lazy" decoding="async" /></a>
+          <a href="case-studies.html#cases-fanduel" title="FanDuel case studies"><img class="brand-tile" src="media/brands/fanduel-home.png" alt="FanDuel" loading="lazy" decoding="async" /></a>
+          <a href="cases/fantasy-d2c-ideation.html" title="NFL Fantasy case study"><img class="brand-tile" src="media/brands/nfl-fantasy-home.png" alt="NFL Fantasy" loading="lazy" decoding="async" /></a>
+          <a href="cases/nfl-d2c-packaging.html" title="NFL+ case study"><img class="brand-tile" src="media/brands/nfl-plus-home.png" alt="NFL+" loading="lazy" decoding="async" /></a>
+          <a href="cases/insulin-pen-usability.html" title="Ipsos Healthcare case study"><img class="brand-tile" src="media/brands/ipsos-home.png" alt="Ipsos" loading="lazy" decoding="async" /></a>
+          <a href="cases/verizon-superstadium.html" title="Verizon 5G SuperStadium case study"><img class="brand-tile" src="media/brands/verizon-5g-home.png" alt="Verizon 5G" loading="lazy" decoding="async" /></a>
+          <a href="cases/intel-trueview.html" title="Intel TrueView case study"><img class="brand-tile" src="media/brands/intel-home.png" alt="Intel" loading="lazy" decoding="async" /></a>
         </div>
         <div class="hero-actions">
           <a class="btn btn-primary" href="case-studies.html">View case studies</a>
@@ -1202,7 +1289,12 @@ def write_home():
 def write_case_studies_page():
     case_blocks = build_case_blocks()
     html = (
-        header(active="Case studies", nav_active="cases")
+        header(
+            active="Case studies",
+            nav_active="cases",
+            page_path="case-studies.html",
+            description="Twelve case studies across Robinhood, FanDuel, Ipsos Healthcare, and the NFL—each tied to a shipped product decision and a measured outcome.",
+        )
         + f"""
   <main>
     <section class="section page-section" id="case-studies">
@@ -1210,6 +1302,12 @@ def write_case_studies_page():
         <div class="section-head reveal">
           <h2>Case studies</h2>
           <p>Twelve studies across Robinhood, FanDuel, Ipsos Healthcare, and the NFL—each tied to a shipped product decision and a measured outcome.</p>
+        </div>
+        <div class="filter-bar reveal" data-case-filters role="group" aria-label="Filter case studies by industry">
+          <button type="button" class="filter-pill is-active" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="filter-pill" data-filter="fintech" aria-pressed="false">Fintech</button>
+          <button type="button" class="filter-pill" data-filter="sports-media" aria-pressed="false">Sports &amp; Media</button>
+          <button type="button" class="filter-pill" data-filter="healthcare" aria-pressed="false">Healthcare</button>
         </div>
 {chr(10).join(case_blocks)}
       </div>
@@ -1320,7 +1418,7 @@ def render_media_video(item, big=False):
     poster = item.get("poster")
     poster_src = f"media/{poster}" if poster else ""
     poster_img = (
-        f'<img class="video-click-poster" src="{poster_src}" alt="" loading="lazy" />'
+        f'<img class="video-click-poster" src="{poster_src}" alt="" loading="lazy" decoding="async" />'
         if poster
         else ""
     )
@@ -1350,7 +1448,7 @@ def render_media_image(item):
     cap_html = f'<figcaption class="media-caption">{caption}</figcaption>' if caption else ""
     return f"""      <figure class="media-item media-image reveal">
         <div class="media-frame">
-          <img class="media-img" src="media/{item['src']}" alt="{alt}" loading="lazy" />
+          <img class="media-img" src="media/{item['src']}" alt="{alt}" loading="lazy" decoding="async" />
         </div>
         {cap_html}
       </figure>"""
@@ -1371,7 +1469,7 @@ def write_media_page():
           </div>
           <figure class="media-item media-video media-item-feature">
             <div class="media-frame media-frame-feature video-click-frame" data-video-click>
-              <img class="video-click-poster" src="media/{ds['poster']}" alt="" loading="lazy" />
+              <img class="video-click-poster" src="media/{ds['poster']}" alt="" loading="lazy" decoding="async" />
               <video class="video-click-el" playsinline preload="none" poster="media/{ds['poster']}" hidden>
                 <source src="media/{ds['src']}" type="video/mp4" />
                 Your browser does not support the video tag.
@@ -1401,7 +1499,12 @@ def write_media_page():
         )
 
     html = (
-        header(active="Media", nav_active="media")
+        header(
+            active="Media",
+            nav_active="media",
+            page_path="media.html",
+            description="Media and gallery — immersive prototypes with Intel and Verizon, Robinhood prediction-market design changes, FanDuel benchmarking, and NFL Fantasy tools.",
+        )
         + f"""
   <main>
     <section class="section page-section" id="media">
@@ -1439,7 +1542,12 @@ def write_skills_page():
         </section>"""
         )
     html = (
-        header(active="Skills", nav_active="skills")
+        header(
+            active="Skills",
+            nav_active="skills",
+            page_path="skills.html",
+            description="Quantitative UX, psychometrics, sports/in-the-wild methods, and engineered research infrastructure.",
+        )
         + f"""
   <main>
     <section class="section page-section" id="skills">
@@ -1467,7 +1575,7 @@ def write_research_tools_page():
         if icon_file:
             icon_html = (
                 f'<span class="tool-icon-swatch">'
-                f'<img src="media/tool-icons/{icon_file}" alt="{tool} logo" loading="lazy" />'
+                f'<img src="media/tool-icons/{icon_file}" alt="{tool} logo" loading="lazy" decoding="async" />'
                 f"</span>"
             )
         else:
@@ -1481,7 +1589,12 @@ def write_research_tools_page():
         )
     tools = "\n".join(tiles)
     html = (
-        header(active="Tech Stack", nav_active="research-tools")
+        header(
+            active="Tech Stack",
+            nav_active="research-tools",
+            page_path="research-tools.html",
+            description="Platforms and languages used across survey, analytics, experimentation, collaboration, and analysis.",
+        )
         + f"""
   <main>
     <section class="section page-section" id="research-tools">
@@ -1504,7 +1617,7 @@ def write_research_tools_page():
 
 def write_about_page():
     html = (
-        header(active="About me", nav_active="about")
+        header(active="About me", nav_active="about", page_path="about.html")
         + f"""
   <main>
     <section class="section page-section" id="about">
@@ -1581,7 +1694,12 @@ def write_resume_page():
         )
 
     html = (
-        header(active="Professional Experience", nav_active="resume")
+        header(
+            active="Professional Experience",
+            nav_active="resume",
+            page_path="resume.html",
+            description="Professional experience — Robinhood, FanDuel, the NFL, Claremont Graduate University, and Ipsos Healthcare.",
+        )
         + f"""
   <main>
     <section class="section page-section resume-page" id="resume">
@@ -1636,7 +1754,12 @@ def write_education_page():
         for a in RESUME_ATHLETICS
     )
     html = (
-        header(active="Education", nav_active="education")
+        header(
+            active="Education",
+            nav_active="education",
+            page_path="education.html",
+            description="Graduate and undergraduate study in cognitive and social psychology, public policy, and communications—alongside a Division 1 athletics background.",
+        )
         + f"""
   <main>
     <section class="section page-section resume-page" id="education">
@@ -1679,7 +1802,12 @@ def write_contact_page():
         for label, value in contact_rows
     )
     html = (
-        header(active="Contact", nav_active="contact")
+        header(
+            active="Contact",
+            nav_active="contact",
+            page_path="contact.html",
+            description="Get in touch — email, LinkedIn, and phone for Sam Weinberger.",
+        )
         + f"""
   <main>
     <section class="section page-section resume-page" id="contact">
@@ -1741,7 +1869,7 @@ def render_nfl_media(case):
         poster = v.get("poster")
         poster_src = f"../media/{poster}" if poster else ""
         poster_img = (
-            f'<img class="video-click-poster" src="{poster_src}" alt="" loading="lazy" />'
+            f'<img class="video-click-poster" src="{poster_src}" alt="" loading="lazy" decoding="async" />'
             if poster
             else ""
         )
@@ -1777,7 +1905,7 @@ def render_nfl_media(case):
         )
         return f"""      <figure class="case-nfl-media case-nfl-image reveal">
         <div class="case-nfl-media-frame">
-          <img class="case-nfl-media-img" src="../media/{img['src']}" alt="{img.get('alt', '')}" loading="lazy" />
+          <img class="case-nfl-media-img" src="../media/{img['src']}" alt="{img.get('alt', '')}" loading="lazy" decoding="async" />
         </div>
         {cap_html}
       </figure>"""
@@ -1811,7 +1939,7 @@ def render_nfl_gallery(case):
         )
         if "row" in item:
             imgs = "\n".join(
-                f'            <img class="case-nfl-gallery-img" src="../media/{im["src"]}" alt="{im.get("alt", "")}" loading="lazy" />'
+                f'            <img class="case-nfl-gallery-img" src="../media/{im["src"]}" alt="{im.get("alt", "")}" loading="lazy" decoding="async" />'
                 for im in item["row"]
             )
             figs.append(
@@ -1826,7 +1954,7 @@ def render_nfl_gallery(case):
             figs.append(
                 f"""      <figure class="case-nfl-media case-nfl-image reveal">
         <div class="case-nfl-media-frame">
-          <img class="case-nfl-media-img" src="../media/{item['src']}" alt="{item.get('alt', '')}" loading="lazy" />
+          <img class="case-nfl-media-img" src="../media/{item['src']}" alt="{item.get('alt', '')}" loading="lazy" decoding="async" />
         </div>
         {cap_html}
       </figure>"""
@@ -1936,6 +2064,8 @@ def write_case_nfl(case, index):
             brand=case["brand"],
             nav_active="cases",
             body_classes=["case-nfl"],
+            page_path=f"cases/{case['slug']}.html",
+            description=case.get("short") or case.get("summary"),
         )
         + f"""
   <main class="case-page case-nfl-page">
@@ -1972,6 +2102,13 @@ def write_case_nfl(case, index):
     (CASES_DIR / f"{case['slug']}.html").write_text(html)
 
 
+def _section_slug(title):
+    slug = "".join(ch if ch.isalnum() else "-" for ch in title.lower())
+    while "--" in slug:
+        slug = slug.replace("--", "-")
+    return slug.strip("-") or "section"
+
+
 def write_case(case, index):
     if case["brand"] == "nfl":
         write_case_nfl(case, index)
@@ -2004,7 +2141,7 @@ def write_case(case, index):
             cap = im.get("caption", "")
             active = " is-active" if idx == 0 else ""
             slides.append(
-                f'            <img class="carousel-slide{active}" src="../media/{im["src"]}" alt="{alt}" data-caption="{cap}" loading="lazy" />'
+                f'            <img class="carousel-slide{active}" src="../media/{im["src"]}" alt="{alt}" data-caption="{cap}" loading="lazy" decoding="async" />'
             )
         controls_html = ""
         if n > 1:
@@ -2042,7 +2179,7 @@ def write_case(case, index):
             cta_label = v.get("cta", "Click to watch video")
             poster_src = f'../media/{poster}' if poster else ""
             poster_img = (
-                f'<img class="video-click-poster" src="{poster_src}" alt="" loading="lazy" />'
+                f'<img class="video-click-poster" src="{poster_src}" alt="" loading="lazy" decoding="async" />'
                 if poster
                 else ""
             )
@@ -2094,7 +2231,7 @@ def write_case(case, index):
             cap_html = f'<figcaption>{cap}</figcaption>' if cap else ""
             items.append(
                 f"""        <figure class="chart-card">
-          <img src="../media/{c['src']}" alt="{c.get('alt', '')}" loading="lazy" />
+          <img src="../media/{c['src']}" alt="{c.get('alt', '')}" loading="lazy" decoding="async" />
           {cap_html}
         </figure>"""
             )
@@ -2111,16 +2248,29 @@ def write_case(case, index):
     charts_after = charts_html if case.get("gallery_after_body") else ""
 
     section_blocks = []
+    toc_items = []
     total = len(case["sections"])
     for i, (title, body) in enumerate(case["sections"]):
+        sid = _section_slug(title)
+        toc_items.append((sid, title))
         section_blocks.append(
-            f"""        <section class="case-section reveal">
+            f"""        <section class="case-section reveal" id="{sid}">
           <div class="case-section-label">
             <h2>{title}</h2>
           </div>
           <div class="case-section-body">{body}</div>
         </section>"""
         )
+    toc_html = ""
+    if len(toc_items) > 1:
+        links = "\n".join(
+            f'      <a href="#{sid}">{title}</a>' for sid, title in toc_items
+        )
+        toc_html = f"""
+    <nav class="case-toc" data-case-toc aria-label="On this page">
+      <span class="case-toc-label">On this page</span>
+{links}
+    </nav>"""
     flow_html = f"""      <div class="case-flow">
 {chr(10).join(section_blocks)}
       </div>"""
@@ -2190,9 +2340,16 @@ def write_case(case, index):
         </div>"""
 
     html = (
-        header(active=case["title"], prefix="../", brand=case["brand"], nav_active="cases")
+        header(
+            active=case["title"],
+            prefix="../",
+            brand=case["brand"],
+            nav_active="cases",
+            page_path=f"cases/{case['slug']}.html",
+            description=case.get("short") or case.get("summary"),
+        )
         + f"""
-  <main class="case-page">
+  <main class="case-page">{toc_html}
     <header class="case-hero">
       <div class="wrap">
         <div class="crumb"><a href="../case-studies.html">Case studies</a> <span aria-hidden="true">/</span> {case['num']}</div>

@@ -4,7 +4,28 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Case studies — Sam Weinberger</title>
-  <meta name="description" content="Samuel Weinberger — applied cognitive and social psychologist turned UX Design Researcher and Research Engineer. Bridging human behavior, analytics, and interactive design." />
+  <meta name="description" content="Twelve case studies across Robinhood, FanDuel, Ipsos Healthcare, and the NFL—each tied to a shipped product decision and a measured outcome." />
+  <meta name="color-scheme" content="dark light" />
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark'){t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Sam Weinberger" />
+  <meta property="og:title" content="Case studies — Sam Weinberger" />
+  <meta property="og:description" content="Twelve case studies across Robinhood, FanDuel, Ipsos Healthcare, and the NFL—each tied to a shipped product decision and a measured outcome." />
+  <meta property="og:url" content="https://samuelcweinberger-web.github.io/Case-Studies/case-studies.html" />
+  <meta property="og:image" content="https://samuelcweinberger-web.github.io/Case-Studies/media/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Case studies — Sam Weinberger" />
+  <meta name="twitter:description" content="Twelve case studies across Robinhood, FanDuel, Ipsos Healthcare, and the NFL—each tied to a shipped product decision and a measured outcome." />
+  <meta name="twitter:image" content="https://samuelcweinberger-web.github.io/Case-Studies/media/og-card.png" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon.png" type="image/png" sizes="64x64" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..750&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..750&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&display=swap" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -20,6 +41,10 @@
         <a href="skills.html">Skills</a>
         <a href="education.html">Education</a>
         <a href="contact.html">Contact</a>
+        <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch between dark and light theme">
+          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.4"/><path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M5.3 5.3l1.7 1.7M17 17l1.7 1.7M18.7 5.3L17 7M7 17l-1.7 1.7"/></svg>
+          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M20.6 14.6A8.7 8.7 0 0 1 9.4 3.4a8.7 8.7 0 1 0 11.2 11.2z"/></svg>
+        </button>
       </nav>
     </div>
   </header>
@@ -31,9 +56,15 @@
           <h2>Case studies</h2>
           <p>Twelve studies across Robinhood, FanDuel, Ipsos Healthcare, and the NFL—each tied to a shipped product decision and a measured outcome.</p>
         </div>
-        <div class="company-group company-robinhood reveal" id="cases-robinhood">
+        <div class="filter-bar reveal" data-case-filters role="group" aria-label="Filter case studies by industry">
+          <button type="button" class="filter-pill is-active" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="filter-pill" data-filter="fintech" aria-pressed="false">Fintech</button>
+          <button type="button" class="filter-pill" data-filter="sports-media" aria-pressed="false">Sports &amp; Media</button>
+          <button type="button" class="filter-pill" data-filter="healthcare" aria-pressed="false">Healthcare</button>
+        </div>
+        <div class="company-group company-robinhood reveal" id="cases-robinhood" data-industry="fintech">
           <div class="company-group-head">
-          <span class="brand-chip brand-chip-robinhood"><img src="media/brands/robinhood-official.svg" alt="Robinhood logo" loading="lazy" /></span>
+          <span class="brand-chip brand-chip-robinhood"><img src="media/brands/robinhood-official.svg" alt="Robinhood logo" loading="lazy" decoding="async" /></span>
             <h3 class="company-heading">Robinhood</h3>
           </div>
           <div class="product-carousel" data-pcarousel>
@@ -42,6 +73,7 @@
             <a class="case-card case-robinhood reveal" href="cases/first-trade-conversion.html">
               <div class="case-card-top">
                 <span class="case-num">01</span>
+                <span class="brand-chip brand-chip-robinhood brand-chip-card"><img src="media/brands/robinhood-official.svg" alt="Robinhood logo" loading="lazy" decoding="async" /></span>
               </div>
               <span class="product-badge product-robinhood"><span class="product-name">Robinhood</span></span>
               <h3>Why Approved Traders Never Placed Their First Trade</h3>
@@ -51,6 +83,7 @@
             <a class="case-card case-robinhood reveal" href="cases/first-trade-recovery.html">
               <div class="case-card-top">
                 <span class="case-num">02</span>
+                <span class="brand-chip brand-chip-robinhood brand-chip-card"><img src="media/brands/robinhood-official.svg" alt="Robinhood logo" loading="lazy" decoding="async" /></span>
               </div>
               <span class="product-badge product-robinhood"><span class="product-name">Robinhood</span></span>
               <h3>Turning a Dead End Into a Second Chance</h3>
@@ -60,6 +93,7 @@
             <a class="case-card case-robinhood reveal" href="cases/diversify-single-category.html">
               <div class="case-card-top">
                 <span class="case-num">03</span>
+                <span class="brand-chip brand-chip-robinhood brand-chip-card"><img src="media/brands/robinhood-official.svg" alt="Robinhood logo" loading="lazy" decoding="async" /></span>
               </div>
               <span class="product-badge product-robinhood"><span class="product-name">Robinhood</span></span>
               <h3>From Coin Toss to Informed Call: Getting Single-Category Traders to Diversify</h3>
@@ -69,6 +103,7 @@
             <a class="case-card case-robinhood reveal" href="cases/cold-start-personalization.html">
               <div class="case-card-top">
                 <span class="case-num">04</span>
+                <span class="brand-chip brand-chip-robinhood brand-chip-card"><img src="media/brands/robinhood-official.svg" alt="Robinhood logo" loading="lazy" decoding="async" /></span>
               </div>
               <span class="product-badge product-robinhood"><span class="product-name">Robinhood</span></span>
               <h3>The Cold-Start Problem: A Deep Dive Into a Personalization Experiment</h3>
@@ -79,9 +114,9 @@
             <button type="button" class="pcar-btn pcar-next" data-pcar-next aria-label="Scroll to more Robinhood cases">&#8250;</button>
           </div>
         </div>
-        <div class="company-group company-fanduel reveal" id="cases-fanduel">
+        <div class="company-group company-fanduel reveal" id="cases-fanduel" data-industry="fintech">
           <div class="company-group-head">
-          <span class="brand-chip brand-chip-fanduel"><img src="media/brands/fanduel-official.svg" alt="FanDuel logo" loading="lazy" /></span>
+          <span class="brand-chip brand-chip-fanduel"><img src="media/brands/fanduel-official.svg" alt="FanDuel logo" loading="lazy" decoding="async" /></span>
             <h3 class="company-heading">FanDuel</h3>
           </div>
           <div class="product-carousel" data-pcarousel>
@@ -90,6 +125,7 @@
             <a class="case-card case-fanduel reveal" href="cases/registration-dropoff.html">
               <div class="case-card-top">
                 <span class="case-num">05</span>
+                <span class="brand-chip brand-chip-fanduel brand-chip-card"><img src="media/brands/fanduel-official.svg" alt="FanDuel logo" loading="lazy" decoding="async" /></span>
               </div>
               <span class="product-badge product-fanduel"><span class="product-name">FanDuel</span></span>
               <h3>Studying the Users You Can’t Recruit: Fixing Registration Drop-Off</h3>
@@ -99,6 +135,7 @@
             <a class="case-card case-fanduel reveal" href="cases/benchmarking-decision-engine.html">
               <div class="case-card-top">
                 <span class="case-num">06</span>
+                <span class="brand-chip brand-chip-fanduel brand-chip-card"><img src="media/brands/fanduel-official.svg" alt="FanDuel logo" loading="lazy" decoding="async" /></span>
               </div>
               <span class="product-badge product-fanduel"><span class="product-name">FanDuel</span></span>
               <h3>Benchmarking as a Decision Engine: Measuring Experience Across a Fragmented Portfolio</h3>
@@ -108,6 +145,7 @@
             <a class="case-card case-fanduel reveal" href="cases/ach-adoption.html">
               <div class="case-card-top">
                 <span class="case-num">07</span>
+                <span class="brand-chip brand-chip-fanduel brand-chip-card"><img src="media/brands/fanduel-official.svg" alt="FanDuel logo" loading="lazy" decoding="async" /></span>
               </div>
               <span class="product-badge product-fanduel"><span class="product-name">FanDuel</span></span>
               <h3>ACH Adoption: Turning a Payments Risk Into a Trust Problem Worth Solving</h3>
@@ -118,9 +156,9 @@
             <button type="button" class="pcar-btn pcar-next" data-pcar-next aria-label="Scroll to more FanDuel cases">&#8250;</button>
           </div>
         </div>
-        <div class="company-group company-nfl reveal" id="cases-nfl">
+        <div class="company-group company-nfl reveal" id="cases-nfl" data-industry="sports-media">
           <div class="company-group-head">
-          <span class="brand-chip brand-chip-nfl"><img src="media/brands/nfl-official.svg" alt="NFL logo" loading="lazy" /></span>
+          <span class="brand-chip brand-chip-nfl"><img src="media/brands/nfl-official.svg" alt="NFL logo" loading="lazy" decoding="async" /></span>
             <h3 class="company-heading">NFL</h3>
           </div>
           <div class="product-carousel" data-pcarousel>
@@ -129,6 +167,7 @@
             <a class="case-card case-nfl reveal" href="cases/fantasy-d2c-ideation.html">
               <div class="case-card-top">
                 <span class="case-num">08</span>
+                <span class="brand-chip brand-chip-nfl brand-chip-card"><img src="media/brands/nfl-official.svg" alt="NFL Fantasy App & NFL+ logo" loading="lazy" decoding="async" /></span>
               </div>
               <span class="product-badge product-nfl"><span class="product-name">NFL Fantasy App & NFL+</span></span>
               <h3>NFL Fantasy Mobile App</h3>
@@ -138,6 +177,7 @@
             <a class="case-card case-nfl reveal" href="cases/nfl-d2c-packaging.html">
               <div class="case-card-top">
                 <span class="case-num">09</span>
+                <span class="brand-chip brand-chip-nfl brand-chip-card"><img src="media/brands/nfl-official.svg" alt="NFL Fantasy App & NFL+ logo" loading="lazy" decoding="async" /></span>
               </div>
               <span class="product-badge product-nfl"><span class="product-name">NFL Fantasy App & NFL+</span></span>
               <h3>Pricing &amp; Packaging: The NFL+ Subscription</h3>
@@ -147,6 +187,7 @@
             <a class="case-card case-nfl reveal" href="cases/intel-trueview.html">
               <div class="case-card-top">
                 <span class="case-num">10</span>
+                <span class="brand-chip brand-chip-nfl brand-chip-card"><img src="media/brands/nfl-official.svg" alt="NFL Fantasy App & NFL+ logo" loading="lazy" decoding="async" /></span>
               </div>
               <span class="product-badge product-nfl"><span class="product-name">NFL Fantasy App & NFL+</span></span>
               <h3>Intel TrueView 360° Prototype</h3>
@@ -156,6 +197,7 @@
             <a class="case-card case-nfl reveal" href="cases/verizon-superstadium.html">
               <div class="case-card-top">
                 <span class="case-num">11</span>
+                <span class="brand-chip brand-chip-nfl brand-chip-card"><img src="media/brands/nfl-official.svg" alt="NFL Fantasy App & NFL+ logo" loading="lazy" decoding="async" /></span>
               </div>
               <span class="product-badge product-nfl"><span class="product-name">NFL Fantasy App & NFL+</span></span>
               <h3>Verizon 5G SuperStadium: The In-Stadium Fan Experience</h3>
@@ -166,9 +208,9 @@
             <button type="button" class="pcar-btn pcar-next" data-pcar-next aria-label="Scroll to more NFL cases">&#8250;</button>
           </div>
         </div>
-        <div class="company-group company-ipsos reveal" id="cases-ipsos">
+        <div class="company-group company-ipsos reveal" id="cases-ipsos" data-industry="healthcare">
           <div class="company-group-head">
-          <span class="brand-chip brand-chip-ipsos"><img src="media/brands/ipsos-official.svg" alt="Ipsos Healthcare logo" loading="lazy" /></span>
+          <span class="brand-chip brand-chip-ipsos"><img src="media/brands/ipsos-official.svg" alt="Ipsos Healthcare logo" loading="lazy" decoding="async" /></span>
             <h3 class="company-heading">Ipsos Healthcare</h3>
           </div>
           <div class="product-carousel" data-pcarousel>
@@ -177,6 +219,7 @@
             <a class="case-card case-ipsos reveal" href="cases/insulin-pen-usability.html">
               <div class="case-card-top">
                 <span class="case-num">12</span>
+                <span class="brand-chip brand-chip-ipsos brand-chip-card"><img src="media/brands/ipsos-official.svg" alt="Ipsos Healthcare logo" loading="lazy" decoding="async" /></span>
               </div>
               <span class="product-badge product-ipsos"><span class="product-name">Ipsos Healthcare</span></span>
               <h3>Insulin Pen Usability: Turning Device Research Into Commercial Evidence</h3>

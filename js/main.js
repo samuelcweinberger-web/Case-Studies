@@ -7,19 +7,94 @@ if (header) {
   window.addEventListener("scroll", onScroll, { passive: true });
 }
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
-        observer.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.14, rootMargin: "0px 0px -8% 0px" }
-);
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+if (prefersReducedMotion) {
+  document.querySelectorAll(".reveal").forEach((el) => el.classList.add("is-visible"));
+} else {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.14, rootMargin: "0px 0px -8% 0px" }
+  );
+
+  document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+}
+
+// Theme toggle — the inline <head> script sets data-theme pre-paint; this
+// just flips it and persists the choice.
+document.querySelectorAll("[data-theme-toggle]").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const next =
+      document.documentElement.getAttribute("data-theme") === "light" ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", next);
+    try {
+      localStorage.setItem("theme", next);
+    } catch (e) {
+      /* private mode */
+    }
+  });
+});
+
+// Industry filter pills on the case-studies index.
+document.querySelectorAll("[data-case-filters]").forEach((bar) => {
+  const pills = Array.from(bar.querySelectorAll(".filter-pill"));
+  const groups = Array.from(document.querySelectorAll(".company-group[data-industry]"));
+  pills.forEach((pill) => {
+    pill.addEventListener("click", () => {
+      const filter = pill.dataset.filter;
+      pills.forEach((p) => {
+        const active = p === pill;
+        p.classList.toggle("is-active", active);
+        p.setAttribute("aria-pressed", String(active));
+      });
+      groups.forEach((group) => {
+        const show = filter === "all" || group.dataset.industry === filter;
+        group.classList.remove("is-filter-in");
+        group.classList.toggle("is-filtered-out", !show);
+        if (show) {
+          group.classList.add("is-visible");
+          void group.offsetWidth;
+          group.classList.add("is-filter-in");
+        }
+      });
+    });
+  });
+});
+
+// Sticky TOC scroll-spy on case pages.
+document.querySelectorAll("[data-case-toc]").forEach((toc) => {
+  const links = Array.from(toc.querySelectorAll('a[href^="#"]'));
+  const sections = links
+    .map((link) => document.getElementById(link.getAttribute("href").slice(1)))
+    .filter(Boolean);
+  if (!sections.length) return;
+
+  const setCurrent = (id) => {
+    links.forEach((link) =>
+      link.classList.toggle("is-current", link.getAttribute("href") === `#${id}`)
+    );
+  };
+
+  const spy = new IntersectionObserver(
+    (entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+      if (visible.length) setCurrent(visible[0].target.id);
+    },
+    { rootMargin: "-20% 0px -60% 0px", threshold: 0 }
+  );
+
+  sections.forEach((section) => spy.observe(section));
+  setCurrent(sections[0].id);
+});
 
 document.querySelectorAll("[data-video-cta]").forEach((btn) => {
   const frame = btn.closest(".video-loop-frame");

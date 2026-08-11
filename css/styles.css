@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&display=swap");
+/* Fonts (Inter variable + Fraunces) are loaded from <head> with preconnect +
+   preload — see generate.py header(). */
 
 :root {
   --bg: #0c0f12;
@@ -8,12 +9,20 @@
   --faint: #8b949e;
   --accent: #d6ff4b;
   --accent-dim: rgba(214, 255, 75, 0.14);
+  --accent-contrast: #11150a;
   --line: rgba(244, 241, 234, 0.1);
   --glow: rgba(94, 200, 255, 0.18);
   --display: "Fraunces", Georgia, "Times New Roman", serif;
-  --sans: "DM Sans", system-ui, sans-serif;
+  --sans: "Inter", "DM Sans", system-ui, sans-serif;
   --max: 1120px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  color-scheme: dark;
+}
+
+/* Cross-document view transitions: same-origin navigation cross-fades in
+   supporting browsers (Chrome 126+, Safari 18.2+). */
+@view-transition {
+  navigation: auto;
 }
 
 *,
@@ -31,9 +40,10 @@ body {
   background: var(--bg);
   color: var(--ink);
   font-family: var(--sans);
+  font-optical-sizing: auto;
   font-size: 1.125rem;
   line-height: 1.7;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.002em;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -122,6 +132,52 @@ img {
   color: var(--ink);
 }
 
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  padding: 0;
+  margin-left: 0.1rem;
+  align-self: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease,
+    transform 0.2s var(--ease);
+}
+
+.theme-toggle:hover {
+  color: var(--ink);
+  border-color: var(--accent);
+  transform: rotate(12deg);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.theme-icon {
+  display: block;
+}
+
+/* Dark theme shows the sun ("switch to light"); light shows the moon. */
+.theme-icon-moon {
+  display: none;
+}
+
+html[data-theme="light"] .theme-icon-moon {
+  display: block;
+}
+
+html[data-theme="light"] .theme-icon-sun {
+  display: none;
+}
+
 .page-section {
   padding-top: 3.5rem;
 }
@@ -193,9 +249,9 @@ img {
   margin: 0;
   font-family: var(--display);
   font-weight: 500;
-  font-size: clamp(2.4rem, 6.5vw, 4.4rem);
+  font-size: clamp(2.4rem, 6.5vw, 4.6rem);
   line-height: 1.02;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   color: #ffffff;
   text-shadow: 0 2px 24px rgba(0, 0, 0, 0.55);
   opacity: 0;
@@ -237,6 +293,33 @@ img {
   text-shadow: 0 1px 12px rgba(0, 0, 0, 0.45);
   opacity: 0;
   animation: rise 1s var(--ease) 0.42s forwards;
+}
+
+.hero-status {
+  margin: 0.85rem 0 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.38rem 0.95rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.045);
+  backdrop-filter: blur(6px);
+  font-size: 0.86rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--muted);
+  opacity: 0;
+  animation: rise 1s var(--ease) 0.34s forwards;
+}
+
+.hero-status-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-dim);
+  flex-shrink: 0;
 }
 
 .brand-strip {
@@ -369,7 +452,7 @@ img {
 
 .btn-primary {
   background: var(--accent);
-  color: #11150a;
+  color: var(--accent-contrast);
 }
 
 .btn-ghost {
@@ -409,7 +492,7 @@ img {
   font-family: var(--display);
   font-weight: 500;
   font-size: clamp(1.9rem, 4.2vw, 2.8rem);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.028em;
   line-height: 1.05;
 }
 
@@ -1028,7 +1111,7 @@ body.brand-nfl::before {
   font-family: var(--display);
   font-weight: 500;
   font-size: clamp(2.4rem, 5.5vw, 4rem);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.028em;
   line-height: 1.04;
   max-width: 20ch;
   color: var(--ink);
@@ -1197,6 +1280,53 @@ body.brand-nfl::before {
   align-items: start;
   padding: 3rem 0;
   border-top: 1px solid var(--line);
+  scroll-margin-top: 6.5rem;
+}
+
+/* Slim sticky table of contents (wide viewports only) */
+.case-toc {
+  position: fixed;
+  top: 10rem;
+  left: max(1.25rem, calc((100vw - var(--max)) / 2 - 11.5rem));
+  width: 9.25rem;
+  z-index: 5;
+  display: grid;
+  gap: 0;
+  font-size: 0.83rem;
+}
+
+.case-toc-label {
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin-bottom: 0.55rem;
+}
+
+.case-toc a {
+  display: block;
+  padding: 0.34rem 0 0.34rem 0.85rem;
+  border-left: 2px solid var(--line);
+  color: var(--faint);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.case-toc a:hover {
+  color: var(--ink);
+}
+
+.case-toc a.is-current {
+  color: var(--accent);
+  border-left-color: var(--accent);
+}
+
+@media (max-width: 1479px) {
+  .case-toc {
+    display: none;
+  }
 }
 
 .case-section:first-child {
@@ -1359,7 +1489,7 @@ body.brand-nfl::before {
   border: none;
   border-radius: 999px;
   background: var(--accent);
-  color: #0c0f12;
+  color: var(--accent-contrast);
   font-family: var(--sans);
   font-size: 0.72rem;
   font-weight: 600;
@@ -1414,7 +1544,7 @@ body.brand-nfl::before {
   border: none;
   border-radius: 999px;
   background: var(--accent);
-  color: #0c0f12;
+  color: var(--accent-contrast);
   font-family: var(--sans);
   font-size: 0.72rem;
   font-weight: 600;
@@ -1539,7 +1669,7 @@ body.brand-nfl::before {
 .carousel-btn:hover {
   background: var(--accent);
   border-color: var(--accent);
-  color: #0c0f12;
+  color: var(--accent-contrast);
 }
 
 .carousel-count {
@@ -2743,6 +2873,65 @@ body.case-nfl .site-footer {
 
 
 /* ============================================================
+   Case-studies index — industry filter pills
+   ============================================================ */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: -1.25rem 0 2.25rem;
+}
+
+.filter-pill {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.42rem 1rem;
+  background: transparent;
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.filter-pill:hover {
+  color: var(--ink);
+  border-color: var(--accent);
+}
+
+.filter-pill.is-active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-contrast);
+}
+
+.filter-pill:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.company-group.is-filtered-out {
+  display: none;
+}
+
+.company-group.is-filter-in {
+  animation: filter-in 0.4s var(--ease);
+}
+
+@keyframes filter-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================================
    Case-studies index — per-product carousels
    ============================================================ */
 .company-group-head {
@@ -2793,11 +2982,13 @@ body.case-nfl .site-footer {
 }
 
 .case-card {
+  position: relative;
+  overflow: hidden;
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
   gap: 0.45rem;
-  padding: 1.35rem 1.35rem 1.4rem;
+  padding: 1.45rem 1.35rem 1.4rem;
   background: var(--bg-soft);
   border: 1px solid var(--line);
   border-radius: 0.9rem;
@@ -2808,10 +2999,49 @@ body.case-nfl .site-footer {
     background 0.3s var(--ease), box-shadow 0.3s var(--ease);
 }
 
+/* Brand-colored accent bar along the top of each card. */
+.case-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: var(--card-accent, var(--accent));
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+
+.case-card:hover::before {
+  opacity: 1;
+}
+
+.case-card.case-robinhood { --card-accent: #00c805; }
+.case-card.case-fanduel { --card-accent: #4c9aff; }
+.case-card.case-nfl { --card-accent: #d50a0a; }
+.case-card.case-ipsos { --card-accent: #c4a35a; }
+.case-card.case-cgu { --card-accent: #a67c52; }
+.case-card.case-burkmont { --card-accent: #e56020; }
+
 .case-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-5px);
   border-color: rgba(244, 241, 234, 0.22);
   box-shadow: 0 16px 34px rgba(0, 0, 0, 0.4);
+}
+
+/* Small brand mark chip in the card's top-right corner. */
+.brand-chip-card {
+  height: 1.65rem;
+  padding: 0 0.45rem;
+  border-radius: 0.45rem;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.25);
+}
+
+.brand-chip-card img {
+  max-height: 1rem;
+  max-width: 4.25rem;
+}
+
+.brand-chip-card.brand-chip-nfl img {
+  max-height: 1.3rem;
 }
 
 .case-card-top {
@@ -2900,7 +3130,7 @@ body.case-nfl .site-footer {
 
 .pcar-btn:hover {
   background: var(--accent);
-  color: #0c0f12;
+  color: var(--accent-contrast);
 }
 
 .pcar-btn:disabled {
@@ -3050,4 +3280,275 @@ body.case-nfl .site-footer {
   .pcar-btn {
     display: none;
   }
+}
+
+/* ============================================================
+   Reduced motion — disable reveals, hero rises, lifts, and
+   cross-document view transitions.
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  @view-transition {
+    navigation: none;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .hero-kicker,
+  .hero-brand,
+  .hero-role,
+  .hero-title,
+  .hero-status,
+  .hero-lede,
+  .brand-strip,
+  .hero-actions {
+    animation: none;
+    opacity: 1;
+  }
+
+  .company-group.is-filter-in {
+    animation: none;
+  }
+
+  .case-card,
+  .btn,
+  .brand-strip a,
+  .theme-toggle,
+  .carousel-slide {
+    transition: none;
+  }
+
+  .case-card:hover,
+  .btn:hover,
+  .brand-strip a:hover,
+  .theme-toggle:hover {
+    transform: none;
+  }
+}
+
+/* ============================================================
+   Light theme. The site is dark-first; these overrides restate
+   the same palette relationships on a warm paper background.
+   Applied when html[data-theme="light"] is set by the inline
+   head script (stored toggle choice, else prefers-color-scheme).
+   ============================================================ */
+html[data-theme="light"] {
+  color-scheme: light;
+  --bg: #faf9f5;
+  --bg-soft: #ffffff;
+  --ink: #171b20;
+  --muted: #464e58;
+  --faint: #69727d;
+  --accent: #5d7d00;
+  --accent-dim: rgba(125, 160, 0, 0.13);
+  --accent-contrast: #ffffff;
+  --line: rgba(23, 27, 32, 0.13);
+  --glow: rgba(76, 154, 255, 0.14);
+}
+
+html[data-theme="light"] body::before {
+  background:
+    radial-gradient(900px 500px at 12% -10%, rgba(174, 214, 32, 0.14), transparent 55%),
+    radial-gradient(700px 420px at 88% 8%, var(--glow), transparent 50%),
+    linear-gradient(180deg, #f4f4ec 0%, var(--bg) 40%, #f5f3ec 100%);
+}
+
+html[data-theme="light"] .site-header {
+  background: rgba(250, 249, 245, 0.78);
+}
+
+/* Hero — swap white-on-dark type for ink-on-paper, drop the glow shadows. */
+html[data-theme="light"] .hero-media {
+  background:
+    radial-gradient(900px 520px at 12% -10%, rgba(174, 214, 32, 0.2), transparent 55%),
+    radial-gradient(700px 420px at 90% 10%, rgba(76, 154, 255, 0.14), transparent 50%),
+    linear-gradient(180deg, #f1f2e9 0%, #faf9f5 45%, #f6f4ee 100%);
+}
+
+html[data-theme="light"] .hero-atmosphere {
+  background: linear-gradient(180deg, rgba(250, 249, 245, 0.25) 0%, rgba(250, 249, 245, 0.05) 40%, rgba(250, 249, 245, 0.9) 100%);
+}
+
+html[data-theme="light"] .hero-brand,
+html[data-theme="light"] .hero-role,
+html[data-theme="light"] .hero-title {
+  color: var(--ink);
+  text-shadow: none;
+}
+
+html[data-theme="light"] .hero-kicker {
+  text-shadow: none;
+}
+
+html[data-theme="light"] .hero-lede {
+  color: var(--muted);
+  text-shadow: none;
+}
+
+html[data-theme="light"] .hero-status {
+  background: rgba(23, 27, 32, 0.04);
+}
+
+html[data-theme="light"] .btn-ghost {
+  background: rgba(23, 27, 32, 0.03);
+}
+
+html[data-theme="light"] .btn-ghost:hover {
+  border-color: rgba(23, 27, 32, 0.32);
+}
+
+html[data-theme="light"] .brand-strip .brand-tile {
+  box-shadow: 0 2px 10px rgba(24, 30, 38, 0.16);
+}
+
+/* Brand chips: keep the white chip, soften the halo for paper. */
+html[data-theme="light"] .brand-chip {
+  border-color: rgba(23, 27, 32, 0.1);
+  box-shadow: 0 2px 8px rgba(24, 30, 38, 0.12);
+}
+
+/* Company headings / badges — darken brand tints for contrast on paper. */
+html[data-theme="light"] .company-robinhood .company-heading { color: #009606; }
+html[data-theme="light"] .company-fanduel .company-heading { color: #1668d6; }
+html[data-theme="light"] .company-nfl .company-heading { color: #013369; }
+html[data-theme="light"] .company-ipsos .company-heading { color: #96742c; }
+html[data-theme="light"] .company-cgu .company-heading { color: #7d5834; }
+html[data-theme="light"] .company-burkmont .company-heading { color: #c24e12; }
+
+html[data-theme="light"] .product-robinhood .product-name { color: #009606; }
+html[data-theme="light"] .product-fanduel .product-name { color: #1668d6; }
+html[data-theme="light"] .product-nfl .product-name { color: #013369; }
+html[data-theme="light"] .product-intel .product-name { color: #0068b5; }
+html[data-theme="light"] .product-ipsos .product-name { color: #96742c; }
+html[data-theme="light"] .product-cgu .product-name { color: #7d5834; }
+html[data-theme="light"] .product-burkmont .product-name { color: #c24e12; }
+
+/* Case cards & rows — titles go ink; accents darken. */
+html[data-theme="light"] .case-card h3,
+html[data-theme="light"] .case-row h3 {
+  color: var(--ink);
+}
+
+html[data-theme="light"] .case-card:hover {
+  border-color: rgba(23, 27, 32, 0.24);
+  box-shadow: 0 16px 34px rgba(24, 30, 38, 0.14);
+}
+
+html[data-theme="light"] .case-card.case-robinhood .case-num,
+html[data-theme="light"] .case-row.case-robinhood .case-num { color: #009606; }
+html[data-theme="light"] .case-card.case-fanduel .case-num,
+html[data-theme="light"] .case-row.case-fanduel .case-num { color: #1668d6; }
+html[data-theme="light"] .case-card.case-nfl .case-num,
+html[data-theme="light"] .case-row.case-nfl .case-num { color: #b30808; }
+html[data-theme="light"] .case-card.case-ipsos .case-num,
+html[data-theme="light"] .case-row.case-ipsos .case-num { color: #96742c; }
+
+html[data-theme="light"] .pcar-btn {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 8px 22px rgba(24, 30, 38, 0.16);
+}
+
+html[data-theme="light"] .carousel-btn {
+  background: rgba(23, 27, 32, 0.05);
+}
+
+html[data-theme="light"] .tool-pill,
+html[data-theme="light"] .tool-icon-tile {
+  background: rgba(23, 27, 32, 0.03);
+}
+
+/* Case pages — narrative body text on paper. */
+html[data-theme="light"] .case-section-body {
+  color: #343d47;
+}
+
+html[data-theme="light"] .case-section-body .callout,
+html[data-theme="light"] .prose .callout {
+  color: #333a41;
+}
+
+/* KPI accent colors, darkened for contrast. */
+html[data-theme="light"] .kpi--revenue { border-top-color: #0b8f52; }
+html[data-theme="light"] .kpi--conversion { border-top-color: #1668d6; }
+html[data-theme="light"] .kpi--scale { border-top-color: #8a6d2f; }
+html[data-theme="light"] .kpi--efficiency { border-top-color: #24705e; }
+html[data-theme="light"] .kpi--compliance { border-top-color: #a06f1e; }
+html[data-theme="light"] .kpi-value--revenue { color: #0b8f52; }
+html[data-theme="light"] .kpi-value--conversion { color: #1668d6; }
+html[data-theme="light"] .kpi-value--scale { color: #8a6d2f; }
+html[data-theme="light"] .kpi-value--efficiency { color: #24705e; }
+html[data-theme="light"] .kpi-value--compliance { color: #a06f1e; }
+
+html[data-theme="light"] .trueview-section .section-head h2 {
+  color: var(--ink);
+}
+
+/* Brand-themed case pages */
+html[data-theme="light"] body.brand-robinhood {
+  --accent: #008505;
+  --accent-dim: rgba(0, 150, 10, 0.12);
+  --glow: rgba(0, 200, 5, 0.12);
+  --bg: #f6faf6;
+  --bg-soft: #ffffff;
+}
+
+html[data-theme="light"] body.brand-robinhood::before {
+  background:
+    radial-gradient(800px 480px at 10% -8%, rgba(0, 200, 5, 0.1), transparent 55%),
+    linear-gradient(180deg, #f0f7f0 0%, #f6faf6 45%, #f6faf6 100%);
+}
+
+html[data-theme="light"] body.brand-robinhood .site-header {
+  background: rgba(246, 250, 246, 0.8);
+}
+
+html[data-theme="light"] body.brand-fanduel {
+  --accent: #1668d6;
+  --accent-dim: rgba(22, 104, 214, 0.12);
+  --glow: rgba(76, 154, 255, 0.16);
+  --bg: #f5f8fd;
+  --bg-soft: #ffffff;
+}
+
+html[data-theme="light"] body.brand-fanduel::before {
+  background:
+    radial-gradient(900px 520px at 88% -10%, rgba(76, 154, 255, 0.14), transparent 55%),
+    linear-gradient(180deg, #eef4fc 0%, #f5f8fd 50%, #f5f8fd 100%);
+}
+
+html[data-theme="light"] body.brand-fanduel .site-header {
+  background: rgba(245, 248, 253, 0.8);
+}
+
+/* The NFL blue reference layout is its own self-contained design
+   (white type on a blue field) — keep it identical in light mode. */
+html[data-theme="light"] body.case-nfl {
+  --ink: #fafaf8;
+  --muted: #c4cad2;
+  --faint: #8b949e;
+  --line: rgba(255, 255, 255, 0.18);
+  --accent: #d50a0a;
+  --accent-contrast: #ffffff;
+}
+
+/* Re-assert the faceted blue backdrop and header over the generic light
+   overrides (which otherwise win on specificity). */
+html[data-theme="light"] body.case-nfl::before {
+  background:
+    linear-gradient(118deg, rgba(255, 255, 255, 0.10) 0 26%, transparent 26% 100%),
+    linear-gradient(305deg, rgba(255, 255, 255, 0.07) 0 30%, transparent 30% 100%),
+    linear-gradient(196deg, rgba(9, 34, 96, 0.42) 0 46%, transparent 46% 100%),
+    linear-gradient(146deg, rgba(11, 52, 132, 0.40) 58%, transparent 58% 100%),
+    linear-gradient(122deg, #34ace6 0%, #2b83dc 40%, #234fca 72%, #213fc0 100%);
+}
+
+html[data-theme="light"] body.case-nfl .site-header {
+  background: rgba(20, 62, 150, 0.55);
 }
