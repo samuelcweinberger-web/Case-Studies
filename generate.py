@@ -85,13 +85,13 @@ CASES = [
             },
         ],
         "title": "Why Approved Traders Never Placed Their First Trade",
-        "short": "Approved traders kept signing up for prediction markets but never placed a first trade—matched interviews traced it to findability on the home page, and five low-effort design changes brought ~480K stalled customers back to a first trade.",
+        "short": "Approved traders kept signing up for prediction markets but never placed a first trade—matched interviews traced it to findability on the home page, and five low-effort design changes brought hundreds of thousands of stalled customers back to a first trade.",
         "context": "Robinhood · Prediction Markets & Event Contracts",
         "year": "2026",
         "role": "UX Researcher (study lead)",
         "timeline": "~1 week (vs. typical 3–4 weeks)",
         "methods": "AI-moderated interviews (Listen Labs) · Matched converter/non-converter design · Funnel analysis · Claude/Python/SQL deep dive",
-        "summary": "A large group of approved customers went through every step to trade event contracts, then never placed a first trade. A one-week matched study showed the barrier was findability on the home page—and five low-effort changes brought roughly 480K stalled customers back to a first trade.",
+        "summary": "A large group of approved customers went through every step to trade event contracts, then never placed a first trade. A one-week matched study showed the barrier was findability on the home page—and five low-effort changes brought hundreds of thousands of stalled customers back to a first trade.",
         "stats": [],
         "sections": [
             ("Situation", """<ul>
@@ -111,7 +111,7 @@ CASES = [
             ("Action", """<ul>
 <li>Ran AI-moderated interviews via Listen Labs with two matched groups of similar background: 25 converters (placed a first trade) and 25 non-converters (had not).</li>
 <li>Trained the AI moderator to adapt follow-ups to each participant in real time.</li>
-<li>Recruited both groups from a 50K internal list — all active futures, crypto, and stock traders.</li>
+<li>Recruited both groups from a large internal list — all active futures, crypto, and stock traders.</li>
 <li>Paired the qualitative signal with funnel analysis and a Claude/Python/SQL deep dive into engagement behavior.</li>
 </ul>"""),
             ("Result", """<p>The two groups arrived at the app for different reasons, and the design only worked for one of them:</p>
@@ -131,9 +131,9 @@ CASES = [
 </ul>
 <p><strong>What happened after the changes shipped.</strong> The changes recovered a large share of the stalled customers and improved two separate measures the business tracked. Each is described below in plain terms.</p>
 <ul>
-<li><strong>Half the stalled group finally traded.</strong> Of the roughly 900,000 approved customers who had never traded, about 480,000 placed their first trade.</li>
-<li><strong>More people traded in the same sitting they signed up — up from 57% to about 66%.</strong> The company wanted customers to place their first trade in the same session they got approved, without leaving the app and coming back. (This measure counts only people who finish in one sitting, which usually takes a few minutes; it excludes new customers who need a manual review first.) This mattered because customers who trade in that first sitting go on to trade about 15% more than those who don’t.</li>
-<li><strong>Nearly everyone who traded within a day did so quickly — 88%.</strong> A second measure looked at customers who placed a first trade within 24 hours of being approved; that figure reached 88%. The 24-hour mark mattered because separate research showed that customers who trade within a day stay more engaged over time than those who take longer.</li>
+<li><strong>Half the stalled group finally traded.</strong> Of the hundreds of thousands of approved customers who had never traded, roughly half placed their first trade after the changes shipped.</li>
+<li><strong>More people traded in the same sitting they signed up — a roughly nine-point lift.</strong> The company wanted customers to place their first trade in the same session they got approved, without leaving the app and coming back. (This measure counts only people who finish in one sitting, which usually takes a few minutes; it excludes new customers who need a manual review first.) This mattered because customers who trade in that first sitting go on to trade about 15% more than those who don’t.</li>
+<li><strong>Nearly everyone who traded within a day did so quickly — roughly 9 in 10.</strong> A second measure looked at customers who placed a first trade within 24 hours of being approved; nearly all of them did. The 24-hour mark mattered because separate research showed that customers who trade within a day stay more engaged over time than those who take longer.</li>
 </ul>"""),
         ],
     },
@@ -142,13 +142,13 @@ CASES = [
         "num": "02",
         "brand": "robinhood",
         "title": "Turning a Dead End Into a Second Chance",
-        "short": "A backend failure the company couldn’t fix was silently churning 1 in 5 first-time traders. Redesigning the moment around the error—a plain-language message and a path back to the trade—won back 6 of every 10 at-risk users and ~$12M in monthly revenue.",
+        "short": "A backend failure the company couldn’t fix was silently churning 1 in 5 first-time traders. Redesigning the moment around the error—a plain-language message and a path back to the trade—won back 6 of every 10 at-risk users and roughly 70% of the revenue that had been at risk.",
         "context": "Robinhood · Prediction Markets & Event Contracts",
         "year": "2026",
         "role": "UX Researcher (investigation lead)",
         "timeline": "Interview → data diagnosis → shipped fix",
         "methods": "In-depth interviews · Python/SQL prevalence analysis · Churn analysis · Message design with content partners",
-        "summary": "A backend failure the company couldn’t control was silently churning 1 in 5 first-time traders. Redesigning the moment around the error—with no engineering fix or spend—kept 6 of every 10 at-risk users and recovered about $12M in monthly revenue.",
+        "summary": "A backend failure the company couldn’t control was silently churning 1 in 5 first-time traders. Redesigning the moment around the error—with no engineering fix or spend—kept 6 of every 10 at-risk users and recovered most of the revenue that had been at risk.",
         "stats": [],
         "sections": [
             ("Situation", """<ul>
@@ -167,17 +167,17 @@ CASES = [
 <li>Recover a customer segment that was being lost silently, at scale, every month.</li>
 </ul>"""),
             ("Action", """<ul>
-<li>Used Python and SQL to diagnose prevalence across the first-trade funnel, confirming it affected 1 in 5 first-time users and was a major driver of onboarding abandonment and 7–8 figure monthly revenue loss.</li>
+<li>Used Python and SQL to diagnose prevalence across the first-trade funnel, confirming it affected 1 in 5 first-time users and was a major driver of onboarding abandonment and substantial monthly revenue loss.</li>
 <li>Identified a rare and valuable population: the ~10% of affected users who returned and tried again despite the failure.</li>
 <li>Interviewed that group specifically — asking what would have prevented everyone else from dropping off for good.</li>
 <li>Their answer was consistent and specific: a brief explanation of what happened, plus a CTA that kept them inside the app and returned them to the event they’d been trying to trade.</li>
 <li>Worked with content partners to design that messaging: a plain-language explanation of the failure and a recovery path straight back into the trade funnel.</li>
 </ul>"""),
             ("Result", """<ul>
-<li><strong>The problem was a failure the company couldn’t fix, and it was costing millions a month.</strong> New customers were hitting a technical error the company had no control over, and most of them left for good. The lost business ran into the tens of millions of dollars a month.</li>
+<li><strong>The problem was a failure the company couldn’t fix, and it was costing real money every month.</strong> New customers were hitting a technical error the company had no control over, and most of them left for good. The lost business was substantial — a revenue leak, not a rounding error.</li>
 <li><strong>The fix was a simple message, not an engineering change.</strong> I recommended showing customers a short, plain explanation of what went wrong, plus a button that took them straight back to the event they’d been trying to trade — instead of leaving them stuck on a blank screen with no way forward.</li>
 <li><strong>Far fewer people gave up.</strong> Before, about 9 out of 10 customers who hit the error abandoned the app. After the change, that dropped to about 3 out of 10 — meaning 6 of every 10 customers who would have been lost were kept.</li>
-<li>This recovered about $12 million in revenue a month, roughly 70% of what the company had been on track to lose.</li>
+<li>This recovered roughly 70% of the revenue the company had been on track to lose each month.</li>
 <li>The underlying error was never fixed — it still happens. The entire recovery came from redesigning what customers see when it happens, with no financial incentives, no engineering fix, and no added spend.</li>
 </ul>"""),
         ],
@@ -211,7 +211,7 @@ CASES = [
             "caption": "Scrubbing the Bitcoin chart to inspect the price at any moment, sourced from CF Benchmarks’ BRTI.",
         },
         "title": "From Coin Toss to Informed Call: Getting Single-Category Traders to Diversify",
-        "short": "About 70% of users traded a single category, mostly sports. The real blocker wasn’t risk or knowledge but confidence—new decision tools (a limit order and a chart Tool Tip) made trying a new category feel informed and lifted multi-category trading 11%.",
+        "short": "Most users traded a single category, mostly sports. The real blocker wasn’t risk or knowledge but confidence—new decision tools (a limit order and a chart Tool Tip) made trying a new category feel informed and lifted multi-category trading 11%.",
         "context": "Robinhood · Prediction Markets & Event Contracts",
         "year": "2026",
         "role": "UX Researcher (study lead)",
@@ -221,7 +221,7 @@ CASES = [
         "stats": [],
         "sections": [
             ("Situation", """<ul>
-<li>Previous research showed about 70% of users traded a single prediction-market category, overwhelmingly sports.</li>
+<li>Previous research showed a large majority of users traded a single prediction-market category, overwhelmingly sports.</li>
 <li>The company wanted them to expand into other categories — the trading-app version of “diversify your portfolio.”</li>
 <li>Initial research surfaced the two usual suspects as the most-reported barriers: risk-aversion and lack of knowledge.</li>
 <li>These were the same reasons the org reflexively met with education modules and risk-free promotions.</li>
@@ -248,7 +248,7 @@ CASES = [
             ("Result", """<p>The real barrier for the exploring majority: trading a new category felt like a gamble, not an informed choice — and the tools that would make it feel informed were either hidden in the app or missing entirely. The recommendations below are ordered by how easily they could be acted on.</p>
 <p><strong>Lowest-hanging fruit — tell people about tools that already existed.</strong> The fastest wins required no new capability, just surfacing what was buried:</p>
 <ul>
-<li><strong>Point users to the limit order.</strong> The limit order lets a trader set the price they’re willing to pay instead of taking whatever the market offers, but it was buried deep in the order form and few users ever reached it. After it was surfaced and added to the order form, limit orders made up about 24% of all trading volume within two weeks.</li>
+<li><strong>Point users to the limit order.</strong> The limit order lets a trader set the price they’re willing to pay instead of taking whatever the market offers, but it was buried deep in the order form and few users ever reached it. After it was surfaced and added to the order form, limit orders became a meaningful share of all trading volume within two weeks.</li>
 <li><strong>Show where the price comes from, and how to see its history.</strong> On the 15-minute Bitcoin market, the price history was on the chart but wasn’t presented as decision support, and the source wasn’t clearly credited. I recommended making the pricing history easier to find and turning the “Source: BRTI” label into a tappable link to the independent benchmark, so skeptical traders could verify it themselves.</li>
 <li><strong>For sports-only traders specifically — surface fast-settling non-sports events.</strong> Because these users avoid anything that ties up their money, I recommended surfacing quick-turnaround non-sports markets like the 15-minute Bitcoin event. Usability testing confirmed this satisfied their need for a fast start-to-finish window — giving them a non-sports on-ramp that didn’t feel like money-jail.</li>
 <li><strong>Teach the chart-scrub.</strong> Testing the Bitcoin event surfaced the next problem: users didn’t know they could press and drag along the chart to see the price at any point in time. I concept-tested Tool Tip, a one-time prompt that shows them this is possible. In testing it clearly changed how willing people were to engage, and after it shipped, the share of people trading in more than one category rose 11%.</li>
@@ -271,13 +271,13 @@ CASES = [
         "num": "04",
         "brand": "robinhood",
         "title": "The Cold-Start Problem: A Deep Dive Into a Personalization Experiment",
-        "short": "A personalization algorithm looked like a win (+4% in its A/B test) but trade volume had plateaued. Re-analysis showed it couldn’t cold-start new users; the fixes I recommended cut post-first-trade drop-off from 54% to 37%.",
+        "short": "A personalization algorithm looked like a win (+4% in its A/B test) but trade volume had plateaued. Re-analysis showed it couldn’t cold-start new users; the fixes I recommended cut post-first-trade drop-off by nearly a third.",
         "context": "Robinhood · Prediction Markets & Event Contracts",
         "year": "2026",
         "role": "UX Researcher (investigation lead)",
         "timeline": "Multi-week deep dive",
         "methods": "Behavioral segmentation · AI-moderated interviews · Factorial ANOVA (arm × segment) · Matched-sample analysis · Prototyping (Cursor · GitHub · Figma · Python)",
-        "summary": "A personalization algorithm looked like a win (+4% in its A/B test), yet trade volume had plateaued. My re-analysis showed it couldn’t cold-start new users, and the fixes I recommended cut post-first-trade drop-off from 54% to 37%.",
+        "summary": "A personalization algorithm looked like a win (+4% in its A/B test), yet trade volume had plateaued. My re-analysis showed it couldn’t cold-start new users, and the fixes I recommended cut post-first-trade drop-off by nearly a third.",
         "stats": [],
         "sections": [
             ("Situation", """<ul>
@@ -288,7 +288,7 @@ CASES = [
 </ul>"""),
             ("Task", """<ul>
 <li>Map what actually drives and suppresses trade volume, and diagnose the plateau.</li>
-<li>Preliminary analysis surfaced the risk immediately: ~70% of the base traded sports contracts only.</li>
+<li>Preliminary analysis surfaced the risk immediately: a large majority of the base traded sports contracts only.</li>
 <li>Higher-value multi-category traders — who trade significantly more — were shrinking fast.</li>
 <li>That set up a seasonal cliff: once college basketball and the NBA season ended, volume had nowhere to go.</li>
 </ul>"""),
@@ -307,7 +307,7 @@ CASES = [
 </ul>
 <p><strong>What the A/B test showed</strong></p>
 <ul>
-<li><strong>The Watch List cut drop-off after a first trade.</strong> In the control group (no Watch List), 54% of users dropped off after placing a trade; with the Watch List, only 37% dropped off after their first trade.</li>
+<li><strong>The Watch List cut drop-off after a first trade.</strong> In the control group (no Watch List), more than half of users dropped off after placing a trade; with the Watch List, drop-off after a first trade fell by nearly a third.</li>
 <li>The customization idea — letting users pick their own categories — was recommended and is being built, with those options planned for release in Q4.</li>
 </ul>
 <p class="callout">Note: The watchlist designs that shaped this work are in beta testing and not yet fully live in prediction markets, so any visuals reflect the existing investing-side watchlist that set the framework for the initial prediction-markets design.</p>"""),
@@ -318,13 +318,13 @@ CASES = [
         "num": "05",
         "brand": "fanduel",
         "title": "Studying the Users You Can’t Recruit: Fixing Registration Drop-Off",
-        "short": "More than half of prospective customers abandoned registration on every state launch, and they couldn’t be recruited. A simulated-app study localized the drop and a reordered flow lifted completion from ~50% to ~65% in production.",
+        "short": "More than half of prospective customers abandoned registration on every state launch, and they couldn’t be recruited. A simulated-app study localized the drop and a reordered flow lifted production completion by roughly a third.",
         "context": "FanDuel · Core Products & Experiences",
         "year": "2021–2023",
         "role": "UX Researcher (study lead)",
         "timeline": "Multi-phase (simulation → A/B → production)",
         "methods": "Simulated-app experiment · Step-by-step intention measurement · Third-party panel recruitment · A/B testing · Behavioral theory (foot-in-the-door)",
-        "summary": "More than half of prospective FanDuel customers abandoned registration on every state launch—and they couldn’t be recruited to study. A simulated-app experiment localized the drop, and reordering when SSN and banking are asked lifted completion from ~50% to ~65% in production.",
+        "summary": "More than half of prospective FanDuel customers abandoned registration on every state launch—and they couldn’t be recruited to study. A simulated-app experiment localized the drop, and reordering when SSN and banking are asked lifted production completion by roughly a third.",
         "stats": [],
         "sections": [
             ("Situation", """<ul>
@@ -350,7 +350,7 @@ CASES = [
 </ul>"""),
             ("Result", """<ul>
 <li><strong>Changing the order of the questions nearly doubled sign-ups in testing.</strong> When the flow asked for email, name, and address first — and saved the Social Security number and banking details for later — completion rose from 30% to 58% in the simulation (500 people in each version).</li>
-<li><strong>The same fix worked just as well with real customers.</strong> Once the reordered flow went live, completion climbed from about 50% to about 65%.</li>
+<li><strong>The same fix worked just as well with real customers.</strong> Once the reordered flow went live, production completion climbed by roughly a third.</li>
 <li><strong>It became the standard.</strong> Every new-state launch afterward used the reordered flow.</li>
 <li><strong>The method itself was the breakthrough.</strong> It made it possible to study people who had quit and couldn’t be recruited — by watching new participants go through a stand-in version of the flow — without any ethical or compliance problems.</li>
 <li>Registration and login stayed a top area of investment while FanDuel grew from about 1.5 million to more than 20 million registered users during this period.</li>
@@ -414,13 +414,13 @@ CASES = [
         "num": "07",
         "brand": "fanduel",
         "title": "ACH Adoption: Turning a Payments Risk Into a Trust Problem Worth Solving",
-        "short": "Customers avoided ACH—the safer deposit method—because bank numbers felt least secure. Reframing the message (not adding incentives) roughly doubled ACH adoption from under 20% to ~32%, draining a costly football-Sunday debit exploit.",
+        "short": "Customers avoided ACH—the safer deposit method—because bank numbers felt least secure. Reframing the message (not adding incentives) roughly doubled ACH adoption, draining a costly football-Sunday debit exploit.",
         "context": "FanDuel · Core Products & Experiences",
         "year": "2024–2026",
         "role": "UX Researcher (study lead)",
         "timeline": "Multi-phase (research → A/B → production)",
         "methods": "In-depth interviews · A/B message testing · Behavioral + sentiment pairing · Cross-functional work with content design",
-        "summary": "Customers avoided ACH—the safer deposit method—because entering bank numbers felt least secure. Reframing the message rather than adding incentives roughly doubled ACH adoption from under 20% to about 32%, draining a costly football-Sunday debit exploit.",
+        "summary": "Customers avoided ACH—the safer deposit method—because entering bank numbers felt least secure. Reframing the message rather than adding incentives roughly doubled ACH adoption, draining a costly football-Sunday debit exploit.",
         "stats": [],
         "sections": [
             ("Situation", """<ul>
@@ -429,7 +429,7 @@ CASES = [
 <li>Bets settled the next day as those transactions cleared, sometimes leaving the bank unable to transfer funds.</li>
 <li>If the customer had lost, they were left with a negative balance many never repaid.</li>
 <li>This cost the company directly and incentivized fraud, with bad actors opening new accounts under others’ information to keep exploiting the gap.</li>
-<li>ACH deposits — tied to a verifiable bank balance — would close it, but adoption sat below 20%.</li>
+<li>ACH deposits — tied to a verifiable bank balance — would close it, but adoption remained stubbornly low.</li>
 </ul>"""),
             ("Task", """<ul>
 <li>Understand why customers avoided ACH despite it being the safer, more stable deposit method.</li>
@@ -443,7 +443,7 @@ CASES = [
 <li>A/B tested the variations to find what genuinely moved behavior.</li>
 </ul>"""),
             ("Result", """<ul>
-<li><strong>Roughly twice as many customers started using bank transfers.</strong> Adoption of ACH (paying directly from a bank account) rose from under 20% to about 32%.</li>
+<li><strong>Roughly twice as many customers started using bank transfers.</strong> Adoption of ACH (paying directly from a bank account) roughly doubled after the reframed messaging shipped.</li>
 <li><strong>The fix was to correct a false impression, not to add rewards or extra steps.</strong> Customers had believed that typing in bank account and routing numbers was the least safe way to pay — less safe than the debit card they were used to, which is the opposite of the truth. Better wording, developed with the content design team and tested head-to-head, changed that belief.</li>
 <li><strong>This directly shrank the Sunday-football problem.</strong> Because a bank transfer is tied to money the customer actually has, moving people onto it removed much of the gap that let bets get placed against funds that weren’t really there.</li>
 <li>It reduced two costly outcomes: customers left owing money they never paid back, and the fraud that came with it — people opening new accounts under other identities to keep exploiting the gap.</li>
@@ -456,7 +456,7 @@ CASES = [
         "brand": "nfl",
         "title": "NFL Fantasy Mobile App",
         "subtitle": "Monetizing Fantasy Football — The Tools Package",
-        "short": "Developed and shipped Fantasy features available via in-app purchase—$600K in the first week, $920K in total revenue in 2020, bought by 1.4M users (45% of active users).",
+        "short": "Developed and shipped Fantasy features available via in-app purchase—nearly $1M in first-year revenue, most of it in launch week, bought by more than a million players (nearly half of active users).",
         "brand_card": {
             "logo": "nfl/nfl-fantasy-logo.png",
             "logo_alt": "NFL Fantasy logo",
@@ -478,19 +478,18 @@ CASES = [
             },
         ],
         "headline_kpis": [
-            ("Total Revenue (2020)", "$920K"),
-            ("Active Users Who Bought", "1.4M (45%)"),
+            ("First-Year Revenue", "~$1M"),
+            ("Active Users Who Bought", "1M+ (nearly half)"),
         ],
         "context": "NFL · NFL Fantasy App · Fantasy Sports",
         "year": "2019–2021",
         "role": "UX Researcher (study lead) · 5-person cross-functional team (2 designers, 1 researcher, 1 PM, 1 engineer)",
         "methods": "In-depth interviews · Large-scale survey · MaxDiff · Design-thinking · Static-concept testing · A/B testing",
-        "summary": "Developed and shipped Fantasy features sold via in-app purchase—$600K in direct-to-consumer sales in the first week, $920K in total revenue in 2020, bought by 1.4M users (45% of active users), and later folded into NFL+.",
+        "summary": "Developed and shipped Fantasy features sold via in-app purchase—nearly $1M in first-year revenue with most of it landing in launch week, bought by more than a million players (nearly half of active users), and later folded into NFL+.",
         "insight": "Fans would pay to win their league—as long as paying never changed the game itself.",
         "stats": [
-            ("$600K", "Direct-to-consumer sales in the first week", "revenue"),
-            ("$920K", "Total revenue in 2020", "revenue"),
-            ("1.4M (45%)", "Active Fantasy users who bought the Tools Package", "scale"),
+            ("~$1M", "Direct-to-consumer revenue in year one", "revenue"),
+            ("1M+", "Active Fantasy users who bought the Tools Package — nearly half of actives", "scale"),
         ],
         "sections": [
             (
@@ -520,8 +519,8 @@ CASES = [
             (
                 "Result",
                 """<ul>
-<li>The Tools Package sold immediately — $600K in direct-to-consumer sales in its first week.</li>
-<li>It reached $920K in total revenue in 2020, bought by 1.4 million users (45% of active users).</li>
+<li>The Tools Package sold immediately — most of its first-year revenue landed in launch week.</li>
+<li>It approached $1M in revenue in year one, bought by more than a million players — nearly half of active users.</li>
 <li>It never broke the free game. The paid tools lived inside the existing Fantasy screens, so the free experience stayed whole.</li>
 <li>It became part of NFL+. The Tools Package was later folded into the NFL+ subscription in 2022.</li>
 </ul>""",
@@ -657,7 +656,7 @@ CASES = [
         },
         "stats": [
             ("$1B+", "NFL–Verizon technology partnership", "revenue"),
-            ("59.6%", "Super Bowl LX attendees connected to SuperStadium", "conversion"),
+            ("~60%", "Super Bowl LX attendees connected to SuperStadium", "conversion"),
         ],
         "sections": [
             (
@@ -686,7 +685,7 @@ CASES = [
                 "Result",
                 """<ul>
 <li>The research helped seed SuperStadium, which is now built into the official NFL app and sits at the center of a $1 billion-plus partnership between the NFL and Verizon.</li>
-<li>Fans used it at the sport’s biggest event. At Super Bowl LX, 59.6% of attendees were actively connected to the SuperStadium experience.</li>
+<li>Fans used it at the sport’s biggest event. At Super Bowl LX, roughly 60% of attendees were actively connected to the SuperStadium experience.</li>
 </ul>""",
             ),
         ],
@@ -1317,18 +1316,6 @@ MEDIA_SECTIONS = [
 ]
 
 # Official + sub-brand marks shown at the foot of the gallery.
-MEDIA_BRAND_MARKS = [
-    ("robinhood", "brands/robinhood-official.svg", "Robinhood"),
-    ("fanduel", "brands/fanduel-official.svg", "FanDuel"),
-    ("nfl", "brands/nfl-official.svg", "NFL"),
-    ("intel", "brands/intel-official.svg", "Intel"),
-    ("verizon", "brands/verizon-official.svg", "Verizon"),
-    ("ipsos", "brands/ipsos-official.svg", "Ipsos"),
-    ("nfl", "nfl/nfl-fantasy-logo.png", "NFL Fantasy"),
-    ("nfl", "nfl/nflplus-logo.png", "NFL+"),
-]
-
-
 def render_media_video(item, big=False):
     poster = item.get("poster")
     poster_src = f"media/{poster}" if poster else ""
@@ -1413,22 +1400,6 @@ def write_media_page():
         </section>"""
         )
 
-    mark_cells = "\n".join(
-        f'            <span class="brand-chip brand-chip-{key} brand-chip-lg" title="{label}"><img src="media/{src}" alt="{label} logo" loading="lazy" /></span>'
-        if src.endswith(".svg")
-        else f'            <span class="brand-chip brand-chip-lg" title="{label}"><img src="media/{src}" alt="{label} logo" loading="lazy" /></span>'
-        for key, src, label in MEDIA_BRAND_MARKS
-    )
-    marks_block = f"""        <section class="media-section media-marks reveal" id="media-brand-marks" aria-labelledby="media-marks-title">
-          <div class="media-section-head">
-            <h3 id="media-marks-title">Brand marks</h3>
-            <p>Official marks of the brands featured across these studies, used for portfolio identification.</p>
-          </div>
-          <div class="media-mark-row">
-{mark_cells}
-          </div>
-        </section>"""
-
     html = (
         header(active="Media", nav_active="media")
         + f"""
@@ -1440,7 +1411,6 @@ def write_media_page():
         </div>
 {featured}
 {chr(10).join(section_blocks)}
-{marks_block}
       </div>
     </section>
   </main>
