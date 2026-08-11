@@ -1310,11 +1310,11 @@ def write_home():
     <section class="hero hero-page hero-cinema">
       <div class="hero-media" aria-hidden="true">
         <div class="hero-slides" data-hero-slides>
-          <img class="hero-slide is-active" src="media/hero/slide-writing.jpg" alt="" fetchpriority="high" decoding="async" />
-          <img class="hero-slide" src="media/hero/slide-trueview.jpg" alt="" loading="lazy" decoding="async" />
+          <img class="hero-slide is-active" src="media/hero/slide-sam-writing.jpg" alt="" fetchpriority="high" decoding="async" />
+          <img class="hero-slide" src="media/hero/slide-persona.jpg" alt="" loading="lazy" decoding="async" />
+          <img class="hero-slide" src="media/hero/slide-sam-pen.jpg" alt="" loading="lazy" decoding="async" />
           <img class="hero-slide" src="media/hero/slide-survey-lance.jpg" alt="" loading="lazy" decoding="async" />
           <img class="hero-slide" src="media/hero/slide-survey-alanna.jpg" alt="" loading="lazy" decoding="async" />
-          <img class="hero-slide" src="media/hero/slide-persona.jpg" alt="" loading="lazy" decoding="async" />
         </div>
       </div>
       <div class="hero-scrim" aria-hidden="true"></div>
@@ -1717,7 +1717,7 @@ def write_about_page():
         </div>
         <div class="reveal">
           <figure class="about-portrait">
-            <img src="media/about-sam.jpg" alt="Samuel Weinberger annotating a prototype evaluation survey during an NFL research session" loading="lazy" decoding="async" width="1000" height="1152" />
+            <img src="media/about-sam.jpg" alt="Samuel Weinberger annotating a prototype evaluation survey during an NFL research session" loading="lazy" decoding="async" width="1000" height="1138" />
             <figcaption>In the field &mdash; prototype evaluation during an NFL &times; Intel research session.</figcaption>
           </figure>
           <div class="pill-row">
