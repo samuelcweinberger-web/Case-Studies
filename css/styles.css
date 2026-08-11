@@ -208,7 +208,12 @@ html[data-theme="light"] .theme-icon-sun {
   background: #0a0c0f;
 }
 
-.hero-video {
+.hero-slides {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-slide {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -216,19 +221,44 @@ html[data-theme="light"] .theme-icon-sun {
   object-fit: cover;
   object-position: center 42%;
   filter: saturate(0.72) contrast(1.02) brightness(0.82);
+  opacity: 0;
+  transition: opacity 1.9s ease;
+  will-change: opacity, transform;
 }
 
-/* Very slow Ken Burns once the clip is actually playing. */
-.hero-video.is-playing {
-  animation: hero-kenburns 44s ease-in-out infinite alternate;
+.hero-slide.is-active {
+  opacity: 1;
 }
 
-@keyframes hero-kenburns {
+/* Slow Ken Burns on whichever slide is showing. `.is-leaving` keeps the
+   exact same animation declaration on the outgoing slide so the zoom keeps
+   drifting (rather than snapping back) while it crossfades out. Alternating
+   drift directions keep consecutive slides from feeling repetitive. */
+.hero-slide.is-active,
+.hero-slide.is-leaving {
+  animation: hero-kb-drift 12s ease-in-out both;
+}
+
+.hero-slide.is-active:nth-child(even),
+.hero-slide.is-leaving:nth-child(even) {
+  animation-name: hero-kb-drift-alt;
+}
+
+@keyframes hero-kb-drift {
   from {
-    transform: scale(1);
+    transform: scale(1) translate3d(0, 0, 0);
   }
   to {
-    transform: scale(1.08);
+    transform: scale(1.09) translate3d(-1.4%, 1%, 0);
+  }
+}
+
+@keyframes hero-kb-drift-alt {
+  from {
+    transform: scale(1.05) translate3d(1.4%, -1%, 0);
+  }
+  to {
+    transform: scale(1.12) translate3d(-0.4%, 0.6%, 0);
   }
 }
 
@@ -1263,6 +1293,28 @@ body.brand-nfl::before {
 
 .about-grid p:last-child {
   margin-bottom: 0;
+}
+
+.about-portrait {
+  margin: 0 0 1.5rem;
+}
+
+.about-portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 24rem;
+  object-fit: cover;
+  object-position: center 30%;
+  border: 1px solid var(--line);
+  border-radius: 0.9rem;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+.about-portrait figcaption {
+  margin-top: 0.6rem;
+  color: var(--faint);
+  font-size: 0.82rem;
 }
 
 .pill-row {
@@ -3670,10 +3722,13 @@ body.case-nfl .site-footer {
     opacity: 1;
   }
 
-  /* The hero video is never started by JS under reduced motion — the
-     element simply shows its poster frame. Kill the Ken Burns too. */
-  .hero-video.is-playing {
+  /* The hero slideshow is never rotated by JS under reduced motion — the
+     first still simply stays put. Kill the Ken Burns drift too. */
+  .hero-slide,
+  .hero-slide.is-active,
+  .hero-slide.is-leaving {
     animation: none;
+    transition: none;
   }
 
   .hero-scroll-line {

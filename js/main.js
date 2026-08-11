@@ -238,67 +238,58 @@ document.querySelectorAll("[data-pcarousel]").forEach((carousel) => {
   update();
 });
 
-// Cinematic hero background — the sizzle-reel <video> ships with
-// preload="none" and a poster, so no video bytes move until this decides
-// playback is appropriate: wide viewport, motion allowed, no data-saver.
-// Small screens and reduced-motion users just keep the poster frame.
-const heroVideo = document.querySelector("[data-hero-video]");
-if (heroVideo) {
-  const wideViewport = window.matchMedia("(min-width: 780px)");
+// Cinematic hero background — a slow Ken Burns slideshow of research
+// stills. CSS owns the drift + crossfade; JS only rotates which slide is
+// active. Under reduced motion (or data-saver) the first still stays put.
+const heroSlides = Array.from(
+  document.querySelectorAll("[data-hero-slides] .hero-slide")
+);
+if (heroSlides.length > 1) {
   const saveData = navigator.connection && navigator.connection.saveData;
 
-  // Slowed playback reads as cinematic slow motion behind the copy.
-  // playbackRate can only be set via JS and resets when the media element
-  // reloads, so re-apply it whenever metadata loads or playback (re)starts.
-  const HERO_PLAYBACK_RATE = 0.55;
-  const applyHeroRate = () => {
-    heroVideo.playbackRate = HERO_PLAYBACK_RATE;
-  };
-  heroVideo.addEventListener("loadedmetadata", applyHeroRate);
-  heroVideo.addEventListener("play", applyHeroRate);
-
-  const startHeroVideo = () => {
-    if (heroVideo.dataset.started) return;
-    heroVideo.dataset.started = "true";
-    heroVideo.muted = true;
-    heroVideo.preload = "auto";
-    applyHeroRate();
-    const playback = heroVideo.play();
-    if (playback && typeof playback.catch === "function") playback.catch(() => {});
-  };
-
-  heroVideo.addEventListener(
-    "playing",
-    () => heroVideo.classList.add("is-playing"),
-    { once: true }
-  );
-
   if (!prefersReducedMotion && !saveData) {
-    if (wideViewport.matches) {
-      startHeroVideo();
-    } else if (typeof wideViewport.addEventListener === "function") {
-      wideViewport.addEventListener("change", (e) => {
-        if (e.matches) startHeroVideo();
-      });
-    }
+    const SLIDE_INTERVAL_MS = 7500;
+    const CROSSFADE_MS = 1900; // matches the .hero-slide opacity transition
+    let current = 0;
+    let timer = null;
 
-    // Don't keep decoding video the visitor has scrolled past.
+    const advance = () => {
+      const prev = heroSlides[current];
+      current = (current + 1) % heroSlides.length;
+      const next = heroSlides[current];
+      // `.is-leaving` carries the same Ken Burns declaration, so the
+      // outgoing slide keeps drifting while it fades instead of snapping.
+      prev.classList.add("is-leaving");
+      prev.classList.remove("is-active");
+      next.classList.add("is-active");
+      window.setTimeout(() => prev.classList.remove("is-leaving"), CROSSFADE_MS);
+    };
+
+    const start = () => {
+      if (timer === null) timer = window.setInterval(advance, SLIDE_INTERVAL_MS);
+    };
+    const stop = () => {
+      if (timer !== null) {
+        window.clearInterval(timer);
+        timer = null;
+      }
+    };
+    start();
+
+    // Don't keep cycling a hero the visitor has scrolled past or tabbed away
+    // from.
     if ("IntersectionObserver" in window) {
       new IntersectionObserver(
         (entries) => {
-          entries.forEach((entry) => {
-            if (!heroVideo.dataset.started) return;
-            if (entry.isIntersecting) {
-              const playback = heroVideo.play();
-              if (playback && typeof playback.catch === "function") playback.catch(() => {});
-            } else {
-              heroVideo.pause();
-            }
-          });
+          entries.forEach((entry) => (entry.isIntersecting ? start() : stop()));
         },
         { threshold: 0.05 }
-      ).observe(heroVideo);
+      ).observe(heroSlides[0].parentElement);
     }
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) stop();
+      else start();
+    });
   }
 }
 
