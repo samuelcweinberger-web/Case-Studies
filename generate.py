@@ -1322,7 +1322,6 @@ def write_home():
         <p class="hero-kicker">AI-Driven Insights</p>
         <h1 class="hero-brand">Sam<br />Weinberger</h1>
         <p class="hero-role">UX Design Research | Research Engineer</p>
-        <p class="hero-status"><span class="hero-status-dot" aria-hidden="true"></span>Most recently: Prediction Markets @ Robinhood</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#work">Explore the work</a>
         </div>

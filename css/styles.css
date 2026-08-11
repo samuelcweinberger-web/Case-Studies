@@ -326,33 +326,6 @@ html[data-theme="light"] .theme-icon-sun {
   animation: rise 1s var(--ease) 0.26s forwards;
 }
 
-.hero-status {
-  margin: 1.2rem 0 0;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  padding: 0.38rem 0.95rem;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  border-radius: 999px;
-  background: rgba(10, 12, 15, 0.38);
-  backdrop-filter: blur(6px);
-  font-size: 0.86rem;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  color: rgba(255, 255, 255, 0.82);
-  opacity: 0;
-  animation: rise 1s var(--ease) 0.5s forwards;
-}
-
-.hero-status-dot {
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-dim);
-  flex-shrink: 0;
-}
-
 /* Quiet scroll invitation at the base of the opening view. */
 .hero-scroll-cue {
   position: absolute;
@@ -3715,7 +3688,6 @@ body.case-nfl .site-footer {
   .hero-kicker,
   .hero-brand,
   .hero-role,
-  .hero-status,
   .hero-actions,
   .hero-scroll-cue {
     animation: none;
@@ -3801,14 +3773,9 @@ html[data-theme="light"] .site-header {
   background: rgba(250, 249, 245, 0.78);
 }
 
-/* Hero — intentionally stays dark and cinematic in light mode (the video
+/* Hero — intentionally stays dark and cinematic in light mode (the still
    hero reads as one graphic object on the paper background). Only the
    accent-colored bits need re-tuning for contrast on the dark scrim. */
-html[data-theme="light"] .hero-cinema .hero-status-dot {
-  background: #a8c928;
-  box-shadow: 0 0 0 3px rgba(168, 201, 40, 0.22);
-}
-
 html[data-theme="light"] .hero-cinema .btn-primary {
   background: #d6ff4b;
   color: #10150a;
