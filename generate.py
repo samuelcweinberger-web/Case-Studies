@@ -324,7 +324,7 @@ CASES = [
 <li>Tested it with an A/B experiment (two homogeneous samples, N=500) comparing SSN-first against SSN-later.</li>
 </ul>"""),
             ("Result", """<ul>
-<li><strong>Changing the order of the questions nearly doubled sign-ups in testing.</strong> When the flow asked for email, name, and address first — and saved the Social Security number and banking details for later — completion rose from 30% to 58% in the simulation (500 people in each version).</li>
+<li><strong>Changing the order of the questions nearly doubled sign-ups in testing.</strong> When the flow asked for email, name, and address first — and saved the Social Security number and banking details for later — completion rose by 28 percentage points in the simulation (500 people in each version).</li>
 <li><strong>The same fix worked just as well with real customers.</strong> Once the reordered flow went live, production completion climbed by roughly a third.</li>
 <li><strong>It became the standard.</strong> Every new-state launch afterward used the reordered flow.</li>
 <li><strong>The method itself was the breakthrough.</strong> It made it possible to study people who had quit and couldn’t be recruited — by watching new participants go through a stand-in version of the flow — without any ethical or compliance problems.</li>
@@ -344,6 +344,29 @@ CASES = [
         "timeline": "Ongoing program",
         "methods": "Journey benchmarking · Event-triggered in-app surveys · Behavioral telemetry · Competitive benchmarking · Stakeholder dashboards",
         "summary": "FanDuel’s products were siloed with no shared baseline. I built continuous cross-product benchmarking that became the reference point the organization used to decide where to invest—surfacing Same Game Parlays and growing research into a 32-person team.",
+        "gallery_title": "Benchmarking artifacts",
+        "charts": [
+            {
+                "src": "benchmarking/q1-2022-supr-q-trend.jpg",
+                "alt": "SUPR-Q trend line over quarters",
+                "caption": "SUPR-Q trend line over quarters.",
+            },
+            {
+                "src": "benchmarking/q2-2023-all-products-a.jpg",
+                "alt": "Cross-product comparison across the FanDuel portfolio",
+                "caption": "Cross-product comparison across the FanDuel portfolio.",
+            },
+            {
+                "src": "benchmarking/q1-2022-competitor-supr.jpg",
+                "alt": "Competitor SUPR-Q comparison for the sportsbook category",
+                "caption": "Competitor SUPR-Q comparison for the sportsbook category.",
+            },
+            {
+                "src": "benchmarking/q1-2022-rg-scores.jpg",
+                "alt": "Responsible Gaming scores tracked alongside usability and loyalty",
+                "caption": "Responsible Gaming scores tracked alongside usability and loyalty.",
+            },
+        ],
         "stats": [],
         "sections": [
             ("Situation", """<ul>
@@ -431,7 +454,7 @@ CASES = [
         "brand": "nfl",
         "title": "NFL Fantasy Mobile App",
         "subtitle": "Monetizing Fantasy Football — The Tools Package",
-        "short": "Developed and shipped Fantasy features available via in-app purchase—nearly $1M in first-year revenue, most of it in launch week, bought by more than a million players (nearly half of active users).",
+        "short": "Developed and shipped Fantasy features available via in-app purchase—six-figure first-year revenue, most of it in launch week, bought by nearly half of active users.",
         "brand_card": {
             "wordmark": "NFL Fantasy",
             "tagline": "In-App Tools Package",
@@ -450,20 +473,28 @@ CASES = [
                 ],
                 "caption": "Feature set: the all-new Lineup View, personalized player lists, and backups to avoid last-minute inactives.",
             },
+            {
+                "row": [
+                    {"src": "fantasy/optimize-team.png", "alt": "Optimize-team tooling from the paid package"},
+                    {"src": "fantasy/personalized-lists.png", "alt": "Personalized recommendation lists surfaced to buyers"},
+                    {"src": "fantasy/fantasy-plus-upsell.png", "alt": "The in-app upsell used to convert free players"},
+                ],
+                "caption": "Optimize-team tooling, personalized recommendation lists, and the in-app upsell used to convert free players — A/B tested for placement and messaging.",
+            },
         ],
         "headline_kpis": [
-            ("First-Year Revenue", "~$1M"),
-            ("Active Users Who Bought", "1M+ (nearly half)"),
+            ("First-Year Revenue", "Six figures"),
+            ("Active Users Who Bought", "Nearly half"),
         ],
         "context": "NFL · NFL Fantasy App · Fantasy Sports",
         "year": "2019–2021",
         "role": "UX Researcher (study lead) · 5-person cross-functional team (2 designers, 1 researcher, 1 PM, 1 engineer)",
         "methods": "In-depth interviews · Large-scale survey · MaxDiff · Design-thinking · Static-concept testing · A/B testing",
-        "summary": "Developed and shipped Fantasy features sold via in-app purchase—nearly $1M in first-year revenue with most of it landing in launch week, bought by more than a million players (nearly half of active users), and later folded into NFL+.",
+        "summary": "Developed and shipped Fantasy features sold via in-app purchase—six-figure first-year revenue with most of it landing in launch week, bought by nearly half of active users, and later folded into NFL+.",
         "insight": "Fans would pay to win their league—as long as paying never changed the game itself.",
         "stats": [
-            ("~$1M", "Direct-to-consumer revenue in year one", "revenue"),
-            ("1M+", "Active Fantasy users who bought the Tools Package — nearly half of actives", "scale"),
+            ("Six figures", "Direct-to-consumer revenue in year one", "revenue"),
+            ("Nearly half", "Of active Fantasy users bought the Tools Package", "scale"),
         ],
         "sections": [
             (
@@ -494,7 +525,7 @@ CASES = [
                 "Result",
                 """<ul>
 <li>The Tools Package sold immediately — most of its first-year revenue landed in launch week.</li>
-<li>It approached $1M in revenue in year one, bought by more than a million players — nearly half of active users.</li>
+<li>It generated six-figure revenue in year one, bought by nearly half of active users.</li>
 <li>It never broke the free game. The paid tools lived inside the existing Fantasy screens, so the free experience stayed whole.</li>
 <li>It became part of NFL+. The Tools Package was later folded into the NFL+ subscription in 2022.</li>
 </ul>""",
@@ -572,10 +603,28 @@ CASES = [
         "summary": "Ran design studios on Intel’s TrueView rotate-the-camera replay prototype and delivered a clear read on fan appetite plus concrete recommendations for how an interactive replay should work in Game Pass and condensed-replay experiences.",
         "insight": "Perspective control earned its place when fans wanted to understand a play—not as a default for every highlight.",
         "video": {
-            "src": "nfl-intel/trueview-prototype.mp4",
-            "poster": "intel-trueview-poster.png",
-            "caption": "The Intel TrueView prototype — rotate the camera around a recorded play. (Click to watch.)",
+            "src": "nfl-intel/sizzle-reel.mp4",
+            "poster": "nfl-intel/sizzle-reel-poster.jpg",
+            "preload": "metadata",
+            "caption": "Sizzle reel — the NFL Design “Research Design Studio” program and the TrueView concept, cut as a highlight reel. (Click to watch.)",
         },
+        "extra_videos": [
+            {
+                "src": "nfl-intel/design-studio.mp4",
+                "poster": "nfl-intel/design-studio-poster.jpg",
+                "caption": "Running Design Studios — a 2.5-min clip from the NFL Design “Research Design Studio” co-design session. (Click to watch.)",
+            },
+            {
+                "src": "nfl-intel/intel-prototype.mp4",
+                "poster": "nfl-intel/intel-prototype-poster.jpg",
+                "caption": "“Be the Player.” The volumetric replay prototype fans tested hands-on: pick a player and see the play from their perspective. (Click to watch.)",
+            },
+            {
+                "src": "nfl-intel/trueview-prototype.mp4",
+                "poster": "intel-trueview-poster.png",
+                "caption": "The Intel TrueView prototype — rotate the camera around a recorded play. (Click to watch.)",
+            },
+        ],
         "stats": [],
         "sections": [
             (
@@ -627,6 +676,13 @@ CASES = [
             "poster": "nfl-intel/superstadium-poster.jpg",
             "caption": "SuperStadium — multi-angle views and Next Gen Stats AR overlays from your seat. (Click to watch.)",
         },
+        "extra_videos": [
+            {
+                "src": "nfl-intel/verizon-5g-prototype.mp4",
+                "poster": "nfl-intel/verizon-5g-prototype-poster.jpg",
+                "caption": "Verizon 5G SuperStadium — multi-angle in-stadium viewing, the raw camera angles behind the from-your-seat experience. (Click to watch.)",
+            },
+        ],
         "stats": [
             ("$1B+", "NFL–Verizon technology partnership", "revenue"),
             ("~60%", "Super Bowl LX attendees connected to SuperStadium", "conversion"),
@@ -766,7 +822,6 @@ def header(active=None, prefix="", brand=None, nav_active=None, body_classes=Non
         {nav_link("about.html", "About me", "about")}
         {nav_link("resume.html", "Professional Experience", "resume")}
         {nav_link("case-studies.html", "Case studies", "cases")}
-        {nav_link("media.html", "Media", "media")}
         {nav_link("research-tools.html", "Tech Stack", "research-tools")}
         {nav_link("skills.html", "Skills", "skills")}
         {nav_link("education.html", "Education", "education")}
@@ -907,7 +962,7 @@ RESUME_EXPERIENCE = [
         "bullets": [
             (
                 "Fantasy+ Tools",
-                'Led generative and formative research on a small cross-functional team to develop and test in-app features that shipped — <a href="cases/fantasy-d2c-ideation.html">converting nearly half of active users and generating nearly $1M in revenue</a>.',
+                'Led generative and formative research on a small cross-functional team to develop and test in-app features that shipped — <a href="cases/fantasy-d2c-ideation.html">converting nearly half of active users and generating six-figure revenue</a>.',
             ),
             (
                 "NFL+ Pricing &amp; Packaging",
@@ -1141,7 +1196,7 @@ HOME_INDEX_OUTCOMES = {
     "registration-dropoff": "A simulated-app experiment localized the drop; reordering when SSN and banking are asked lifted completion by roughly a third.",
     "benchmarking-decision-engine": "Cross-product benchmarking became the organization&rsquo;s investment reference point&mdash;and grew research into a 32-person team.",
     "ach-adoption": "Reframing the message&mdash;no incentives&mdash;roughly doubled ACH adoption and drained a costly football-Sunday debit exploit.",
-    "fantasy-d2c-ideation": "Nearly $1M in first-year revenue from Fantasy features bought by more than a million players.",
+    "fantasy-d2c-ideation": "Six-figure first-year revenue from Fantasy features bought by nearly half of active users.",
     "nfl-d2c-packaging": "Formative research behind NFL+, launched to ~1.1M sign-ups and roughly 2.7M subscribers heading into 2024.",
     "intel-trueview": "Design studios on Intel&rsquo;s volumetric replay prototype delivered a clear read on fan appetite for interactive replay.",
     "verizon-superstadium": "Usability and in-stadium field research that helped seed SuperStadium, now built into the official NFL app.",
@@ -1298,210 +1353,6 @@ def write_case_studies_page():
         + footer()
     )
     (ROOT / "case-studies.html").write_text(html)
-
-
-# --- Media / gallery page ----------------------------------------------------
-
-# Featured "design studio" clip. Identified from frame analysis of the candidate
-# Intel videos: this is the higher-quality source recording of the NFL Design
-# "Research Design Studio" co-design session (name tents, "How might we
-# enhance/upgrade NFL Game Replay Experiences?", group sketching / concept
-# critique), compressed for the web. Duration of source ≈ 2:34.
-# NOTE: `description` below is an editable DRAFT — refine the copy freely.
-MEDIA_DESIGN_STUDIO = {
-    "src": "nfl-intel/design-studio.mp4",
-    "poster": "nfl-intel/design-studio-poster.jpg",
-    "caption": "Running Design Studios: Watch this 2.5-min clip",
-    "description": (
-        "A design studio is a structured, collaborative co-design workshop where "
-        "researchers, designers, cross-functional partners, and sometimes users "
-        "rapidly sketch, share, and critique multiple solution concepts side by "
-        "side—turning a room full of divergent ideas into an aligned product "
-        "direction in a single working session."
-    ),
-}
-
-MEDIA_SECTIONS = [
-    {
-        "id": "nfl-labs-prototypes",
-        "title": "NFL Labs — Immersive Prototypes",
-        "blurb": "Partner research with Intel and Verizon: the TrueView 360° replay prototype and the Verizon 5G in-stadium experience.",
-        "items": [
-            {
-                "type": "video",
-                "src": "nfl-intel/sizzle-reel.mp4",
-                "poster": "nfl-intel/sizzle-reel-poster.jpg",
-                "caption": "Intel TrueView — Sizzle Reel: the NFL Design “Research Design Studio” program and TrueView concept, cut as a highlight reel.",
-            },
-            {
-                "type": "video",
-                "src": "nfl-intel/intel-prototype.mp4",
-                "poster": "nfl-intel/intel-prototype-poster.jpg",
-                "caption": "Intel TrueView — “Be the Player.” The volumetric replay prototype fans tested hands-on: pick a player and see the play from their perspective.",
-            },
-            {
-                "type": "video",
-                "src": "nfl-intel/verizon-5g-prototype.mp4",
-                "poster": "nfl-intel/verizon-5g-prototype-poster.jpg",
-                "caption": "Verizon 5G SuperStadium — multi-angle in-stadium viewing, the raw camera angles behind the from-your-seat experience.",
-            },
-            {
-                "type": "video",
-                "src": "nfl-intel/superstadium-demo.mp4",
-                "poster": "nfl-intel/superstadium-poster.jpg",
-                "caption": "SuperStadium in the NFL app — multi-angle views and Next Gen Stats AR overlays on a phone.",
-            },
-        ],
-    },
-    {
-        "id": "robinhood",
-        "title": "Robinhood — Prediction Markets",
-        "blurb": "Home-page findability and order-form changes that brought stalled traders back to a first trade and helped single-category traders diversify.",
-        "items": [
-            {"type": "image", "src": "01-non-converters/featured-before-change.png", "caption": "Before: the Featured card and category row sit flush to the edge — no signal that more exists off-screen."},
-            {"type": "image", "src": "01-non-converters/featured-after-change.png", "caption": "After: offsetting the frame lets the next card peek in, cueing a sideways swipe."},
-            {"type": "image", "src": "01-non-converters/featured-non-sports-carousel.png", "caption": "After: a dedicated non-sports carousel (Politics, Crypto, Technology, Commodities) added above Newly Listed."},
-            {"type": "image", "src": "03-category-expansion/order-form-before-change.png", "caption": "Before: one lever — a dollar amount, buy at the market price or not at all."},
-            {"type": "image", "src": "03-category-expansion/order-type-menu.png", "caption": "The new order-type menu introducing the Limit order — set your own price, good for the day."},
-            {"type": "image", "src": "03-category-expansion/order-form-after-change.png", "caption": "After: full limit-order controls — set price, quantity, and expiry, with cost and payout shown before you commit."},
-            {"type": "video", "src": "03-category-expansion/btc-scrub.mp4", "poster": "03-category-expansion/btc-scrub-poster.jpg", "caption": "Scrubbing the Bitcoin chart to inspect the price at any moment, sourced from CF Benchmarks’ BRTI."},
-        ],
-    },
-    {
-        "id": "fanduel",
-        "title": "FanDuel — Quarterly Benchmarking",
-        "blurb": "The product benchmarking program that turned SUPR-Q, Ease of Use, loyalty, and Responsible Gaming into a shared executive scorecard.",
-        "items": [
-            {"type": "image", "src": "benchmarking/q1-2022-supr-q-trend.jpg", "caption": "SUPR-Q trend line over quarters."},
-            {"type": "image", "src": "benchmarking/q2-2023-all-products-a.jpg", "caption": "Cross-product comparison across the FanDuel portfolio."},
-            {"type": "image", "src": "benchmarking/q1-2022-competitor-supr.jpg", "caption": "Competitor SUPR-Q comparison for the sportsbook category."},
-            {"type": "image", "src": "benchmarking/q1-2022-rg-scores.jpg", "caption": "Responsible Gaming scores tracked alongside usability and loyalty."},
-        ],
-    },
-    {
-        "id": "nfl-fantasy",
-        "title": "NFL Fantasy — The Tools Package",
-        "blurb": "Fantasy features sold via in-app purchase — later folded into NFL+.",
-        "items": [
-            {"type": "image", "src": "fantasy/tools-package.png", "caption": "The Tools Package inside the Fantasy app — waiver tools, most-added players, and upgrade prompts."},
-            {"type": "image", "src": "fantasy/lineup-view.png", "caption": "The all-new Lineup View."},
-            {"type": "image", "src": "fantasy/player-lists.png", "caption": "Personalized player lists."},
-            {"type": "image", "src": "fantasy/backups.png", "caption": "Set your backups to avoid last-minute inactives."},
-            {"type": "image", "src": "fantasy/optimize-team.png", "caption": "Optimize-team tooling from the paid package."},
-            {"type": "image", "src": "fantasy/personalized-lists.png", "caption": "Personalized recommendation lists surfaced to buyers."},
-            {"type": "image", "src": "fantasy/fantasy-plus-upsell.png", "caption": "The in-app upsell used to convert free players — A/B tested for placement and messaging."},
-        ],
-    },
-]
-
-# Official + sub-brand marks shown at the foot of the gallery.
-def render_media_video(item, big=False):
-    poster = item.get("poster")
-    poster_src = f"media/{poster}" if poster else ""
-    poster_img = (
-        f'<img class="video-click-poster" src="{poster_src}" alt="" loading="lazy" decoding="async" />'
-        if poster
-        else ""
-    )
-    poster_attr = f' poster="{poster_src}"' if poster else ""
-    caption = item.get("caption", "")
-    cap_html = f'<figcaption class="media-caption">{caption}</figcaption>' if caption else ""
-    frame_cls = "media-frame video-click-frame"
-    return f"""      <figure class="media-item media-video{' media-item-feature' if big else ''} reveal">
-        <div class="{frame_cls}" data-video-click>
-          {poster_img}
-          <video class="video-click-el" playsinline preload="none"{poster_attr} hidden>
-            <source src="media/{item['src']}" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <button type="button" class="video-click-cta media-play" aria-label="Play video">
-            <span class="video-click-cta-icon" aria-hidden="true">&#9654;</span>
-            <span>Play</span>
-          </button>
-        </div>
-        {cap_html}
-      </figure>"""
-
-
-def render_media_image(item):
-    caption = item.get("caption", "")
-    alt = item.get("alt", caption)
-    cap_html = f'<figcaption class="media-caption">{caption}</figcaption>' if caption else ""
-    return f"""      <figure class="media-item media-image reveal">
-        <div class="media-frame">
-          <img class="media-img" src="media/{item['src']}" alt="{alt}" loading="lazy" decoding="async" />
-        </div>
-        {cap_html}
-      </figure>"""
-
-
-def render_media_item(item, big=False):
-    if item["type"] == "video":
-        return render_media_video(item, big=big)
-    return render_media_image(item)
-
-
-def write_media_page():
-    ds = MEDIA_DESIGN_STUDIO
-    featured = f"""        <section class="media-featured reveal" id="design-studio" aria-labelledby="design-studio-title">
-          <div class="media-featured-head">
-            <span class="media-kicker">Featured</span>
-            <h3 id="design-studio-title">Running Design Studios</h3>
-          </div>
-          <figure class="media-item media-video media-item-feature">
-            <div class="media-frame media-frame-feature video-click-frame" data-video-click>
-              <img class="video-click-poster" src="media/{ds['poster']}" alt="" loading="lazy" decoding="async" />
-              <video class="video-click-el" playsinline preload="none" poster="media/{ds['poster']}" hidden>
-                <source src="media/{ds['src']}" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-              <button type="button" class="video-click-cta media-play media-play-feature" aria-label="Play the design studio clip">
-                <span class="video-click-cta-icon" aria-hidden="true">&#9654;</span>
-                <span>{ds['caption']}</span>
-              </button>
-            </div>
-            <figcaption class="media-caption media-caption-feature">{ds['description']}</figcaption>
-          </figure>
-        </section>"""
-
-    section_blocks = []
-    for sec in MEDIA_SECTIONS:
-        items_html = "\n".join(render_media_item(it) for it in sec["items"])
-        section_blocks.append(
-            f"""        <section class="media-section reveal" id="media-{sec['id']}" aria-labelledby="media-{sec['id']}-title">
-          <div class="media-section-head">
-            <h3 id="media-{sec['id']}-title">{sec['title']}</h3>
-            <p>{sec['blurb']}</p>
-          </div>
-          <div class="media-grid">
-{items_html}
-          </div>
-        </section>"""
-        )
-
-    html = (
-        header(
-            active="Media",
-            nav_active="media",
-            page_path="media.html",
-            description="Media and gallery — immersive prototypes with Intel and Verizon, Robinhood prediction-market design changes, FanDuel benchmarking, and NFL Fantasy tools.",
-        )
-        + f"""
-  <main>
-    <section class="section page-section" id="media">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <h2>Media &amp; gallery</h2>
-        </div>
-{featured}
-{chr(10).join(section_blocks)}
-      </div>
-    </section>
-  </main>
-"""
-        + footer()
-    )
-    (ROOT / "media.html").write_text(html)
 
 
 def write_skills_page():
@@ -1812,6 +1663,38 @@ def write_contact_page():
     (ROOT / "contact.html").write_text(html)
 
 
+def _render_nfl_video_figure(v):
+    poster = v.get("poster")
+    poster_src = f"../media/{poster}" if poster else ""
+    poster_img = (
+        f'<img class="video-click-poster" src="{poster_src}" alt="" loading="lazy" decoding="async" />'
+        if poster
+        else ""
+    )
+    vtype = v.get("type", "video/mp4")
+    preload = v.get("preload", "none")
+    poster_attr = f' poster="{poster_src}"' if poster else ""
+    caption = v.get("caption", "")
+    cap_html = (
+        f'<figcaption class="case-nfl-media-caption">{caption}</figcaption>'
+        if caption
+        else ""
+    )
+    return f"""      <figure class="case-nfl-media case-nfl-video reveal">
+        <div class="case-nfl-media-frame video-click-frame" data-video-click>
+          {poster_img}
+          <video class="video-click-el" playsinline preload="{preload}"{poster_attr} hidden>
+            <source src="../media/{v['src']}" type="{vtype}" />
+            Your browser does not support the video tag.
+          </video>
+          <button type="button" class="video-click-cta case-nfl-play" aria-label="Play video">
+            <span class="case-nfl-play-icon" aria-hidden="true">&#9654;</span>
+          </button>
+        </div>
+        {cap_html}
+      </figure>"""
+
+
 def render_nfl_media(case):
     """Reference-style framed media player for NFL case pages.
 
@@ -1846,34 +1729,8 @@ def render_nfl_media(case):
 
     v = case.get("video")
     if v:
-        poster = v.get("poster")
-        poster_src = f"../media/{poster}" if poster else ""
-        poster_img = (
-            f'<img class="video-click-poster" src="{poster_src}" alt="" loading="lazy" decoding="async" />'
-            if poster
-            else ""
-        )
-        vtype = v.get("type", "video/mp4")
-        poster_attr = f' poster="{poster_src}"' if poster else ""
-        caption = v.get("caption", "")
-        cap_html = (
-            f'<figcaption class="case-nfl-media-caption">{caption}</figcaption>'
-            if caption
-            else ""
-        )
-        return f"""      <figure class="case-nfl-media case-nfl-video reveal">
-        <div class="case-nfl-media-frame video-click-frame" data-video-click>
-          {poster_img}
-          <video class="video-click-el" playsinline preload="none"{poster_attr} hidden>
-            <source src="../media/{v['src']}" type="{vtype}" />
-            Your browser does not support the video tag.
-          </video>
-          <button type="button" class="video-click-cta case-nfl-play" aria-label="Play video">
-            <span class="case-nfl-play-icon" aria-hidden="true">&#9654;</span>
-          </button>
-        </div>
-        {cap_html}
-      </figure>"""
+        figures = [_render_nfl_video_figure(vid) for vid in [v] + case.get("extra_videos", [])]
+        return "\n".join(figures)
 
     img = case.get("media_image")
     if img:
@@ -2356,7 +2213,6 @@ def main():
     CASES_DIR.mkdir(parents=True, exist_ok=True)
     write_home()
     write_case_studies_page()
-    write_media_page()
     write_skills_page()
     write_research_tools_page()
     write_about_page()
