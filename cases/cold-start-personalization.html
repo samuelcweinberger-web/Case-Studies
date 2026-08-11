@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>The Cold-Start Problem: A Deep Dive Into a Personalization Experiment — Sam Weinberger</title>
   <meta name="description" content="A personalization algorithm looked like a win (+4% in its A/B test) but trade volume had plateaued. Re-analysis showed it couldn’t cold-start new users; the fixes I recommended cut post-first-trade drop-off by nearly a third." />
+  <meta name="robots" content="noindex" />
   <meta name="color-scheme" content="dark light" />
   <script>(function(){document.documentElement.classList.add('js');try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark'){t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
   <meta property="og:type" content="website" />
@@ -115,7 +116,7 @@
           <div class="case-section-body"><ul>
 <li>Working from a defined research plan, ran behavioral segmentation and interviewed the top 2% of four groups: sports-only traders, multi-category traders, former-multi-category traders who had retreated, and net-new “cold-start” users the algorithm had no history for.</li>
 <li>In-app, users showed me the mechanism directly: the algorithm kept re-surfacing the same events and buried inventory they’d have loved.</li>
-<li>One high-value trader had defected to a competitor for WNBA contracts that Robinhood actually offered but hid so deep in the UI he assumed they didn’t exist.</li>
+<li>One high-value trader had defected to a competitor for WNBA contracts that the company actually offered but hid so deep in the UI he assumed they didn’t exist.</li>
 <li>Went back to Data Science for the raw experiment data and found the aggregate +4% couldn’t support “personalization works”: the treatment window overlapped the NBA Finals (a major confound), the test was heavily overpowered, and the lift was carried by users with existing trading history.</li>
 <li>A planned cold-start contrast (factorial ANOVA, arm × segment) told the opposite story — for net-new users, control outperformed the personalized experience by 24%.</li>
 </ul></div>

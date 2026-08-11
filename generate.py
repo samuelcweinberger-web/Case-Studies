@@ -70,9 +70,9 @@ CASES = [
         "stats": [],
         "sections": [
             ("Situation", """<ul>
-<li>Robinhood opened event-contract trading to its 27M+ customers, but crossover from traditional traders (stocks, futures, crypto) was low — only a small share moved into event contracts.</li>
+<li>The company opened event-contract trading to its 27M+ customers, but crossover from traditional traders (stocks, futures, crypto) was low — only a small share moved into event contracts.</li>
 <li>A large group of existing customers went through the steps to get approved to trade event contracts, then never placed a first trade.</li>
-<li>These “non-converters” stayed active on Robinhood otherwise — still trading and investing as before, just not in prediction markets — so disinterest didn’t explain it.</li>
+<li>These “non-converters” stayed active on the platform otherwise — still trading and investing as before, just not in prediction markets — so disinterest didn’t explain it.</li>
 <li>They accounted for more than half of all registered prediction-market users.</li>
 <li>The question: what drove them in, and what drove them out before a first trade?</li>
 </ul>"""),
@@ -270,7 +270,7 @@ CASES = [
             ("Action", """<ul>
 <li>Working from a defined research plan, ran behavioral segmentation and interviewed the top 2% of four groups: sports-only traders, multi-category traders, former-multi-category traders who had retreated, and net-new “cold-start” users the algorithm had no history for.</li>
 <li>In-app, users showed me the mechanism directly: the algorithm kept re-surfacing the same events and buried inventory they’d have loved.</li>
-<li>One high-value trader had defected to a competitor for WNBA contracts that Robinhood actually offered but hid so deep in the UI he assumed they didn’t exist.</li>
+<li>One high-value trader had defected to a competitor for WNBA contracts that the company actually offered but hid so deep in the UI he assumed they didn’t exist.</li>
 <li>Went back to Data Science for the raw experiment data and found the aggregate +4% couldn’t support “personalization works”: the treatment window overlapped the NBA Finals (a major confound), the test was heavily overpowered, and the lift was carried by users with existing trading history.</li>
 <li>A planned cold-start contrast (factorial ANOVA, arm × segment) told the opposite story — for net-new users, control outperformed the personalized experience by 24%.</li>
 </ul>"""),
@@ -299,11 +299,11 @@ CASES = [
         "role": "UX Researcher (study lead)",
         "timeline": "Multi-phase (simulation → A/B → production)",
         "methods": "Simulated-app experiment · Step-by-step intention measurement · Third-party panel recruitment · A/B testing · Behavioral theory (foot-in-the-door)",
-        "summary": "More than half of prospective FanDuel customers abandoned registration on every state launch—and they couldn’t be recruited to study. A simulated-app experiment localized the drop, and reordering when SSN and banking are asked lifted production completion by roughly a third.",
+        "summary": "More than half of prospective customers abandoned registration on every state launch—and they couldn’t be recruited to study. A simulated-app experiment localized the drop, and reordering when SSN and banking are asked lifted production completion by roughly a third.",
         "stats": [],
         "sections": [
             ("Situation", """<ul>
-<li>Every time FanDuel launched in a new state, more than half of prospective customers failed to complete the registration funnel.</li>
+<li>Every time the company launched in a new state, more than half of prospective customers failed to complete the registration funnel.</li>
 <li>The people who abandoned were the ones the business most needed to understand — but because they never finished signing up, they couldn’t be recruited for any study.</li>
 <li>Users who did complete registration couldn’t explain the drop-off either; they hadn’t experienced it as a blocker.</li>
 <li>This was a top priority because benchmarking had flagged registration and login as the two highest-leverage steps in the entire experience.</li>
@@ -328,7 +328,7 @@ CASES = [
 <li><strong>The same fix worked just as well with real customers.</strong> Once the reordered flow went live, production completion climbed by roughly a third.</li>
 <li><strong>It became the standard.</strong> Every new-state launch afterward used the reordered flow.</li>
 <li><strong>The method itself was the breakthrough.</strong> It made it possible to study people who had quit and couldn’t be recruited — by watching new participants go through a stand-in version of the flow — without any ethical or compliance problems.</li>
-<li>Registration and login stayed a top area of investment while FanDuel grew from about 1.5 million to more than 20 million registered users during this period.</li>
+<li>Registration and login stayed a top area of investment while the company grew from about 1.5 million to more than 20 million registered users during this period.</li>
 </ul>"""),
         ],
     },
@@ -337,13 +337,13 @@ CASES = [
         "num": "06",
         "brand": "fanduel",
         "title": "Benchmarking as a Decision Engine: Measuring Experience Across Multiple Apps",
-        "short": "The company’s products were siloed with no shared baseline. I built continuous cross-product benchmarking that became the reference point the org used to decide where to invest—surfacing Same Game Parlays and growing research into a 32-person team.",
+        "short": "The company’s products were siloed with no shared baseline. I built continuous cross-product benchmarking that became the reference point the org used to decide where to invest—surfacing same-game parlays and growing research into a 32-person team.",
         "context": "Core Products & Experiences",
         "year": "2021–2023",
         "role": "UX Researcher (system owner)",
         "timeline": "Ongoing program",
         "methods": "Journey benchmarking · Event-triggered in-app surveys · Behavioral telemetry · Competitive benchmarking · Stakeholder dashboards",
-        "summary": "FanDuel’s products were siloed with no shared baseline. I built continuous cross-product benchmarking that became the reference point the organization used to decide where to invest—surfacing Same Game Parlays and growing research into a 32-person team.",
+        "summary": "The company’s products were siloed with no shared baseline. I built continuous cross-product benchmarking that became the reference point the organization used to decide where to invest—surfacing same-game parlays and growing research into a 32-person team.",
         "gallery_title": "Benchmarking artifacts",
         "charts": [
             {
@@ -353,8 +353,8 @@ CASES = [
             },
             {
                 "src": "benchmarking/q2-2023-all-products-a.jpg",
-                "alt": "Cross-product comparison across the FanDuel portfolio",
-                "caption": "Cross-product comparison across the FanDuel portfolio.",
+                "alt": "Cross-product comparison across the product portfolio",
+                "caption": "Cross-product comparison across the product portfolio.",
             },
             {
                 "src": "benchmarking/q1-2022-competitor-supr.jpg",
@@ -370,7 +370,7 @@ CASES = [
         "stats": [],
         "sections": [
             ("Situation", """<ul>
-<li>FanDuel’s products were siloed, and no research ran across them.</li>
+<li>The company’s products were siloed, and no research ran across them.</li>
 <li>Designers and product managers shipped changes with no shared baseline and no feedback loop.</li>
 <li>No way to know whether a change had helped or hurt the experience.</li>
 <li>No way to compare one product’s health against another, or against the competition.</li>
@@ -390,7 +390,7 @@ CASES = [
             ("Result", """<p>The system became the reference point the whole product organization used to decide where to invest.</p>
 <p><strong>What it uncovered</strong></p>
 <ul>
-<li><strong>It led to Same Game Parlays, FanDuel’s most valuable feature.</strong> By having customers rate FanDuel against rivals like DraftKings on the same measures, the system exposed a gap in what FanDuel offered — and the research then helped shape and confirm the feature as it was built.</li>
+<li><strong>It led to same-game parlays, the product’s most valuable feature.</strong> By having customers rate the product against competitors on the same measures, the system exposed a gap in the offering — and the research then helped shape and confirm the feature as it was built.</li>
 <li><strong>It showed that onboarding and login were the most important place to improve.</strong> This step cost the company the most sign-ups and also carried the most legal risk — customers had to register state by state, location had to be verified, and some were getting logged out in the middle of placing a bet.</li>
 <li>It tied specific frustrations to support costs, which put customer-experience problems in the dollar terms leadership responds to.</li>
 </ul>
@@ -452,12 +452,12 @@ CASES = [
         "slug": "fantasy-d2c-ideation",
         "num": "08",
         "brand": "nfl",
-        "title": "NFL Fantasy Mobile App",
+        "title": "Turning a Free Fantasy Game Into Direct-to-Consumer Revenue",
         "subtitle": "Monetizing Fantasy Football — The Tools Package",
         "short": "Developed and shipped Fantasy features available via in-app purchase—six-figure first-year revenue, most of it in launch week, bought by nearly half of active users.",
         "brand_card": {
-            "wordmark": "NFL Fantasy",
-            "tagline": "In-App Tools Package",
+            "wordmark": "The Tools Package",
+            "tagline": "Fantasy Sports · In-App Purchase",
         },
         "media_gallery": [
             {
@@ -490,7 +490,7 @@ CASES = [
         "year": "2019–2021",
         "role": "UX Researcher (study lead) · 5-person cross-functional team (2 designers, 1 researcher, 1 PM, 1 engineer)",
         "methods": "In-depth interviews · Large-scale survey · MaxDiff · Design-thinking · Static-concept testing · A/B testing",
-        "summary": "Developed and shipped Fantasy features sold via in-app purchase—six-figure first-year revenue with most of it landing in launch week, bought by nearly half of active users, and later folded into NFL+.",
+        "summary": "Developed and shipped Fantasy features sold via in-app purchase—six-figure first-year revenue with most of it landing in launch week, bought by nearly half of active users, and later folded into the company’s subscription product.",
         "insight": "Fans would pay to win their league—as long as paying never changed the game itself.",
         "stats": [
             ("Six figures", "Direct-to-consumer revenue in year one", "revenue"),
@@ -500,7 +500,7 @@ CASES = [
             (
                 "Situation",
                 """<ul>
-<li>Fantasy Football was a free feature that pulled fans into the NFL app, but the app’s actual revenue came from elsewhere.</li>
+<li>Fantasy football was a free feature that pulled fans into the league’s main app, but the app’s actual revenue came from elsewhere.</li>
 <li>Engagement was high and players had needs the free game didn’t meet — a sign they might pay, as long as paying never interfered with the core game everyone came for.</li>
 </ul>""",
             ),
@@ -527,7 +527,7 @@ CASES = [
 <li>The Tools Package sold immediately — most of its first-year revenue landed in launch week.</li>
 <li>It generated six-figure revenue in year one, bought by nearly half of active users.</li>
 <li>It never broke the free game. The paid tools lived inside the existing Fantasy screens, so the free experience stayed whole.</li>
-<li>It became part of NFL+. The Tools Package was later folded into the NFL+ subscription in 2022.</li>
+<li>It became part of the subscription product. The Tools Package was later folded into the company’s direct-to-consumer subscription in 2022.</li>
 </ul>""",
             ),
         ],
@@ -536,11 +536,11 @@ CASES = [
         "slug": "nfl-d2c-packaging",
         "num": "09",
         "brand": "nfl",
-        "title": "Pricing &amp; Packaging: The NFL+ Subscription",
-        "short": "Formative research on the NFL’s first direct-to-consumer mobile subscription—NFL+, launched in 2022 to ~1.1M sign-ups and ~2.7M subscribers by 2024.",
+        "title": "Pricing &amp; Packaging a Direct-to-Consumer Streaming Subscription",
+        "short": "Formative research on the league’s first direct-to-consumer mobile subscription—launched in 2022 to ~1.1M sign-ups and ~2.7M subscribers by 2024.",
         "brand_card": {
-            "wordmark": "NFL+",
-            "tagline": "Direct-to-Consumer Subscription",
+            "wordmark": "D2C",
+            "tagline": "Mobile Streaming Subscription",
         },
         "headline_kpis": [
             ("Sign-ups at Launch", "1.1M"),
@@ -550,24 +550,24 @@ CASES = [
         "year": "2019–2021",
         "role": "UX Researcher (study lead)",
         "methods": "Design Studios · MoSCoW sorting · Package ranking · National survey (N=2,208) · TURF analysis · MaxDiff · SPSS",
-        "summary": "Formative research on the NFL’s first direct-to-consumer mobile subscription—NFL+, launched in 2022 to about 1.1M sign-ups and grew to roughly 2.7M subscribers heading into 2024.",
+        "summary": "Formative research on the league’s first direct-to-consumer mobile subscription—launched in 2022 to about 1.1M sign-ups and grew to roughly 2.7M subscribers heading into 2024.",
         "insight": "Features alone didn’t explain what fans would pay for—a measure of what motivates fans to subscribe explained why segments chose differently.",
         "stats": [
-            ("1.1M", "NFL+ sign-ups in 2022", "scale"),
-            ("~2.7M", "NFL+ subscribers heading into 2024", "scale"),
+            ("1.1M", "Sign-ups in 2022", "scale"),
+            ("~2.7M", "Subscribers heading into 2024", "scale"),
         ],
         "sections": [
             (
                 "Situation",
                 """<ul>
-<li>The NFL was preparing NFL+, its first direct-to-consumer mobile subscription, in a field that already included Club+, League Pass, Club Pass, and Mobile RedZone.</li>
+<li>The league was preparing its first direct-to-consumer mobile subscription, in a field that already included several of its existing subscription products.</li>
 <li>Before launch, product and media strategy needed evidence — not instinct — for how to package and price it.</li>
 </ul>""",
             ),
             (
                 "Task",
                 """<ul>
-<li>Evaluate five different ways NFL+ could be packaged.</li>
+<li>Evaluate five different ways the subscription could be packaged.</li>
 <li>Explain why different fan segments preferred different packages, using a measure of what actually motivates fans to subscribe.</li>
 </ul>""",
             ),
@@ -582,9 +582,9 @@ CASES = [
             (
                 "Result",
                 """<ul>
-<li>The research shaped the NFL’s first-ever mobile subscription. The packaging and pricing recommendations became the basis for the initial NFL+ offering.</li>
+<li>The research shaped the league’s first-ever mobile subscription. The packaging and pricing recommendations became the basis for the initial offering.</li>
 <li>It launched to about 1.1 million sign-ups in 2022 and grew to roughly 2.7 million subscribers heading into 2024.</li>
-<li>It was a cross-team effort. The packaging blueprint was built in partnership with NFL Media and Product Strategy.</li>
+<li>It was a cross-team effort. The packaging blueprint was built in partnership with the media and product strategy teams.</li>
 </ul>""",
             ),
         ],
@@ -593,26 +593,25 @@ CASES = [
         "slug": "intel-trueview",
         "num": "10",
         "brand": "nfl",
-        "badge_label": "NFL Labs",
-        "title": "Intel TrueView 360° Prototype",
-        "short": "Tested Intel’s TrueView rotate-the-camera replay prototype with fans and delivered recommendations for how to integrate it into the NFL app and Game Pass.",
+        "title": "Evaluating a 360° Volumetric Replay Prototype With Fans",
+        "short": "Tested a rotate-the-camera volumetric replay prototype with fans and delivered recommendations for how interactive replay should work in live and condensed viewing.",
         "context": "Labs · Partner research",
         "year": "2019–2021",
         "role": "UX Researcher (study lead)",
         "methods": "Design studios · Live-prototype testing · Behavioral observation",
-        "summary": "Ran design studios on Intel’s TrueView rotate-the-camera replay prototype and delivered a clear read on fan appetite plus concrete recommendations for how an interactive replay should work in Game Pass and condensed-replay experiences.",
+        "summary": "Ran design studios on a rotate-the-camera volumetric replay prototype and delivered a clear read on fan appetite plus concrete recommendations for how an interactive replay should work in premium and condensed-replay experiences.",
         "insight": "Perspective control earned its place when fans wanted to understand a play—not as a default for every highlight.",
         "video": {
             "src": "nfl-intel/sizzle-reel.mp4",
             "poster": "nfl-intel/sizzle-reel-poster.jpg",
             "preload": "metadata",
-            "caption": "Sizzle reel — the NFL Design “Research Design Studio” program and the TrueView concept, cut as a highlight reel. (Click to watch.)",
+            "caption": "Sizzle reel — the “Research Design Studio” co-design program and the volumetric replay concept, cut as a highlight reel. (Click to watch.)",
         },
         "extra_videos": [
             {
                 "src": "nfl-intel/design-studio.mp4",
                 "poster": "nfl-intel/design-studio-poster.jpg",
-                "caption": "Running Design Studios — a 2.5-min clip from the NFL Design “Research Design Studio” co-design session. (Click to watch.)",
+                "caption": "Running Design Studios — a 2.5-min clip from a “Research Design Studio” co-design session. (Click to watch.)",
             },
             {
                 "src": "nfl-intel/intel-prototype.mp4",
@@ -622,7 +621,7 @@ CASES = [
             {
                 "src": "nfl-intel/trueview-prototype.mp4",
                 "poster": "intel-trueview-poster.png",
-                "caption": "The Intel TrueView prototype — rotate the camera around a recorded play. (Click to watch.)",
+                "caption": "The volumetric replay prototype — rotate the camera around a recorded play. (Click to watch.)",
             },
         ],
         "stats": [],
@@ -630,30 +629,30 @@ CASES = [
             (
                 "Situation",
                 """<ul>
-<li>Intel’s TrueView prototype let fans rotate the camera all the way around a recorded play.</li>
-<li>Before investing further in the partnership, NFL Labs needed a clear read on whether fans actually wanted this.</li>
+<li>A technology partner’s volumetric replay prototype let fans rotate the camera all the way around a recorded play.</li>
+<li>Before investing further in the partnership, the league’s innovation lab needed a clear read on whether fans actually wanted this.</li>
 </ul>""",
             ),
             (
                 "Task",
                 """<ul>
 <li>Put the working prototype in front of real fans and learn how they used it.</li>
-<li>Turn what we learned into concrete product recommendations for both NFL Labs and Intel.</li>
+<li>Turn what we learned into concrete product recommendations for both the innovation lab and the technology partner.</li>
 </ul>""",
             ),
             (
                 "Action",
                 """<ul>
-<li>Ran design studios where fans tried the live TrueView prototype hands-on.</li>
+<li>Ran design studios where fans tried the live prototype hands-on.</li>
 <li>Captured the moments when controlling the camera angle genuinely helped — and the moments when a normal highlight was all fans wanted.</li>
-<li>Translated those findings into recommendations for Game Pass and condensed-replay experiences.</li>
+<li>Translated those findings into recommendations for premium replay and condensed-replay experiences.</li>
 </ul>""",
             ),
             (
                 "Result",
                 """<ul>
 <li>Answered whether fans actually wanted the feature. The study delivered a clear read on fan appetite, plus specific recommendations for how an interactive replay should work.</li>
-<li>Gave both partners a shared starting point. NFL Labs and Intel came away with a common research basis for deciding their next steps together.</li>
+<li>Gave both partners a shared starting point. The lab and the technology partner came away with a common research basis for deciding their next steps together.</li>
 </ul>""",
             ),
         ],
@@ -662,59 +661,58 @@ CASES = [
         "slug": "verizon-superstadium",
         "num": "11",
         "brand": "nfl",
-        "badge_label": "NFL Labs",
-        "title": "Verizon 5G SuperStadium: The In-Stadium Fan Experience",
-        "short": "Led usability and in-stadium field research on Verizon 5G’s SuperStadium experience—now built into the official NFL app and central to a $1B+ NFL–Verizon partnership.",
+        "title": "Testing a Next-Generation In-Stadium Fan Experience",
+        "short": "Led usability and in-stadium field research on a 5G-powered fan experience—now built into the league’s official app and central to a $1B+ league–carrier partnership.",
         "context": "Labs · 5G partnership",
         "year": "2019–2021",
         "role": "UX Researcher (study lead)",
         "methods": "Cognitive task analysis · In-stadium field research · Immersive-AR prototype &amp; usability evaluation",
-        "summary": "NFL Labs partnered with Verizon 5G to explore next-generation in-stadium fan engagement. I led usability and field research—cognitive task analysis plus in-stadium field observation at SoFi Stadium during an LA Rams game—that helped seed SuperStadium, now built into the official NFL app.",
+        "summary": "The league’s innovation lab partnered with a major carrier to explore next-generation in-stadium fan engagement. I led usability and field research—cognitive task analysis plus in-stadium field observation during a live game—that helped seed the experience, now built into the league’s official app.",
         "insight": "In-stadium fans didn’t want a second screen—they wanted the stadium itself to become the interface.",
         "video": {
             "src": "nfl-intel/superstadium-demo.mp4",
             "poster": "nfl-intel/superstadium-poster.jpg",
-            "caption": "SuperStadium — multi-angle views and Next Gen Stats AR overlays from your seat. (Click to watch.)",
+            "caption": "Multi-angle views and live-stats AR overlays from your seat. (Click to watch.)",
         },
         "extra_videos": [
             {
                 "src": "nfl-intel/verizon-5g-prototype.mp4",
                 "poster": "nfl-intel/verizon-5g-prototype-poster.jpg",
-                "caption": "Verizon 5G SuperStadium — multi-angle in-stadium viewing, the raw camera angles behind the from-your-seat experience. (Click to watch.)",
+                "caption": "Multi-angle in-stadium viewing — the raw camera angles behind the from-your-seat experience. (Click to watch.)",
             },
         ],
         "stats": [
-            ("$1B+", "NFL–Verizon technology partnership", "revenue"),
-            ("~60%", "Super Bowl LX attendees connected to SuperStadium", "conversion"),
+            ("$1B+", "League–carrier technology partnership", "revenue"),
+            ("~60%", "Championship-game attendees connected to the experience", "conversion"),
         ],
         "sections": [
             (
                 "Situation",
                 """<ul>
-<li>NFL Labs wanted next-generation ways to deepen how fans engage during live games, especially inside the stadium.</li>
-<li>Verizon’s 5G network made new experiences possible: real-time AR overlays and multi-angle viewing from your seat.</li>
+<li>The league’s innovation lab wanted next-generation ways to deepen how fans engage during live games, especially inside the stadium.</li>
+<li>The carrier’s 5G network made new experiences possible: real-time AR overlays and multi-angle viewing from your seat.</li>
 </ul>""",
             ),
             (
                 "Task",
                 """<ul>
-<li>Lead usability and field research on the Verizon-powered 5G, AR, and VR fan experiences built for in-stadium use.</li>
-<li>Turn the findings into a concrete product direction NFL Labs could formalize with Verizon.</li>
+<li>Lead usability and field research on the carrier-powered 5G, AR, and VR fan experiences built for in-stadium use.</li>
+<li>Turn the findings into a concrete product direction the lab could formalize with the carrier.</li>
 </ul>""",
             ),
             (
                 "Action",
                 """<ul>
-<li>Ran cognitive task analysis and in-stadium field research during live events — capturing real fan behavior at SoFi Stadium during an LA Rams game.</li>
-<li>Ran prototype and usability testing on immersive AR hardware alongside Verizon’s innovation team.</li>
-<li>Shaped the product direction: multi-angle live and replay views, Next Gen Stats AR overlays, and in-stadium navigation running over 5G Ultra Wideband.</li>
+<li>Ran cognitive task analysis and in-stadium field research during live events — capturing real fan behavior at a major-league stadium during a live game.</li>
+<li>Ran prototype and usability testing on immersive AR hardware alongside the carrier’s innovation team.</li>
+<li>Shaped the product direction: multi-angle live and replay views, live-stats AR overlays, and in-stadium navigation running over 5G.</li>
 </ul>""",
             ),
             (
                 "Result",
                 """<ul>
-<li>The research helped seed SuperStadium, which is now built into the official NFL app and sits at the center of a $1 billion-plus partnership between the NFL and Verizon.</li>
-<li>Fans used it at the sport’s biggest event. At Super Bowl LX, roughly 60% of attendees were actively connected to the SuperStadium experience.</li>
+<li>The research helped seed the in-stadium experience, which is now built into the league’s official app and sits at the center of a $1 billion-plus partnership between the league and the carrier.</li>
+<li>Fans used it at the sport’s biggest event. At the league championship game, roughly 60% of attendees were actively connected to the experience.</li>
 </ul>""",
             ),
         ],
@@ -791,6 +789,7 @@ def header(active=None, prefix="", brand=None, nav_active=None, body_classes=Non
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{title}</title>
   <meta name="description" content="{desc}" />
+  <meta name="robots" content="noindex" />
   <meta name="color-scheme" content="dark light" />
   <script>{THEME_SCRIPT}</script>
   <meta property="og:type" content="website" />
@@ -1197,9 +1196,9 @@ HOME_INDEX_OUTCOMES = {
     "benchmarking-decision-engine": "Cross-product benchmarking became the organization&rsquo;s investment reference point&mdash;and grew research into a 32-person team.",
     "ach-adoption": "Reframing the message&mdash;no incentives&mdash;roughly doubled ACH adoption and drained a costly football-Sunday debit exploit.",
     "fantasy-d2c-ideation": "Six-figure first-year revenue from Fantasy features bought by nearly half of active users.",
-    "nfl-d2c-packaging": "Formative research behind NFL+, launched to ~1.1M sign-ups and roughly 2.7M subscribers heading into 2024.",
-    "intel-trueview": "Design studios on Intel&rsquo;s volumetric replay prototype delivered a clear read on fan appetite for interactive replay.",
-    "verizon-superstadium": "Usability and in-stadium field research that helped seed SuperStadium, now built into the official NFL app.",
+    "nfl-d2c-packaging": "Formative research behind a direct-to-consumer subscription launched to ~1.1M sign-ups and roughly 2.7M subscribers heading into 2024.",
+    "intel-trueview": "Design studios on a volumetric replay prototype delivered a clear read on fan appetite for interactive replay.",
+    "verizon-superstadium": "Usability and in-stadium field research that helped seed a from-your-seat experience now built into the league&rsquo;s official app.",
 }
 
 HOME_INDEX_INDUSTRY = {
@@ -1310,7 +1309,7 @@ def write_case_studies_page():
             active="Case studies",
             nav_active="cases",
             page_path="case-studies.html",
-            description="Eleven case studies across Robinhood, FanDuel, and the NFL—each tied to a shipped product decision and a measured outcome.",
+            description="Eleven case studies across fintech and sports media—each tied to a shipped product decision and a measured outcome.",
         )
         + f"""
   <main>
@@ -1509,7 +1508,7 @@ def write_resume_page():
             active="Professional Experience",
             nav_active="resume",
             page_path="resume.html",
-            description="Professional experience — Robinhood, FanDuel, the NFL, Claremont Graduate University, and Ipsos Healthcare.",
+            description="Professional experience across fintech, sports media, healthcare research, and academia.",
         )
         + f"""
   <main>
