@@ -230,6 +230,12 @@ html[data-theme="light"] .theme-icon-sun {
   opacity: 1;
 }
 
+/* Portrait-ish crops of Sam: bias toward the top so his face stays in
+   frame when object-fit crops the tall image on wide viewports. */
+.hero-slide--face {
+  object-position: 50% 16%;
+}
+
 /* Slow Ken Burns on whichever slide is showing. `.is-leaving` keeps the
    exact same animation declaration on the outgoing slide so the zoom keeps
    drifting (rather than snapping back) while it crossfades out. Alternating
@@ -1254,6 +1260,33 @@ body.brand-nfl::before {
   grid-template-columns: 1.1fr 0.9fr;
   gap: 2.5rem;
   align-items: start;
+}
+
+.about-photos {
+  display: grid;
+  gap: 1rem;
+  margin: 0 0 1.5rem;
+}
+
+.about-photos img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 0.9rem;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+.about-photos-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.about-photos-pair img {
+  aspect-ratio: 1 / 1;
+  height: 100%;
+  object-fit: cover;
 }
 
 .about-grid p {

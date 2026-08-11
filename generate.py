@@ -860,6 +860,7 @@ def product_badge(brand_key, prefix="", label_override=None):
 ABOUT_COPY = """
           <p>I’m an applied cognitive and social psychologist turned UX Design Researcher and Research Engineer. My graduate work in human motivation, persuasion, and behavior change is the foundation for how I approach product strategy—bridging human behavior, data analytics, and interactive design. From FDA-regulated medical device research to the NFL Fantasy app, four years scaling FanDuel’s sportsbook, and now Robinhood’s prediction markets, I’ve run mixed-methods research across healthcare, sports media, and fintech—always tying insights to product and revenue outcomes.</p>
           <p>The “engineering” in my title isn’t backend software; it’s the research operation itself. I build automated pipelines that field studies in days, telemetry and dashboards that connect what users say to what they actually do, and interactive prototypes built mid-interview—increasingly augmented by generative AI. That infrastructure links research to analytics, design, and product, so insights arrive fast enough to shape strategy and turn complex human behavior into product momentum.</p>
+          <p>Outside of work: rocketry and aviation with my son—members of the California Rocket Club and the Academy of Model Aeronautics (AMA)—and baseball, most recently at Cooperstown, where he hit 3 home runs in one game.</p>
 """
 
 RESUME_TITLE = "User Experience Research Engineer | AI-Driven Insights"
@@ -1310,8 +1311,11 @@ def write_home():
     <section class="hero hero-page hero-cinema">
       <div class="hero-media" aria-hidden="true">
         <div class="hero-slides" data-hero-slides>
-          <img class="hero-slide is-active" src="media/hero/slide-sam-writing.jpg" alt="" fetchpriority="high" decoding="async" />
+          <img class="hero-slide hero-slide--face is-active" src="media/hero/slide-sam-tablet.jpg" alt="" fetchpriority="high" decoding="async" />
+          <img class="hero-slide" src="media/hero/slide-sam-writing.jpg" alt="" loading="lazy" decoding="async" />
+          <img class="hero-slide hero-slide--face" src="media/hero/slide-sam-folder.jpg" alt="" loading="lazy" decoding="async" />
           <img class="hero-slide" src="media/hero/slide-persona.jpg" alt="" loading="lazy" decoding="async" />
+          <img class="hero-slide hero-slide--face" src="media/hero/slide-sam-couch.jpg" alt="" loading="lazy" decoding="async" />
           <img class="hero-slide" src="media/hero/slide-sam-pen.jpg" alt="" loading="lazy" decoding="async" />
           <img class="hero-slide" src="media/hero/slide-survey-lance.jpg" alt="" loading="lazy" decoding="async" />
           <img class="hero-slide" src="media/hero/slide-survey-alanna.jpg" alt="" loading="lazy" decoding="async" />
@@ -1716,6 +1720,13 @@ def write_about_page():
 {ABOUT_COPY}
         </div>
         <div class="reveal">
+          <div class="about-photos">
+            <img src="media/about-sam-1.jpg" alt="Samuel Weinberger on a boat with the Seattle skyline behind him" loading="lazy" decoding="async" width="576" height="860" />
+            <div class="about-photos-pair">
+              <img src="media/about-sam-2.jpg" alt="Samuel Weinberger smiling and holding his son" loading="lazy" decoding="async" width="1024" height="1024" />
+              <img src="media/about-sam-3.jpg" alt="Samuel Weinberger with his son in the car" loading="lazy" decoding="async" width="1024" height="684" />
+            </div>
+          </div>
           <div class="pill-row">
             <span class="pill">Cognitive &amp; social psychology</span>
             <span class="pill">UX Engineering</span>
