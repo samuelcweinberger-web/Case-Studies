@@ -248,7 +248,7 @@ if (heroSlides.length > 1) {
   const saveData = navigator.connection && navigator.connection.saveData;
 
   if (!prefersReducedMotion && !saveData) {
-    const SLIDE_INTERVAL_MS = 7500;
+    const SLIDE_INTERVAL_MS = 6800;
     const CROSSFADE_MS = 1900; // matches the .hero-slide opacity transition
     let current = 0;
     let timer = null;
