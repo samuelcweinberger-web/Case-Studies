@@ -413,7 +413,7 @@ CASES = [
         "slug": "ach-adoption",
         "num": "07",
         "brand": "fanduel",
-        "title": "ACH Adoption: Turning a Payments Risk Into a Trust Problem Worth Solving",
+        "title": "Wallet Journeys: Increasing ACH Adoption",
         "short": "Customers avoided ACH—the safer deposit method—because bank numbers felt least secure. Reframing the message (not adding incentives) roughly doubled ACH adoption, draining a costly football-Sunday debit exploit.",
         "context": "FanDuel · Core Products & Experiences",
         "year": "2024–2026",
