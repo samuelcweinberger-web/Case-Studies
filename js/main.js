@@ -247,11 +247,22 @@ if (heroVideo) {
   const wideViewport = window.matchMedia("(min-width: 780px)");
   const saveData = navigator.connection && navigator.connection.saveData;
 
+  // Slowed playback reads as cinematic slow motion behind the copy.
+  // playbackRate can only be set via JS and resets when the media element
+  // reloads, so re-apply it whenever metadata loads or playback (re)starts.
+  const HERO_PLAYBACK_RATE = 0.55;
+  const applyHeroRate = () => {
+    heroVideo.playbackRate = HERO_PLAYBACK_RATE;
+  };
+  heroVideo.addEventListener("loadedmetadata", applyHeroRate);
+  heroVideo.addEventListener("play", applyHeroRate);
+
   const startHeroVideo = () => {
     if (heroVideo.dataset.started) return;
     heroVideo.dataset.started = "true";
     heroVideo.muted = true;
     heroVideo.preload = "auto";
+    applyHeroRate();
     const playback = heroVideo.play();
     if (playback && typeof playback.catch === "function") playback.catch(() => {});
   };
