@@ -1296,19 +1296,6 @@ def write_home():
       </div>
     </section>
 
-    <section class="brand-band" aria-label="Brands worked with">
-      <div class="wrap reveal">
-        <p class="brand-band-label">Selected work across</p>
-        <div class="brand-strip">
-          <a class="brand-name" href="case-studies.html#cases-robinhood" title="Robinhood case studies">Robinhood</a>
-          <a class="brand-name" href="case-studies.html#cases-fanduel" title="FanDuel case studies">FanDuel</a>
-          <a class="brand-name" href="cases/fantasy-d2c-ideation.html" title="NFL Fantasy case study">NFL Fantasy</a>
-          <a class="brand-name" href="cases/nfl-d2c-packaging.html" title="NFL+ case study">NFL+</a>
-          <a class="brand-name" href="cases/verizon-superstadium.html" title="Verizon 5G SuperStadium case study">Verizon</a>
-          <a class="brand-name" href="cases/intel-trueview.html" title="Intel TrueView case study">Intel</a>
-        </div>
-      </div>
-    </section>
   </main>
 """
         + footer()

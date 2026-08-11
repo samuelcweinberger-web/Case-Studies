@@ -372,34 +372,6 @@ html[data-theme="light"] .theme-icon-sun {
   outline-offset: 4px;
 }
 
-.brand-strip {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.5rem 1.6rem;
-  margin: 1.1rem 0 0;
-}
-
-/* Text-only company names — no third-party logo images anywhere on the site. */
-.brand-strip .brand-name {
-  font-family: var(--display);
-  font-size: 1.15rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  color: var(--muted);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.brand-strip .brand-name:hover {
-  color: var(--ink);
-}
-
-.brand-strip .brand-name:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 4px;
-}
-
 .notable-logos img[alt="Robinhood"] {
   height: 2.5rem;
   max-width: 11rem;
@@ -714,19 +686,6 @@ html[data-theme="light"] .theme-icon-sun {
 .index-foot a:hover {
   color: var(--ink);
   border-color: var(--accent);
-}
-
-.brand-band {
-  padding: 1.5rem 0 5.5rem;
-}
-
-.brand-band-label {
-  margin: 0;
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--faint);
 }
 
 .btn {
@@ -1099,10 +1058,6 @@ html[data-theme="light"] .theme-icon-sun {
 
   .idx-arrow {
     display: none;
-  }
-
-  .brand-band {
-    padding-bottom: 4rem;
   }
 }
 
@@ -3547,7 +3502,6 @@ body.case-nfl .site-footer {
 
   .case-card,
   .btn,
-  .brand-strip a,
   .theme-toggle,
   .carousel-slide {
     transition: none;
@@ -3555,7 +3509,6 @@ body.case-nfl .site-footer {
 
   .case-card:hover,
   .btn:hover,
-  .brand-strip a:hover,
   .theme-toggle:hover {
     transform: none;
   }
