@@ -1268,28 +1268,6 @@ body.brand-nfl::before {
   margin-bottom: 0;
 }
 
-.about-portrait {
-  margin: 0 0 1.5rem;
-}
-
-.about-portrait img {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: 24rem;
-  object-fit: cover;
-  object-position: center 30%;
-  border: 1px solid var(--line);
-  border-radius: 0.9rem;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
-}
-
-.about-portrait figcaption {
-  margin-top: 0.6rem;
-  color: var(--faint);
-  font-size: 0.82rem;
-}
-
 .pill-row {
   display: flex;
   flex-wrap: wrap;
