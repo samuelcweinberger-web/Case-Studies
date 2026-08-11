@@ -690,48 +690,6 @@ CASES = [
             ),
         ],
     },
-    {
-        "slug": "insulin-pen-usability",
-        "num": "12",
-        "brand": "ipsos",
-        "title": "Insulin Pen Usability: Turning Device Research Into Commercial Evidence",
-        "short": "A pharma company needed defensible evidence of where its biosimilar insulin pen stood against market leaders. My multi-country comparative usability study reshaped device training and was linked to a 27% reduction in device-use errors.",
-        "context": "Ipsos Healthcare · Medical Devices & Diabetes Research",
-        "year": "2015–2017",
-        "role": "UX Research Analyst (protocol author, moderator, analyst)",
-        "timeline": "Multi-country study",
-        "methods": "Comparative usability testing · Simulated-injection task protocol · In-person moderation · Cognitive debriefing · Video capture · Follow-up interviews",
-        "summary": "A pharma company needed defensible evidence of where its biosimilar insulin pen stood against market leaders. My multi-country comparative usability study reshaped the device training protocol and was linked to a 27% reduction in device-use errors.",
-        "stats": [],
-        "sections": [
-            ("Situation", """<ul>
-<li>A global pharmaceutical company was co-developing a biosimilar insulin glargine and pen injector.</li>
-<li>It needed to know how its device compared to established market leaders on the factors that determine adherence: handling, dose setting, dose reading, injection force, and confidence.</li>
-<li>Insulin pens improve adherence over vial-and-syringe methods, but vary widely in usability.</li>
-<li>In a market with entrenched competitor devices, the company needed defensible evidence of where its pen stood before building launch messaging or making a market-access case.</li>
-</ul>"""),
-            ("Task", """<ul>
-<li>Produce evidence credible to three audiences at once: patients and educators who would use the device, commercial teams who needed launch messaging, and regulatory and payer stakeholders who required rigor.</li>
-<li>Design and run the study that generated it.</li>
-<li>Turn subjective device preference into structured, comparable data across patients and certified diabetes educators.</li>
-</ul>"""),
-            ("Action", """<ul>
-<li>Authored the research protocol and built the study materials.</li>
-<li>Moderated in-person usability sessions with patients and nurses recruited from a local clinic.</li>
-<li>Participants performed simulated injections with each device in randomized order.</li>
-<li>Captured performance data (task completion, whether injections were performed correctly, time on task) alongside structured preference ratings across handling, dose selection, dose reading, injection force, and confidence.</li>
-<li>Filmed the sessions and conducted follow-up interviews to capture the reasoning behind participants’ ratings.</li>
-<li>Analyzed the combined behavioral and attitudinal data.</li>
-</ul>"""),
-            ("Result", """<ul>
-<li><strong>The main insight: how the device is taught matters as much as the device itself.</strong> The way patients and educators were trained turned out to be just as important as the pen’s design.</li>
-<li><strong>The research changed how the device is taught — and that change was linked to fewer mistakes.</strong> After the training approach for educators and patients was reshaped based on the findings, device-use errors were about 27% lower and training took less time. (The study is linked to these improvements; it isn’t claiming to be the sole cause.)</li>
-<li><strong>The recordings became marketing material.</strong> The filmed sessions and follow-up interviews were used to build the training and sales materials that pharmaceutical representatives and diabetes educators used in the field.</li>
-<li><strong>The study gave the company evidence it could compare.</strong> It produced side-by-side results across patients and certified diabetes educators, supporting both launch messaging and the case for getting the device covered and paid for.</li>
-<li>I ran the whole study: writing the plan, building the materials, moderating the sessions, filming, conducting the follow-up interviews, and analyzing the data.</li>
-</ul>"""),
-        ],
-    },
 ]
 
 
@@ -1018,7 +976,7 @@ RESUME_EXPERIENCE = [
         "bullets": [
             (
                 "Medical Device Usability",
-                'Authored the research protocol and ran end-to-end <a href="cases/insulin-pen-usability.html">comparative usability testing of a biosimilar insulin pen</a> with patients and clinic nurses — moderating simulated-injection sessions, filming, and analyzing behavioral and preference data.',
+                'Authored the research protocol and ran end-to-end comparative usability testing of a biosimilar insulin pen with patients and clinic nurses — moderating simulated-injection sessions, filming, and analyzing behavioral and preference data.',
             ),
             (
                 "Research-to-Commercial Impact",
@@ -1263,21 +1221,18 @@ HOME_INDEX_OUTCOMES = {
     "nfl-d2c-packaging": "Formative research behind NFL+, launched to ~1.1M sign-ups and roughly 2.7M subscribers heading into 2024.",
     "intel-trueview": "Design studios on Intel&rsquo;s volumetric replay prototype delivered a clear read on fan appetite for interactive replay.",
     "verizon-superstadium": "Usability and in-stadium field research that helped seed SuperStadium, now built into the official NFL app.",
-    "insulin-pen-usability": "A multi-country comparative usability study reshaped device training and was linked to a 27% reduction in use errors.",
 }
 
 HOME_INDEX_BRAND_SHORT = {
     "robinhood": "Robinhood",
     "fanduel": "FanDuel",
     "nfl": "NFL",
-    "ipsos": "Ipsos Healthcare",
 }
 
 HOME_INDEX_INDUSTRY = {
     "robinhood": "fintech",
     "fanduel": "fintech",
     "nfl": "sports-media",
-    "ipsos": "healthcare",
 }
 
 
@@ -1354,12 +1309,11 @@ def write_home():
     <section class="home-index" id="work" aria-label="Case study index">
       <div class="wrap">
         <header class="index-head reveal">
-          <p class="index-kicker">Index &middot; Twelve case studies</p>
+          <p class="index-kicker">Index &middot; Eleven case studies</p>
           <div class="index-paths" role="group" aria-label="Choose a path through the work">
             <button type="button" class="path-link is-active" data-path="all" aria-pressed="true">All</button>
             <button type="button" class="path-link" data-path="fintech" aria-pressed="false">Fintech</button>
             <button type="button" class="path-link" data-path="sports-media" aria-pressed="false">Sports &amp; Media</button>
-            <button type="button" class="path-link" data-path="healthcare" aria-pressed="false">Healthcare</button>
           </div>
         </header>
         <ol class="idx-list" data-case-index>
@@ -1377,7 +1331,6 @@ def write_home():
           <a href="case-studies.html#cases-fanduel" title="FanDuel case studies"><img class="brand-tile" src="media/brands/fanduel-home.png" alt="FanDuel" loading="lazy" decoding="async" /></a>
           <a href="cases/fantasy-d2c-ideation.html" title="NFL Fantasy case study"><img class="brand-tile" src="media/brands/nfl-fantasy-home.png" alt="NFL Fantasy" loading="lazy" decoding="async" /></a>
           <a href="cases/nfl-d2c-packaging.html" title="NFL+ case study"><img class="brand-tile" src="media/brands/nfl-plus-home.png" alt="NFL+" loading="lazy" decoding="async" /></a>
-          <a href="cases/insulin-pen-usability.html" title="Ipsos Healthcare case study"><img class="brand-tile" src="media/brands/ipsos-home.png" alt="Ipsos" loading="lazy" decoding="async" /></a>
           <a href="cases/verizon-superstadium.html" title="Verizon 5G SuperStadium case study"><img class="brand-tile" src="media/brands/verizon-5g-home.png" alt="Verizon 5G" loading="lazy" decoding="async" /></a>
           <a href="cases/intel-trueview.html" title="Intel TrueView case study"><img class="brand-tile" src="media/brands/intel-home.png" alt="Intel" loading="lazy" decoding="async" /></a>
         </div>
@@ -1397,7 +1350,7 @@ def write_case_studies_page():
             active="Case studies",
             nav_active="cases",
             page_path="case-studies.html",
-            description="Twelve case studies across Robinhood, FanDuel, Ipsos Healthcare, and the NFL—each tied to a shipped product decision and a measured outcome.",
+            description="Eleven case studies across Robinhood, FanDuel, and the NFL—each tied to a shipped product decision and a measured outcome.",
         )
         + f"""
   <main>
@@ -1405,13 +1358,12 @@ def write_case_studies_page():
       <div class="wrap">
         <div class="section-head reveal">
           <h2>Case studies</h2>
-          <p>Twelve studies across Robinhood, FanDuel, Ipsos Healthcare, and the NFL—each tied to a shipped product decision and a measured outcome.</p>
+          <p>Eleven studies across Robinhood, FanDuel, and the NFL—each tied to a shipped product decision and a measured outcome.</p>
         </div>
         <div class="filter-bar reveal" data-case-filters role="group" aria-label="Filter case studies by industry">
           <button type="button" class="filter-pill is-active" data-filter="all" aria-pressed="true">All</button>
           <button type="button" class="filter-pill" data-filter="fintech" aria-pressed="false">Fintech</button>
           <button type="button" class="filter-pill" data-filter="sports-media" aria-pressed="false">Sports &amp; Media</button>
-          <button type="button" class="filter-pill" data-filter="healthcare" aria-pressed="false">Healthcare</button>
         </div>
 {chr(10).join(case_blocks)}
       </div>
