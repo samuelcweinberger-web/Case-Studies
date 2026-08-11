@@ -361,7 +361,7 @@ CASES = [
         "slug": "benchmarking-decision-engine",
         "num": "06",
         "brand": "fanduel",
-        "title": "Benchmarking as a Decision Engine: Measuring Experience Across a Fragmented Portfolio",
+        "title": "Benchmarking as a Decision Engine: Measuring Experience Across Multiple Apps",
         "short": "FanDuel’s products were siloed with no shared baseline. I built continuous cross-product benchmarking that became the reference point the org used to decide where to invest—surfacing Same Game Parlays and growing research into a 32-person team.",
         "context": "FanDuel · Core Products & Experiences",
         "year": "2021–2023",
