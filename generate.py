@@ -843,7 +843,7 @@ def normalize_stat(item):
 
 
 ABOUT_COPY = """
-          <p>I’m an applied cognitive and social psychologist turned UX Design Researcher and Research Engineer. My graduate work in human motivation, persuasion, and behavior change is the foundation for how I approach product strategy—bridging human behavior, data analytics, and interactive design. From FDA-regulated medical device research to the NFL Fantasy app, four years scaling FanDuel’s sportsbook, and now Robinhood’s prediction markets, I’ve run mixed-methods research across healthcare, sports media, and fintech—always tying insights to product and revenue outcomes.</p>
+          <p>I’m an applied cognitive and social psychologist turned UX Design Researcher and Research Engineer. My graduate work in human motivation, persuasion, and behavior change is the foundation for how I approach product strategy—bridging human behavior, data analytics, and interactive design. From FDA-regulated medical device research to the NFL Fantasy app, four years scaling FanDuel’s sportsbook, and now Robinhood’s prediction markets, I’ve run mixed-methods research across healthcare, online gaming, and fintech—always tying insights to product and revenue outcomes.</p>
           <p>The “engineering” in my title isn’t backend software; it’s the research operation itself. I build automated pipelines that field studies in days, telemetry and dashboards that connect what users say to what they actually do, and interactive prototypes built mid-interview—increasingly augmented by generative AI. That infrastructure links research to analytics, design, and product, so insights arrive fast enough to shape strategy and turn complex human behavior into product momentum.</p>
           <p>Outside of work: rocketry and aviation with my son—members of the California Rocket Club and the Academy of Model Aeronautics (AMA)—and baseball, most recently at Cooperstown, where he hit 3 home runs in one game.</p>
 """
@@ -1272,7 +1272,7 @@ def write_home():
 
     <section class="home-statement" id="statement" aria-label="Introduction">
       <div class="wrap">
-        <p class="statement-line reveal">9+ years of mixed-methods research across fintech, sports media, and healthcare.</p>
+        <p class="statement-line reveal">9+ years of mixed-methods research across fintech, online gaming&mdash;sports betting and prediction markets&mdash;and healthcare.</p>
         <p class="statement-line reveal">Every study here ends the same way&mdash;</p>
         <p class="statement-line statement-em reveal">a shipped product decision and a measured outcome.</p>
       </div>
@@ -1285,7 +1285,7 @@ def write_home():
           <div class="index-paths" role="group" aria-label="Choose a path through the work">
             <button type="button" class="path-link is-active" data-path="all" aria-pressed="true">All</button>
             <button type="button" class="path-link" data-path="fintech" aria-pressed="false">Fintech</button>
-            <button type="button" class="path-link" data-path="sports-media" aria-pressed="false">Sports &amp; Media</button>
+            <button type="button" class="path-link" data-path="sports-media" aria-pressed="false">Sports &amp; Gaming</button>
           </div>
         </header>
         <ol class="idx-list" data-case-index>
@@ -1309,7 +1309,7 @@ def write_case_studies_page():
             active="Case studies",
             nav_active="cases",
             page_path="case-studies.html",
-            description="Eleven case studies across fintech and sports media—each tied to a shipped product decision and a measured outcome.",
+            description="Eleven case studies across fintech, online gaming, and sports media—each tied to a shipped product decision and a measured outcome.",
         )
         + f"""
   <main>
@@ -1317,12 +1317,12 @@ def write_case_studies_page():
       <div class="wrap">
         <div class="section-head reveal">
           <h2>Case studies</h2>
-          <p>Eleven studies across fintech and sports media—each tied to a shipped product decision and a measured outcome.</p>
+          <p>Eleven studies across fintech, online gaming, and sports media—each tied to a shipped product decision and a measured outcome.</p>
         </div>
         <div class="filter-bar reveal" data-case-filters role="group" aria-label="Filter case studies by industry">
           <button type="button" class="filter-pill is-active" data-filter="all" aria-pressed="true">All</button>
           <button type="button" class="filter-pill" data-filter="fintech" aria-pressed="false">Fintech</button>
-          <button type="button" class="filter-pill" data-filter="sports-media" aria-pressed="false">Sports &amp; Media</button>
+          <button type="button" class="filter-pill" data-filter="sports-media" aria-pressed="false">Sports &amp; Gaming</button>
         </div>
 {chr(10).join(case_blocks)}
       </div>
@@ -1508,7 +1508,7 @@ def write_resume_page():
             active="Professional Experience",
             nav_active="resume",
             page_path="resume.html",
-            description="Professional experience across fintech, sports media, healthcare research, and academia.",
+            description="Professional experience across fintech, online gaming, healthcare research, and academia.",
         )
         + f"""
   <main>
