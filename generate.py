@@ -863,7 +863,12 @@ RESUME_EDUCATION = [
     {
         "name": "Claremont Graduate University",
         "dates": "2016–2020",
-        "details": "Ph.D., Cognitive &amp; Social Psychology (ABD) · Master of Arts in Psychology, GPA 3.45",
+        "details": "Ph.D., Cognitive &amp; Social Psychology (ABD)",
+    },
+    {
+        "name": "Claremont Graduate University",
+        "dates": "2016–2020",
+        "details": "Master of Psychology, GPA 3.45",
     },
     {
         "name": "University of Southern California",
