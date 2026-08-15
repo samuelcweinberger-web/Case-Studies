@@ -1439,16 +1439,6 @@ def write_about_page():
               <img src="media/about-sam-3.jpg" alt="Samuel Weinberger with his son in the car" loading="lazy" decoding="async" width="1024" height="684" />
             </div>
           </div>
-          <div class="pill-row">
-            <span class="pill">Cognitive &amp; social psychology</span>
-            <span class="pill">UX Engineering</span>
-            <span class="pill">Quantitative UX research</span>
-            <span class="pill">Human behavior</span>
-            <span class="pill">Data analytics</span>
-            <span class="pill">Interactive design</span>
-            <span class="pill">Generative AI</span>
-            <span class="pill">Research ops</span>
-          </div>
         </div>
       </div>
     </section>

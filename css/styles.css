@@ -1167,21 +1167,6 @@ body.brand-nfl::before {
   margin-bottom: 0;
 }
 
-.pill-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.55rem;
-  margin-top: 1.25rem;
-}
-
-.pill {
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: 0.45rem 0.85rem;
-  font-size: 0.82rem;
-  color: var(--muted);
-}
-
 .skills-grid {
   display: grid;
   gap: 2rem;
@@ -3052,11 +3037,6 @@ body.case-nfl .site-footer {
   .resume-role-head h4,
   .skills-list strong {
     color: #000;
-  }
-
-  .pill {
-    border-color: #999;
-    color: #333;
   }
 
   .page-section {
