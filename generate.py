@@ -1242,7 +1242,15 @@ def build_home_index_rows():
 def write_home():
     index_rows = build_home_index_rows()
     html = (
-        header(nav_active="home", page_path="")
+        header(
+            nav_active="home",
+            page_path="",
+            description=(
+                "Samuel Weinberger — Design Research | Research Engineering. "
+                "Applied cognitive and social psychologist bridging human behavior, "
+                "analytics, and interactive design."
+            ),
+        )
         + f"""
   <main>
     <section class="hero hero-page hero-cinema">
@@ -1267,7 +1275,8 @@ def write_home():
       <div class="wrap hero-copy">
         <p class="hero-kicker">AI-Driven Insights</p>
         <h1 class="hero-brand">Sam<br />Weinberger</h1>
-        <p class="hero-role">UX Design Research | Research Engineer</p>
+        <p class="hero-role">Design Research | Research Engineering</p>
+        <p class="hero-proof">Agentic workflows · research ops · insights tied to outcomes</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#work">Explore the work</a>
         </div>

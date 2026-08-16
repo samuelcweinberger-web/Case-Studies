@@ -332,6 +332,19 @@ html[data-theme="light"] .theme-icon-sun {
   animation: rise 1s var(--ease) 0.26s forwards;
 }
 
+.hero-proof {
+  margin: 0.35rem 0 0;
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: clamp(0.78rem, 1.25vw, 0.88rem);
+  line-height: 1.45;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.64);
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  animation: rise 1s var(--ease) 0.34s forwards;
+}
+
 /* Quiet scroll invitation at the base of the opening view. */
 .hero-scroll-cue {
   position: absolute;
@@ -3442,6 +3455,7 @@ body.case-nfl .site-footer {
   .hero-kicker,
   .hero-brand,
   .hero-role,
+  .hero-proof,
   .hero-actions,
   .hero-scroll-cue {
     animation: none;
