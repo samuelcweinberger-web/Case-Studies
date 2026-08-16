@@ -723,9 +723,8 @@ CASES = [
 SITE_URL = "https://samuelcweinberger-web.github.io/Case-Studies/"
 
 DEFAULT_DESCRIPTION = (
-    "Samuel Weinberger — applied cognitive and social psychologist turned UX Design "
-    "Researcher and Research Engineer. Bridging human behavior, analytics, and "
-    "interactive design."
+    "Design research and research engineering. Agentic workflows, research ops, "
+    "and insights tied to outcomes across fintech, online gaming, and healthcare."
 )
 
 FONTS_URL = (
@@ -761,20 +760,25 @@ MOON_ICON = (
 
 
 def _meta_escape(text):
-    return text.replace("&", "&amp;").replace('"', "&quot;")
+    return (
+        text.replace("&amp;", "&")
+        .replace("&quot;", '"')
+        .replace("&", "&amp;")
+        .replace('"', "&quot;")
+    )
 
 
 def header(active=None, prefix="", brand=None, nav_active=None, body_classes=None,
-           page_path="", description=None):
+           page_path="", description=None, page_title=None):
     classes = []
     if brand:
         classes.append(f"brand-{brand}")
     if body_classes:
         classes.extend(body_classes)
     brand_class = f' class="{" ".join(classes)}"' if classes else ""
-    title = "Sam Weinberger" if not active else f"{active} — Sam Weinberger"
+    title = page_title or ("Sam Weinberger" if not active else f"{active} — Sam Weinberger")
+    title_esc = _meta_escape(title)
     desc = _meta_escape(description or DEFAULT_DESCRIPTION)
-    og_title = _meta_escape(title)
     og_url = f"{SITE_URL}{page_path}"
     og_image = f"{SITE_URL}media/og-card.png"
 
@@ -787,21 +791,20 @@ def header(active=None, prefix="", brand=None, nav_active=None, body_classes=Non
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{title}</title>
+  <title>{title_esc}</title>
   <meta name="description" content="{desc}" />
-  <meta name="robots" content="noindex" />
   <meta name="color-scheme" content="dark light" />
   <script>{THEME_SCRIPT}</script>
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Sam Weinberger" />
-  <meta property="og:title" content="{og_title}" />
+  <meta property="og:title" content="{title_esc}" />
   <meta property="og:description" content="{desc}" />
   <meta property="og:url" content="{og_url}" />
   <meta property="og:image" content="{og_image}" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="{og_title}" />
+  <meta name="twitter:title" content="{title_esc}" />
   <meta name="twitter:description" content="{desc}" />
   <meta name="twitter:image" content="{og_image}" />
   <link rel="icon" href="{prefix}favicon.svg" type="image/svg+xml" />
@@ -1245,11 +1248,8 @@ def write_home():
         header(
             nav_active="home",
             page_path="",
-            description=(
-                "Samuel Weinberger — Design Research | Research Engineering. "
-                "Applied cognitive and social psychologist bridging human behavior, "
-                "analytics, and interactive design."
-            ),
+            page_title="Sam Weinberger — Design Research | Research Engineering",
+            description=DEFAULT_DESCRIPTION,
         )
         + f"""
   <main>
@@ -1323,7 +1323,11 @@ def write_case_studies_page():
             active="Case studies",
             nav_active="cases",
             page_path="case-studies.html",
-            description="Eleven case studies across fintech, online gaming, and sports media—each tied to a shipped product decision and a measured outcome.",
+            description=(
+                "Mixed-methods UX case studies—usability, research operations, and "
+                "insights tied to shipped product decisions across fintech, online "
+                "gaming, and sports."
+            ),
         )
         + f"""
   <main>
@@ -1371,7 +1375,11 @@ def write_skills_page():
             active="Skills",
             nav_active="skills",
             page_path="skills.html",
-            description="Quantitative UX, psychometrics, sports/in-the-wild methods, and engineered research infrastructure.",
+            description=(
+                "UX research skills: mixed-methods, usability, psychometrics, "
+                "research operations, and engineered infrastructure for fintech, "
+                "sports, and healthcare."
+            ),
         )
         + f"""
   <main>
@@ -1410,7 +1418,11 @@ def write_research_tools_page():
             active="Tech Stack",
             nav_active="research-tools",
             page_path="research-tools.html",
-            description="Platforms and languages used across survey, analytics, experimentation, collaboration, and analysis.",
+            description=(
+                "Research engineering stack for mixed-methods UX research—survey, "
+                "analytics, experimentation, and analysis tools that power research "
+                "operations."
+            ),
         )
         + f"""
   <main>
@@ -1434,7 +1446,16 @@ def write_research_tools_page():
 
 def write_about_page():
     html = (
-        header(active="About me", nav_active="about", page_path="about.html")
+        header(
+            active="About me",
+            nav_active="about",
+            page_path="about.html",
+            description=(
+                "UX researcher and research engineer. Mixed-methods work, agentic "
+                "workflows, and research ops across fintech, online gaming, "
+                "prediction markets, and healthcare."
+            ),
+        )
         + f"""
   <main>
     <section class="section page-section" id="about">
@@ -1512,7 +1533,11 @@ def write_resume_page():
             active="Professional Experience",
             nav_active="resume",
             page_path="resume.html",
-            description="Professional experience across fintech, online gaming, healthcare research, and academia.",
+            description=(
+                "Professional experience in design research and research "
+                "engineering—fintech, prediction markets, online gaming, healthcare, "
+                "and academia."
+            ),
         )
         + f"""
   <main>
@@ -1572,7 +1597,11 @@ def write_education_page():
             active="Education",
             nav_active="education",
             page_path="education.html",
-            description="Graduate and undergraduate study in cognitive and social psychology, public policy, and communications—alongside a Division 1 athletics background.",
+            description=(
+                "Education behind the design research and research engineering "
+                "practice—cognitive and social psychology, public policy, and "
+                "communications, plus Division 1 athletics."
+            ),
         )
         + f"""
   <main>
@@ -1620,7 +1649,11 @@ def write_contact_page():
             active="Contact",
             nav_active="contact",
             page_path="contact.html",
-            description="Get in touch — email, LinkedIn, and phone for Sam Weinberger.",
+            description=(
+                "Contact Sam Weinberger for design research and research engineering. "
+                "Email, LinkedIn, and phone—happy to talk UX research and product "
+                "strategy."
+            ),
         )
         + f"""
   <main>
