@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Wallet Journeys: Increasing ACH Adoption — Sam Weinberger</title>
-  <meta name="description" content="Customers avoided ACH—the safer deposit method—because bank numbers felt least secure. Reframing the message (not adding incentives) roughly doubled ACH adoption, draining a costly football-Sunday debit exploit." />
+  <title>Measuring the Invisible: A Validated Scale for Responsible Gaming — Sam Weinberger</title>
+  <meta name="description" content="Risk-prevention tools existed, but nothing measured whether they worked. A validated Responsible Gaming Sentiment Scale raised the share of customers meeting regulatory standards by 14 points, to the program's highest level yet." />
   <meta name="color-scheme" content="dark light" />
   <script>(function(){document.documentElement.classList.add('js');try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark'){t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Sam Weinberger" />
-  <meta property="og:title" content="Wallet Journeys: Increasing ACH Adoption — Sam Weinberger" />
-  <meta property="og:description" content="Customers avoided ACH—the safer deposit method—because bank numbers felt least secure. Reframing the message (not adding incentives) roughly doubled ACH adoption, draining a costly football-Sunday debit exploit." />
-  <meta property="og:url" content="https://samuelcweinberger-web.github.io/Case-Studies/cases/ach-adoption.html" />
+  <meta property="og:title" content="Measuring the Invisible: A Validated Scale for Responsible Gaming — Sam Weinberger" />
+  <meta property="og:description" content="Risk-prevention tools existed, but nothing measured whether they worked. A validated Responsible Gaming Sentiment Scale raised the share of customers meeting regulatory standards by 14 points, to the program's highest level yet." />
+  <meta property="og:url" content="https://samuelcweinberger-web.github.io/Case-Studies/cases/responsible-gaming.html" />
   <meta property="og:image" content="https://samuelcweinberger-web.github.io/Case-Studies/media/og-card.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Wallet Journeys: Increasing ACH Adoption — Sam Weinberger" />
-  <meta name="twitter:description" content="Customers avoided ACH—the safer deposit method—because bank numbers felt least secure. Reframing the message (not adding incentives) roughly doubled ACH adoption, draining a costly football-Sunday debit exploit." />
+  <meta name="twitter:title" content="Measuring the Invisible: A Validated Scale for Responsible Gaming — Sam Weinberger" />
+  <meta name="twitter:description" content="Risk-prevention tools existed, but nothing measured whether they worked. A validated Responsible Gaming Sentiment Scale raised the share of customers meeting regulatory standards by 14 points, to the program's highest level yet." />
   <meta name="twitter:image" content="https://samuelcweinberger-web.github.io/Case-Studies/media/og-card.png" />
   <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="../favicon.png" type="image/png" sizes="64x64" />
@@ -58,27 +58,27 @@
     </nav>
     <header class="case-hero">
       <div class="wrap">
-        <div class="crumb"><a href="../case-studies.html">Case studies</a> <span aria-hidden="true">/</span> 07</div>
-        <h1>Wallet Journeys: Increasing ACH Adoption</h1>
-        
-        
-        
+        <div class="crumb"><a href="../case-studies.html">Case studies</a> <span aria-hidden="true">/</span> 08</div>
+        <h1>Measuring the Invisible: A Validated Scale for Responsible Gaming</h1>
+
+
+
         <div class="case-meta-line">
           <span>Core Products & Experiences</span>
         </div>
-        
+
         <dl class="case-brief">
           <div class="brief-item">
             <dt>Role</dt>
-            <dd>UX Researcher (study lead)</dd>
+            <dd>UX Researcher (scale developer, study lead)</dd>
           </div>
           <div class="brief-item">
             <dt>Timeline</dt>
-            <dd>Multi-phase (research → A/B → production)</dd>
+            <dd>Multi-phase (scale development → validation → deployment)</dd>
           </div>
           <div class="brief-item">
             <dt>Methods</dt>
-            <dd>In-depth interviews · A/B message testing · Behavioral + sentiment pairing · Cross-functional work with content design</dd>
+            <dd>Scale development · Exploratory &amp; confirmatory factor analysis · Psychometric validation · Behavioral risk-tool design</dd>
           </div>
         </dl>
       </div>
@@ -91,12 +91,9 @@
             <h2>Situation</h2>
           </div>
           <div class="case-section-body"><ul>
-<li>Customers frequently deposited via debit card on Sundays during football, when banks were closed.</li>
-<li>Their other pending transactions hadn’t posted yet — so accounts looked funded when they weren’t.</li>
-<li>Bets settled the next day as those transactions cleared, sometimes leaving the bank unable to transfer funds.</li>
-<li>If the customer had lost, they were left with a negative balance many never repaid.</li>
-<li>This cost the company directly and incentivized fraud, with bad actors opening new accounts under others’ information to keep exploiting the gap.</li>
-<li>ACH deposits — tied to a verifiable bank balance — would close it, but adoption remained stubbornly low.</li>
+<li>The company had risk-detection and player-protection tools already live in the app, but no validated way to measure whether they actually reduced at-risk play.</li>
+<li>Regulators were raising the bar on what counted as adequate player protection — having tools wasn’t a defensible answer without a measure showing they worked.</li>
+<li>The signals available (support contacts, self-exclusion requests) were lagging indicators: they showed harm after it happened, not risk before it did.</li>
 </ul></div>
         </section>
         <section class="case-section reveal" id="task">
@@ -104,9 +101,9 @@
             <h2>Task</h2>
           </div>
           <div class="case-section-body"><ul>
-<li>Understand why customers avoided ACH despite it being the safer, more stable deposit method.</li>
-<li>Find a way to move adoption up without adding friction.</li>
-<li>Shrink the negative-balance and fraud exposure the debit-float created.</li>
+<li>Build and validate an instrument that could measure responsible-gaming sentiment and behavior directly, not just track downstream harm after the fact.</li>
+<li>Use that measure to guide which risk-prevention tools to build or refine, and prove whether they actually moved behavior.</li>
+<li>Get the measure to a rigor bar that regulators and the business would both trust.</li>
 </ul></div>
         </section>
         <section class="case-section reveal" id="action">
@@ -114,10 +111,10 @@
             <h2>Action</h2>
           </div>
           <div class="case-section-body"><ul>
-<li>Ran interviews to understand the avoidance and paired that qualitative signal with behavioral data.</li>
-<li>Surfaced a counterintuitive root cause: customers perceived entering bank routing and account numbers as the least secure way to pay — riskier, in their minds, than the debit card they were used to.</li>
-<li>Since the barrier was perception rather than mechanics, partnered with the content design team (copywriters) to explore message framing and tone conveying how ACH is actually safer and more secure.</li>
-<li>A/B tested the variations to find what genuinely moved behavior.</li>
+<li>Generated and refined an item pool grounded in the psychology of risk perception and self-control, then ran it through the standard scale-development pipeline: pilot testing, exploratory and confirmatory factor analysis, and reliability testing.</li>
+<li>Validated the resulting Responsible Gaming Sentiment Scale against real behavioral outcomes, not just self-report.</li>
+<li>Used the validated scale to evaluate and refine the in-app risk-detection and intervention tools, iterating on which prompts and limits genuinely shifted behavior.</li>
+<li>Folded the scale into ongoing measurement, tracked alongside usability and loyalty metrics as part of the broader benchmarking program.</li>
 </ul></div>
         </section>
         <section class="case-section reveal" id="result">
@@ -125,22 +122,21 @@
             <h2>Result</h2>
           </div>
           <div class="case-section-body"><ul>
-<li><strong>Roughly twice as many customers started using bank transfers.</strong> Adoption of ACH (paying directly from a bank account) roughly doubled after the reframed messaging shipped.</li>
-<li><strong>The fix was to correct a false impression, not to add rewards or extra steps.</strong> Customers had believed that typing in bank account and routing numbers was the least safe way to pay — less safe than the debit card they were used to, which is the opposite of the truth. Better wording, developed with the content design team and tested head-to-head, changed that belief.</li>
-<li><strong>This directly shrank the Sunday-football problem.</strong> Because a bank transfer is tied to money the customer actually has, moving people onto it removed much of the gap that let bets get placed against funds that weren’t really there.</li>
-<li>It reduced two costly outcomes: customers left owing money they never paid back, and the fraud that came with it — people opening new accounts under other identities to keep exploiting the gap.</li>
+<li><strong>The share of customers meeting regulatory player-protection standards rose 14 percentage points — the highest level the program had reached.</strong> The lift tracked directly to the risk tools the scale had been used to refine.</li>
+<li><strong>Gave the company a defensible, validated way to show its player-protection tools worked</strong> — not just that they existed.</li>
+<li>Became the measurement backbone referenced in the org’s broader benchmarking program, tracked alongside usability and loyalty scores.</li>
 </ul></div>
         </section>
       </div>
 
       <nav class="pager" aria-label="Case study pagination">
-        <a class="pager-link pager-prev" href="benchmarking-decision-engine.html">
+        <a class="pager-link pager-prev" href="ach-adoption.html">
           <span class="pager-kicker">← Previous</span>
-          <span class="pager-title">Benchmarking as a Decision Engine: Measuring Experience Across Multiple Apps</span>
+          <span class="pager-title">Wallet Journeys: Increasing ACH Adoption</span>
         </a>
-        <a class="pager-link pager-next" href="responsible-gaming.html">
+        <a class="pager-link pager-next" href="fantasy-d2c-ideation.html">
           <span class="pager-kicker">Next →</span>
-          <span class="pager-title">Measuring the Invisible: A Validated Scale for Responsible Gaming</span>
+          <span class="pager-title">Turning a Free Fantasy Game Into Direct-to-Consumer Revenue</span>
         </a>
       </nav>
     </div>
